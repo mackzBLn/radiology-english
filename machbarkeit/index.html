@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!--
+Radiology English – Machbarkeitstest (Testseite). Oberfläche deutsch, englische Sätze mit lang="en" [H12].
+Die Logik liegt in test.js, der Service Worker in sw.js (beide relativ eingebunden, Quelle 11).
+Quellen: "Quelle N" verweist auf die Quellenlisten des Projekts. Die Adressen [H1] bis [H13] wurden am 03.11.2026 gelesen (MDN Web Docs), [H10] am 06.11.2026 erneut.
+ [H1]  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport
+ [H2]  https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+ [H3]  https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+ [H4]  https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+ [H5]  https://developer.mozilla.org/en-US/docs/Web/CSS/env
+ [H6]  https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
+ [H7]  https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+ [H8]  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize
+ [H9]  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck
+ [H10] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file
+ [H11] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/readonly
+ [H12] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang
+ [H13] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect (Quelle 33)
+-->
+<!-- width=device-width und initial-scale=1 [H1]; viewport-fit=cover, damit env(safe-area-inset-bottom) wirkt (Quelle 37, [H1]). -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Für Suchmaschinen gesperrt (Quelle 16). -->
+<meta name="robots" content="noindex">
+<title>Radiology English – Machbarkeitstest</title>
+<style>
+/* Farbwerte nach Vorgabe des Projekts (dunkles Design). color-scheme: dark stellt Formularelemente und Bildlaufleisten dunkel [H2]. */
+:root {
+  color-scheme: dark;
+  --bg: #141416;
+  --card: #232326;
+  --text: #F2F2F7;
+  --accent: #5CB8FF;
+  --ok: #4AD968;
+  --warn: #FEDF43;
+  --err: #FF6165;
+}
+html { background: var(--bg); }
+/* Systemschrift über system-ui [H3], keine Webschriften (Vorgabe des Projekts).
+   Abstand unten mit env(safe-area-inset-bottom) [H5] (Quelle 37). */
+body {
+  margin: 0;
+  padding: 16px 16px calc(24px + env(safe-area-inset-bottom));
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+main { max-width: 720px; margin: 0 auto; }
+[hidden] { display: none !important; }
+.card { background: var(--card); border-radius: 14px; padding: 16px; margin: 0 0 16px; }
+h1 { font-size: 1.35rem; margin: 0 0 10px; }
+h2 { font-size: 1.15rem; margin: 0 0 10px; }
+h3 { font-size: 1rem; margin: 14px 0 6px; color: rgba(242, 242, 247, 0.75); }
+p { margin: 0 0 10px; }
+.small { font-size: 0.9rem; color: rgba(242, 242, 247, 0.75); }
+.hint { color: var(--warn); font-weight: 600; }
+.sentence { font-size: 1.25rem; font-weight: 600; margin: 8px 0 12px; }
+/* Knöpfe mindestens 48 CSS-Pixel hoch und breit; Apples Mindestgröße (Quelle 36) ist offen.
+   touch-action: manipulation lässt Wischen und Zoom mit zwei Fingern zu, schaltet aber den Doppeltipp-Zoom ab [H4]. */
+.btn {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--bg);
+  font: inherit;
+  font-weight: 600;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.btn.secondary { background: var(--bg); color: var(--accent); border: 2px solid var(--accent); }
+.btn:disabled { opacity: 0.4; cursor: default; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+.row .btn { flex: 1 1 180px; }
+.row.column { flex-direction: column; }
+.row.column .btn { flex: 0 0 auto; }
+/* Ergebnisfelder: Leerzeichen und Zeilenumbrüche bleiben erhalten [H7]; lange Zeichenketten wie der userAgent brechen um [H6]. */
+.result {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.95rem;
+}
+/* Festbreitenschrift; die doppelte Angabe hält die geerbte Schriftgröße [H3]. */
+.mono { font-family: monospace, monospace; }
+.ok { color: var(--ok); }
+.warn { color: var(--warn); }
+.err { color: var(--err); }
+/* Fehlertexte können lange Adressen enthalten; sie brechen um [H6]. */
+.banner { margin-top: 10px; padding: 10px 12px; border-radius: 10px; font-weight: 700; overflow-wrap: anywhere; }
+.banner.err { background: var(--err); color: var(--bg); }
+table.kv { width: 100%; border-collapse: collapse; }
+table.kv th, table.kv td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 6px 6px 0;
+  border-bottom: 1px solid rgba(242, 242, 247, 0.12);
+  overflow-wrap: anywhere;
+}
+table.kv th { width: 40%; font-weight: 600; color: rgba(242, 242, 247, 0.8); }
+.voices { max-height: 280px; overflow: auto; }
+.voices table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.voices th, .voices td { text-align: left; padding: 4px 6px 4px 0; border-bottom: 1px solid rgba(242, 242, 247, 0.12); }
+label { display: block; margin: 10px 0 6px; font-weight: 600; }
+input[type="text"], input[type="file"], select, textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid rgba(242, 242, 247, 0.3);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+textarea { min-height: 260px; font-family: monospace, monospace; font-size: 0.85rem; }
+.space { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <section class="card" id="card-head">
+    <h1>Radiology English – Machbarkeitstest</h1>
+    <table class="kv">
+      <tr><th>Seite</th><td id="page-version">…</td></tr>
+      <tr><th>Service Worker</th><td id="sw-version">…</td></tr>
+    </table>
+    <div id="version-mismatch" class="banner err" hidden>Versionen weichen ab: Seite und Service Worker sind nicht gleich.</div>
+    <p class="hint">Bitte nur die Sätze von dieser Seite sprechen und keine Patientendaten eingeben.</p>
+    <noscript><p class="err">Diese Testseite braucht JavaScript.</p></noscript>
+  </section>
+
+  <section class="card" id="card-env">
+    <h2>2. Umgebung</h2>
+    <table class="kv" id="env-table"></table>
+    <h3>Schnittstellen vorhanden</h3>
+    <table class="kv" id="api-table"></table>
+  </section>
+
+  <section class="card" id="card-recognition">
+    <h2>3. Spracherkennung</h2>
+    <p>Bitte diesen Satz vorlesen:</p>
+    <p class="sentence" lang="en" id="recognition-sentence">The weather is nice today and the park is open.</p>
+    <div class="row">
+      <button type="button" class="btn" id="btn-rec-gb">Erkennung en-GB</button>
+      <button type="button" class="btn" id="btn-rec-us">Erkennung en-US</button>
+    </div>
+    <p class="small">Einstellungen: continuous=false, interimResults=true, maxAlternatives=3. Nach 15 Sekunden ohne Ende bricht die Seite ab.</p>
+    <div class="result" id="rec-status">Noch nicht gestartet.</div>
+    <h3>Zwischenergebnis</h3>
+    <div class="result" id="rec-interim" lang="en">–</div>
+    <h3>Endergebnis mit Alternativen und confidence</h3>
+    <div class="result" id="rec-final" lang="en">–</div>
+    <h3>Ereignisse</h3>
+    <div class="result mono" id="rec-events">–</div>
+    <h3>Alle Läufe, je Sprache nummeriert</h3>
+    <p class="small">Die Felder darüber zeigen den letzten Lauf. Hier und im Ergebnis bleibt jeder Lauf stehen.</p>
+    <div class="result" id="rec-runs">–</div>
+  </section>
+
+  <section class="card" id="card-tts">
+    <h2>4. Sprachausgabe</h2>
+    <div id="voice-summary">…</div>
+    <div class="result voices" id="voice-list">…</div>
+    <div class="row"><button type="button" class="btn secondary" id="btn-voices-reload">Stimmen neu laden</button></div>
+    <label for="voice-select">Englische Stimme</label>
+    <select id="voice-select"></select>
+    <p class="sentence" lang="en" id="tts-sentence">The weather is nice today and the park is open.</p>
+    <div class="row">
+      <button type="button" class="btn" id="btn-tts-once">Satz vorlesen</button>
+      <button type="button" class="btn" id="btn-tts-slow">Langsam vorlesen</button>
+      <button type="button" class="btn" id="btn-tts-two">Zwei Sätze nacheinander</button>
+      <button type="button" class="btn" id="btn-tts-delayed">Zweiter Satz verzögert</button>
+      <button type="button" class="btn" id="btn-tts-long">Langer Text (Sperrbildschirm-Test)</button>
+    </div>
+    <p class="small">„Zweiter Satz verzögert“: Ein Tipp startet Satz 1. Zwei Sekunden nach dessen Ende startet die Seite Satz 2 von selbst. Bitte bis dahin nichts antippen.</p>
+    <div class="result" id="tts-delayed-status">Zweiter Satz verzögert: noch nicht gestartet.</div>
+    <h3>Protokoll (start, end, error je Äußerung; dazu Stimmenliste und Sichtbarkeit der Seite)</h3>
+    <div class="result mono" id="tts-log">–</div>
+  </section>
+
+  <section class="card" id="card-exercise">
+    <h2>5. Übung ohne Netz</h2>
+    <p>Anhören und danach die richtige deutsche Bedeutung antippen.</p>
+    <div class="row"><button type="button" class="btn" id="btn-ex-play">Anhören</button></div>
+    <div class="result" id="ex-status">–</div>
+    <div class="row column">
+      <button type="button" class="btn secondary" data-answer="0">Das Wetter ist heute schön.</button>
+      <button type="button" class="btn secondary" data-answer="1">Der Laden schließt um sechs Uhr abends.</button>
+      <button type="button" class="btn secondary" data-answer="2">Der Zug fährt um sieben Uhr morgens ab.</button>
+    </div>
+    <div class="result" id="ex-result">–</div>
+  </section>
+
+  <section class="card" id="card-storage">
+    <h2>6. Speichern</h2>
+    <div class="row"><button type="button" class="btn" id="btn-counter">Zähler +1</button></div>
+    <table class="kv">
+      <tr><th>localStorage</th><td id="store-local">…</td></tr>
+      <tr><th>IndexedDB</th><td id="store-idb">…</td></tr>
+      <tr><th>persisted()</th><td id="store-persisted">…</td></tr>
+      <tr><th>persist()</th><td id="store-persist">noch nicht angefragt</td></tr>
+    </table>
+    <div class="row"><button type="button" class="btn secondary" id="btn-persist">Dauerhaften Speicher anfragen</button></div>
+  </section>
+
+  <section class="card" id="card-backup">
+    <h2>7. Sichern und Einlesen</h2>
+    <p>Sichern als Datei: JSON mit Zählerstand, zwei Wege nebeneinander.</p>
+    <div class="row">
+      <button type="button" class="btn" id="btn-download">Herunterladen</button>
+      <button type="button" class="btn" id="btn-share">Teilen</button>
+    </div>
+    <div class="result" id="backup-status">–</div>
+    <!-- Dateifeld für JSON; accept ist nur ein Hinweis an den Dateidialog [H10]. -->
+    <label for="import-file">Einlesen (JSON-Datei)</label>
+    <input type="file" id="import-file" accept=".json,application/json">
+    <!-- Zweites Feld ohne accept, gleiche Prüfung und Nachfrage (test.js). Ob der iOS-Dateidialog eine .json-Datei mit accept auswählbar zeigt, ist offen;
+         was ein Dialog ohne accept anbietet, sagt [H10] nicht, das zeigt der Test. -->
+    <label for="import-file-any">Einlesen, alle Dateien</label>
+    <input type="file" id="import-file-any">
+    <div class="result" id="import-status">–</div>
+  </section>
+
+  <section class="card" id="card-keyboard">
+    <h2>8. Tastatur</h2>
+    <label for="kb-input">Englischer Satz, gern mit einem Tippfehler</label>
+    <!-- Ohne Autokorrektur [H13] (Quelle 33), ohne automatische Großschreibung [H8], ohne Rechtschreibprüfung [H9]; autocomplete="off" nach Vorgabe des Projekts.
+         Kein lang-Attribut am Eingabefeld; ob lang die Tastatur beeinflusst, ist offen. -->
+    <input type="text" id="kb-input" autocorrect="off" autocapitalize="off" spellcheck="false" autocomplete="off">
+    <p class="hint">Bitte keine Patientendaten eingeben.</p>
+    <div class="row"><button type="button" class="btn" id="btn-kb">Übernehmen</button></div>
+    <div class="result mono" id="kb-echo" lang="en">–</div>
+    <div class="small" id="kb-count"></div>
+  </section>
+
+  <section class="card" id="card-update">
+    <h2>9. Aktualisierung</h2>
+    <div class="result" id="update-status">…</div>
+    <!-- Hinweis mit Fehlertext, wenn die Registrierung oder die Installation des Service Workers fehlschlägt (test.js). -->
+    <div id="update-error" class="banner err" hidden></div>
+    <div class="row"><button type="button" class="btn" id="btn-update" hidden>Jetzt aktualisieren</button></div>
+  </section>
+
+  <section class="card" id="card-report">
+    <h2>10. Ergebnis</h2>
+    <p>Alle Ergebnisse dieser Sitzung als Text: markieren, kopieren und in den Chat schicken.</p>
+    <div class="row"><button type="button" class="btn" id="btn-select-all">Alles markieren</button></div>
+    <!-- Schreibgeschützt [H11]: nicht änderbar, aber markierbar. -->
+    <textarea id="report" readonly></textarea>
+  </section>
+</main>
+<script src="test.js" defer></script>
+</body>
+</html>
