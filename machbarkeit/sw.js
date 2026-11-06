@@ -36,7 +36,7 @@
 
 // Version des Service Workers; die Seite (test.js) trägt dieselbe Konstante und zeigt beide an.
 // Jede Version hat einen eigenen Cache-Namen (Vorgabe des Projekts), darum steigt sie bei jeder Änderung an dieser Datei.
-const VERSION = "0.1.1";
+const VERSION = "0.1.2";
 
 // Ein eigener Cache-Name je Version; alte Caches mit dieser Vorsilbe löscht activate (Vorgabe des Projekts).
 const CACHE_PREFIX = "radiology-english.machbarkeit.";

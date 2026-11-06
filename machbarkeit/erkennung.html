@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Radiology English – Erkennung mehrfach</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #141416;
+  --card: #232326;
+  --text: #F2F2F7;
+  --muted: rgb(235 235 245 / .64);
+  --accent: #5CB8FF;
+  --ok: #4AD968;
+  --warn: #FEDF43;
+  --err: #FF6165;
+  --line: #3a3a3e;
+  --field: #1b1b1e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.45 -apple-system, system-ui, sans-serif;
+  /* Abstand zur Home-Leiste nach Quelle 37. */
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+}
+main { max-width: 640px; margin: 0 auto; }
+.card { background: var(--card); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+h1 { font-size: 1.25rem; margin: 0 0 6px; }
+h2 { font-size: 1.05rem; margin: 0 0 6px; }
+p, ol { margin: 6px 0; }
+ol { padding-left: 20px; }
+.small { font-size: .85rem; color: var(--muted); }
+.sentence { font-size: 1.15rem; font-weight: 600; color: var(--accent); }
+/* Knöpfe großzügig; die genaue Mindestgröße nach Apple (Quelle 36) ist offen. */
+button {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0b1a26;
+  font: inherit;
+  font-weight: 600;
+}
+button.secondary { background: var(--line); color: var(--text); }
+button:disabled { opacity: .45; }
+.variant { border-top: 1px solid var(--line); padding-top: 8px; margin-top: 10px; }
+.status { padding: 10px; border-radius: 10px; background: var(--field); min-height: 48px; margin-top: 8px; }
+.status.ok { color: var(--ok); }
+.status.warn { color: var(--warn); }
+.status.err { color: var(--err); }
+textarea {
+  width: 100%;
+  min-height: 260px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--field);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: monospace, monospace;
+  font-size: .8rem;
+}
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <section class="card">
+    <h1>Erkennung mehrfach</h1>
+    <p class="small" id="info">…</p>
+    <p class="small">Bitte nur den Satz von dieser Seite sprechen und keine Patientendaten eingeben.</p>
+    <p class="small"><a href="index.html">Zurück zur Testseite</a></p>
+  </section>
+
+  <section class="card">
+    <h2>So geht es</h2>
+    <ol>
+      <li>„Seite neu laden“ tippen.</li>
+      <li>Eine Variante tippen.</li>
+      <li>Steht dort „Bitte jetzt den Satz vorlesen“, den Satz vorlesen. Wirklich in jedem Lauf sprechen.</li>
+      <li>Warten, bis „Lauf fertig“ steht.</li>
+      <li>Dieselbe Variante noch zweimal, dann weiter mit Schritt 1 und der nächsten Variante.</li>
+    </ol>
+    <p class="small">Bei C und D reicht ein Tipp, dafür den Satz dreimal sprechen, mit etwa 3 Sekunden Pause dazwischen. Bei G lädt sich die Seite nach jedem Lauf selbst neu. Handy nicht stumm, ohne Kopfhörer.</p>
+    <p class="sentence" lang="en" id="sentence"></p>
+    <div class="status" id="status">Noch nichts gestartet.</div>
+    <button type="button" class="secondary" id="btn-stop" hidden>Dauerlauf beenden</button>
+    <button type="button" class="secondary" id="btn-reload">Seite neu laden</button>
+  </section>
+
+  <section class="card">
+    <h2>Varianten</h2>
+    <div id="variants"></div>
+  </section>
+
+  <section class="card">
+    <h2>Ergebnis</h2>
+    <p class="small">Am Ende markieren, kopieren und in den Chat schicken. Die Läufe bleiben auch nach dem Neuladen erhalten.</p>
+    <button type="button" id="btn-select">Alles markieren</button>
+    <textarea id="report" readonly></textarea>
+    <button type="button" class="secondary" id="btn-clear">Ergebnisse löschen</button>
+  </section>
+</main>
+<script>
+(function () {
+  "use strict";
+
+  const VERSION = "0.1.2";
+  // Vorsilbe nach Entscheidungen.md, Phase 0, Nr. 1 (Quelle 39).
+  const STORE_KEY = "radiology-english.erkennung.data";
+  const LANG = "en-GB";
+  const SENTENCE = "The weather is nice today and the park is open.";
+  const RUNS_PER_VARIANT = 3;
+  const SENTENCES_PER_CONTINUOUS_RUN = 3;
+  const PAUSE_BEFORE_STOP_MS = 2500;
+  const PAUSE_BEFORE_TONE_MS = 1200;
+  const NO_SPEECH_LIMIT_MS = 15000;
+  const NO_AUDIOSTART_LIMIT_MS = 30000;
+  const CONTINUOUS_LIMIT_MS = 60000;
+  const END_GUARD_MS = 3000;
+  const SPEAK_GUARD_MS = 10000;
+
+  // Hintergrund: wiederholter Start fällt unter iOS aus (Testprotokoll in Entscheidungen.md, Quelle 46).
+  // Die Varianten prüfen, welcher Weg das umgeht. Ob eine davon wirkt, ist offen.
+  const VARIANTS = [
+    { key: "A", title: "A: Neues Objekt", text: "Je Lauf ein neues Erkennungsobjekt, wie bisher." },
+    { key: "B", title: "B: Dasselbe Objekt", text: "Ein Objekt, das für jeden Lauf neu gestartet wird.", reuse: true },
+    { key: "C", title: "C: Dauerlauf", text: "Ein Tipp, dann den Satz dreimal sprechen.", continuous: true },
+    { key: "D", title: "D: Dauerlauf mit Ton", text: "Wie C, nach jedem Satz sagt die Seite kurz etwas.", continuous: true, toneBetween: true },
+    { key: "E", title: "E: Mikrofon lockern", text: "Vor jedem Lauf wird das Mikrofon kurz geöffnet und geschlossen.", warmUp: true },
+    { key: "F", title: "F: Ton dazwischen", text: "Nach jedem Lauf spricht die Seite den Satz vor.", toneAfter: true },
+    { key: "G", title: "G: Neu laden je Lauf", text: "Nach jedem Lauf lädt die Seite sich neu.", reloadAfter: true },
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  let active = null;
+  let busyAfterRun = false;
+  let sharedRecognition = null;
+  let keptUtterance = null;
+
+  function timeStamp() {
+    return new Date().toLocaleTimeString("de-DE");
+  }
+
+  function setStatus(text, kind) {
+    const element = $("status");
+    element.textContent = text;
+    element.className = "status" + (kind ? " " + kind : "");
+  }
+
+  function loadData() {
+    const empty = { runs: [], hiddenSinceLastRun: 0, reloadedSinceLastRun: false, lastEndAt: null };
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      return raw ? Object.assign(empty, JSON.parse(raw)) : empty;
+    } catch (error) {
+      return empty;
+    }
+  }
+
+  function saveData(data) {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    } catch (error) {
+      setStatus("Speichern fehlgeschlagen: " + error.name, "err");
+    }
+  }
+
+  function hasSentence(text) {
+    return /weather/i.test(text) && /park/i.test(text);
+  }
+
+  function countSentences(text) {
+    return (text.match(/\bpark\b/gi) || []).length;
+  }
+
+  function logEvent(run, name) {
+    run.events.push(name + " +" + (Date.now() - run.startedMs) + " ms");
+  }
+
+  function setTimer(session, name, delay, callback) {
+    clearTimer(session, name);
+    session.timers[name] = setTimeout(callback, delay);
+  }
+
+  function clearTimer(session, name) {
+    if (session.timers[name]) {
+      clearTimeout(session.timers[name]);
+      delete session.timers[name];
+    }
+  }
+
+  function createRun(variant, data) {
+    const now = Date.now();
+    return {
+      variant: variant.key,
+      number: data.runs.filter((run) => run.variant === variant.key).length + 1,
+      startedAt: timeStamp(),
+      startedMs: now,
+      gapMs: data.lastEndAt ? now - data.lastEndAt : null,
+      hiddenBefore: data.hiddenSinceLastRun,
+      reloadedBefore: data.reloadedSinceLastRun,
+      events: [],
+      results: 0,
+      text: "",
+      final: false,
+      confidence: null,
+      sentences: 0,
+      error: "",
+      message: "",
+      outcome: "",
+      hit: false,
+      tone: "",
+    };
+  }
+
+  // Sprachausgabe nach Quelle 2b; die Äußerung bleibt referenziert, ob das nötig ist, ist offen.
+  function speak(text, done) {
+    if (!window.speechSynthesis) {
+      done("keine Sprachausgabe");
+      return;
+    }
+    let finished = false;
+    const finish = (result) => {
+      if (!finished) {
+        finished = true;
+        done(result);
+      }
+    };
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = LANG;
+    utterance.onend = () => finish("gesprochen");
+    utterance.onerror = (event) => finish("Fehler " + event.error);
+    keptUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+    setTimeout(() => finish("kein Ende nach " + (SPEAK_GUARD_MS / 1000) + " s"), SPEAK_GUARD_MS);
+  }
+
+  async function warmUpMicrophone(run) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      logEvent(run, "getUserMedia fehlt");
+      return;
+    }
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream.getTracks().forEach((track) => track.stop());
+    logEvent(run, "Mikrofon geöffnet und geschlossen");
+    await new Promise((resolve) => setTimeout(resolve, 300));
+  }
+
+  function requestStop(session, reason) {
+    logEvent(session.run, reason);
+    try {
+      session.recognition.stop();
+    } catch (error) {
+      logEvent(session.run, "Ausnahme bei stop(): " + error.name);
+    }
+    setTimer(session, "endGuard", END_GUARD_MS, () => finishRun(session, "kein end nach stop()"));
+  }
+
+  function requestAbort(session, reason) {
+    logEvent(session.run, reason);
+    try {
+      session.recognition.abort();
+    } catch (error) {
+      logEvent(session.run, "Ausnahme bei abort(): " + error.name);
+    }
+    setTimer(session, "endGuard", END_GUARD_MS, () => finishRun(session, "kein end nach abort()"));
+  }
+
+  function attachHandlers(session) {
+    const { recognition, run, variant } = session;
+
+    recognition.onstart = () => logEvent(run, "start");
+
+    recognition.onaudiostart = () => {
+      logEvent(run, "audiostart");
+      clearTimer(session, "noAudiostart");
+      setStatus("Bitte jetzt den Satz vorlesen" +
+        (variant.continuous ? ", dreimal mit Pause." : "."), "warn");
+      if (variant.continuous) {
+        setTimer(session, "limit", CONTINUOUS_LIMIT_MS, () => requestStop(session, "Zeitlimit Dauerlauf"));
+      } else {
+        setTimer(session, "limit", NO_SPEECH_LIMIT_MS, () => requestAbort(session, "keine Sprache nach " + (NO_SPEECH_LIMIT_MS / 1000) + " s"));
+      }
+    };
+
+    recognition.onspeechstart = () => logEvent(run, "speechstart");
+
+    recognition.onresult = (event) => {
+      run.results += 1;
+      let text = "";
+      for (let i = 0; i < event.results.length; i += 1) {
+        text += event.results[i][0].transcript;
+      }
+      const last = event.results[event.results.length - 1];
+      run.text = text.trim();
+      if (last.isFinal) {
+        run.final = true;
+        run.confidence = last[0].confidence;
+      }
+      if (!variant.continuous) {
+        clearTimer(session, "limit");
+        setStatus("Erkannt bisher: " + run.text, "warn");
+        // Die Erkennung wird nach einer Pause selbst beendet (Testprotokoll, Folgerung 1).
+        setTimer(session, "pause", PAUSE_BEFORE_STOP_MS, () => requestStop(session, "stop() nach Pause"));
+        return;
+      }
+      const count = countSentences(run.text);
+      if (count > run.sentences) {
+        run.sentences = count;
+        logEvent(run, "Satz " + count + " erkannt");
+        if (variant.toneBetween) {
+          setTimer(session, "tone", PAUSE_BEFORE_TONE_MS, () => {
+            logEvent(run, "Ton gestartet");
+            speak("Thank you.", (result) => logEvent(run, "Ton: " + result));
+          });
+        }
+      }
+      setStatus("Dauerlauf: " + run.sentences + " von " + SENTENCES_PER_CONTINUOUS_RUN + " Sätzen erkannt.", "warn");
+      if (run.sentences >= SENTENCES_PER_CONTINUOUS_RUN) {
+        setTimer(session, "pause", PAUSE_BEFORE_STOP_MS, () => requestStop(session, "stop() nach dem letzten Satz"));
+      }
+    };
+
+    recognition.onerror = (event) => {
+      run.error = event.error;
+      run.message = event.message || "";
+      logEvent(run, "error " + event.error);
+    };
+
+    recognition.onend = () => {
+      logEvent(run, "end");
+      finishRun(session, "end");
+    };
+  }
+
+  async function startRun(variant) {
+    if (active || busyAfterRun) {
+      return;
+    }
+    // Safari bietet die Schnittstelle als webkitSpeechRecognition an (Quelle 27).
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) {
+      setStatus("Spracherkennung ist hier nicht vorhanden.", "err");
+      return;
+    }
+    const run = createRun(variant, loadData());
+    const session = { variant, run, recognition: null, timers: {}, finished: false };
+    active = session;
+    render();
+    setStatus(variant.title + ", Lauf " + run.number + ": startet …", "warn");
+    try {
+      if (variant.warmUp) {
+        await warmUpMicrophone(run);
+      }
+      const recognition = variant.reuse
+        ? (sharedRecognition || (sharedRecognition = new Recognition()))
+        : new Recognition();
+      session.recognition = recognition;
+      recognition.lang = LANG;
+      recognition.continuous = Boolean(variant.continuous);
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+      attachHandlers(session);
+      setTimer(session, "noAudiostart", NO_AUDIOSTART_LIMIT_MS, () => requestAbort(session, "kein audiostart nach " + (NO_AUDIOSTART_LIMIT_MS / 1000) + " s"));
+      logEvent(run, "start()");
+      recognition.start();
+    } catch (error) {
+      run.error = error.name;
+      run.message = error.message || "";
+      logEvent(run, "Ausnahme " + error.name);
+      finishRun(session, "Ausnahme");
+    }
+  }
+
+  function finishRun(session, outcome) {
+    if (session.finished) {
+      return;
+    }
+    session.finished = true;
+    Object.keys(session.timers).forEach((name) => clearTimeout(session.timers[name]));
+    const { recognition, run, variant } = session;
+    if (recognition) {
+      ["onstart", "onaudiostart", "onspeechstart", "onresult", "onerror", "onend"].forEach((name) => {
+        recognition[name] = null;
+      });
+    }
+    run.outcome = outcome;
+    run.durationMs = Date.now() - run.startedMs;
+    run.hit = variant.continuous ? run.sentences > 0 : hasSentence(run.text);
+    const data = loadData();
+    data.runs.push(run);
+    data.lastEndAt = Date.now();
+    data.hiddenSinceLastRun = 0;
+    data.reloadedSinceLastRun = false;
+    saveData(data);
+    active = null;
+
+    const label = "Lauf " + run.number + " fertig: ";
+    const summary = variant.continuous
+      ? run.sentences + " von " + SENTENCES_PER_CONTINUOUS_RUN + " Sätzen erkannt."
+      : (run.hit ? "erkannt." : "keine Sprache erkannt" + (run.error ? " (" + run.error + ")." : "."));
+    const kind = run.hit ? "ok" : "err";
+
+    if (variant.toneAfter) {
+      busyAfterRun = true;
+      setStatus(label + summary + " Die Seite spricht jetzt den Satz.", kind);
+      render();
+      speak(SENTENCE, (result) => {
+        const updated = loadData();
+        updated.runs[updated.runs.length - 1].tone = result;
+        saveData(updated);
+        busyAfterRun = false;
+        setStatus(label + summary + " Ton: " + result + ".", kind);
+        render();
+      });
+      return;
+    }
+    if (variant.reloadAfter) {
+      busyAfterRun = true;
+      setStatus(label + summary + " Die Seite lädt neu.", kind);
+      render();
+      setTimeout(() => window.location.reload(), 800);
+      return;
+    }
+    setStatus(label + summary, kind);
+    render();
+  }
+
+  function describeSummary(variant, runs) {
+    if (!runs.length) {
+      return "Noch kein Lauf.";
+    }
+    if (variant.continuous) {
+      const best = runs[runs.length - 1].sentences;
+      return runs.length + " Lauf/Läufe, zuletzt " + best + " von " + SENTENCES_PER_CONTINUOUS_RUN + " Sätzen erkannt.";
+    }
+    const hits = runs.filter((run) => run.hit).length;
+    return "Treffer " + hits + " von " + runs.length + (runs.length < RUNS_PER_VARIANT ? ", noch " + (RUNS_PER_VARIANT - runs.length) + " Lauf/Läufe." : ".");
+  }
+
+  function describeRun(run) {
+    const parts = [
+      "Lauf " + run.number + ", " + run.startedAt + ": " + (run.hit ? "Treffer" : "kein Treffer"),
+    ];
+    if (run.sentences) {
+      parts.push("Sätze " + run.sentences);
+    }
+    parts.push("Text \"" + run.text + "\"");
+    parts.push("Endergebnis " + (run.final ? "ja" : "nein"));
+    if (run.confidence !== null) {
+      parts.push("confidence " + run.confidence);
+    }
+    if (run.error) {
+      parts.push("Fehler " + run.error + (run.message ? " [" + run.message + "]" : ""));
+    }
+    parts.push("Ende: " + run.outcome);
+    parts.push("Abstand zum vorigen Lauf " + (run.gapMs === null ? "keiner" : Math.round(run.gapMs / 1000) + " s"));
+    parts.push("davor verborgen " + run.hiddenBefore + "-mal");
+    parts.push("davor neu geladen " + (run.reloadedBefore ? "ja" : "nein"));
+    if (run.tone) {
+      parts.push("Ton: " + run.tone);
+    }
+    return parts.join("; ") + "\n  Ereignisse: " + run.events.join(", ") + "; result " + run.results + "-mal";
+  }
+
+  function buildReport(data) {
+    const lines = [
+      "Radiology English – Erkennung mehrfach, Version " + VERSION,
+      "Stand: " + new Date().toISOString() + " (UTC), Ortszeit " + timeStamp(),
+      "userAgent: " + navigator.userAgent,
+      "navigator.standalone: " + (typeof navigator.standalone === "boolean" ? navigator.standalone : "nicht vorhanden"),
+      "Sprache: " + LANG,
+    ];
+    VARIANTS.forEach((variant) => {
+      const runs = data.runs.filter((run) => run.variant === variant.key);
+      lines.push("");
+      lines.push("[" + variant.title + "] " + describeSummary(variant, runs));
+      runs.forEach((run) => lines.push(describeRun(run)));
+    });
+    return lines.join("\n");
+  }
+
+  function render() {
+    const data = loadData();
+    const locked = active !== null || busyAfterRun;
+    VARIANTS.forEach((variant) => {
+      const runs = data.runs.filter((run) => run.variant === variant.key);
+      $("btn-" + variant.key).disabled = locked;
+      $("sum-" + variant.key).textContent = describeSummary(variant, runs);
+    });
+    $("btn-reload").disabled = locked;
+    $("btn-clear").disabled = locked;
+    $("btn-stop").hidden = !(active && active.variant.continuous);
+    $("report").value = buildReport(data);
+  }
+
+  function buildVariants() {
+    const host = $("variants");
+    VARIANTS.forEach((variant) => {
+      const box = document.createElement("div");
+      box.className = "variant";
+      const button = document.createElement("button");
+      button.type = "button";
+      button.id = "btn-" + variant.key;
+      button.textContent = variant.title;
+      button.addEventListener("click", () => startRun(variant));
+      const text = document.createElement("p");
+      text.className = "small";
+      text.textContent = variant.text;
+      const summary = document.createElement("p");
+      summary.className = "small";
+      summary.id = "sum-" + variant.key;
+      box.append(button, text, summary);
+      host.append(box);
+    });
+  }
+
+  function init() {
+    $("sentence").textContent = SENTENCE;
+    $("info").textContent = "Version " + VERSION + ", Sprache " + LANG + ", Home-Bildschirm-App: " +
+      (navigator.standalone === true ? "ja" : "nein");
+    buildVariants();
+
+    const data = loadData();
+    if (data.runs.length) {
+      data.reloadedSinceLastRun = true;
+      saveData(data);
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        const current = loadData();
+        current.hiddenSinceLastRun += 1;
+        saveData(current);
+      }
+    });
+
+    $("btn-reload").addEventListener("click", () => window.location.reload());
+    $("btn-stop").addEventListener("click", () => {
+      if (active) {
+        requestStop(active, "stop() per Knopf");
+      }
+    });
+    $("btn-select").addEventListener("click", () => {
+      const report = $("report");
+      report.focus();
+      report.select();
+      report.setSelectionRange(0, report.value.length);
+    });
+    $("btn-clear").addEventListener("click", () => {
+      if (window.confirm("Alle Läufe auf dieser Seite löschen?")) {
+        saveData({ runs: [], hiddenSinceLastRun: 0, reloadedSinceLastRun: false, lastEndAt: null });
+        setStatus("Ergebnisse gelöscht.");
+        render();
+      }
+    });
+    render();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

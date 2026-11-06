@@ -88,7 +88,7 @@
 
 // Version der Seite. Der Service Worker (sw.js) trägt dieselbe Konstante; weichen beide ab, zeigt die Seite das an.
 // sw.js sucht beim Installieren in der gecachten Datei nach genau dieser Schreibweise, darum die Zeile nicht umformatieren.
-const VERSION = "0.1.1";
+const VERSION = "0.1.2";
 
 (function () {
   // ---------- Festwerte ----------
@@ -106,6 +106,7 @@ const VERSION = "0.1.1";
   const BACKUP_FORMAT_VERSION = 1;
 
   const RECOGNITION_TIMEOUT_MS = 15000;
+  const RECOGNITION_START_TIMEOUT_MS = 45000;
   const SW_VERSION_TIMEOUT_MS = 3000;
   const EXERCISE_START_TIMEOUT_MS = 8000;
   const OBJECT_URL_RELEASE_MS = 60000;
@@ -668,7 +669,9 @@ const VERSION = "0.1.1";
       finish();
     });
 
-    const timer = setTimeout(() => {
+    // Das Zeitlimit zählt ab audiostart, davor kann noch eine Abfrage des Systems offen sein
+    // (Testprotokoll in Entscheidungen.md, Lauf 1: 6,4 s bis start). Kommt kein audiostart, gilt das längere Limit.
+    function onTimeout() {
       if (run.ended) {
         return;
       }
@@ -683,7 +686,13 @@ const VERSION = "0.1.1";
         addEvent("abort() Ausnahme: " + describeError(error));
       }
       finish();
-    }, RECOGNITION_TIMEOUT_MS);
+    }
+
+    let timer = setTimeout(onTimeout, RECOGNITION_START_TIMEOUT_MS);
+    recognition.addEventListener("audiostart", () => {
+      clearTimeout(timer);
+      timer = setTimeout(onTimeout, RECOGNITION_TIMEOUT_MS);
+    });
 
     try {
       recognition.start();
