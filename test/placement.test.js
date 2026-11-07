@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { loadContent } from "../js/core/content.js";
-import { LEVELS, WEIGHTS, buildPlan, chooseForm, compareAttempts, scorePlacement } from "../js/core/placement.js";
+import { LEVELS, WEIGHTS, buildPlan, chooseForm, compareAttempts, overallBelowA1, scorePlacement } from "../js/core/placement.js";
 
 const CONTENT = await loadContent((name) => JSON.parse(readFileSync(new URL("../daten/" + name + ".json", import.meta.url), "utf8")));
 const ALL_SECTIONS = CONTENT.sections();
@@ -266,22 +266,72 @@ test("Das Ergebnis nennt die Fassung, passt zum Aufbau eines Versuchs und übers
   assert.deepEqual(JSON.parse(JSON.stringify(attempt)), attempt);
 });
 
+test("Eine schwache Stufe beendet die Suche erst ab zwei gemessenen Aufgaben", () => {
+  // Beim Schreiben gibt es je Stufe eine Aufgabe. Eine richtige Formulierung außerhalb der Fassungen löscht nicht die höheren Treffer.
+  const one = (pattern) => partResult("writing", pattern, 1);
+  assert.equal(one({ A1: [0, 1], A2: [1, 0], B1: [1, 0], B2: [1, 0] }).level, "B2");
+  assert.equal(one({ A1: [1, 0], A2: [0, 1], B1: [1, 0], B2: [0, 1] }).level, "B1");
+  assert.equal(one({ A1: [0, 1], A2: [1, 0], B1: [0, 1], B2: [0, 1] }).level, "A2");
+  const nothing = one({ A1: [0, 1], A2: [0, 1], B1: [0, 1], B2: [0, 1] });
+  assert.equal(nothing.level, "A1");
+  assert.equal(nothing.belowA1, true);
+  // Ab zwei gemessenen Aufgaben bleibt es bei der Regel, auch wenn darüber alles richtig ist.
+  const two = partResult("listening", { A1: [0, 2], A2: [2, 0], B1: [2, 0], B2: [2, 0] }, 2);
+  assert.equal(two.level, "A1");
+  assert.equal(two.belowA1, true);
+  // Eine Aufgabe nicht gemessen, eine falsch: Das reicht nicht, um die Suche zu beenden.
+  assert.equal(partResult("speaking", { A1: [0, 1], A2: [2, 0] }, 2).level, "A2");
+});
+
+test("Ein einzelner Treffer hebt die Stufe nicht, wenn darunter fast alles falsch war", () => {
+  const one = (pattern) => partResult("writing", pattern, 1);
+  for (const pattern of [
+    { A1: [0, 1], A2: [0, 1], B1: [0, 1], B2: [1, 0] },
+    { A1: [0, 1], A2: [0, 1], B1: [1, 0], B2: [0, 1] },
+  ]) {
+    assert.equal(one(pattern).belowA1, true, JSON.stringify(pattern));
+  }
+  // Die Hälfte aller Aufgaben bis dahin ist richtig: Das reicht.
+  assert.equal(one({ A1: [0, 1], A2: [0, 1], B1: [1, 0], B2: [1, 0] }).level, "B2");
+  assert.equal(one({ A1: [1, 0], A2: [0, 1], B1: [0, 1], B2: [1, 0] }).level, "B2");
+  assert.equal(one({ A1: [0, 1], A2: [1, 0], B1: [0, 1], B2: [1, 0] }).level, "B2");
+  // Auch beim Sprechen: Je eine falsche und eine nicht gemessene Aufgabe, nur B2 richtig.
+  const speaking = partResult("speaking", { A1: [0, 1], A2: [0, 1], B1: [0, 1], B2: [2, 0] }, 2);
+  assert.equal(speaking.belowA1, true);
+});
+
 test("strengths und gaps sind deutsche Sätze je Teil", () => {
   const form = makeForm();
   const answers = answersFor(form, {
     speaking: { A1: [2, 0], A2: [1, 1], B1: [0, 2], B2: [0, 2] },
     listening: { A1: [2, 0], A2: [2, 0], B1: [2, 0], B2: [2, 0] },
-    writing: { A1: [0, 1], A2: [1, 0], B1: [1, 0], B2: [1, 0] },
+    writing: { A1: [0, 1], A2: [0, 1], B1: [0, 1], B2: [0, 1] },
   });
   const result = scorePlacement(form, answers);
   assert.deepEqual(result.strengths, [
-    "Sprechen: Du schaffst Stufe A1 (Beispiel speaking A1).",
+    "Sprechen: Die Erkennung hat deine Sätze auf Stufe A1 verstanden (einzelne Laute und Betonung misst die App nicht).",
     "Hören: Du schaffst Stufe B2 (Beispiel listening B2).",
   ]);
   assert.deepEqual(result.gaps, [
-    "Sprechen: Stufe A2 sitzt noch nicht (Beispiel speaking A2).",
+    "Sprechen: Auf Stufe A2 hat die Erkennung deine Sätze noch nicht sicher verstanden (einzelne Laute und Betonung misst die App nicht).",
     "Schreiben: Stufe A1 sitzt noch nicht (Beispiel writing A1).",
   ]);
+});
+
+test("Sprechen: Der Text der Skala steht nie im Ergebnis, die App misst keine Aussprache", () => {
+  const form = makeForm();
+  for (const item of form.items.filter((entry) => entry.part === "speaking")) {
+    item.descriptor.summaryDe = "Betonung und Satzmelodie stören nicht";
+  }
+  for (const value of ["correct", "wrong"]) {
+    const result = scorePlacement(form, allAnswers(form, value));
+    const lines = [...result.strengths, ...result.gaps].filter((line) => line.startsWith("Sprechen"));
+    assert.ok(lines.length > 0, value);
+    for (const line of lines) {
+      assert.equal(line.includes("Satzmelodie"), false, line);
+      assert.ok(line.includes("misst die App nicht"), line);
+    }
+  }
 });
 
 test("gaps meldet einzelne ungemessene Aufgaben ohne sie als Fehler zu werten", () => {
@@ -302,7 +352,11 @@ test("Texte ohne Beschreibung im Format bleiben ganze Sätze", () => {
     delete item.descriptor;
   });
   const result = scorePlacement(form, allAnswers(form, "correct"));
-  assert.deepEqual(result.strengths, ["Sprechen: Du schaffst Stufe B2.", "Hören: Du schaffst Stufe B2.", "Schreiben: Du schaffst Stufe B2."]);
+  assert.deepEqual(result.strengths, [
+    "Sprechen: Die Erkennung hat deine Sätze auf Stufe B2 verstanden (einzelne Laute und Betonung misst die App nicht).",
+    "Hören: Du schaffst Stufe B2.",
+    "Schreiben: Du schaffst Stufe B2.",
+  ]);
   assert.deepEqual(result.gaps, []);
 });
 
@@ -412,6 +466,27 @@ test("compareAttempts mit echten Ergebnissen, unter A1 und nach JSON", () => {
   assert.deepEqual(comparison.speaking, { first: "A1", latest: "B2", firstBelowA1: true, latestBelowA1: false });
   assert.deepEqual(comparison.overall, { first: "A1", latest: "B2" });
   assert.deepEqual(compareAttempts(first, first).writing, { first: "A1", latest: "A1", firstBelowA1: true, latestBelowA1: true });
+});
+
+test("overallBelowA1: nur, wenn alle gemessenen Teile unter A1 liegen", () => {
+  const form = makeForm();
+  const worst = scorePlacement(form, allAnswers(form, "wrong"));
+  const best = scorePlacement(form, allAnswers(form, "correct"));
+  assert.equal(worst.overall, "A1");
+  assert.equal(overallBelowA1(worst), true, "Gesamt A1, aber alles unter A1");
+  assert.equal(overallBelowA1(best), false);
+  const mixed = allAnswers(form, "wrong");
+  for (const item of form.items.filter((entry) => entry.part === "speaking" && entry.level === "A1")) {
+    mixed[item.id] = "correct";
+  }
+  assert.equal(overallBelowA1(scorePlacement(form, mixed)), false, "Ein Teil auf A1 reicht");
+  const open = allAnswers(form, "wrong");
+  for (const item of form.items.filter((entry) => entry.part === "speaking")) {
+    open[item.id] = "notMeasured";
+  }
+  assert.equal(overallBelowA1(scorePlacement(form, open)), true, "Ein nicht gemessener Teil ändert daran nichts");
+  assert.equal(overallBelowA1(scorePlacement(form, {})), false, "Ohne Messung gilt es nicht");
+  assert.equal(overallBelowA1(undefined), false);
 });
 
 test("compareAttempts: Ohne Versuch steht überall null", () => {

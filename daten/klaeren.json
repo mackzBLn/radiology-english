@@ -236,7 +236,8 @@
             "How do you spell that, please?",
             "Sorry, how do you spell that?",
             "How is that spelled?",
-            "How is that spelt?"
+            "How is that spelt?",
+            "Can you spell that?"
           ],
           "keywords": [
             "spell|spelled|spelt"
@@ -335,7 +336,10 @@
               "source": {
                 "ref": "cam-q-echo",
                 "locator": "Echo questions, checking questions"
-              }
+              },
+              "keywords": [
+                "double r|h a r r i s|harris"
+              ]
             },
             {
               "en": "How do you spell that?",
@@ -348,13 +352,13 @@
               }
             },
             {
-              "en": "You can get changed in this cubicle.",
+              "en": "Let me check. H, A, R, I, S. Is that right?",
               "fits": false,
-              "whyDe": "Der Name ist noch nicht bestätigt. Das Umziehen kommt später.",
-              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "whyDe": "Er hat ein Doppel-R genannt. Hier fehlt ein R.",
+              "meaningDe": "Ich prüfe das kurz. H, A, R, I, S. Stimmt das?",
               "source": {
-                "ref": "ruh-mri",
-                "locator": "Where do I go when I arrive at the hospital?"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             }
           ]
@@ -382,7 +386,10 @@
               "source": {
                 "ref": "cam-q-echo",
                 "locator": "Echo questions, checking questions"
-              }
+              },
+              "keywords": [
+                "r e i d|reid"
+              ]
             },
             {
               "en": "Is the first letter B or P?",
@@ -395,13 +402,13 @@
               }
             },
             {
-              "en": "Is that a double L?",
+              "en": "Thank you. So that is R, E, E, D?",
               "fits": false,
-              "whyDe": "Von einem L war keine Rede. Es geht um I und E.",
-              "meaningDe": "Ist das ein Doppel-L?",
+              "whyDe": "Sie hat R, E, I, D buchstabiert.",
+              "meaningDe": "Danke. Das ist also R, E, E, D?",
               "source": {
-                "ref": "cambridge-dictionary",
-                "locator": "Eintrag double"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             }
           ]
@@ -476,7 +483,10 @@
               "source": {
                 "ref": "wihb-xray",
                 "locator": "When you arrive at Radiology"
-              }
+              },
+              "keywords": [
+                "check|sorry|correct"
+              ]
             },
             {
               "en": "Thank you. I will tell the doctor about that.",
@@ -948,18 +958,22 @@
               "fits": true,
               "meaningDe": "Das ist also der 23. März 1971?",
               "source": {
-                "ref": "cam-number",
-                "locator": "Number"
-              }
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              },
+              "keywords": [
+                "23rd of march|23rd march|march 23rd|march 23|23 march",
+                "1971"
+              ]
             },
             {
-              "en": "Is that in the morning or in the afternoon?",
+              "en": "So that is the 13th of March, 1971?",
               "fits": false,
-              "whyDe": "Das passt zu einer Uhrzeit. Er hat dir aber ein Datum genannt.",
-              "meaningDe": "Ist das vormittags oder nachmittags?",
+              "whyDe": "Er hat den 23. März genannt, nicht den 13.",
+              "meaningDe": "Das ist also der 13. März 1971?",
               "source": {
-                "ref": "cam-time",
-                "locator": "Time"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             },
             {
@@ -998,16 +1012,20 @@
               "source": {
                 "ref": "cambridge-dictionary",
                 "locator": "Eintrag date"
-              }
+              },
+              "keywords": [
+                "twelfth|12|twelve",
+                "june"
+              ]
             },
             {
-              "en": "What time is your appointment?",
+              "en": "Thank you. So that is the twentieth of June?",
               "fits": false,
-              "whyDe": "Sie hat dir gerade das Geburtsdatum genannt. Das bestätigst du zuerst.",
-              "meaningDe": "Um wie viel Uhr ist Ihr Termin?",
+              "whyDe": "Sie hat den Zwölften genannt, nicht den Zwanzigsten.",
+              "meaningDe": "Danke. Das ist also der 20. Juni?",
               "source": {
-                "ref": "cam-time",
-                "locator": "Time"
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
               }
             },
             {
@@ -1092,7 +1110,10 @@
               "source": {
                 "ref": "cam-q-echo",
                 "locator": "Echo questions, checking questions"
-              }
+              },
+              "keywords": [
+                "1957"
+              ]
             },
             {
               "en": "What is your date of birth, please?",
@@ -1105,13 +1126,13 @@
               }
             },
             {
-              "en": "It is only for a few seconds.",
+              "en": "No problem. So that is 1967?",
               "fits": false,
-              "whyDe": "Das sagst du beim Luftanhalten. Zum Geburtsjahr passt es nicht.",
-              "meaningDe": "Es sind nur ein paar Sekunden.",
+              "whyDe": "Er hat 1957 gesagt, nicht 1967.",
+              "meaningDe": "Kein Problem. Also 1967?",
               "source": {
-                "ref": "radiologyinfo-chest",
-                "locator": "How is the procedure performed?"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             }
           ]
@@ -1152,13 +1173,13 @@
               }
             },
             {
-              "en": "Did you say 13 or 30?",
+              "en": "So that is oh seven seven double oh, nine double oh, one three two?",
               "fits": false,
-              "whyDe": "Er hat die Ziffern einzeln genannt. Diese Zahlen kamen gar nicht vor.",
-              "meaningDe": "Haben Sie dreizehn oder dreißig gesagt?",
+              "whyDe": "Die letzten Ziffern stimmen nicht. Er hat eins zwei drei gesagt.",
+              "meaningDe": "Das ist also null sieben sieben null null, neun null null, eins drei zwei?",
               "source": {
-                "ref": "cam-number",
-                "locator": "Number"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             }
           ]
@@ -1186,7 +1207,10 @@
               "source": {
                 "ref": "cam-q-echo",
                 "locator": "Echo questions, checking questions"
-              }
+              },
+              "keywords": [
+                "five five five oh one four two|five five five zero one four two|555 0142|555 oh one four two|555 o one four two|five five five o one four two|555 0 142|555 oh 142|555 o 142|five five five oh 142|triple five oh one four two|triple five zero one four two"
+              ]
             },
             {
               "en": "Did you say 13 or 30?",
@@ -1199,13 +1223,13 @@
               }
             },
             {
-              "en": "Is that a double L?",
+              "en": "Thank you. Five five five, oh one two four?",
               "fits": false,
-              "whyDe": "Das passt zu einem buchstabierten Namen, nicht zu einer Telefonnummer.",
-              "meaningDe": "Ist das ein Doppel-L?",
+              "whyDe": "Die letzten Ziffern stimmen nicht. Sie hat eins vier zwei gesagt.",
+              "meaningDe": "Danke. Fünf fünf fünf, null eins zwei vier?",
               "source": {
-                "ref": "cambridge-dictionary",
-                "locator": "Eintrag double"
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
               }
             }
           ]
@@ -1328,7 +1352,10 @@
               "source": {
                 "ref": "cambridge-dictionary",
                 "locator": "Eintrag quarter"
-              }
+              },
+              "keywords": [
+                "quarter past ten|quarter after ten|ten fifteen"
+              ]
             },
             {
               "en": "Is that the fourth of March or the third of April?",
@@ -1341,13 +1368,13 @@
               }
             },
             {
-              "en": "Please change into this gown.",
+              "en": "So your appointment is at quarter to ten?",
               "fits": false,
-              "whyDe": "Das gehört zum Umziehen. Erst klärst du, ob sein Termin stimmt.",
-              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "whyDe": "Er hat Viertel nach zehn gesagt, nicht Viertel vor zehn.",
+              "meaningDe": "Ihr Termin ist also um Viertel vor zehn?",
               "source": {
-                "ref": "ruh-mri",
-                "locator": "Where do I go when I arrive at the hospital?"
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag quarter"
               }
             }
           ]
@@ -1614,7 +1641,7 @@
         },
         {
           "id": "kl.teachback.s04",
-          "situationDe": "Du möchtest prüfen, ob der Patient alles verstanden hat. Er soll sich dabei aber nicht abgefragt fühlen. Nimm die Verantwortung auf dich.",
+          "situationDe": "Du möchtest prüfen, ob der Patient alles verstanden hat. Er soll sich dabei aber nicht abgefragt fühlen. Sag, dass es dir darum geht, ob du es klar genug erklärt hast.",
           "en": "I want to make sure I explained it clearly.",
           "variants": [
             "I want to be sure that I explained it clearly.",
@@ -1715,7 +1742,7 @@
             "Sorry, I can't answer that question."
           ],
           "keywords": [
-            "answer"
+            "answer|tell you|say"
           ],
           "meaningDe": "Das kann ich Ihnen leider nicht beantworten.",
           "cefr": "A2",
@@ -2032,7 +2059,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "How long will the X-ray take?"
-              }
+              },
+              "keywords": [
+                "depends|minutes|not sure|can't say|check"
+              ]
             },
             {
               "en": "Your doctor will tell you the results.",
@@ -2079,7 +2109,10 @@
               "source": {
                 "ref": "nnuh-xray",
                 "locator": "How long will it take?"
-              }
+              },
+              "keywords": [
+                "find out|check|i will ask|ask the|can't say|not sure|don't know"
+              ]
             },
             {
               "en": "The scan does not hurt.",
@@ -2126,7 +2159,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "How long will the scan take?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out|nearly|almost|minute|minutes|one more"
+              ]
             },
             {
               "en": "Let me explain what will happen today.",
@@ -2174,7 +2210,10 @@
               "source": {
                 "ref": "dudley-ct",
                 "locator": "Will it hurt?"
-              }
+              },
+              "keywords": [
+                "not hurt|no pain|painless|not painful|not feel"
+              ]
             },
             {
               "en": "It depends on the part of your body.",
@@ -2221,7 +2260,10 @@
               "source": {
                 "ref": "dudley-ct",
                 "locator": "Will it hurt?"
-              }
+              },
+              "keywords": [
+                "not feel|no pain|not hurt|painless|not painful|feel nothing"
+              ]
             },
             {
               "en": "I can't give you the results.",
@@ -2269,7 +2311,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "During the CT scan"
-              }
+              },
+              "keywords": [
+                "tell me|let me know|say|press|squeeze|buzzer|call"
+              ]
             },
             {
               "en": "The scan does not hurt.",
@@ -2316,7 +2361,10 @@
               "source": {
                 "ref": "dudley-ct",
                 "locator": "What happens during the CT scan?"
-              }
+              },
+              "keywords": [
+                "worries|worried|worry|afraid|nervous|scared|needle"
+              ]
             },
             {
               "en": "Please keep very still.",
@@ -2364,7 +2412,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "Please wait here for a short time after the scan.",
@@ -2412,7 +2463,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "How will I get my results?"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "Did I understand you correctly?",
@@ -2460,7 +2514,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "I will be in the next room.",
@@ -2508,7 +2565,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Getting your CT scan results"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "I can hear you, and you can talk to me.",
@@ -2555,7 +2615,10 @@
               "source": {
                 "ref": "wwl-mri",
                 "locator": "During your scan"
-              }
+              },
+              "keywords": [
+                "repeat|again|blurred|blurry|not clear|not be clear|not sharp"
+              ]
             },
             {
               "en": "Please keep very still.",
@@ -2602,7 +2665,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What will the MRI scan involve?"
-              }
+              },
+              "keywords": [
+                "still|not move"
+              ]
             },
             {
               "en": "Please tell me if you feel unwell.",
@@ -2697,7 +2763,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "During an MRI scan"
-              }
+              },
+              "keywords": [
+                "talk|hear|call|press|squeeze|buzzer|say"
+              ]
             },
             {
               "en": "It is only for a few seconds.",
@@ -2744,7 +2813,10 @@
               "source": {
                 "ref": "cam-politeness",
                 "locator": "Politeness"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "The scan does not hurt.",
@@ -2791,7 +2863,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Will the scan be uncomfortable?"
-              }
+              },
+              "keywords": [
+                "worries|worried|worry|afraid|nervous|scared"
+              ]
             },
             {
               "en": "You can leave your things in this locker.",
@@ -2838,7 +2913,10 @@
               "source": {
                 "ref": "cam-politeness",
                 "locator": "Politeness"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "You had an operation last year?",
@@ -2885,7 +2963,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "What happens during the X-ray?"
-              }
+              },
+              "keywords": [
+                "safety|radiation|protect|x-rays"
+              ]
             },
             {
               "en": "I can hear you, and you can talk to me.",
@@ -2933,7 +3014,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "Can I bring a relative or friend?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out|depends"
+              ]
             },
             {
               "en": "Could you spell your name for me, please?",
@@ -2981,7 +3065,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Can I eat and drink afterwards?"
-              }
+              },
+              "keywords": [
+                "yes|can eat|may eat|can drink|eat now|eat as normal"
+              ]
             },
             {
               "en": "It depends on the part of your body.",
@@ -3028,7 +3115,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "Are there any risks?"
-              }
+              },
+              "keywords": [
+                "help you relax|to relax|medicine|sedative|calm|tablet|tablets|medication|sedation|sedated"
+              ]
             },
             {
               "en": "Someone will need to take you home.",
@@ -3122,7 +3212,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "Where do I go when I arrive at the hospital?"
-              }
+              },
+              "keywords": [
+                "dressed|that is it|finished|all done"
+              ]
             },
             {
               "en": "Do you have any questions before we start?",

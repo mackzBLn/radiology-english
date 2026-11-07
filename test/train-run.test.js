@@ -1,7 +1,10 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 
+import { readFileSync } from "node:fs";
+import { UNIT_FILES, buildContent } from "../js/core/content.js";
 import { matchTyped } from "../js/core/matcher.js";
+import { surfaceWords } from "../js/core/normalize.js";
 import { createState, unitState } from "../js/core/state.js";
 import {
   HINT_STEPS,
@@ -533,6 +536,88 @@ describe("Hinweis beim Tippen", () => {
     for (let step = 1; step <= HINT_STEPS; step += 1) {
       assert.notEqual(typingHint(en, step).en, "Don't move please");
     }
+  });
+});
+
+describe("Satz legen: Eine zweite richtige Wortfolge ist nicht falsch", () => {
+  const REAL = buildContent(
+    Object.fromEntries([...UNIT_FILES, "faelle", "quellen"].map((name) => [name, JSON.parse(readFileSync(new URL("../daten/" + name + ".json", import.meta.url), "utf8"))])),
+  );
+  const built = (id, sentence) => {
+    const unit = REAL.unit(id);
+    return builtResult({ answer: surfaceWords(unit.en) }, unit, sentence.split(" "));
+  };
+
+  it("please darf am Satzrand stehen, nicht mitten im Satz", () => {
+    assert.equal(built("ge.stillness.s01", "Keep very still please"), "ok");
+    assert.equal(built("ge.stillness.s01", "Keep please very still"), "wrong");
+    assert.equal(built("ge.stillness.s01", "Very keep still please"), "wrong");
+    assert.equal(built("mr.changing.s03", "Take off your belt please"), "ok");
+    assert.equal(built("mr.changing.s03", "Take off please your belt"), "wrong");
+    assert.equal(built("mr.changing.s03", "Please take off belt your"), "wrong", "Die 80-Prozent-Regel gilt hier nicht");
+    assert.equal(built("sb.polite.s02", "Please could you roll up your sleeve"), "ok");
+  });
+
+  it("Ohne please im Satz hilft auch kein please am Rand", () => {
+    const unit = { en: "Keep very still.", variants: [] };
+    assert.equal(builtResult({ answer: surfaceWords(unit.en) }, unit, ["Keep", "very", "still", "please"]), "wrong");
+  });
+
+  it("Partikelverben: Beide Stellungen gelten, auch getippt", () => {
+    for (const [id, sentence] of [
+      ["ge.changing.s01", "Please take your jewellery off"],
+      ["ge.changing.s03", "Please also take your bra and any hair clips off"],
+      ["mr.changing.s03", "Please take your belt off"],
+      ["mr.changing.s06", "Please take your hearing aids out"],
+      ["rx.changing.s02", "Please take your dentures out"],
+      ["rx.changing.s07", "Please take your glasses off"],
+      ["sb.polite.s02", "Could you roll your sleeve up please"],
+      ["sb.polite.s05", "Could you fill this form in please"],
+      ["sb.tenses.s07", "Did you take your watch off"],
+    ]) {
+      assert.equal(built(id, sentence), "ok", id + ": " + sentence);
+      assert.equal(matchTyped(REAL.unit(id), sentence).outcome, "correct", id + ": " + sentence);
+    }
+  });
+
+  it("Nebensatz vorn: Beide Stellungen gelten, auch getippt", () => {
+    for (const [id, sentence] of [
+      ["ge.contrast.s06", "If you feel unwell please tell me"],
+      ["ge.contrast.s07", "After the scan please wait here for a short time"],
+      ["ge.contrast.s09", "If you have trouble breathing please tell me right away"],
+      ["mr.callbutton.s02", "If you need help please squeeze the buzzer"],
+      ["rx.stillness.s02", "Until I tell you please do not move"],
+      ["ct.stillness.s01", "Until I tell you please keep breathing normally"],
+      ["ct.closing.s01", "While I check the pictures please stay on the table"],
+    ]) {
+      assert.equal(built(id, sentence), "ok", id + ": " + sentence);
+      assert.equal(matchTyped(REAL.unit(id), sentence).outcome, "correct", id + ": " + sentence);
+    }
+  });
+});
+
+describe("Rückmeldung: Die übrigen Antworten und die gehörte Fassung", () => {
+  const unit = { en: "Is it loud?", meaningDe: "Ist es laut?", source: { ref: "a", locator: "b" }, noteDe: null };
+  const option = (text, correct) => ({ text, correct, meaningDe: text + " auf Deutsch", source: { ref: "q", locator: text } });
+  const exercise = { unitId: "u", kind: "hearReact", options: [option("Fits.", true), option("Other one.", false), option("Other two.", false)] };
+
+  it("nennt die Antworten, die sonst nirgends stehen, mit Bedeutung und Quelle", () => {
+    const right = feedbackFor({ exercise, unit, chosen: exercise.options[0] });
+    assert.deepEqual(right.others.map((item) => item.text), ["Other one.", "Other two."]);
+    assert.deepEqual(right.others[0], { text: "Other one.", meaningDe: "Other one. auf Deutsch", source: { ref: "q", locator: "Other one." } });
+    const wrong = feedbackFor({ exercise, unit, chosen: exercise.options[1] });
+    assert.deepEqual(wrong.others.map((item) => item.text), ["Other two."], "Das Gewählte und das Passende stehen schon da");
+  });
+
+  it("bei deutschen Antworten gibt es nichts zu nennen", () => {
+    const hearMeaning = { unitId: "u", kind: "hearMeaning", options: [{ text: "Ist es laut?", correct: true }, { text: "Ist es kalt?", correct: false }] };
+    assert.deepEqual(feedbackFor({ exercise: hearMeaning, unit, chosen: hearMeaning.options[0] }).others, []);
+    assert.deepEqual(feedbackFor({ exercise: { unitId: "u", kind: "typeSentence", options: [] }, unit }).others, []);
+  });
+
+  it("zeigt die Fassung, die zu hören war", () => {
+    assert.equal(feedbackFor({ exercise: { ...exercise, heardEn: "Will it be noisy?" }, unit, chosen: exercise.options[0] }).sentence.en, "Will it be noisy?");
+    assert.equal(feedbackFor({ exercise, unit, chosen: exercise.options[0] }).sentence.en, "Is it loud?");
   });
 });
 

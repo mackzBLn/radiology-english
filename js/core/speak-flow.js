@@ -1,7 +1,8 @@
 /*
  * Ablauf der Sprechübung ohne DOM: Sitzung, Schritte, einmalige Wertung, Zusammenfassung. Zeit und Speichern kommen als Parameter.
  *
- * Sitzung: { kind: "speech", appVersion, focus, queue, index, step, result, graded, seenBefore, tally }
+ * Sitzung: { kind: "speech", appVersion, focus, plannedOn, queue, index, step, result, graded, seenBefore, tally }
+ *   plannedOn  der Tag, für den die Runde geplant ist
  *   queue    Liste aus planSpeech: { unitId, stage, snapshot }
  *   step     listen (noch nicht angehört), speak (bereit zum Sprechen), feedback (Ergebnis da), failed (Ausfall)
  *   result   { outcome, transcript, words, against, reason } oder null. outcome: understood, partly, notUnderstood, notMeasured
@@ -56,11 +57,12 @@ export function dontKnowResult() {
 
 // ----- Sitzung -----
 
-export function createSpeechSession({ queue, focus = null, appVersion }) {
+export function createSpeechSession({ queue, focus = null, appVersion, today = null }) {
   return {
     kind: SESSION_KIND,
     appVersion,
     focus: focus ?? null,
+    plannedOn: today,
     queue,
     index: 0,
     step: initialStep(queue[0]),
@@ -85,6 +87,11 @@ export function sessionFits(session, { focus = null, appVersion }) {
   }
   const hasResult = session.step === "feedback" || session.step === "failed";
   return !hasResult || typeof session.result?.outcome === "string";
+}
+
+// Eine Runde von einem anderen Tag wäre veraltet: Heute Fälliges müsste warten, bis sie durch ist. Ein noch nicht gewertetes Ergebnis geht vor.
+export function sessionOutdated(session, today) {
+  return typeof session.plannedOn === "string" && session.plannedOn !== today && !needsGrading(session);
 }
 
 export function currentTask(session) {
@@ -122,10 +129,19 @@ export function needsGrading(session) {
   return Boolean(session.result) && !session.graded;
 }
 
+/*
+ * planSpeech holt auch Einheiten, die noch nicht fällig sind. Verstanden zählt dann als gesprochen, Box und Termin bleiben:
+ * Sonst stiege ein neuer Satz an einem Tag bis Box 3, und die wachsenden Abstände fielen weg.
+ */
 function applyToLearning({ state, task, outcome, today, now }) {
-  const unit = applyResult(unitState(state, task.unitId), LEARNING_RESULT[outcome], today, now);
+  const before = unitState(state, task.unitId);
+  const unit = applyResult(before, LEARNING_RESULT[outcome], today, now);
   if (outcome === "understood") {
     unit[task.stage === "a" ? "spokenA" : "spokenB"] = true;
+    if (typeof before.due === "string" && before.due > today) {
+      unit.box = before.box;
+      unit.due = before.due;
+    }
   }
   setUnitState(state, task.unitId, unit);
   if (outcome !== "notMeasured") {

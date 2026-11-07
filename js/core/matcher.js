@@ -5,8 +5,10 @@
  *
  * missingKeywords nennt die Schlüsselwörter wie in den Daten, also auch mit |. Zum Anzeigen gibt es keywordLabel.
  * words nennt die Wörter so, wie sie in der besten Fassung stehen, ohne Satzzeichen am Rand: I'm bleibt I'm.
- * negationFlip: true steht nur dann im Ergebnis, wenn ein not oder never fehlt oder dazukommt, also der Sinn kippen kann.
+ * negationFlip: true steht nur dann im Ergebnis, wenn ein not, never oder no fehlt oder dazukommt, also der Sinn kippen kann.
  * Gesprochen gilt das höchstens als partly, sonst wäre der gegenteilige Satz gelernt. Getippt bleibt es close, die Bahn und der Test werten es als falsch.
+ * Bei softKeywords zählt nur ein zusätzliches not oder never: Freie Antworten kommen auch ohne aus, ein dazugekommenes kippt aber den Sinn (Sitzung, 07.11.2026).
+ * Beruhigende Wendungen wie Don't worry oder Don't panic drehen keinen Sinn um und zählen dann nicht mit (Prüfung, 07.11.2026). Fehlen sie im festen Satz, zählt das wie jedes not.
  */
 
 import { analyzeWords, apostropheReading, spellingForms, surfaceWords, tokens } from "./normalize.js";
@@ -22,6 +24,7 @@ const DERIVED_KEYWORD_LIMIT = 4;
 const DERIVED_MIN_CHARS = 3;
 // Zwischen den Teilen eines Schlüsselworts dürfen Wörter stehen: take it off, get slowly up.
 const PHRASE_GAP = 3;
+const NOT_GAP = 2;
 
 const PLEASE = "please";
 const QUESTION_STARTS = new Set("do does did am is are was were have has had can could will would shall should may might must".split(" "));
@@ -36,8 +39,23 @@ const FUNCTION_WORDS = new Set(
   did done doing be am is are was were been being have has had having can cannot could will would shall should may might must want
   need let get got go going went some any all both each every much many more most few little very too also just only
   again still now soon well really quite maybe perhaps please sorry thanks thank okay ok alright right sure hello hi bye
-  goodbye dear mr mrs ms miss sir madam one something anything nothing everything someone anyone everyone`.split(/\s+/),
+  goodbye dear mr mrs ms miss sir madam one something anything nothing everything someone anyone everyone
+  tell telling afraid hear like feel hard trouble`.split(/\s+/),
 );
+
+// Formen desselben Worts zählen gleich: Is it hard to breathe? und Do you have trouble breathing?
+const BREATHE_FORMS = "breathe|breathing|breath";
+const SAME_WORD = new Map([["breathe", BREATHE_FORMS], ["breathing", BREATHE_FORMS], ["breath", BREATHE_FORMS]]);
+const SORRY = "sorry";
+
+// Was nach einer Verneinung beruhigt: Don't worry, Try not to worry (beide lehrt sb.reassure.s01), You don't need to be afraid, Don't panic, No need to worry, Never mind.
+const CALM_WORDS = ["worry", "panic", "be afraid", "be scared", "be nervous", "be worried", "be frightened"];
+const CALM_LEADS = ["", "you ", "to ", "need to ", "have to "];
+const REASSURING = new Map([
+  ["not", CALM_LEADS.flatMap((lead) => CALM_WORDS.map((calm) => (lead + calm).split(" ")))],
+  ["never", [["mind"], ["fear"]]],
+  ["no", [["worries"], ...CALM_WORDS.map((calm) => ("need to " + calm).split(" "))]],
+]);
 
 // ----- Schlüsselwörter -----
 
@@ -46,21 +64,35 @@ export function keywordLabel(keyword) {
 }
 
 // Inhaltswörter eines Satzes ab 3 Zeichen, ohne Funktionswörter, höchstens 4. Für Sätze ohne eigene Schlüsselwörter.
+// Bleibt keines übrig, trägt sorry den Satz: I'm sorry to hear that. Sonst zählte nur der Anteil der Wörter, und Oh, I'm sorry wäre nicht erkannt.
 export function deriveKeywords(text) {
   const result = [];
+  let saysSorry = false;
   for (const surface of surfaceWords(text)) {
     const word = surface.toLowerCase().replace(/[‘’]/g, "'");
     const stem = word.replace(/'(?:s|ll|re|ve|d|m)$/, "");
     const chars = stem.replace(/[^\p{L}\p{N}]/gu, "");
     const isContent = !word.endsWith("n't") && !FUNCTION_WORDS.has(stem) && chars.length >= DERIVED_MIN_CHARS;
-    if (isContent && !result.includes(stem)) {
-      result.push(stem);
+    const keyword = SAME_WORD.get(stem) ?? stem;
+    saysSorry ||= stem === SORRY;
+    if (isContent && !result.includes(keyword)) {
+      result.push(keyword);
     }
     if (result.length === DERIVED_KEYWORD_LIMIT) {
       break;
     }
   }
-  return result;
+  return result.length === 0 && saysSorry ? [SORRY] : result;
+}
+
+// Die Schlüsselwörter einer passenden Reaktion: die eigenen aus den Daten, sonst abgeleitet. Eigene stehen dort, wo der Wert oder das not der Lernstoff ist.
+export function reactionKeywords(reaction) {
+  return reaction.keywords ?? deriveKeywords(reaction.en);
+}
+
+// Hinter no steht nichts dazwischen, hinter not wenig: In No, you will feel pain steht kein no pain, und ein Komma sieht der Abgleich nicht.
+function gapAfter(word) {
+  return word === "no" ? 0 : word === "not" ? NOT_GAP : PHRASE_GAP;
 }
 
 // Die Stellen einer Wortfolge in der Liste, zwischen ihren Teilen dürfen Wörter stehen. Nicht gefunden: null.
@@ -72,7 +104,7 @@ function findPhrase(list, phrase) {
     const positions = [start];
     for (let part = 1; part < phrase.length; part += 1) {
       const next = list.indexOf(phrase[part], positions.at(-1) + 1);
-      if (next === -1 || next - positions.at(-1) - 1 > PHRASE_GAP) {
+      if (next === -1 || next - positions.at(-1) - 1 > gapAfter(phrase[part - 1])) {
         break;
       }
       positions.push(next);
@@ -196,8 +228,46 @@ function sameWords(a, b) {
   return a.join("") === b.join("");
 }
 
-function negationCount(list) {
+function notCount(list) {
   return list.filter((token) => token === "not" || token === "never").length;
+}
+
+function isReassuring(list, index) {
+  return REASSURING.get(list[index])?.some((after) => after.every((word, offset) => list[index + 1 + offset] === word)) === true;
+}
+
+// Das not einer beruhigenden Wendung gehört nicht zum Rest des Satzes: In Don't worry, you can move now steht kein not move.
+function withoutReassuring(list) {
+  return list.filter((_, index) => !isReassuring(list, index));
+}
+
+// Für freie Antworten: Beruhigen kippt keinen Sinn, Don't worry, I will stop the scan. No need kippt ihn dagegen: No need to tell the doctor (Prüfung, 07.11.2026).
+function softNotCount(list) {
+  return list.filter((token, index) => (token === "not" || token === "never" || (token === "no" && list[index + 1] === "need")) && !isReassuring(list, index)).length;
+}
+
+// Die Alternative selbst darf ein not tragen, etwa Please don't move bei still|not move. Das ist dann keine dazugekommene Verneinung.
+function notsInHits(list, keywords) {
+  return keywords.reduce((sum, keyword) => {
+    const hit = String(keyword)
+      .split("|")
+      .map((alternative) => tokens(alternative))
+      .find((phrase) => phrase.length > 0 && findPhrase(list, phrase) !== null);
+    return sum + (hit ? notCount(hit) : 0);
+  }, 0);
+}
+
+// no kippt den Sinn ebenso: You have no allergies. Am Satzanfang neben einem not ist es nur die Antwort: No, it does not hurt.
+function negationCount(list) {
+  const nots = notCount(list);
+  return nots + list.filter((token, index) => token === "no" && (index > 0 || nots === 0 || isReassuring(list, index))).length;
+}
+
+// Für feste Sätze: Eine dazugekommene beruhigende Wendung dreht nichts um: Don't worry, the scan is nearly over. Fehlt sie dagegen im Satz, zählt das wie jedes not.
+function negationsDiffer(target, reading) {
+  const calmCount = (list) => list.filter((_, index) => isReassuring(list, index)).length;
+  const added = Math.max(0, calmCount(reading) - calmCount(target));
+  return negationCount(target) !== negationCount(reading) - added;
 }
 
 // Nur please darf die Stelle wechseln: Remove your coat, please. Wortsalat ist falsch, andere freie Stellungen gehören in die Fassungen.
@@ -288,7 +358,7 @@ function judgeTyped(candidate, keywords, reading) {
   }
   if (exactShare >= WORD_SHARE && exactMissing.length === 0) {
     // Fehlt nur das not, kippt der Sinn: The scan does hurt. Das bleibt fast richtig, die Regel mit 80 % hieße sonst richtig.
-    const negationFlip = negationCount(target) !== negationCount(reading);
+    const negationFlip = negationsDiffer(target, reading);
     const outcome = negationFlip || questionOrderChanged(candidate, reading) ? "close" : "correct";
     return { rank: TYPED_RANK[outcome], outcome, share: exactShare, missing: [], negationFlip };
   }
@@ -302,7 +372,7 @@ function judgeTyped(candidate, keywords, reading) {
   }
   const fuzzyMissing = missingKeywordsIn(repaired, keywords);
   if (fuzzy.typos > 0 && fuzzyShare >= WORD_SHARE && fuzzyMissing.length === 0) {
-    return { rank: TYPED_RANK.close, outcome: "close", share: fuzzyShare, missing: [], negationFlip: negationCount(target) !== negationCount(repaired) };
+    return { rank: TYPED_RANK.close, outcome: "close", share: fuzzyShare, missing: [], negationFlip: negationsDiffer(target, repaired) };
   }
   if (fuzzyMissing.length === 0 && pleaseMoved(target, repaired, keywords)) {
     return { rank: TYPED_RANK.close, outcome: "close", share: fuzzyShare, missing: [] };
@@ -361,7 +431,8 @@ export function matchSpoken(unit, transcript, { stage = "a" } = {}) {
       candidate.owners.every((owners, tokenIndex) => !owners.includes(surfaceIndex) || hit.has(tokenIndex)),
     );
     const wordShare = recognized.filter(Boolean).length / candidate.surfaces.length;
-    const missing = missingKeywordsIn(reading, keywords);
+    const calm = withoutReassuring(reading);
+    const missing = missingKeywordsIn(calm, keywords);
     const plain = spokenOutcome({
       stage,
       soft: unit.softKeywords === true,
@@ -371,8 +442,9 @@ export function matchSpoken(unit, transcript, { stage = "a" } = {}) {
       keywords,
       missing,
     });
-    // Freie Antworten fallen verschieden aus, dort sagt ein fehlendes not nichts.
-    const negationFlip = unit.softKeywords !== true && negationCount(candidate.tokens) !== negationCount(reading);
+    // Freie Antworten fallen verschieden aus, dort sagt ein fehlendes not nichts. Ein zusätzliches kippt aber den Sinn: I will not stop the scan.
+    const negationFlip =
+      unit.softKeywords === true ? softNotCount(reading) - notsInHits(calm, keywords) > softNotCount(candidate.tokens) : negationsDiffer(candidate.tokens, reading);
     const outcome = negationFlip && plain === "understood" ? "partly" : plain;
     return {
       rank: SPOKEN_RANK[outcome],

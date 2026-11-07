@@ -167,7 +167,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How does it work?"
-              }
+              },
+              "keywords": [
+                "x-rays|x-ray|not an mri|not the same|different|ct"
+              ]
             },
             {
               "en": "The table moves in and out of the ring.",
@@ -213,7 +216,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "worries|worried|worry|afraid|nervous|scared|ring"
+              ]
             },
             {
               "en": "Your doctor will tell you the results.",
@@ -260,7 +266,10 @@
               "source": {
                 "ref": "cam-politeness",
                 "locator": "Politeness"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "The table moves in and out of the ring.",
@@ -420,7 +429,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Your whole visit will take longer than the scan.",
@@ -467,7 +479,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "Allergy to iodine or intravenous contrast medium"
-              }
+              },
+              "keywords": [
+                "what happened|what kind|kind of problem|what was|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "I will be in the next room.",
@@ -514,7 +529,10 @@
               "source": {
                 "ref": "dudley-ct",
                 "locator": "How do I prepare for the CT scan?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "The dye can make you feel warm for a short time.",
@@ -679,7 +697,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "metal|zip|buttons"
+              ]
             },
             {
               "en": "Breathe in.",
@@ -726,7 +747,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
-              }
+              },
+              "keywords": [
+                "looser|loosen|loose|sorry"
+              ]
             },
             {
               "en": "You may have a metal taste in your mouth.",
@@ -764,11 +788,12 @@
           "variants": [
             "Please breathe normally until I tell you.",
             "Just keep breathing normally until I tell you.",
-            "Please keep breathing normally until I say."
+            "Please keep breathing normally until I say.",
+            "Until I tell you, please keep breathing normally."
           ],
           "keywords": [
             "breathing|breathe",
-            "normally"
+            "normally|normal"
           ],
           "meaningDe": "Bitte atmen Sie normal weiter, bis ich es Ihnen sage.",
           "cefr": "A2",
@@ -848,7 +873,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
-              }
+              },
+              "keywords": [
+                "seconds|short|moment"
+              ]
             },
             {
               "en": "The table moves in and out of the ring.",
@@ -895,7 +923,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
-              }
+              },
+              "keywords": [
+                "check|the pictures|no problem|that is ok|do it again|try again"
+              ]
             },
             {
               "en": "You can get changed in this cubicle.",
@@ -1022,7 +1053,7 @@
             "You'll get the dye through a vein in your arm."
           ],
           "keywords": [
-            "dye|contrast medium",
+            "dye|contrast medium|contrast",
             "vein"
           ],
           "meaningDe": "Sie bekommen das Kontrastmittel über eine Vene im Arm.",
@@ -1090,7 +1121,8 @@
             "It only feels like that. You are not passing urine."
           ],
           "keywords": [
-            "feels"
+            "feels",
+            "normal|not really|not passing"
           ],
           "meaningDe": "Das fühlt sich nur so an. Das ist normal.",
           "cefr": "A2",
@@ -1125,7 +1157,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Before the CT scan"
-              }
+              },
+              "keywords": [
+                "clearer|clear|better|see|pictures"
+              ]
             },
             {
               "en": "I will be in the next room.",
@@ -1171,7 +1206,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "Are there any risks?"
-              }
+              },
+              "keywords": [
+                "worry|normal|dye|go away"
+              ]
             },
             {
               "en": "Do you have any questions before we start?",
@@ -1219,7 +1257,10 @@
               "source": {
                 "ref": "radiologyinfo-contrast",
                 "locator": "Side effects and adverse and allergic reactions"
-              }
+              },
+              "keywords": [
+                "trouble breathing|hard to breathe|difficult to breathe|problem breathing|problems breathing|difficulty breathing|can you breathe|breathing ok|how is your breathing|is your breathing|short of breath|shortness of breath|breathless|swallow|your throat|how do you feel|are you ok|are you all right|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "These feelings usually go away quickly.",
@@ -1261,8 +1302,8 @@
             "It is only a ring, not a long tunnel."
           ],
           "keywords": [
-            "ring",
-            "tunnel"
+            "only|just|not a tunnel|not a long tunnel",
+            "ring"
           ],
           "meaningDe": "Das Gerät ist nur ein Ring, kein langer Tunnel.",
           "cefr": "A2",
@@ -1319,7 +1360,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How does it work?"
-              }
+              },
+              "keywords": [
+                "only a ring|just a ring|is a ring|short tunnel|open|not a tunnel|not a long tunnel|not shut"
+              ]
             },
             {
               "en": "Please drink it slowly while you wait.",
@@ -1441,7 +1485,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "During the CT scan"
-              }
+              },
+              "keywords": [
+                "call|hear|talk|press|buzzer"
+              ]
             },
             {
               "en": "The table will move while you hold your breath.",
@@ -1481,7 +1528,8 @@
           "variants": [
             "Please stay on the table while I check the images.",
             "Please stay on the table until I have checked the pictures.",
-            "Could you stay on the table while I check the pictures, please?"
+            "Could you stay on the table while I check the pictures, please?",
+            "While I check the pictures, please stay on the table."
           ],
           "keywords": [
             "stay",
@@ -1564,7 +1612,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens after the scan?"
-              }
+              },
+              "keywords": [
+                "yes|can eat|may eat|can drink|eat now|eat as normal"
+              ]
             },
             {
               "en": "Please drink this before your scan.",

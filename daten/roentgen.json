@@ -183,7 +183,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "What happens during the X-ray?"
-              }
+              },
+              "keywords": [
+                "moment|see you|hear you|short|seconds"
+              ]
             },
             {
               "en": "The X-ray only takes a few minutes.",
@@ -230,7 +233,10 @@
               "source": {
                 "ref": "nnuh-xray",
                 "locator": "Are there any risks?"
-              }
+              },
+              "keywords": [
+                "small amount|small dose|low dose|low amount|very little|doctor"
+              ]
             },
             {
               "en": "You will not feel anything.",
@@ -277,7 +283,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "What happens during an X-ray"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "It depends on the part of your body.",
@@ -416,7 +425,10 @@
               "source": {
                 "ref": "nnuh-xray",
                 "locator": "Are you required to make any special preparations?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Have you had an X-ray like this recently?",
@@ -462,7 +474,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "Are there any risks or side effects?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "I need to know this because of the radiation.",
@@ -521,7 +536,8 @@
           "variants": [
             "Please remove your dentures.",
             "Could you take out your dentures, please?",
-            "Please take out your false teeth."
+            "Please take out your false teeth.",
+            "Please take your dentures out."
           ],
           "keywords": [
             "dentures|false teeth"
@@ -543,7 +559,8 @@
           "variants": [
             "Please remove your glasses.",
             "Could you take off your glasses, please?",
-            "Could you take your glasses off, please?"
+            "Could you take your glasses off, please?",
+            "Please take your glasses off."
           ],
           "keywords": [
             "glasses"
@@ -609,7 +626,9 @@
             "Please turn to your right.",
             "Could you turn to your left, please?",
             "Please turn to the left.",
-            "Please turn to the right."
+            "Please turn to the right.",
+            "Please turn left.",
+            "Please turn right."
           ],
           "keywords": [
             "turn",
@@ -770,7 +789,10 @@
               "source": {
                 "ref": "radiologyinfo-chest",
                 "locator": "How is the procedure performed?"
-              }
+              },
+              "keywords": [
+                "lie|sit|unwell|chair"
+              ]
             },
             {
               "en": "Please stand against this plate.",
@@ -817,7 +839,10 @@
               "source": {
                 "ref": "radiologyinfo-chest",
                 "locator": "What will I experience during and after the procedure?"
-              }
+              },
+              "keywords": [
+                "the problem|what problem|hurt|pain|what happened|what is wrong"
+              ]
             },
             {
               "en": "Please turn to your left.",
@@ -876,11 +901,13 @@
           "variants": [
             "Please don't move until I tell you.",
             "Please do not move until I say so.",
-            "Please stay still until I tell you."
+            "Please stay still until I tell you.",
+            "Until I tell you, please do not move."
           ],
           "keywords": [
             "until",
-            "tell|say"
+            "tell|say",
+            "stay still|keep still|very still|hold still|not move|don't move"
           ],
           "meaningDe": "Bitte bewegen Sie sich nicht, bis ich es Ihnen sage.",
           "cefr": "A2",
@@ -900,7 +927,7 @@
             "That one is finished. You can move again now."
           ],
           "keywords": [
-            "move"
+            "can move|move again|move now"
           ],
           "meaningDe": "Das Bild ist fertig. Sie können sich jetzt wieder bewegen.",
           "cefr": "A2",
@@ -934,7 +961,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "What happens during an X-ray"
-              }
+              },
+              "keywords": [
+                "done|finished|that is it|well"
+              ]
             },
             {
               "en": "Hold your breath.",
@@ -981,7 +1011,10 @@
               "source": {
                 "ref": "radiologyinfo-chest",
                 "locator": "How is the procedure performed?"
-              }
+              },
+              "keywords": [
+                "seconds|moment|short|nearly|quick|manage"
+              ]
             },
             {
               "en": "Please keep very still.",
@@ -1126,7 +1159,10 @@
               "source": {
                 "ref": "radiologyinfo-contrast",
                 "locator": "What will I experience before and after receiving contrast material?"
-              }
+              },
+              "keywords": [
+                "tastes|taste|unpleasant|chalky|strange"
+              ]
             },
             {
               "en": "Please drink more than usual after the barium.",
@@ -1174,7 +1210,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "Preparing for an X-ray"
-              }
+              },
+              "keywords": [
+                "felt|feel|what happened"
+              ]
             },
             {
               "en": "You will drink a liquid called barium.",
@@ -1295,7 +1334,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "Getting your X-ray results"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "That is everything. You can leave now.",

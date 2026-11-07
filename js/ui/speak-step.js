@@ -46,7 +46,7 @@
 
 import { DONT_KNOW, dontKnowResult, initialStep, resultFromHearing, stepAfterResult } from "../core/speak-flow.js";
 import { createBrowserAssessor } from "../speech/assessor.js";
-import { createRecognizer, timingsFor } from "../speech/recognizer.js";
+import { START_LIMIT_MS, createRecognizer, timingsFor } from "../speech/recognizer.js";
 import { barRow, bottomBar, button, card, clinicNote, englishText, infoButton, negationNote, soundHint } from "./components.js";
 import { el } from "./dom.js";
 
@@ -317,6 +317,7 @@ export function renderSpeakStep(
       .listen({
         lang: ctx.state.settings.lang,
         ...timingsFor(stage),
+        startLimitMs: START_LIMIT_MS,
         onState: (name) => {
           const display = LISTEN_DISPLAY[name];
           if (display) {
@@ -329,6 +330,10 @@ export function renderSpeakStep(
   }
 
   function receive(heard) {
+    // Ein Abbruch durch die Nutzerin ist kein Ausfall. Alles andere ohne Text kommt in den Technik-Bericht, die Oberfläche sagt nur „hat nicht geklappt“.
+    if (heard.status !== "heard" && heard.reason !== "cancelled") {
+      ctx.store.noteSpeechRun?.({ at: ctx.now().toISOString(), status: heard.status, reason: heard.reason, events: heard.events });
+    }
     if (destroyed || leaving) {
       return;
     }
@@ -416,7 +421,9 @@ export function renderSpeakStep(
     const model = result.against ?? snapshot.en;
     const dontKnow = result.reason === DONT_KNOW;
     const [title, text] = dontKnow ? DONT_KNOW_VERDICT : VERDICT[result.outcome][stage];
-    const hasMissing = result.words.some((item) => item.status === "missing");
+    // Eine gut verstandene freie Antwort fällt anders aus als der Mustersatz. Seine Wörter stehen dann ohne Farbe da, sonst sähe alles nach Fehler aus.
+    const plainWords = stage === "b" && result.outcome === "understood";
+    const hasMissing = !plainWords && result.words.some((item) => item.status === "missing");
 
     // „Langsam“ spielt das zuletzt angetippte Wort, sonst den ganzen Satz. Einzeilig, damit die Leiste nicht springt.
     let slowWord = null;
@@ -440,8 +447,8 @@ export function renderSpeakStep(
         "button",
         {
           type: "button",
-          class: "word word-" + status,
-          "aria-label": status === "missing" ? word + ", nicht erkannt" : word,
+          class: plainWords ? "word" : "word word-" + status,
+          "aria-label": !plainWords && status === "missing" ? word + ", nicht erkannt" : word,
           onclick: () => {
             aimSlow(word);
             player.play(word);
@@ -473,7 +480,7 @@ export function renderSpeakStep(
           : el(
               "p",
               { class: "muted" },
-              (stage === "b" ? "Deine Antwort darf anders klingen. " : "") +
+              (stage === "b" ? "Deine Antwort darf anders klingen. Die App vergleicht Wörter, den Sinn prüfst du selbst am Mustersatz. " : "") +
                 (hasMissing ? "Gestrichelt: nicht erkannt. " : "") +
                 (wordButtons.length > 0 ? "Tippe ein Wort an, dann hörst du es." : ""),
             ),

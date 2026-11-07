@@ -10,7 +10,7 @@
 import { EXAMS } from "../../core/content.js";
 import { addDays } from "../../core/dates.js";
 import { weakUnitsFromRating } from "../../core/partner.js";
-import { compareAttempts } from "../../core/placement.js";
+import { compareAttempts, overallBelowA1 } from "../../core/placement.js";
 import { isDue, isLearned, isWeak } from "../../core/srs.js";
 import { unitState } from "../../core/state.js";
 import { backButton, bottomBar, card, formatDate, hint, navButton, progressBar, viewHeader } from "../components.js";
@@ -114,7 +114,11 @@ export function placementOverview(attempts) {
     first: levelText(comparison[part].first, comparison[part].firstBelowA1),
     latest: levelText(comparison[part].latest, comparison[part].latestBelowA1),
   }));
-  rows.push({ labelDe: "Gesamt", first: levelText(comparison.overall.first), latest: levelText(comparison.overall.latest) });
+  rows.push({
+    labelDe: "Gesamt",
+    first: levelText(comparison.overall.first, overallBelowA1(first)),
+    latest: levelText(comparison.overall.latest, overallBelowA1(latest)),
+  });
   return { count: attempts.length, firstAt: first.at, latestAt: latest.at, rows };
 }
 

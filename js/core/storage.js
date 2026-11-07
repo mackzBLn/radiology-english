@@ -18,6 +18,10 @@ export const STORAGE_KEYS = {
   session: PREFIX + "session",
 };
 
+// Eigener Schlüssel: Die Läufe ohne erkannten Text gehören nicht zum Lernstand und nicht in die Sicherung.
+const SPEECH_LOG_KEY = PREFIX + "speechLog";
+const SPEECH_LOG_LIMIT = 20;
+
 function loadError(code, messageDe, cause) {
   const error = new Error(messageDe, { cause });
   error.code = code;
@@ -31,6 +35,23 @@ export function unreadableError(cause) {
     "Der Speicher des Geräts lässt sich gerade nicht lesen. Lade die App neu. Dein Lernstand wird nicht überschrieben.",
     cause,
   );
+}
+
+/*
+ * Eine Übung aus einer anderen App-Version wird verworfen, der Lernstand bleibt (Vorgabe). discardedKind nennt ihre Art, damit die Startseite es sagen kann.
+ * Wirft dabei der Speicher, läuft die App weiter, und die Startseite zeigt den Hinweis.
+ */
+export function discardForeignSession(store, version) {
+  try {
+    const session = store.loadSession();
+    if (session && session.appVersion !== version) {
+      store.clearSession();
+      return { error: null, discardedKind: session.kind ?? null };
+    }
+    return { error: null, discardedKind: null };
+  } catch (cause) {
+    return { error: unreadableError(cause), discardedKind: null };
+  }
 }
 
 function errorForStoredState(cause) {
@@ -241,5 +262,23 @@ export function createStore(backend, { now = () => new Date(), migrations, targe
     backend.removeItem(STORAGE_KEYS.session);
   }
 
-  return { load, save, keepPrevious, loadPrevious, loadBroken, loadSession, saveSession, clearSession };
+  // Die letzten Läufe der Erkennung ohne Text, für den Technik-Bericht: Grund und Zeiten, nie ein Inhalt. Sie überstehen das Neuladen je Satz.
+  function loadSpeechLog() {
+    try {
+      const log = JSON.parse(backend.getItem(SPEECH_LOG_KEY));
+      return Array.isArray(log) ? log : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function noteSpeechRun(entry) {
+    try {
+      backend.setItem(SPEECH_LOG_KEY, JSON.stringify([...loadSpeechLog(), entry].slice(-SPEECH_LOG_LIMIT)));
+    } catch {
+      // Der Bericht ist nur eine Hilfe. Ein voller Speicher darf die Übung nicht stören.
+    }
+  }
+
+  return { load, save, keepPrevious, loadPrevious, loadBroken, loadSession, saveSession, clearSession, loadSpeechLog, noteSpeechRun };
 }

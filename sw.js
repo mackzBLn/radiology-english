@@ -25,7 +25,7 @@
  */
 
 // Dieselbe Nummer wie in js/version.js. Nummer und Liste setzt nur die Sitzung.
-const VERSION = "0.9.1";
+const VERSION = "0.9.2";
 
 // Ein eigener Cache je Version. Die Testseite nutzt eine andere Vorsilbe, ihr Cache bleibt unberührt.
 const CACHE_PREFIX = "radiology-english.app.";

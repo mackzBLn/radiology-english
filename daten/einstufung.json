@@ -11,10 +11,10 @@
           "type": "hearChoose",
           "level": "A1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A1",
-            "page": 177,
-            "summaryDe": "vertraute Wörter und einfache Wendungen erkennen, wenn langsam und deutlich gesprochen wird"
+            "page": 73,
+            "summaryDe": "Alltagswendungen verstehen, wenn sie direkt, deutlich und langsam zu dir gesagt werden"
           },
           "situationDe": "Beim Röntgen fragt dich die Patientin etwas.",
           "en": "Will it hurt?",
@@ -65,10 +65,10 @@
           "type": "hearChoose",
           "level": "A1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A1",
-            "page": 177,
-            "summaryDe": "vertraute Wörter und einfache Wendungen erkennen, wenn langsam und deutlich gesprochen wird"
+            "page": 73,
+            "summaryDe": "Alltagswendungen verstehen, wenn sie direkt, deutlich und langsam zu dir gesagt werden"
           },
           "situationDe": "Der Patient steht im Wartebereich und fragt dich etwas.",
           "en": "Where do I go now?",
@@ -119,10 +119,10 @@
           "type": "hearChoose",
           "level": "A2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A2",
-            "page": 177,
-            "summaryDe": "häufige Wörter zu naheliegenden Themen und den Kern kurzer, klarer Mitteilungen verstehen"
+            "page": 73,
+            "summaryDe": "verstehen, was im einfachen Alltagsgespräch klar, langsam und direkt zu dir gesagt wird"
           },
           "situationDe": "Vor dem MRT fragt dich die Patientin etwas.",
           "en": "How long will the scan take?",
@@ -143,10 +143,10 @@
               }
             },
             {
-              "en": "Please keep very still.",
+              "en": "Please keep very still while the scanner is taking the pictures.",
               "fits": false,
               "whyDe": "Das ist eine Anweisung für die Aufnahme, keine Angabe zur Dauer.",
-              "meaningDe": "Bitte halten Sie ganz still.",
+              "meaningDe": "Bitte halten Sie ganz still, während das Gerät die Bilder macht.",
               "source": {
                 "ref": "nhs-mri",
                 "locator": "During an MRI scan"
@@ -174,10 +174,10 @@
           "type": "hearChoose",
           "level": "A2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A2",
-            "page": 177,
-            "summaryDe": "häufige Wörter zu naheliegenden Themen und den Kern kurzer, klarer Mitteilungen verstehen"
+            "page": 73,
+            "summaryDe": "verstehen, was im einfachen Alltagsgespräch klar, langsam und direkt zu dir gesagt wird"
           },
           "situationDe": "Der Patient kommt zum MRT und fragt dich etwas.",
           "en": "Can my daughter come with me?",
@@ -208,10 +208,10 @@
               }
             },
             {
-              "en": "You can eat and drink as usual.",
+              "en": "You can eat and drink as usual after the scan is finished.",
               "fits": false,
               "whyDe": "Das gilt fürs Essen und Trinken und passt nicht zu seiner Frage.",
-              "meaningDe": "Sie können wie gewohnt essen und trinken.",
+              "meaningDe": "Nach der Aufnahme können Sie wie gewohnt essen und trinken.",
               "source": {
                 "ref": "nhs-mri",
                 "locator": "After an MRI scan"
@@ -229,10 +229,10 @@
           "type": "hearChoose",
           "level": "B1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B1",
-            "page": 177,
-            "summaryDe": "die Hauptpunkte klarer Standardsprache bei vertrauten Themen verstehen"
+            "page": 73,
+            "summaryDe": "klar gesprochener Rede folgen, die an dich gerichtet ist, mit gelegentlichem Nachfragen"
           },
           "situationDe": "Du gehst vor dem MRT den Fragebogen durch. Die Patientin erzählt dir etwas.",
           "en": "I had an operation on my hip a few years ago.",
@@ -253,10 +253,10 @@
               }
             },
             {
-              "en": "Your doctor will explain the results to you.",
+              "en": "Your doctor will explain the results to you after the scan.",
               "fits": false,
               "whyDe": "Das betrifft das Ergebnis und geht nicht auf die Operation ein.",
-              "meaningDe": "Ihr Arzt erklärt Ihnen die Ergebnisse.",
+              "meaningDe": "Ihr Arzt erklärt Ihnen die Ergebnisse nach der Aufnahme.",
               "source": {
                 "ref": "ruh-mri",
                 "locator": "How do I get my results?"
@@ -284,10 +284,10 @@
           "type": "hearChoose",
           "level": "B1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B1",
-            "page": 177,
-            "summaryDe": "die Hauptpunkte klarer Standardsprache bei vertrauten Themen verstehen"
+            "page": 73,
+            "summaryDe": "klar gesprochener Rede folgen, die an dich gerichtet ist, mit gelegentlichem Nachfragen"
           },
           "situationDe": "Nach der Spritze spricht dich der Patient an.",
           "en": "I have been feeling a bit dizzy since the injection.",
@@ -303,8 +303,8 @@
               "fits": true,
               "meaningDe": "Bitte bleiben Sie hier, ich hole die Ärztin.",
               "source": {
-                "ref": "nhs-mri",
-                "locator": "Possible complications of an MRI scan"
+                "ref": "ruh-mri",
+                "locator": "Are there any risks?"
               }
             },
             {
@@ -339,10 +339,10 @@
           "type": "hearChoose",
           "level": "B2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B2",
-            "page": 177,
-            "summaryDe": "längeren Aussagen und auch verwickelteren Gedanken folgen, wenn das Thema vertraut ist"
+            "page": 73,
+            "summaryDe": "im Einzelnen verstehen, was zu dir gesagt wird"
           },
           "situationDe": "Vor dem MRT vertraut dir die Patientin etwas an.",
           "en": "I'm rather claustrophobic, so I'm dreading being stuck in that tube.",
@@ -373,10 +373,10 @@
               }
             },
             {
-              "en": "Please stay very still while the pictures are taken.",
+              "en": "Please stay very still, or we may need to take the pictures again.",
               "fits": false,
               "whyDe": "Das erklärt das Stillhalten, geht aber nicht auf ihre Angst ein.",
-              "meaningDe": "Bitte bleiben Sie ganz still, während die Bilder gemacht werden.",
+              "meaningDe": "Bitte bleiben Sie ganz still, sonst müssen wir die Bilder vielleicht noch einmal machen.",
               "source": {
                 "ref": "wwl-mri",
                 "locator": "During your scan"
@@ -394,10 +394,10 @@
           "type": "hearChoose",
           "level": "B2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B2",
-            "page": 177,
-            "summaryDe": "längeren Aussagen und auch verwickelteren Gedanken folgen, wenn das Thema vertraut ist"
+            "page": 73,
+            "summaryDe": "im Einzelnen verstehen, was zu dir gesagt wird"
           },
           "situationDe": "Der Patient hat vor dem MRT Beruhigungstabletten bekommen und fragt dich etwas.",
           "en": "Would it be a problem if I drove home after those relaxing tablets?",
@@ -429,10 +429,10 @@
               }
             },
             {
-              "en": "It is very noisy, so you will get headphones.",
+              "en": "It is very noisy, so you will get headphones or earplugs before the scan.",
               "fits": false,
               "whyDe": "Das erklärt den Lärm, nicht die Heimfahrt.",
-              "meaningDe": "Es ist sehr laut, deshalb bekommen Sie Kopfhörer.",
+              "meaningDe": "Es ist sehr laut, deshalb bekommen Sie vor der Aufnahme Kopfhörer oder Ohrstöpsel.",
               "source": {
                 "ref": "nhs-mri",
                 "locator": "During an MRI scan"
@@ -460,7 +460,13 @@
           "variants": [
             "Sit down, please.",
             "Please take a seat.",
-            "Please have a seat."
+            "Please have a seat.",
+            "Take a seat.",
+            "Take a seat, please.",
+            "Have a seat.",
+            "Have a seat, please.",
+            "Sit down.",
+            "Please sit."
           ],
           "keywords": [
             "sit|seat"
@@ -480,7 +486,7 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "A2",
             "page": 178,
-            "summaryDe": "einfache Sätze schreiben und mit und, aber oder weil verbinden"
+            "summaryDe": "einfache einzelne Sätze schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Frag den Patienten vor dem CT, ob er Schmuck trägt.",
           "en": "Are you wearing any jewellery?",
@@ -489,7 +495,9 @@
             "Do you have any jewellery on?",
             "Do you have any jewelry on?",
             "Do you wear any jewellery?",
-            "Do you wear any jewelry?"
+            "Do you wear any jewelry?",
+            "Do you have jewellery?",
+            "Have you got any jewellery on?"
           ],
           "keywords": [
             "jewellery|jewelry"
@@ -509,14 +517,16 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "B1",
             "page": 178,
-            "summaryDe": "zusammenhängend und einfach über vertraute Themen schreiben"
+            "summaryDe": "einzelne Fragen und Sätze zu vertrauten Themen richtig schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Frag die Patientin, ob sie schon einmal ein MRT hatte.",
           "en": "Have you ever had an MRI scan?",
           "variants": [
             "Have you ever had an MRI?",
             "Have you had an MRI scan before?",
-            "Have you had an MRI before?"
+            "Have you had an MRI before?",
+            "Did you ever have an MRI?",
+            "Did you have an MRI before?"
           ],
           "keywords": [
             "mri"
@@ -536,7 +546,7 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "B2",
             "page": 178,
-            "summaryDe": "klar und ausführlich über Themen aus dem eigenen Bereich schreiben"
+            "summaryDe": "auch einen langen Satz mit Nebensatz richtig schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Sag dem Patienten nach dem MRT: Falls man ihm nichts anderes gesagt hat, kann er danach normal essen und trinken.",
           "en": "Unless you have been told otherwise, you can eat and drink as normal.",
@@ -545,12 +555,14 @@
             "You can eat and drink as normal unless you have been told otherwise.",
             "You can eat and drink normally unless you have been told otherwise.",
             "Unless you were told otherwise, you can eat and drink as normal.",
-            "If you have not been told otherwise, you can eat and drink as normal."
+            "If you have not been told otherwise, you can eat and drink as normal.",
+            "You can eat and drink normally if you have not been told otherwise.",
+            "If you have not been told anything else, you can eat and drink as normal."
           ],
           "keywords": [
-            "otherwise",
+            "otherwise|anything else",
             "eat",
-            "drink"
+            "unless|not been told"
           ],
           "meaningDe": "Falls man Ihnen nichts anderes gesagt hat, können Sie normal essen und trinken.",
           "source": {
@@ -653,7 +665,7 @@
             "Are you allergic to anything?"
           ],
           "keywords": [
-            "allergies|allergic"
+            "allergies|allergic|allergy"
           ],
           "meaningDe": "Haben Sie Allergien?",
           "source": {
@@ -758,7 +770,6 @@
           ],
           "keywords": [
             "doctor|GP",
-            "results|result",
             "report"
           ],
           "meaningDe": "Ihre Ärztin geht die Ergebnisse mit Ihnen durch, sobald der Bericht da ist.",
@@ -778,10 +789,10 @@
           "type": "hearChoose",
           "level": "A1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A1",
-            "page": 177,
-            "summaryDe": "vertraute Wörter und einfache Wendungen erkennen, wenn langsam und deutlich gesprochen wird"
+            "page": 73,
+            "summaryDe": "Alltagswendungen verstehen, wenn sie direkt, deutlich und langsam zu dir gesagt werden"
           },
           "situationDe": "Vor dem MRT fragt dich der Patient etwas.",
           "en": "Is it loud?",
@@ -801,10 +812,10 @@
               }
             },
             {
-              "en": "Hello, I am Anna, your radiographer.",
+              "en": "Hello, I am Anna, your radiographer for this scan today.",
               "fits": false,
               "whyDe": "Das ist eine Vorstellung, keine Antwort auf seine Frage.",
-              "meaningDe": "Guten Tag, ich bin Anna, Ihre MTR.",
+              "meaningDe": "Guten Tag, ich bin Anna, heute Ihre MTR für diese Aufnahme.",
               "source": {
                 "ref": "glos-mri",
                 "locator": "Who will I see?"
@@ -832,10 +843,10 @@
           "type": "hearChoose",
           "level": "A1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A1",
-            "page": 177,
-            "summaryDe": "vertraute Wörter und einfache Wendungen erkennen, wenn langsam und deutlich gesprochen wird"
+            "page": 73,
+            "summaryDe": "Alltagswendungen verstehen, wenn sie direkt, deutlich und langsam zu dir gesagt werden"
           },
           "situationDe": "Die Aufnahme ohne Kontrastmittel ist vorbei. Die Patientin fragt dich etwas.",
           "en": "Can I go home now?",
@@ -851,15 +862,15 @@
               "clinicDependent": true,
               "meaningDe": "Ja, wir sind für heute fertig.",
               "source": {
-                "ref": "nhs-mri",
-                "locator": "After an MRI scan"
+                "ref": "lothian-mri",
+                "locator": "What happens after the scan?"
               }
             },
             {
-              "en": "Please lie on your back.",
+              "en": "Please lie on your back on the table.",
               "fits": false,
               "whyDe": "Das ist eine Anweisung zur Lagerung. Sie möchte aber gehen.",
-              "meaningDe": "Bitte legen Sie sich auf den Rücken.",
+              "meaningDe": "Bitte legen Sie sich auf dem Tisch auf den Rücken.",
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
@@ -877,8 +888,8 @@
             }
           ],
           "source": {
-            "ref": "nhs-mri",
-            "locator": "After an MRI scan"
+            "ref": "lothian-mri",
+            "locator": "What happens after the scan?"
           }
         },
         {
@@ -887,10 +898,10 @@
           "type": "hearChoose",
           "level": "A2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A2",
-            "page": 177,
-            "summaryDe": "häufige Wörter zu naheliegenden Themen und den Kern kurzer, klarer Mitteilungen verstehen"
+            "page": 73,
+            "summaryDe": "verstehen, was im einfachen Alltagsgespräch klar, langsam und direkt zu dir gesagt wird"
           },
           "situationDe": "Nach dem CT fragt dich der Patient etwas.",
           "en": "When will I get my results?",
@@ -921,13 +932,13 @@
               }
             },
             {
-              "en": "Please breathe in and hold your breath.",
+              "en": "Please breathe in and hold your breath for a few seconds.",
               "fits": false,
               "whyDe": "Das ist eine Atemanweisung. Die Aufnahme ist aber schon vorbei.",
-              "meaningDe": "Bitte atmen Sie ein und halten Sie die Luft an.",
+              "meaningDe": "Bitte atmen Sie ein und halten Sie für ein paar Sekunden die Luft an.",
               "source": {
-                "ref": "nhs-ct",
-                "locator": "During the CT scan"
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
               }
             }
           ],
@@ -942,12 +953,12 @@
           "type": "hearChoose",
           "level": "A2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "A2",
-            "page": 177,
-            "summaryDe": "häufige Wörter zu naheliegenden Themen und den Kern kurzer, klarer Mitteilungen verstehen"
+            "page": 73,
+            "summaryDe": "verstehen, was im einfachen Alltagsgespräch klar, langsam und direkt zu dir gesagt wird"
           },
-          "situationDe": "Vor dem Röntgen fragt dich die Patientin etwas.",
+          "situationDe": "Vor dem Röntgen des Kopfes fragt dich die Patientin etwas.",
           "en": "Can I keep my glasses on?",
           "variants": [],
           "keywords": [
@@ -956,10 +967,10 @@
           "meaningDe": "Darf ich meine Brille aufbehalten?",
           "options": [
             {
-              "en": "No, please take them off for the X-ray.",
+              "en": "For this X-ray, please take them off.",
               "fits": true,
               "clinicDependent": true,
-              "meaningDe": "Nein, bitte nehmen Sie sie für das Röntgen ab.",
+              "meaningDe": "Für diese Aufnahme nehmen Sie sie bitte ab.",
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "Are you required to make any special preparations?"
@@ -976,10 +987,10 @@
               }
             },
             {
-              "en": "It only takes a few minutes.",
+              "en": "It only takes a few minutes, and you will not feel anything.",
               "fits": false,
               "whyDe": "Das sagt etwas zur Dauer, nicht zur Brille.",
-              "meaningDe": "Es dauert nur ein paar Minuten.",
+              "meaningDe": "Es dauert nur ein paar Minuten, und Sie spüren nichts.",
               "source": {
                 "ref": "nhs-xray",
                 "locator": "What happens during an X-ray"
@@ -997,10 +1008,10 @@
           "type": "hearChoose",
           "level": "B1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B1",
-            "page": 177,
-            "summaryDe": "die Hauptpunkte klarer Standardsprache bei vertrauten Themen verstehen"
+            "page": 73,
+            "summaryDe": "klar gesprochener Rede folgen, die an dich gerichtet ist, mit gelegentlichem Nachfragen"
           },
           "situationDe": "Vor dem CT erzählt dir die Patientin etwas.",
           "en": "I think I might be pregnant, but I'm not sure.",
@@ -1051,10 +1062,10 @@
           "type": "hearChoose",
           "level": "B1",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B1",
-            "page": 177,
-            "summaryDe": "die Hauptpunkte klarer Standardsprache bei vertrauten Themen verstehen"
+            "page": 73,
+            "summaryDe": "klar gesprochener Rede folgen, die an dich gerichtet ist, mit gelegentlichem Nachfragen"
           },
           "situationDe": "Nach der Spritze spricht dich die Patientin an.",
           "en": "My arm has started to itch since the injection.",
@@ -1075,10 +1086,10 @@
               }
             },
             {
-              "en": "Your GP will get the results.",
+              "en": "I will ask the doctor to send your results to your GP later.",
               "fits": false,
               "whyDe": "Das betrifft das Ergebnis. Jetzt geht es um den Juckreiz.",
-              "meaningDe": "Ihr Hausarzt bekommt die Ergebnisse.",
+              "meaningDe": "Ich bitte die Ärztin, Ihre Ergebnisse später an Ihren Hausarzt zu schicken.",
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
@@ -1106,10 +1117,10 @@
           "type": "hearChoose",
           "level": "B2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B2",
-            "page": 177,
-            "summaryDe": "längeren Aussagen und auch verwickelteren Gedanken folgen, wenn das Thema vertraut ist"
+            "page": 73,
+            "summaryDe": "im Einzelnen verstehen, was zu dir gesagt wird"
           },
           "situationDe": "Vor dem CT teilt dir der Patient einen Wunsch mit.",
           "en": "I'd rather not have the dye unless it's absolutely necessary.",
@@ -1126,7 +1137,7 @@
               "meaningDe": "Ich verstehe, ich bitte die Ärztin, mit Ihnen darüber zu sprechen.",
               "source": {
                 "ref": "nhs-ct",
-                "locator": "Before the CT scan"
+                "locator": "Possible complications of a CT scan"
               }
             },
             {
@@ -1140,10 +1151,10 @@
               }
             },
             {
-              "en": "The doctor will explain your results later.",
+              "en": "I will ask the doctor to explain your results to you later on.",
               "fits": false,
               "whyDe": "Es geht um das Kontrastmittel, nicht um die Ergebnisse.",
-              "meaningDe": "Die Ärztin erklärt Ihnen die Ergebnisse später.",
+              "meaningDe": "Ich bitte die Ärztin, Ihnen die Ergebnisse später zu erklären.",
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
@@ -1161,10 +1172,10 @@
           "type": "hearChoose",
           "level": "B2",
           "descriptor": {
-            "scale": "Self-assessment grid (Appendix 2): Oral comprehension",
+            "scale": "Understanding an interlocutor",
             "level": "B2",
-            "page": 177,
-            "summaryDe": "längeren Aussagen und auch verwickelteren Gedanken folgen, wenn das Thema vertraut ist"
+            "page": 73,
+            "summaryDe": "im Einzelnen verstehen, was zu dir gesagt wird"
           },
           "situationDe": "Vor dem CT fragt dich die Patientin etwas.",
           "en": "Could the radiation do any harm, given that I've had several scans recently?",
@@ -1195,10 +1206,10 @@
               }
             },
             {
-              "en": "A doctor will look at your images after the scan.",
+              "en": "I will ask the doctor to look at your images after the scan today.",
               "fits": false,
               "whyDe": "Das sagt, wer die Bilder ansieht, beantwortet aber nicht ihre Frage zur Strahlung.",
-              "meaningDe": "Eine Ärztin sieht sich Ihre Bilder nach der Aufnahme an.",
+              "meaningDe": "Ich bitte die Ärztin, sich Ihre Bilder heute nach der Aufnahme anzusehen.",
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
@@ -1226,7 +1237,13 @@
           "variants": [
             "Lie down here, please.",
             "Please lie here.",
-            "Can you lie down here, please?"
+            "Can you lie down here, please?",
+            "Please lie down.",
+            "Lie down, please.",
+            "Lie down here.",
+            "Could you lie down here?",
+            "Could you lie down, please?",
+            "Can you lie down, please?"
           ],
           "keywords": [
             "lie"
@@ -1246,7 +1263,7 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "A2",
             "page": 178,
-            "summaryDe": "einfache Sätze schreiben und mit und, aber oder weil verbinden"
+            "summaryDe": "einfache einzelne Sätze schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Frag die Patientin vor dem MRT, ob sie etwas in den Taschen hat.",
           "en": "Do you have anything in your pockets?",
@@ -1273,14 +1290,15 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "B1",
             "page": 178,
-            "summaryDe": "zusammenhängend und einfach über vertraute Themen schreiben"
+            "summaryDe": "einzelne Fragen und Sätze zu vertrauten Themen richtig schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Frag den Patienten vor dem CT, ob er schon einmal Probleme mit den Nieren hatte.",
           "en": "Have you ever had problems with your kidneys?",
           "variants": [
             "Have you had any problems with your kidneys?",
             "Have you ever had any kidney problems?",
-            "Have you had any kidney problems?"
+            "Have you had any kidney problems?",
+            "Did you ever have problems with your kidneys?"
           ],
           "keywords": [
             "kidneys|kidney"
@@ -1300,7 +1318,7 @@
             "scale": "Self-assessment grid (Appendix 2): Written production",
             "level": "B2",
             "page": 178,
-            "summaryDe": "klar und ausführlich über Themen aus dem eigenen Bereich schreiben"
+            "summaryDe": "auch einen langen Satz mit Nebensatz richtig schreiben, längere Texte prüft der Test nicht"
           },
           "situationDe": "Sag der Patientin nach dem CT: Auch wenn sie sich gut fühlt, soll sie nach der Spritze noch eine Weile hier warten.",
           "en": "Even if you feel well, please wait here for a while after the injection.",
@@ -1308,10 +1326,11 @@
             "Please wait here for a while after the injection, even if you feel well.",
             "Even if you feel fine, please wait here for a while after the injection.",
             "Please wait here for a while after the injection, even if you feel fine.",
-            "Although you feel well, please wait here for a while after the injection."
+            "Although you feel well, please wait here for a while after the injection.",
+            "Even if you feel fine, you should stay here for a while after the injection."
           ],
           "keywords": [
-            "wait",
+            "wait|stay",
             "injection"
           ],
           "meaningDe": "Auch wenn Sie sich gut fühlen, warten Sie bitte nach der Spritze noch eine Weile hier.",
@@ -1466,7 +1485,7 @@
             "Did you ever have an operation?"
           ],
           "keywords": [
-            "operation|operations|surgery"
+            "operation|operations|surgery|operated|surgeries"
           ],
           "meaningDe": "Hatten Sie schon einmal eine Operation?",
           "source": {
@@ -1514,12 +1533,12 @@
           "variants": [
             "We can stop the scan at any time if you start to feel uncomfortable.",
             "If you feel uncomfortable, we can stop the scan at any time.",
-            "Should you feel uncomfortable, we can stop the scan at any time."
+            "Should you feel uncomfortable, we can stop the scan at any time.",
+            "If you don't feel well, we can stop the scan at any time."
           ],
           "keywords": [
-            "uncomfortable|unwell",
             "stop",
-            "scan"
+            "uncomfortable|unwell|not feel well|don't feel well|bad"
           ],
           "meaningDe": "Falls Sie sich unwohl fühlen, können wir die Aufnahme jederzeit stoppen.",
           "source": {

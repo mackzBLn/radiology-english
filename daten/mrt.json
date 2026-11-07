@@ -213,7 +213,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "What is an MRI scan?"
-              }
+              },
+              "keywords": [
+                "not use|no x-rays|no x-ray|not an x-ray|not x-ray|not the same|magnet|magnetic|magnets|no radiation"
+              ]
             },
             {
               "en": "The table will move into the scanner.",
@@ -259,7 +262,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "What happens during the MRI scan?"
-              }
+              },
+              "keywords": [
+                "depends|part of your body"
+              ]
             },
             {
               "en": "The scan does not use X-rays.",
@@ -305,7 +311,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "How long will the scan take?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "This machine uses a very strong magnet to take pictures.",
@@ -546,7 +555,7 @@
         },
         {
           "id": "mr.safety.s11",
-          "situationDe": "Früher Eingriffe können bei dieser Untersuchung wichtig sein. Frag ganz allgemein danach.",
+          "situationDe": "Frühere Eingriffe können bei dieser Untersuchung wichtig sein. Frag ganz allgemein danach.",
           "en": "Have you ever had an operation?",
           "variants": [
             "Have you ever had surgery?",
@@ -554,7 +563,7 @@
             "Have you had any surgery?"
           ],
           "keywords": [
-            "operation|operations|surgery"
+            "operation|operations|surgery|operated|surgeries"
           ],
           "meaningDe": "Wurden Sie schon einmal operiert?",
           "cefr": "A2",
@@ -608,7 +617,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What happens before my scan?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Please change into this gown.",
@@ -748,7 +760,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "MRI Safety Questionnaire"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have a pacemaker?",
@@ -795,7 +810,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What happens before my scan?"
-              }
+              },
+              "keywords": [
+                "kind of device|what kind|what device|what is it|is it a pacemaker|do you have a pacemaker|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "The magnet can affect metal in your body.",
@@ -841,7 +859,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Preparing for an MRI scan"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "Have you ever had any metal in your eyes?",
@@ -887,7 +908,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What happens before my scan?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have a stent?",
@@ -949,9 +973,9 @@
             "Please leave your watch, keys and credit cards in the locker."
           ],
           "keywords": [
-            "watch",
             "keys",
-            "cards"
+            "cards",
+            "locker"
           ],
           "meaningDe": "Bitte lassen Sie Ihre Uhr, Ihre Schlüssel und Ihre Bankkarten im Spind.",
           "cefr": "A2",
@@ -969,7 +993,8 @@
           "variants": [
             "Please remove your belt.",
             "Could you take off your belt, please?",
-            "Could you remove your belt, please?"
+            "Could you remove your belt, please?",
+            "Please take your belt off."
           ],
           "keywords": [
             "belt"
@@ -1031,7 +1056,8 @@
           "variants": [
             "Please remove your hearing aids.",
             "Could you take out your hearing aids, please?",
-            "Could you remove your hearing aids, please?"
+            "Could you remove your hearing aids, please?",
+            "Please take your hearing aids out."
           ],
           "keywords": [
             "hearing aids"
@@ -1068,7 +1094,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What preparation will be needed?"
-              }
+              },
+              "keywords": [
+                "locker|take it off|remove it"
+              ]
             },
             {
               "en": "Are you wearing any make-up today?",
@@ -1160,7 +1189,10 @@
               "source": {
                 "ref": "wwl-mri",
                 "locator": "Before your scan"
-              }
+              },
+              "keywords": [
+                "locker|take it out|take it off|leave it"
+              ]
             },
             {
               "en": "Please take out your hearing aids.",
@@ -1202,7 +1234,7 @@
           ],
           "keywords": [
             "still",
-            "noisy"
+            "noisy|loud"
           ],
           "meaningDe": "Bitte halten Sie ganz still, vor allem, wenn es laut ist.",
           "cefr": "A2",
@@ -1243,7 +1275,7 @@
             "We may have to do that part again if you move."
           ],
           "keywords": [
-            "move",
+            "if you move",
             "again"
           ],
           "meaningDe": "Wenn Sie sich bewegen, müssen wir diesen Teil vielleicht wiederholen.",
@@ -1278,7 +1310,10 @@
               "source": {
                 "ref": "wwl-mri",
                 "locator": "During your scan"
-              }
+              },
+              "keywords": [
+                "still|not move"
+              ]
             },
             {
               "en": "You can breathe normally now.",
@@ -1512,7 +1547,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Risks from the contrast medium (dye)"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "You will get a special dye. It makes the pictures clearer.",
@@ -1558,7 +1596,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Possible complications of an MRI scan"
-              }
+              },
+              "keywords": [
+                "how do you feel|how are you feeling|what do you feel|feel unwell|feeling unwell|do you feel sick|are you ok|are you all right|what is wrong|trouble breathing|hard to breathe|difficult to breathe|problem breathing|problems breathing|difficulty breathing|can you breathe|breathing ok|how is your breathing|is your breathing|short of breath|shortness of breath|breathless|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "We will take more pictures after the injection.",
@@ -1706,7 +1747,7 @@
             "We can stop the scan if you need to."
           ],
           "keywords": [
-            "stop"
+            "stop|get you out"
           ],
           "meaningDe": "Wir können die Aufnahme anhalten, wenn Sie das brauchen.",
           "cefr": "A2",
@@ -1760,7 +1801,10 @@
               "source": {
                 "ref": "york-mri",
                 "locator": "Seite 8"
-              }
+              },
+              "keywords": [
+                "come with me|follow|of course|this way"
+              ]
             },
             {
               "en": "Would you like to see the scanner first?",
@@ -1806,7 +1850,10 @@
               "source": {
                 "ref": "wwl-mri",
                 "locator": "During your scan"
-              }
+              },
+              "keywords": [
+                "buzzer|press|squeeze|stop the scan|stop it|stopping|call out|tell me"
+              ]
             },
             {
               "en": "There is a small mirror, so you can see out.",
@@ -1852,7 +1899,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Will the scan be uncomfortable?"
-              }
+              },
+              "keywords": [
+                "happened|sorry|what went wrong"
+              ]
             },
             {
               "en": "The machine may vibrate a little.",
@@ -1898,7 +1948,10 @@
               "source": {
                 "ref": "wwl-mri",
                 "locator": "During your scan"
-              }
+              },
+              "keywords": [
+                "stop the scan|stop it|stop now|stopping|coming|get you out|bring you out|take you out|let you out"
+              ]
             },
             {
               "en": "If you move, we may have to do that part again.",
@@ -1940,7 +1993,7 @@
             "Here is your call button. Please hold it in your hand."
           ],
           "keywords": [
-            "buzzer|call button|call bell",
+            "buzzer|call button|call bell|button|ball",
             "hand"
           ],
           "meaningDe": "Das ist Ihr Rufknopf. Bitte halten Sie ihn in der Hand.",
@@ -1960,10 +2013,12 @@
             "Please press the buzzer if you need help.",
             "Please squeeze the call button if you need help.",
             "Please press the call button if you need help.",
-            "Press the buzzer if you need help, please."
+            "Press the buzzer if you need help, please.",
+            "If you need help, please squeeze the buzzer.",
+            "If you need help, please press the buzzer."
           ],
           "keywords": [
-            "buzzer|call button|call bell",
+            "buzzer|call button|call bell|button|ball",
             "help"
           ],
           "meaningDe": "Bitte drücken Sie den Rufknopf, wenn Sie Hilfe brauchen.",
@@ -2019,7 +2074,10 @@
               "source": {
                 "ref": "york-mri",
                 "locator": "Seite 11"
-              }
+              },
+              "keywords": [
+                "buzzer|button|ball|squeeze|press"
+              ]
             },
             {
               "en": "I will be in the next room.",
@@ -2065,7 +2123,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What will the MRI scan involve?"
-              }
+              },
+              "keywords": [
+                "hear|better|loud"
+              ]
             },
             {
               "en": "I can see you the whole time.",
@@ -2106,8 +2167,8 @@
             "The machine makes loud banging noises."
           ],
           "keywords": [
-            "loud",
-            "noise|noises"
+            "loud|noisy",
+            "noise|noises|noisy|sound|sounds"
           ],
           "meaningDe": "Das Gerät macht ein lautes, klopfendes Geräusch.",
           "cefr": "A2",
@@ -2129,7 +2190,8 @@
           ],
           "keywords": [
             "earplugs|ear plugs|headphones",
-            "ears"
+            "ears",
+            "wear|put in|put on|use"
           ],
           "meaningDe": "Bitte tragen Sie diese Ohrstöpsel, um Ihre Ohren zu schützen.",
           "cefr": "A2",
@@ -2206,7 +2268,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "What will the MRI scan involve?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "The machine makes a loud banging noise.",
@@ -2375,7 +2440,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "After an MRI scan"
-              }
+              },
+              "keywords": [
+                "help you relax|to relax|medicine|sedative|calm|tablet|tablets|medication|sedation|sedated"
+              ]
             },
             {
               "en": "You can eat and drink as normal.",
@@ -2421,7 +2489,10 @@
               "source": {
                 "ref": "ruh-mri",
                 "locator": "Are there any risks?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "You must not drive after that medicine.",

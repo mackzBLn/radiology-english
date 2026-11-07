@@ -201,7 +201,7 @@
         },
         {
           "id": "sb.questions.s10",
-          "situationDe": "Die Patientin schaut ständig auf die Uhr und sagt, dass sie heute noch woanders hinmuss. Frag, ab wann es eng für sie wird.",
+          "situationDe": "Die Patientin schaut ständig auf die Uhr und sagt, dass sie heute noch woanders hinmuss. Frag nach ihrem nächsten Termin.",
           "en": "When is your next appointment?",
           "variants": [
             "What time is your next appointment?",
@@ -343,7 +343,8 @@
           "variants": [
             "Come in, please.",
             "Please come in here.",
-            "Please come this way."
+            "Please come this way.",
+            "Come in."
           ],
           "keywords": [
             "come"
@@ -383,7 +384,8 @@
           "variants": [
             "Wait here, please.",
             "Please wait in here.",
-            "Could you wait here, please?"
+            "Could you wait here, please?",
+            "Wait here."
           ],
           "keywords": [
             "wait"
@@ -623,7 +625,8 @@
           "variants": [
             "Can you roll up your sleeve, please?",
             "Would you roll up your sleeve, please?",
-            "Could you pull up your sleeve, please?"
+            "Could you pull up your sleeve, please?",
+            "Could you roll your sleeve up, please?"
           ],
           "keywords": [
             "sleeve"
@@ -685,7 +688,8 @@
           "variants": [
             "Can you fill in this form, please?",
             "Could you fill out this form, please?",
-            "Would you fill in this form, please?"
+            "Would you fill in this form, please?",
+            "Could you fill this form in, please?"
           ],
           "keywords": [
             "form"
@@ -784,7 +788,7 @@
         },
         {
           "id": "sb.polite.s10",
-          "situationDe": "Für die nächste Aufnahme brauchst du den Patienten in einer anderen Lage, nicht mehr auf dem Rücken. Bitte ihn sehr höflich darum.",
+          "situationDe": "Für die nächste Aufnahme soll der Patient auf der Seite liegen, nicht mehr auf dem Rücken. Bitte ihn sehr höflich darum.",
           "en": "Would you mind lying on your side?",
           "variants": [
             "Would you mind lying on your side for me?",
@@ -1043,7 +1047,7 @@
         },
         {
           "id": "sb.tenses.s08",
-          "situationDe": "In der Akte siehst du einen Besuch aus dem vergangenen Jahr. Sprich den Patienten freundlich darauf an.",
+          "situationDe": "In der Akte siehst du einen Besuch aus dem vergangenen Jahr. Sag dem Patienten freundlich, dass er deiner Meinung nach letztes Jahr schon einmal hier war.",
           "en": "I think you were here last year.",
           "variants": [
             "I think you came here last year.",
@@ -1265,10 +1269,11 @@
           "variants": [
             "Hi, my name is Anna.",
             "Good morning, my name is Anna.",
-            "Good afternoon, my name is Anna."
+            "Good afternoon, my name is Anna.",
+            "Hello, I'm Anna."
           ],
           "keywords": [
-            "name"
+            "name|I am|I'm"
           ],
           "meaningDe": "Guten Tag, mein Name ist Anna.",
           "cefr": "A1",
@@ -1406,7 +1411,10 @@
               "source": {
                 "ref": "cam-imperative",
                 "locator": "Imperative clauses"
-              }
+              },
+              "keywords": [
+                "follow|come with me|this way"
+              ]
             },
             {
               "en": "Nice to meet you.",
@@ -1453,7 +1461,10 @@
               "source": {
                 "ref": "cam-imperative",
                 "locator": "Imperative clauses"
-              }
+              },
+              "keywords": [
+                "tom"
+              ]
             },
             {
               "en": "Thank you, Mr Harris. Please come with me.",
@@ -1500,7 +1511,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Who will I see?"
-              }
+              },
+              "keywords": [
+                "radiographer|technician|technologist|not the doctor|not a doctor|not your doctor"
+              ]
             },
             {
               "en": "Nice to meet you.",
@@ -1696,7 +1710,10 @@
               "source": {
                 "ref": "cambridge-dictionary",
                 "locator": "Eintrag glad"
-              }
+              },
+              "keywords": [
+                "good|glad|great|nice"
+              ]
             },
             {
               "en": "How are you today?",
@@ -1790,7 +1807,10 @@
               "source": {
                 "ref": "cam-q-wh",
                 "locator": "Questions: wh- questions"
-              }
+              },
+              "keywords": [
+                "wrong|sorry|what happened|problem"
+              ]
             },
             {
               "en": "Good, I'm glad to hear that.",
@@ -1988,7 +2008,10 @@
               "source": {
                 "ref": "nnuh-xray",
                 "locator": "How long will it take?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "Thank you for waiting.",
@@ -2035,7 +2058,10 @@
               "source": {
                 "ref": "cambridge-dictionary",
                 "locator": "Eintrag kind"
-              }
+              },
+              "keywords": [
+                "kind|thank|thanks"
+              ]
             },
             {
               "en": "I'm sorry to hear that.",
@@ -2134,7 +2160,7 @@
         },
         {
           "id": "sb.weather.s02",
-          "situationDe": "Durchs Fenster scheint die Sonne. Beginne damit ein lockeres Gespräch.",
+          "situationDe": "Durchs Fenster scheint die Sonne. Beginne ein lockeres Gespräch und sag, wie schön der Tag heute ist.",
           "en": "It is a lovely day today.",
           "variants": [
             "It's a lovely day today.",
@@ -2668,7 +2694,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "What happens during an X-ray"
-              }
+              },
+              "keywords": [
+                "picture|nearly|almost|one more|minute"
+              ]
             },
             {
               "en": "You are next.",

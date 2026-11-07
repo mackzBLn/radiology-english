@@ -130,13 +130,14 @@ export function stateProblem(state) {
       return problem;
     }
   }
-  if (!isPlainObject(state.placement) || !Array.isArray(state.placement.attempts)) {
+  // Auch die Einträge der Listen: Die Ansichten lesen ihre Felder, ein null endete dort auf der Fehlerkarte.
+  if (!isPlainObject(state.placement) || !Array.isArray(state.placement.attempts) || !state.placement.attempts.every(isPlainObject)) {
     return "Die Einstufung ist beschädigt";
   }
   if (state.placement.plan !== null && !isPlainObject(state.placement.plan)) {
     return "Der Lernplan ist beschädigt";
   }
-  if (!Array.isArray(state.partner)) {
+  if (!Array.isArray(state.partner) || !state.partner.every(isPlainObject)) {
     return "Die Partnerübungen sind beschädigt";
   }
   if (!isPlainObject(state.settings)) {

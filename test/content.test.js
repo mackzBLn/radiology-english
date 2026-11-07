@@ -337,6 +337,31 @@ test("Daten: eigene Einheiten erscheinen nur bei ihrer Untersuchung, gemeinsame 
   }
 });
 
+test("Daten: Jede Quelle nennt Titel, Herausgeber, Adresse, Abrufdatum und wie sie gelesen wurde", () => {
+  const { sources } = readData("quellen");
+  assert.ok(sources.length > 0);
+  for (const source of sources) {
+    assert.ok(source.title, source.id + ": Titel");
+    assert.ok(source.publisher, source.id + ": Herausgeber");
+    assert.match(source.url, /^https:\/\//, source.id + ": Adresse");
+    assert.match(source.retrieved, /^\d{4}-\d{2}-\d{2}$/, source.id + ": Datum");
+    assert.ok(["direct", "search"].includes(source.access), source.id + ": Zugang");
+  }
+});
+
+test("Quelle: Ein Eintrag im Wörterbuch führt zum Eintrag, nicht auf die Startseite", () => {
+  const real = buildContent(Object.fromEntries([...UNIT_FILES, "faelle", "quellen"].map((name) => [name, readData(name)])));
+  const base = real.source("cambridge-dictionary").url;
+  const entry = (locator) => real.source({ ref: "cambridge-dictionary", locator }).url;
+  assert.equal(entry("Eintrag seat"), base + "dictionary/english/seat");
+  assert.equal(entry("Eintrag just-a-moment"), base + "dictionary/english/just-a-moment");
+  assert.equal(entry("Eintrag phone number"), base + "dictionary/english/phone-number");
+  assert.equal(entry("Eintrag take care"), base + "dictionary/english/take-care");
+  assert.equal(entry("Einleitung"), base, "Ohne Eintrag bleibt die Adresse der Quelle");
+  assert.equal(real.source({ ref: "nhs-mri", locator: "Eintrag seat" }).url, real.source("nhs-mri").url, "Nur Quellen mit entryBase");
+  assert.equal(real.source({ ref: "cambridge-dictionary", locator: "Eintrag seat" }).locator, "Eintrag seat");
+});
+
 test("Daten: Wörter je Untersuchung", () => {
   const sharedWords = FILES.gemeinsam.words.map((word) => word.id);
   const expected = { mri: FILES.mrt.words, ct: FILES.ct.words, xray: FILES.roentgen.words };

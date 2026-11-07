@@ -11,6 +11,7 @@ import {
   gradeOnce,
   needsGrading,
   sessionFits,
+  sessionOutdated,
   setStepState,
   stepStateOf,
   summaryOf,
@@ -187,7 +188,7 @@ async function startRound(container, ctx, focus) {
     showNothing(container, ctx, focus);
     return undefined;
   }
-  const session = createSpeechSession({ queue, focus, appVersion: ctx.version });
+  const session = createSpeechSession({ queue, focus, appVersion: ctx.version, today: ctx.today() });
   ctx.store.saveSession(session);
   return runRound(container, ctx, session);
 }
@@ -199,7 +200,7 @@ export async function render(container, ctx, params) {
     return undefined;
   }
   const stored = ctx.store.loadSession();
-  if (sessionFits(stored, { focus, appVersion: ctx.version })) {
+  if (sessionFits(stored, { focus, appVersion: ctx.version }) && !sessionOutdated(stored, ctx.today())) {
     return runRound(container, ctx, stored);
   }
   if (stored?.kind === PLACEMENT_KIND) {

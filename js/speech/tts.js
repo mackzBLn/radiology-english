@@ -79,6 +79,10 @@ export function createTts(
     return voices;
   }
 
+  // Einmal gleich beim Start, wie auf der Testseite: Die Liste kann beim ersten Aufruf leer sein und füllt sich erst danach (Gerätetest Lauf 2).
+  // Käme der erste Aufruf erst im Tipp, spräche die gewählte Stimme beim ersten Vortrag nicht.
+  refreshVoices();
+
   if (synth && typeof synth.addEventListener === "function") {
     synth.addEventListener("voiceschanged", () => {
       refreshVoices();

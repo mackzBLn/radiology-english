@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 
-import { createRecognizer, recognitionUsedOnThisPage, timingsFor } from "../js/speech/recognizer.js";
+import { START_LIMIT_MS, createRecognizer, recognitionUsedOnThisPage, timingsFor } from "../js/speech/recognizer.js";
 
 function fakeClass({ throwOnStart = false, throwOnConstruct = false, onAbort = null, onStop = null } = {}) {
   const instances = [];
@@ -379,6 +379,53 @@ describe("Spracherkennung: Ende und Endergebnis", () => {
     const { events } = await promise;
     assert.deepEqual(events.find((event) => event.name === "audiostart"), { name: "audiostart", ms: 300 });
     assert.deepEqual(events.at(-1), { name: "end", ms: 1300 });
+  });
+});
+
+describe("Spracherkennung: Grenze bis audiostart", () => {
+  function start(t) {
+    t.mock.timers.enable({ apis: ["setTimeout", "Date"] });
+    const { FakeRecognition, instances } = fakeClass();
+    const recognizer = createRecognizer(FakeRecognition);
+    const promise = recognizer.listen({ lang: "en-GB", noSpeechMs: 6000, limitMs: 20000, pauseMs: 2500, startLimitMs: START_LIMIT_MS });
+    return { promise, one: instances[0], tick: (ms) => t.mock.timers.tick(ms) };
+  }
+
+  it("Wer für die Systemfragen zum Mikrofon lange braucht, hat 30 s Zeit", async (t) => {
+    const { one, tick, promise } = start(t);
+    tick(29999);
+    assert.deepEqual(one.calls, ["start"]);
+    tick(1);
+    assert.deepEqual(one.calls, ["start", "abort"]);
+    assert.equal((await promise).reason, "noAudioStart");
+  });
+
+  it("Das Limit fürs Sprechen zählt erst ab audiostart", async (t) => {
+    const { one, tick, promise } = start(t);
+    tick(25000);
+    one.fire("audiostart");
+    one.fire("speechstart");
+    for (let second = 1; second <= 19; second += 1) {
+      tick(1000);
+      one.result("word " + second);
+    }
+    assert.equal(one.calls.includes("stop"), false, "Nach 44 s läuft der Satz noch");
+    tick(1000);
+    assert.equal(one.calls.includes("stop"), true);
+    one.fire("end");
+    assert.equal((await promise).status, "heard");
+  });
+
+  it("Nach audiostart gilt die kurze Frist ohne Sprache wie immer", async (t) => {
+    const { one, tick, promise } = start(t);
+    tick(25000);
+    one.fire("audiostart");
+    tick(6000);
+    assert.equal((await promise).reason, "noSpeech");
+  });
+
+  it("Die Vorgabe des Sprechschritts ist 30 s", () => {
+    assert.equal(START_LIMIT_MS, 30000);
   });
 });
 

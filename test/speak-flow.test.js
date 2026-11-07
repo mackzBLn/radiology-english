@@ -12,6 +12,7 @@ import {
   needsGrading,
   resultFromHearing,
   sessionFits,
+  sessionOutdated,
   setStepState,
   stepAfterResult,
   stepStateOf,
@@ -422,6 +423,71 @@ describe("Sprechablauf: genau einmal werten", () => {
     run.grade();
     assert.equal(unitState(run.state, "a.s01").seen, 8);
     assert.equal(unitState(run.state, "a.s01").box, 3);
+  });
+});
+
+describe("Sprechablauf: Noch nicht fällige Einheiten", () => {
+  const notDue = (state) => ({ ...unitState(state, "a.s01"), box: 1, due: "2026-11-08", seen: 1, correct: 1, lastResult: "ok", lastAt: "2026-11-07T08:00:00.000Z" });
+
+  it("Verstanden zählt als gesprochen, Box und Termin bleiben", () => {
+    const run = setup();
+    run.state.units["a.s01"] = notDue(run.state);
+    run.store.save(run.state);
+    run.deliver(result("understood"));
+    run.grade();
+    const unit = unitState(run.state, "a.s01");
+    assert.equal(unit.box, 1);
+    assert.equal(unit.due, "2026-11-08");
+    assert.equal(unit.spokenA, true);
+    assert.equal(unit.seen, 2);
+    assert.equal(unit.correct, 2);
+    assert.equal(unit.lastResult, "ok");
+    assert.equal(unit.lastAt, NOW.toISOString());
+  });
+
+  it("Ist die Einheit fällig oder neu, steigt die Box wie immer", () => {
+    for (const due of [TODAY, "2026-11-01", null]) {
+      const run = setup();
+      run.state.units["a.s01"] = { ...notDue(run.state), due };
+      run.store.save(run.state);
+      run.deliver(result("understood"));
+      run.grade();
+      assert.equal(unitState(run.state, "a.s01").box, 2, String(due));
+    }
+  });
+
+  it("Teilweise bleibt schwach, auch wenn die Einheit noch nicht fällig ist", () => {
+    const run = setup();
+    run.state.units["a.s01"] = notDue(run.state);
+    run.store.save(run.state);
+    run.deliver(result("partly"));
+    run.grade();
+    assert.equal(unitState(run.state, "a.s01").box, 0);
+    assert.equal(unitState(run.state, "a.s01").due, "2026-11-08");
+  });
+});
+
+describe("Sprechablauf: Runden von einem anderen Tag", () => {
+  const planned = () => createSpeechSession({ queue: [task("a", "a")], appVersion: VERSION, today: "2026-11-06" });
+
+  it("merkt sich den Tag und gilt am selben Tag weiter", () => {
+    assert.equal(planned().plannedOn, "2026-11-06");
+    assert.equal(sessionOutdated(planned(), "2026-11-06"), false);
+  });
+
+  it("ist am nächsten Tag veraltet, wenn nichts mehr zu werten ist", () => {
+    assert.equal(sessionOutdated(planned(), TODAY), true);
+    const graded = planned();
+    setStepState(graded, { step: "feedback", result: result("understood") });
+    graded.graded = true;
+    assert.equal(sessionOutdated(graded, TODAY), true);
+  });
+
+  it("wertet ein offenes Ergebnis erst noch, und ohne Tag gilt sie weiter", () => {
+    const open = planned();
+    setStepState(open, { step: "feedback", result: result("understood") });
+    assert.equal(sessionOutdated(open, TODAY), false);
+    assert.equal(sessionOutdated(createSpeechSession({ queue: [task("a", "a")], appVersion: VERSION }), TODAY), false);
   });
 });
 

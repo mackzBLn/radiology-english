@@ -14,6 +14,7 @@ const PART_NAMES = Object.keys(WEIGHTS);
 const PART_LABELS = { speaking: "Sprechen", listening: "Hören", writing: "Schreiben" };
 const REACHED_SHARE = 0.6;
 const LOWER_SHARE = 0.5;
+const MEASURED_TO_STOP = 2;
 const STRONG_FROM = LEVELS.indexOf("B1");
 const BASIC_BELOW = LEVELS.indexOf("A2");
 
@@ -29,20 +30,29 @@ function countsOf(items, answers) {
   return levels;
 }
 
-// Höchste Stufe mit mindestens 60 %, jede niedrigere mit mindestens 50 %. Eine Stufe ohne Messung sagt nichts aus.
+/*
+ * Höchste Stufe mit mindestens 60 %, jede niedrigere mit mindestens 50 %. Eine Stufe ohne Messung sagt nichts aus.
+ * Eine schwache Stufe beendet die Suche erst ab zwei gemessenen Aufgaben. Beim Schreiben gibt es je Stufe nur eine,
+ * und eine einzige richtige Formulierung außerhalb der Fassungen löschte sonst alle höheren Treffer (Sitzung, 07.11.2026).
+ * Eine Stufe gilt nur, wenn auch von allen Aufgaben bis dahin mindestens die Hälfte richtig ist: Ein einzelner Treffer auf B2 hebt sonst drei Fehler darunter auf.
+ */
 function reachedLevel(levels) {
   let reached = null;
+  let correctSoFar = 0;
+  let measuredSoFar = 0;
   for (const level of LEVELS) {
     const { correct, wrong } = levels[level];
     const measured = correct + wrong;
     if (measured === 0) {
       continue;
     }
+    correctSoFar += correct;
+    measuredSoFar += measured;
     const share = correct / measured;
-    if (share >= REACHED_SHARE) {
+    if (share >= REACHED_SHARE && correctSoFar / measuredSoFar >= LOWER_SHARE) {
       reached = level;
     }
-    if (share < LOWER_SHARE) {
+    if (share < LOWER_SHARE && measured >= MEASURED_TO_STOP) {
       break;
     }
   }
@@ -78,6 +88,21 @@ function withSummary(text, items, level) {
   return summary ? text + " (" + summary + ")." : text + ".";
 }
 
+// Die Erkennung liefert nur Text. Darum nie der Wortlaut der Skala, sonst sagte die App etwas über die Aussprache, das sie nicht gemessen hat.
+const SPEAKING_LIMIT = " (einzelne Laute und Betonung misst die App nicht).";
+
+function strengthText(part, label, level, items) {
+  return part === "speaking"
+    ? label + ": Die Erkennung hat deine Sätze auf Stufe " + level + " verstanden" + SPEAKING_LIMIT
+    : withSummary(label + ": Du schaffst Stufe " + level, items, level);
+}
+
+function gapText(part, label, level, items) {
+  return part === "speaking"
+    ? label + ": Auf Stufe " + level + " hat die Erkennung deine Sätze noch nicht sicher verstanden" + SPEAKING_LIMIT
+    : withSummary(label + ": Stufe " + level + " sitzt noch nicht", items, level);
+}
+
 function describe(parts, itemsOfPart) {
   const strengths = [];
   const gaps = [];
@@ -90,11 +115,11 @@ function describe(parts, itemsOfPart) {
       continue;
     }
     if (!result.belowA1) {
-      strengths.push(withSummary(label + ": Du schaffst Stufe " + result.level, items, result.level));
+      strengths.push(strengthText(part, label, result.level, items));
     }
     const nextIndex = result.belowA1 ? 0 : LEVELS.indexOf(result.level) + 1;
     if (nextIndex < LEVELS.length) {
-      gaps.push(withSummary(label + ": Stufe " + LEVELS[nextIndex] + " sitzt noch nicht", items, LEVELS[nextIndex]));
+      gaps.push(gapText(part, label, LEVELS[nextIndex], items));
     }
     const open = LEVELS.reduce((sum, level) => sum + result.levels[level].notMeasured, 0);
     if (open > 0) {
@@ -195,4 +220,10 @@ export function compareAttempts(first, latest) {
   }
   comparison.overall = { first: first?.overall ?? null, latest: latest?.overall ?? null };
   return comparison;
+}
+
+// Liegen alle gemessenen Teile unter A1, gilt das auch für die Gesamtstufe. Sonst stünde im Vergleich A1 → A1, obwohl es ein Fortschritt ist.
+export function overallBelowA1(attempt) {
+  const measured = PART_NAMES.map((part) => attempt?.parts?.[part]).filter((result) => result?.level);
+  return measured.length > 0 && measured.every((result) => result.belowA1 === true);
 }

@@ -34,6 +34,12 @@ function examsOf(raw, type, header) {
   return type === "word" && header.file === SHARED_FILE ? [...EXAMS] : [];
 }
 
+// Ein Wörterbuch nennt als Stelle „Eintrag <wort>“. Mit entryBase in daten/quellen.json führt der Link direkt zum Eintrag, nicht auf die Startseite.
+function withEntryAddress(source) {
+  const word = source.entryBase ? /^Eintrag (.+)$/.exec(source.locator ?? "")?.[1] : null;
+  return word ? { ...source, url: source.entryBase + word.trim().toLowerCase().replaceAll(" ", "-") } : source;
+}
+
 function buildUnit(raw, type, header, section) {
   return {
     id: raw.id,
@@ -118,7 +124,7 @@ export function buildContent(files) {
       if (!found) {
         return null;
       }
-      return { ...found, locator: isField ? ref.locator ?? null : null };
+      return withEntryAddress({ ...found, locator: isField ? ref.locator ?? null : null });
     },
 
     sections() {

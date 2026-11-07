@@ -11,8 +11,8 @@ Radiology English: Hülle der App, der Inhalt entsteht in js/ui/app.js. Kein Inh
  [H4] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script
  [H5] https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event
 -->
-<!-- viewport-fit=cover, damit env(safe-area-inset-bottom) wirkt (Quelle 37, [H1]). -->
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- viewport-fit=cover, damit env(safe-area-inset-bottom) wirkt (Quelle 37, [H1]). interactive-widget: Die Tastatur soll die Seite verkleinern, nicht überdecken ([H1], WebKit-Bug 259770). Ob das Gerät es schon tut, zeigt der Gerätetest. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <!-- Für Suchmaschinen gesperrt (Quelle 16). -->
 <meta name="robots" content="noindex">
 <!-- Dunkel, bevor das Stylesheet geladen ist [H2]. -->

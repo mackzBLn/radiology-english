@@ -15,10 +15,11 @@
  *   https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
  *   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/enterkeyhint
  *   https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+ *   https://bugs.webkit.org/show_bug.cgi?id=259770
  */
 
 import { matchTyped } from "../../core/matcher.js";
-import { buildPlan, chooseForm, compareAttempts, scorePlacement, WEIGHTS } from "../../core/placement.js";
+import { buildPlan, chooseForm, compareAttempts, overallBelowA1, scorePlacement, WEIGHTS } from "../../core/placement.js";
 import { recognitionUsedOnThisPage } from "../../speech/recognizer.js";
 import {
   audioButton,
@@ -27,6 +28,7 @@ import {
   bottomBar,
   button,
   card,
+  englishText,
   formatDate,
   hint,
   infoButton,
@@ -45,10 +47,13 @@ const TITLE = "Einstufungstest";
 const PART_ORDER = ["listening", "writing", "speaking"];
 const PART_LABELS = { listening: "Hören", writing: "Schreiben", speaking: "Sprechen" };
 const SPEECH_ANSWER = { understood: "correct", partly: "wrong", notUnderstood: "wrong", notMeasured: "notMeasured" };
-const SCALE_SOURCE = "cefr-cv";
+// Das Werk hat 279 Seiten, darum mit den Stellen, aus denen der Test seine Skalen nimmt.
+export const SCALE_SOURCE = { ref: "cefr-cv", locator: "Understanding an interlocutor S. 73; Phonological control S. 134–135; Appendix 2 S. 178" };
 const THREE_COLUMNS_STYLE = "grid-template-columns:minmax(0,1fr) auto auto";
 const LIST_STYLE = "margin:0;padding-left:20px";
 const ROUGH_TEXT = "Das ist eine grobe Orientierung, keine Prüfung und kein Zertifikat.";
+// Ein zweiter Tipp direkt danach zählt nicht: Er träfe sonst schon die nächste Aufgabe, ohne dass sie zu sehen war. Wie in der Bahn.
+const TAP_GUARD_MS = 300;
 
 // ---------- Sitzung und Wertung, ohne DOM ----------
 
@@ -228,11 +233,26 @@ function showLoadFailed(view, retry) {
   );
 }
 
+function firstTap(view) {
+  const now = globalThis.performance.now();
+  if (now - view.lastTapAt < TAP_GUARD_MS) {
+    return false;
+  }
+  view.lastTapAt = now;
+  return true;
+}
+
 function answerAndContinue(view, session, item, answer) {
+  if (session.queue[session.index] !== item.id || !firstTap(view)) {
+    return;
+  }
   view.ctx.tts.cancel();
-  recordAnswer(session, item.id, answer);
-  advance(session);
-  view.ctx.store.saveSession(session); // Antwort und nächste Aufgabe in einem Schreibvorgang, so zählt nichts doppelt.
+  // Erst speichern, dann übernehmen. Ist der Speicher voll, bleibt die Aufgabe offen, und der nächste Tipp überspringt keine.
+  const next = { ...session, answers: { ...session.answers } };
+  recordAnswer(next, item.id, answer);
+  advance(next);
+  view.ctx.store.saveSession(next); // Antwort und nächste Aufgabe in einem Schreibvorgang, so zählt nichts doppelt.
+  Object.assign(session, next);
   run(view, session);
 }
 
@@ -329,14 +349,19 @@ function showWriting(view, session, item) {
       el("p", null, "Schreib den Satz auf Englisch."),
       input,
       noPatientDataHint(),
+      // In der Karte, denn die Leiste unten kann die Tastatur verdecken (WebKit-Bug 259770). Unter dem Hinweis, ein Fehltipp beim Antippen des Felds wäre endgültig.
+      button("Weiß ich nicht", () => answerAndContinue(view, session, item, "wrong")),
     ),
-    bottomBar(next, button("Weiß ich nicht", () => answerAndContinue(view, session, item, "wrong"))),
+    bottomBar(next),
   );
 }
 
 // ---------- Sprechen ----------
 
 function skipSpeakingAndFinish(view, session) {
+  if (!firstTap(view)) {
+    return;
+  }
   skipRemainingSpeaking(session);
   view.ctx.store.saveSession(session);
   run(view, session);
@@ -360,7 +385,7 @@ function showSpeakingIntro(view, session) {
     testHeader(ctx),
     card(
       el("h2", { class: "card-title" }, "Jetzt kommt der Sprechteil"),
-      el("p", null, (count === 1 ? "1 Aufgabe" : count + " Aufgaben") + ". Setz Kopfhörer auf und such dir einen ruhigen Ort."),
+      el("p", null, (count === 1 ? "1 Aufgabe" : count + " Aufgaben") + ". Such dir einen ruhigen Ort."),
       el("p", null, "Gleich wirst du nach dem Mikrofon gefragt. Erlaube es bitte."),
       el("p", null, "Die App misst nur, ob deine Sätze verstanden werden, nicht einzelne Laute."),
       el("p", { class: "muted" }, "Geht es gerade nicht? Dann lass den Teil aus und wiederhole ihn später allein. Das zählt nicht als Fehler."),
@@ -369,6 +394,9 @@ function showSpeakingIntro(view, session) {
       button(
         "Sprechteil starten",
         () => {
+          if (!firstTap(view)) {
+            return;
+          }
           session.speakingReady = true;
           ctx.store.saveSession(session);
           run(view, session);
@@ -454,8 +482,7 @@ export function overallText(attempt) {
   if (!attempt.overall) {
     return "Noch keine Stufe";
   }
-  const measured = PART_ORDER.map((part) => attempt.parts?.[part]).filter((result) => result?.level);
-  return measured.length > 0 && measured.every((result) => result.belowA1 === true) ? "Unter A1" : "Stufe " + attempt.overall;
+  return overallBelowA1(attempt) ? "Unter A1" : "Stufe " + attempt.overall;
 }
 
 function weightsText() {
@@ -475,7 +502,7 @@ function comparisonCard(attempts) {
     levelText(comparison[part].first, comparison[part].firstBelowA1),
     levelText(comparison[part].latest, comparison[part].latestBelowA1),
   ]);
-  rows.push(["Gesamt", levelText(comparison.overall.first), levelText(comparison.overall.latest)]);
+  rows.push(["Gesamt", levelText(comparison.overall.first, overallBelowA1(first)), levelText(comparison.overall.latest, overallBelowA1(latest))]);
   return card(
     el("p", { class: "card-title" }, "Erster und letzter Versuch"),
     el(
@@ -533,19 +560,49 @@ function calculationDetails(scale) {
   );
 }
 
+// Jede Aufgabe der Fassung in der Folge der Teile. Gehörte Sätze und Mustersätze zeigt der Test selbst nie, ihre Quelle steht deshalb hier.
+export function testSentences(form) {
+  return PART_ORDER.map((part) => ({ labelDe: PART_LABELS[part], items: form.items.filter((item) => item.part === part) }));
+}
+
+function testSentencesCard(form) {
+  if (!form) {
+    return null;
+  }
+  const row = (item) =>
+    el(
+      "div",
+      { class: "row" },
+      el("div", { class: "sentence", style: "flex:1 1 auto;min-width:0" }, englishText(item.en), el("p", { class: "meaning-de" }, item.meaningDe)),
+      infoButton(item.source),
+    );
+  return card(
+    el(
+      "details",
+      { class: "group" },
+      el("summary", null, el("span", null, "Die Sätze aus dem Test")),
+      el("div", { class: "stack" }, testSentences(form).map((group) => [el("p", { class: "label" }, group.labelDe), group.items.map(row)])),
+    ),
+  );
+}
+
 async function showResult(view, attempt) {
   const { ctx, container } = view;
   let scale = null;
+  let form = null;
   try {
     scale = (await ctx.getContent()).source(SCALE_SOURCE);
+    form = await loadFormSnapshot(ctx, attempt.form);
   } catch {
-    // Das Ergebnis steht im Lernstand. Ohne Inhaltsdaten fehlt nur die Angabe zur Quelle.
+    // Das Ergebnis steht im Lernstand. Ohne Inhaltsdaten fehlen nur die Angabe zur Quelle und die Sätze aus dem Test.
   }
   if (!container.isConnected) {
     return;
   }
   const { attempts, plan } = ctx.state.placement;
   const canRetake = speakingOpen(attempt);
+  // Neu aus den Antworten: Ein Versuch aus einer älteren Version trüge sonst noch deren Wortlaut.
+  const { strengths, gaps } = form && attempt.answers ? scorePlacement(form, attempt.answers) : attempt;
   draw(
     view,
     viewHeader(ctx, { title: "Dein Ergebnis" }),
@@ -564,9 +621,10 @@ async function showResult(view, attempt) {
         )
       : null,
     plan?.noteDe ? card(el("p", { class: "card-title" }, "Dein Lernplan"), el("p", null, plan.noteDe)) : null,
-    listCard("Das kannst du schon", attempt.strengths),
-    listCard("Hier fehlt noch etwas", attempt.gaps),
+    listCard("Das kannst du schon", strengths),
+    listCard("Hier fehlt noch etwas", gaps),
     comparisonCard(attempts),
+    testSentencesCard(form),
     bottomBar(
       canRetake ? button("Sprechteil wiederholen", () => startRetake(view, attempt), { kind: "primary" }) : null,
       barRow(continueButton(ctx, canRetake ? "secondary" : "primary"), backButton(ctx)),
@@ -692,7 +750,7 @@ function showIntro(view) {
       el("h2", { class: "card-title" }, attempts.length > 0 ? "Mach den Test noch einmal" : "Wo stehst du gerade?"),
       el("p", null, "Der Test dauert etwa 10 Minuten. Erst hörst du, dann schreibst du, zum Schluss sprichst du."),
       hint(ROUGH_TEXT),
-      el("p", null, "Für den Sprechteil brauchst du Kopfhörer und einen ruhigen Ort. Dort wirst du nach dem Mikrofon gefragt."),
+      el("p", null, "Für den Sprechteil brauchst du einen ruhigen Ort. Dort wirst du nach dem Mikrofon gefragt."),
       el("p", { class: "muted" }, "Du kannst jederzeit aufhören und später weitermachen. An dem, was du schon geübt hast, ändert der Test nichts."),
       attempts.length > 0 ? el("p", { class: "muted" }, "Diesmal kommen andere Sätze.") : null,
     ),
@@ -702,7 +760,7 @@ function showIntro(view) {
 }
 
 export async function render(container, ctx) {
-  const view = { container, ctx, step: null };
+  const view = { container, ctx, step: null, lastTapAt: -Infinity };
   const stored = ctx.store.loadSession();
   if (!sessionUsable(stored, ctx.version)) {
     showIntro(view);

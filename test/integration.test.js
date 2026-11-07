@@ -193,7 +193,7 @@ describe("Jeder Eintrag des Lernpfads lässt sich üben", () => {
       if (unit.type === "patient") {
         return ["hearReact"];
       }
-      return [["pickEnglish"], ["pickEnglish", "hearMeaning"], ["buildSentence"]][box] ?? ["typeSentence"];
+      return box <= 2 ? ["buildSentence"] : ["typeSentence"];
     };
     for (const box of [0, 1, 2, 3, 4, 5]) {
       for (const entry of entries) {

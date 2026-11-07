@@ -13,6 +13,7 @@
  *   https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
  *   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/enterkeyhint
  *   https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_alignment/In_flexbox
+ *   https://bugs.webkit.org/show_bug.cgi?id=259770
  */
 
 import { matchTyped } from "../../core/matcher.js";
@@ -122,6 +123,30 @@ function yourAnswer(label, text) {
   return el("p", null, el("span", { class: "label" }, label + " "), el("span", { lang: "en" }, text));
 }
 
+// Die übrigen Antworten verschwinden sonst ohne Quelle. Eingeklappt, die Karte soll ohne Scrollen passen.
+function otherAnswersBlock(content, others) {
+  if (others.length === 0) {
+    return null;
+  }
+  return el(
+    "details",
+    { class: "group" },
+    el("summary", null, el("span", null, "Die anderen Antworten")),
+    el(
+      "div",
+      { class: "stack" },
+      others.map((other) =>
+        el(
+          "div",
+          { class: "sentence" },
+          englishWithInfo(other.text, content.source(other.source)),
+          other.meaningDe ? el("p", { class: "meaning-de" }, other.meaningDe) : null,
+        ),
+      ),
+    ),
+  );
+}
+
 function wrongChoiceBlock(content, wrong) {
   return el(
     "div",
@@ -158,6 +183,7 @@ function wrongReactionBody(ctx, content, feedback) {
         wrongChoiceBlock(content, wrongChoice),
       ),
     ),
+    otherAnswersBlock(content, feedback.others),
   ];
 }
 
@@ -168,6 +194,7 @@ function feedbackBody(ctx, content, feedback, verdict) {
     feedback.noteDe ? el("p", null, feedback.noteDe) : null,
     feedback.clinic ? clinicNote() : null,
     feedback.wrongChoice ? wrongChoiceBlock(content, feedback.wrongChoice) : null,
+    otherAnswersBlock(content, feedback.others),
   ];
 }
 
@@ -278,6 +305,12 @@ function runRound(container, ctx, content, plan, focus) {
     return nextButton;
   }
 
+  // Der Ausstieg auch unten, in Reichweite des Daumens. Ein falscher Tipp öffnet nur die Rückfrage.
+  function feedbackActions() {
+    const next = makeNextButton();
+    return hasNext(run, ctx.now()) ? barRow(button("Beenden", askToEnd), next) : next;
+  }
+
   // ---------- Antworten ----------
 
   function answer(result, shown) {
@@ -309,7 +342,7 @@ function runRound(container, ctx, content, plan, focus) {
           verdict.closing && !wrong ? el("p", null, verdict.closing) : null,
         ),
       ),
-      pinnedBar(makeNextButton()),
+      pinnedBar(feedbackActions()),
     );
   }
 
@@ -340,14 +373,15 @@ function runRound(container, ctx, content, plan, focus) {
     const first = isFirstHearing(run);
     const { label, text } = promptOf(exercise.kind, unit);
     const lang = optionsAreEnglish(exercise.kind) ? "en" : null;
-    const listen = hearing ? listenButton(unit.en, ctx, first ? "Anhören" : AGAIN_LABEL) : null;
+    const heard = exercise.heardEn ?? unit.en; // Patienten sagen dasselbe verschieden, die Fassung steht in der Übung.
+    const listen = hearing ? listenButton(heard, ctx, first ? "Anhören" : AGAIN_LABEL) : null;
     const choose = guarded((option) => answer(choiceResult(option), { chosen: option }));
     show(
       lowerArea(
         promptCard(label, text, first ? firstHearingNotes() : null),
         exercise.options.map((option) => button(option.text, () => choose(option), { kind: "option", lang })),
       ),
-      hearing ? pinnedBar(barRow(listen.node, slowButton(unit.en, ctx))) : null,
+      hearing ? pinnedBar(barRow(listen.node, slowButton(heard, ctx))) : null,
     );
     return listen;
   }
@@ -424,10 +458,11 @@ function runRound(container, ctx, content, plan, focus) {
     show(
       lowerArea(
         promptCard("Tippe den Satz auf Englisch.", unit.situationDe),
-        // Direkt unter dem Feld, in jeder Übung: Der Hinweis gehört zu jedem Freitextfeld (Vorgabe).
-        el("form", { class: "stack", onsubmit }, hintArea, input, compactPatientHint()),
+        // „Hinweis“ über dem Feld: Die Leiste unten kann die Tastatur verdecken (WebKit-Bug 259770), Prüfen geht dann über die Eingabetaste.
+        // Der Text zu den Patientendaten direkt unter dem Feld, in jeder Übung: Er gehört zu jedem Freitextfeld (Vorgabe).
+        el("form", { class: "stack", onsubmit }, hintArea, hintButton, input, compactPatientHint()),
       ),
-      pinnedBar(barRow(hintButton, check)),
+      pinnedBar(check),
     );
   }
 

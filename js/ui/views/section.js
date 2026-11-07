@@ -92,12 +92,30 @@ function reactionBlock(reaction, noteDe, content, ctx) {
   );
 }
 
+// Patienten sagen dasselbe verschieden, auch das soll sie verstehen (Vorgabe). Zugeklappt, die Karte bleibt kurz.
+function patientVariants(unit, content, ctx) {
+  if (unit.type !== "patient" || unit.variants.length === 0) {
+    return null;
+  }
+  return el(
+    "details",
+    { class: "group" },
+    el("summary", null, el("span", null, "So kann es der Patient auch sagen")),
+    el(
+      "div",
+      { class: "stack" },
+      unit.variants.map((text) => el("div", { class: "sentence" }, englishText(text), sentenceRow(text, unit.source, false, null, content, ctx))),
+    ),
+  );
+}
+
 function unitCard(unit, content, ctx) {
   return card(
     englishText(unit.en),
     unit.meaningDe ? el("p", { class: "meaning-de" }, unit.meaningDe) : null,
     unit.noteDe ? el("p", { class: "muted" }, unit.noteDe) : null,
     sentenceRow(unit.en, unit.source, unit.clinicDependent, unit.noteDe, content, ctx),
+    patientVariants(unit, content, ctx),
     unit.type === "patient" ? fittingReactions(unit).map((reaction) => reactionBlock(reaction, unit.noteDe, content, ctx)) : null,
   );
 }

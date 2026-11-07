@@ -296,6 +296,27 @@ describe("cancel", () => {
   });
 });
 
+describe("Stimmen beim Start", () => {
+  it("fragt die Liste schon beim Anlegen ab, nicht erst im Tipp", () => {
+    const synth = createSynth([voice("Daniel", "en-GB")]);
+    let asked = 0;
+    const getVoices = synth.getVoices;
+    synth.getVoices = function counted() {
+      asked += 1;
+      return getVoices.call(this);
+    };
+    createTts(synth, { Utterance: FakeUtterance });
+    assert.equal(asked, 1);
+  });
+
+  it("merkt sich die Liste, auch wenn sie im Tipp gerade leer ist", () => {
+    const { synth, tts } = createWith([voice("Daniel", "en-GB")]);
+    synth.voices = [];
+    tts.speak("Hello.");
+    assert.equal(synth.spoken[0].voice.name, "Daniel");
+  });
+});
+
 describe("ohne Sprachausgabe", () => {
   it("wirft nichts und meldet den Ausfall", () => {
     const tts = createTts(null);

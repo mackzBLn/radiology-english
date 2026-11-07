@@ -24,6 +24,9 @@ const LIMIT_MS = 20000;
 const PAUSE_MS = 2500;
 // Nach stop kommt meist ein Endergebnis (Gerätetest Lauf 4, dort mit 3000 ms Frist). Bleibt es aus, gilt das letzte Zwischenergebnis.
 const FINAL_WAIT_MS = 3000;
+// Grenze bis audiostart, dazu kommen beim ersten Start die Systemfragen zum Mikrofon. 30 s wie auf der Testseite (machbarkeit/erkennung.html).
+// Mit startLimitMs zählt limitMs erst ab audiostart (Stand nach Phase 1: Zeitlimit ab audiostart).
+export const START_LIMIT_MS = 30000;
 
 const HANDLERS = ["start", "audiostart", "speechstart", "speechend", "audioend", "result", "nomatch", "error", "end"];
 
@@ -60,7 +63,7 @@ export function createRecognizer(Ctor = globalThis.webkitSpeechRecognition) {
     return typeof Ctor === "function";
   }
 
-  function listen({ lang, onState, noSpeechMs = NO_SPEECH_MS.a, limitMs = LIMIT_MS, pauseMs = PAUSE_MS } = {}) {
+  function listen({ lang, onState, noSpeechMs = NO_SPEECH_MS.a, limitMs = LIMIT_MS, pauseMs = PAUSE_MS, startLimitMs = null } = {}) {
     cancelRun?.();
     return new Promise((resolve) => {
       const startedAt = Date.now();
@@ -146,6 +149,14 @@ export function createRecognizer(Ctor = globalThis.webkitSpeechRecognition) {
         call("stop");
       }
 
+      function onLimit() {
+        if (transcript !== "" || speechStarted) {
+          requestStop("limit");
+        } else {
+          abortWith(audioStarted ? "noSpeech" : "noAudioStart");
+        }
+      }
+
       function bind() {
         recognition.onstart = () => note("start");
         recognition.onaudioend = () => note("audioend");
@@ -156,6 +167,9 @@ export function createRecognizer(Ctor = globalThis.webkitSpeechRecognition) {
             return;
           }
           audioStarted = true;
+          if (startLimitMs !== null) {
+            setTimer("limit", limitMs, onLimit);
+          }
           if (!speechStarted) {
             onState?.("listening");
             setTimer("noSpeech", noSpeechMs, () => abortWith("noSpeech"));
@@ -215,13 +229,7 @@ export function createRecognizer(Ctor = globalThis.webkitSpeechRecognition) {
         recognition.interimResults = true;
         recognition.maxAlternatives = 1;
         bind();
-        setTimer("limit", limitMs, () => {
-          if (transcript !== "" || speechStarted) {
-            requestStop("limit");
-          } else {
-            abortWith(audioStarted ? "noSpeech" : "noAudioStart");
-          }
-        });
+        setTimer("limit", startLimitMs ?? limitMs, onLimit);
         onState?.("starting");
         note("start()");
         usedOnThisPage = true;

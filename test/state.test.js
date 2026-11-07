@@ -13,6 +13,23 @@ import {
 
 const NOW = new Date("2026-11-07T08:30:00.000Z");
 
+test("stateProblem: Einträge in Versuchen und Partnerübungen müssen Objekte sein", () => {
+  const state = () => createState(NOW);
+  const withAttempt = state();
+  withAttempt.placement.attempts = [null];
+  assert.equal(stateProblem(withAttempt), "Die Einstufung ist beschädigt");
+  const withNumber = state();
+  withNumber.placement.attempts = [{ form: "A" }, 3];
+  assert.equal(stateProblem(withNumber), "Die Einstufung ist beschädigt");
+  const withPartner = state();
+  withPartner.partner = [null];
+  assert.equal(stateProblem(withPartner), "Die Partnerübungen sind beschädigt");
+  const fine = state();
+  fine.placement.attempts = [{ form: "A", unbekannt: 1 }];
+  fine.partner = [{ caseId: "fa.mri.1" }];
+  assert.equal(stateProblem(fine), null);
+});
+
 test("createState liefert den vereinbarten Aufbau", () => {
   assert.equal(FORMAT_VERSION, 1);
   assert.deepEqual(createState(NOW), {

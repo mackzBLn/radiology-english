@@ -6,11 +6,12 @@
  *   https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event
  *   https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist
  *   https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+ *   https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
  */
 
 import { VERSION } from "../version.js";
 import { toDateString } from "../core/dates.js";
-import { createStore, unreadableError } from "../core/storage.js";
+import { createStore, discardForeignSession } from "../core/storage.js";
 import { createTts } from "../speech/tts.js";
 import { button, card, copyButton } from "./components.js";
 import { el } from "./dom.js";
@@ -48,17 +49,32 @@ function showErrorCard(error) {
     layer.remove();
   }
 
+  // setItem scheitert, wenn der Speicher voll ist. Das Letzte steht dann noch nicht im Speicher, „bleibt erhalten“ stimmte dafür nicht.
+  const storageFull = error?.name === "QuotaExceededError";
+
   document.querySelector(".error-layer")?.remove();
   const layer = el(
     "div",
     { class: "error-layer", role: "alert" },
     card(
       { class: "card-error" },
-      el("h2", null, "Da ist etwas schiefgelaufen"),
-      el("p", null, "Dein Lernstand bleibt erhalten. Nichts wird irgendwohin geschickt."),
+      el("h2", null, storageFull ? "Der Speicher ist voll" : "Da ist etwas schiefgelaufen"),
+      el(
+        "p",
+        null,
+        storageFull
+          ? "Die letzte Antwort ist noch nicht gesichert. Lass die App offen und sichere deinen Lernstand als Datei. Nichts wird irgendwohin geschickt."
+          : "Dein Lernstand bleibt erhalten. Nichts wird irgendwohin geschickt.",
+      ),
       el("pre", { class: "pre-text" }, report),
       copyButton(() => report),
-      router
+      router && storageFull
+        ? button("Zu „Sichern“", () => {
+            close();
+            router.navigate("#/sichern");
+          }, { kind: "primary" })
+        : null,
+      router && !storageFull
         ? button("Zur Startseite", () => {
             close();
             router.navigate("#/");
@@ -104,26 +120,14 @@ function getContent() {
 const store = createStore(window.localStorage);
 const loaded = store.load();
 
-// Eine Übung aus einer anderen App-Version wird verworfen, der Lernstand bleibt (Vorgabe).
-// Wirft dabei der Speicher, läuft die App weiter, und die Startseite zeigt den Hinweis.
-function discardForeignSession() {
-  try {
-    const session = store.loadSession();
-    if (session && session.appVersion !== VERSION) {
-      store.clearSession();
-    }
-    return null;
-  } catch (cause) {
-    return unreadableError(cause);
-  }
-}
-
-const sessionError = discardForeignSession();
+const foreign = discardForeignSession(store, VERSION);
 const now = () => new Date();
 
 const ctx = {
   state: loaded.state,
-  loadError: loaded.error ?? sessionError,
+  loadError: loaded.error ?? foreign.error,
+  // Ein angefangener Test ging mit dem Update verloren. Die Startseite sagt das einmal, sonst stünde sie still wieder am Anfang.
+  placementDiscarded: foreign.discardedKind === "placement",
   store,
   version: VERSION,
   worker: createWorkerControl(),

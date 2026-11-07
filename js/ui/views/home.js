@@ -6,7 +6,7 @@
  */
 
 import { daysBetween, toDateString } from "../../core/dates.js";
-import { barRow, bottomBar, button, card, navButton } from "../components.js";
+import { barRow, bottomBar, button, card, confirmDialog, navButton } from "../components.js";
 import { el } from "../dom.js";
 import { routeHash } from "../router.js";
 
@@ -67,10 +67,23 @@ export function backupReminderDue(state, today) {
 }
 
 function updateCard(ctx) {
-  const action = button("Jetzt aktualisieren", () => {
+  const apply = () => {
     action.disabled = true;
     action.textContent = "Einen Moment …";
     ctx.worker.applyUpdate();
+  };
+  const action = button("Jetzt aktualisieren", () => {
+    // Eine Sitzung passt nur zu ihrer Version (Vorgabe). Ein offener Test beginnt danach von vorn, das sagt die App vorher.
+    if (openPlacement(ctx.store, ctx.version)) {
+      confirmDialog(action, {
+        title: "Jetzt aktualisieren?",
+        body: el("p", null, "Dein Einstufungstest ist noch offen. Nach dem Update beginnt er von vorn. An dem, was du schon geübt hast, ändert das nichts."),
+        confirmLabel: "Trotzdem aktualisieren",
+        onConfirm: apply,
+      });
+    } else {
+      apply();
+    }
   }, { kind: "primary" });
   return card({ class: "card-ok" }, el("p", { class: "card-title" }, "Neue Version bereit"), action);
 }
@@ -204,6 +217,10 @@ export async function render(container, ctx) {
       ),
     );
   }
+  if (ctx.placementDiscarded) {
+    ctx.placementDiscarded = false; // Einmal genügt.
+    container.append(card({ class: "card-warn" }, el("p", null, "Dein angefangener Test ließ sich nach dem Update nicht fortsetzen. Er beginnt von vorn, dein Lernstand bleibt.")));
+  }
 
   // Der Hinweis erscheint nur hier, also nie mitten in einer Übung (Vorgabe).
   const title = container.firstChild;
@@ -215,9 +232,16 @@ export async function render(container, ctx) {
   showUpdate();
   const stopWatching = ctx.worker.onUpdateReady(showUpdate);
 
-  // Kommt die App nur aus dem Hintergrund zurück, ruft sie keine Seite neu auf. Darum fragt die Startseite selbst nach.
+  // Kommt die App nur aus dem Hintergrund zurück, ruft sie keine Seite neu auf. Darum fragt die Startseite selbst nach:
+  // Liegt ein neuer Tag dazwischen, stimmen „Heute fällig“ und die Erinnerung nicht mehr, die Seite zeichnet sich neu.
+  const renderedDay = ctx.today();
   const checkWhenVisible = () => {
-    if (document.visibilityState === "visible") {
+    if (document.visibilityState !== "visible") {
+      return;
+    }
+    if (ctx.today() !== renderedDay) {
+      ctx.navigate("#/");
+    } else {
       ctx.worker.checkForUpdate();
     }
   };

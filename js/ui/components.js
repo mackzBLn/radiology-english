@@ -202,9 +202,9 @@ export function noPatientDataHint() {
   return hint("Keine Patientendaten eingeben", "warn");
 }
 
-// Ein not fehlt oder kommt dazu. Bei Sicherheitssätzen ist das das Gegenteil des Ziels.
+// Ein not, never oder no fehlt oder kommt dazu. Bei Sicherheitssätzen ist das das Gegenteil des Ziels.
 export function negationNote() {
-  return hint("Achte auf „not“: Dieses Wort dreht den Sinn des Satzes um.", "warn");
+  return hint("Achte auf „not“ und „no“: Diese Wörter drehen den Sinn des Satzes um.", "warn");
 }
 
 export function soundHint() {
@@ -256,11 +256,12 @@ export function confirmDialog(anchor, { title, body = [], confirmLabel, cancelLa
 }
 
 function sourceFacts(source) {
+  // access search: Die Seite war nur über die Suche zu lesen, abgerufen wurde sie nie.
   const facts = [
     ["Titel", source.title ?? source.ref],
     ["Herausgeber", source.publisher],
     ["Stelle", source.locator],
-    ["Abgerufen", source.retrieved ? formatDate(source.retrieved) : null],
+    [source.access === "search" ? "Über die Suche gelesen" : "Abgerufen", source.retrieved ? formatDate(source.retrieved) : null],
   ];
   return el(
     "dl",

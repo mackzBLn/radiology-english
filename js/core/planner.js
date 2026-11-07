@@ -5,7 +5,7 @@
 
 import { EXAMS } from "./content.js";
 import { toDateString } from "./dates.js";
-import { deriveKeywords, matchTyped } from "./matcher.js";
+import { matchTyped, reactionKeywords } from "./matcher.js";
 import { normalizeText, surfaceWords, tokens } from "./normalize.js";
 import { isDue, isNew, isWeak } from "./srs.js";
 import { unitState } from "./state.js";
@@ -25,6 +25,32 @@ const KINDS = {
   patient: ["hearReact"],
   word: ["wordHear", "wordPick"],
 };
+
+/*
+ * Paare, die canAlsoBeRight nicht erkennt, weil die Wörter verschieden sind. Der andere Satz wäre in dieser Lage auch richtig.
+ * ge.contrast.s05 beruhigt bei warmem Gefühl und Geschmack. Bei den Warnzeichen darf das keine Antwort zum Antippen sein.
+ */
+const NOT_TOGETHER = [
+  ["rx.stillness.s01", "rx.stillness.s02"],
+  ["ge.callbutton.s02", "ge.callbutton.s03"],
+  ["mr.closing.s02", "mr.closing.s03"],
+  ["sb.wellbeing.s05", "sb.wellbeing.s06"],
+  ["kl.repeat.s02", "kl.repeat.s03"],
+  ["sb.waiting.s03", "sb.waiting.s04"],
+  ["sb.reassure.s06", "sb.reassure.s07"],
+  ["sb.reassure.s04", "sb.reassure.s05"],
+  ["ge.stillness.s07", "ge.stillness.s08"],
+  ["kl.rescue.s02", "kl.rescue.s03"],
+  ["sb.tenses.s04", "sb.tenses.s13"],
+  ["ge.contrast.s05", "ge.contrast.s06"],
+  ["ge.contrast.s05", "ge.contrast.s09"],
+  ["ge.contrast.s05", "ge.contrast.s13"],
+  ["ge.contrast.s05", "ge.contrast.s14"],
+];
+
+function excludedTogether(a, b) {
+  return NOT_TOGETHER.some(([first, second]) => (first === a && second === b) || (first === b && second === a));
+}
 
 function shuffle(list, rng) {
   const result = [...list];
@@ -118,7 +144,7 @@ function chooseWrong(content, unit, rng, textOf) {
         return chosen;
       }
       const text = normalizeText(textOf(candidate));
-      if (!used.has(text) && !meansTheSame(candidate, unit) && allowed(candidate) && !canAlsoBeRight(candidate, unit)) {
+      if (!used.has(text) && !meansTheSame(candidate, unit) && allowed(candidate) && !excludedTogether(candidate.id, unit.id) && !canAlsoBeRight(candidate, unit)) {
         used.add(text);
         chosen.push(candidate);
       }
@@ -182,7 +208,14 @@ export function kindsFor(unit) {
   return [...KINDS[unit.type]];
 }
 
-export function buildExercise({ content, unit, kind, rng }) {
+// Patienten sagen dasselbe verschieden. Beim ersten Mal der Satz, danach reihum die Fassungen, so hört sie mit der Zeit alle üblichen (Vorgabe).
+export function hearingForm(unit, seen = 0) {
+  const forms = [unit.en, ...unit.variants];
+  return forms[seen % forms.length];
+}
+
+// seen: wie oft die Einheit schon dran war. Wählt bei hearReact die Fassung zum Anhören, sie steht als heardEn in der Übung, wenn sie nicht en ist.
+export function buildExercise({ content, unit, kind, rng, seen = 0 }) {
   if (!KINDS[unit.type].includes(kind)) {
     throw new RangeError("Die Art " + kind + " passt nicht zu " + unit.id);
   }
@@ -192,8 +225,10 @@ export function buildExercise({ content, unit, kind, rng }) {
     case "present":
     case "typeSentence":
       return { unitId: unit.id, kind, options: [] };
-    case "hearReact":
-      return { unitId: unit.id, kind, options: shuffle(reactionOptions(unit), rng) };
+    case "hearReact": {
+      const heard = hearingForm(unit, seen);
+      return { unitId: unit.id, kind, options: shuffle(reactionOptions(unit), rng), ...(heard === unit.en ? {} : { heardEn: heard }) };
+    }
     case "buildSentence": {
       const answer = surfaceWords(unit.en);
       return { unitId: unit.id, kind, options: mixedWords(answer, rng).map((text) => ({ text })), answer };
@@ -318,20 +353,19 @@ function chooseNew(fresh, rank, weights, costs, unitLimit, slots) {
 
 // ----- Bahn -----
 
-function dueKind(unit, progress, rng) {
+function dueKind(unit, progress) {
   if (unit.type === "patient") {
     return "hearReact";
   }
   if (unit.type === "word") {
     return progress.box >= 2 ? "wordPick" : "wordHear";
   }
-  if (progress.box === 0) {
+  // Noch nie geübt, etwa nach einer Partner-Bewertung: Wie bei jedem neuen Satz zuerst antippen, davor hören und lesen (withFirstSight).
+  if (progress.box === 0 && (progress.seen ?? 0) === 0) {
     return "pickEnglish";
   }
-  if (progress.box === 1) {
-    return rng() < 0.5 ? "pickEnglish" : "hearMeaning";
-  }
-  return progress.box === 2 ? "buildSentence" : "typeSentence";
+  // Wiederholt wird durch Abrufen, sie findet den Satz selbst: erst aus seinen Wörtern, dann frei (Vorgabe 5.7).
+  return progress.box <= 2 ? "buildSentence" : "typeSentence";
 }
 
 function newKinds(unit) {
@@ -348,7 +382,7 @@ export function planTrain({ content, state, today, rng, size = 30, focus = null 
   const fresh = entries.filter((entry) => isNew(entry.progress));
   const chosen = chooseNew(fresh, planRank(content, state), TRAIN_WEIGHTS, TRAIN_COSTS, NEW_UNIT_LIMIT, size - due.length);
 
-  const plan = due.map(({ unit, progress }) => buildExercise({ content, unit, kind: dueKind(unit, progress, rng), rng }));
+  const plan = due.map(({ unit, progress }) => buildExercise({ content, unit, kind: dueKind(unit, progress), rng, seen: progress.seen }));
   for (const { unit } of chosen) {
     for (const kind of newKinds(unit)) {
       plan.push(buildExercise({ content, unit, kind, rng }));
@@ -366,7 +400,7 @@ function speechSnapshot(content, unit) {
     return {
       en: reaction.en,
       variants: [],
-      keywords: deriveKeywords(reaction.en),
+      keywords: reactionKeywords(reaction),
       softKeywords: true,
       situationDe: unit.situationDe,
       meaningDe: reaction.meaningDe,

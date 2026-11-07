@@ -41,10 +41,11 @@
             "Hello, my name is Anna. I am your technologist today.",
             "Hello, my name is Anna. I am the radiographer today.",
             "Good morning, my name is Anna. I am your radiographer today.",
-            "Hello, my name is Anna. I'm your radiographer today."
+            "Hello, my name is Anna. I'm your radiographer today.",
+            "Hello, I'm Anna, your radiographer."
           ],
           "keywords": [
-            "name",
+            "name|I am|I'm",
             "radiographer|technologist"
           ],
           "meaningDe": "Guten Tag, mein Name ist Anna. Ich bin heute Ihre MTR.",
@@ -97,7 +98,7 @@
             "What's your date of birth, please?"
           ],
           "keywords": [
-            "birth|born"
+            "birth|born|birthday"
           ],
           "meaningDe": "Wie lautet bitte Ihr Geburtsdatum?",
           "cefr": "A2",
@@ -271,7 +272,10 @@
               "source": {
                 "ref": "wihb-xray",
                 "locator": "When you arrive at Radiology"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know|let me check"
+              ]
             },
             {
               "en": "Please take off your jewellery.",
@@ -322,7 +326,10 @@
               "source": {
                 "ref": "cambridge-dictionary",
                 "locator": "Eintrag seat"
-              }
+              },
+              "keywords": [
+                "hill|my mistake|sorry about that"
+              ]
             },
             {
               "en": "Thank you, Mr Harris. Please come with me.",
@@ -562,7 +569,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "How long will the X-ray take?"
-              }
+              },
+              "keywords": [
+                "depends|minutes|not sure|can't say|check"
+              ]
             },
             {
               "en": "The scan does not hurt.",
@@ -613,7 +623,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out|possible"
+              ]
             },
             {
               "en": "The table will move into the scanner.",
@@ -664,7 +677,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "Will the scan be uncomfortable?"
-              }
+              },
+              "keywords": [
+                "worries|worried|worry|afraid|nervous|scared"
+              ]
             },
             {
               "en": "Your friend can wait in the waiting room.",
@@ -806,7 +822,7 @@
             "Are you allergic to anything?"
           ],
           "keywords": [
-            "allergies|allergic"
+            "allergies|allergic|allergy"
           ],
           "meaningDe": "Haben Sie Allergien?",
           "cefr": "A2",
@@ -933,7 +949,7 @@
             "Thank you. I'll tell the doctor about that."
           ],
           "keywords": [
-            "doctor"
+            "tell the doctor|ask the doctor|let the doctor know|tell doctor|ask doctor|let doctor|get doctor|inform doctor|speak doctor|talk doctor"
           ],
           "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
           "cefr": "A2",
@@ -977,7 +993,10 @@
               "source": {
                 "ref": "radiologyinfo-contrast",
                 "locator": "How should I prepare for my imaging procedure with contrast material?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have any allergies?",
@@ -1028,7 +1047,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "what happened|what kind|kind of problem|which tablets|what was|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Please take off your jewellery.",
@@ -1079,7 +1101,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Are you breastfeeding at the moment?",
@@ -1130,7 +1155,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "Are there any risks or side effects?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Are you breastfeeding at the moment?",
@@ -1181,7 +1209,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have any allergies?",
@@ -1231,7 +1262,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Preparing for an MRI scan"
-              }
+              },
+              "keywords": [
+                "the problem|what problem|kind of problem|what happened|what was wrong|what kind|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have any problems with your kidneys?",
@@ -1333,7 +1367,10 @@
               "source": {
                 "ref": "radiologyinfo-contrast",
                 "locator": "How should I prepare for my imaging procedure with contrast material?"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Have you had anything to eat or drink today?",
@@ -1384,7 +1421,10 @@
               "source": {
                 "ref": "nhs-xray",
                 "locator": "Preparing for an X-ray"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "Do you have diabetes?",
@@ -1422,11 +1462,13 @@
           "variants": [
             "Please remove your jewellery.",
             "Please take off your jewelry.",
-            "Could you take off your jewellery, please?"
+            "Could you take off your jewellery, please?",
+            "Please take your jewellery off.",
+            "Please take your jewelry off."
           ],
           "keywords": [
             "jewellery|jewelry",
-            "take off|remove"
+            "take off|remove|jewellery off|jewelry off"
           ],
           "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
           "cefr": "A2",
@@ -1477,7 +1519,8 @@
           "variants": [
             "Please also remove your bra and any hair clips.",
             "Please take off your bra and any hair clips too.",
-            "Could you also take off your bra and any hair clips?"
+            "Could you also take off your bra and any hair clips?",
+            "Please also take your bra and any hair clips off."
           ],
           "keywords": [
             "bra",
@@ -1507,7 +1550,8 @@
             "Please put this gown on."
           ],
           "keywords": [
-            "gown"
+            "gown",
+            "change|changed|put on|gown on|wear"
           ],
           "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
           "cefr": "A2",
@@ -1628,7 +1672,7 @@
         },
         {
           "id": "ge.changing.s09",
-          "situationDe": "Der Patient liegt auf der Seite. Für die Aufnahme brauchst du eine andere Lage.",
+          "situationDe": "Der Patient liegt auf der Seite. Für die Aufnahme soll er flach auf dem Rücken liegen.",
           "en": "Please lie flat on your back.",
           "variants": [
             "Please lie on your back.",
@@ -1706,7 +1750,10 @@
               "source": {
                 "ref": "glos-mri",
                 "locator": "What happens when I arrive?"
-              }
+              },
+              "keywords": [
+                "check|i will ask|let me ask|i can ask|ask the|find out"
+              ]
             },
             {
               "en": "You can leave your things in this locker.",
@@ -1760,7 +1807,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "Are you required to make any special preparations?"
-              }
+              },
+              "keywords": [
+                "yes|take them off|put them back|put back"
+              ]
             },
             {
               "en": "You can get changed in this cubicle.",
@@ -1810,7 +1860,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
-              }
+              },
+              "keywords": [
+                "pillow|cushion|support|help"
+              ]
             },
             {
               "en": "Please lie flat on your back.",
@@ -1861,7 +1914,10 @@
               "source": {
                 "ref": "cuh-ct",
                 "locator": "Facilities available"
-              }
+              },
+              "keywords": [
+                "of course|show|yes|over there|this way|sure"
+              ]
             },
             {
               "en": "Please change into this gown.",
@@ -1899,10 +1955,13 @@
           "variants": [
             "Please stay very still.",
             "Please keep still.",
-            "Please don't move."
+            "Please don't move.",
+            "Please stay still.",
+            "Please hold still.",
+            "Keep very still."
           ],
           "keywords": [
-            "still|move"
+            "keep very still|stay very still|keep still|stay still|hold still|very still|lie still|not move|don't move"
           ],
           "meaningDe": "Bitte halten Sie ganz still.",
           "cefr": "A2",
@@ -2008,7 +2067,7 @@
             "Take a deep breath in."
           ],
           "keywords": [
-            "breathe in|deep breath"
+            "breathe in|deep breath|big breath|breath in|inhale"
           ],
           "meaningDe": "Einatmen.",
           "cefr": "A2",
@@ -2083,7 +2142,8 @@
             "You can breathe again now."
           ],
           "keywords": [
-            "breathe"
+            "breathe",
+            "normally|normal|again|can breathe"
           ],
           "meaningDe": "Sie können jetzt wieder normal atmen.",
           "cefr": "A2",
@@ -2127,7 +2187,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "During the CT scan"
-              }
+              },
+              "keywords": [
+                "tell me|let me know|i can hear you|i will hear you"
+              ]
             },
             {
               "en": "Hold your breath.",
@@ -2229,7 +2292,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "What happens during the procedure?"
-              }
+              },
+              "keywords": [
+                "check|the pictures|no problem|that is ok"
+              ]
             },
             {
               "en": "You can breathe normally now.",
@@ -2299,6 +2365,7 @@
             "I'll put a small tube in your arm."
           ],
           "keywords": [
+            "put|insert|place|get",
             "tube",
             "arm"
           ],
@@ -2426,11 +2493,14 @@
           "variants": [
             "Please tell me if you don't feel well.",
             "Tell me if you feel unwell, please.",
-            "Please tell me if you feel ill."
+            "Please tell me if you feel ill.",
+            "If you feel unwell, please tell me.",
+            "Please let me know if you feel unwell.",
+            "Please tell me if you feel sick."
           ],
           "keywords": [
-            "tell",
-            "unwell|well|ill"
+            "tell|let me know|say",
+            "unwell|not feel well|don't feel well|not well|ill|sick|bad"
           ],
           "meaningDe": "Bitte sagen Sie mir, wenn Sie sich unwohl fühlen.",
           "cefr": "A2",
@@ -2453,10 +2523,13 @@
             "Please tell me straight away if you have trouble breathing.",
             "Please tell me immediately if you have trouble breathing.",
             "Please tell me at once if you have trouble breathing.",
-            "Please tell me right away if you have problems breathing."
+            "Please tell me right away if you have problems breathing.",
+            "If you have trouble breathing, please tell me right away.",
+            "Please tell me right away if you can't breathe."
           ],
           "keywords": [
-            "breathing"
+            "tell|let me know|say",
+            "trouble breathing|problem breathing|problems breathing|hard to breathe|difficult to breathe|difficulty breathing|not breathe|can't breathe|short of breath|breathing problems|breathing trouble"
           ],
           "meaningDe": "Bitte sagen Sie mir sofort, wenn Sie schlecht Luft bekommen.",
           "cefr": "B1",
@@ -2580,7 +2653,8 @@
             "Please stay here for a short time after the scan.",
             "You need to wait here for a short time after the scan.",
             "Please wait here for a little while after the scan.",
-            "Please wait here for a short time after the X-ray."
+            "Please wait here for a short time after the X-ray.",
+            "After the scan, please wait here for a short time."
           ],
           "keywords": [
             "wait|stay"
@@ -2658,7 +2732,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Before an MRI scan"
-              }
+              },
+              "keywords": [
+                "clearer|clear|better|see|pictures"
+              ]
             },
             {
               "en": "These feelings usually go away quickly.",
@@ -2709,7 +2786,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Possible complications of an MRI scan"
-              }
+              },
+              "keywords": [
+                "what you feel|what do you feel|how do you feel|what does it feel|how does it feel|do you feel|does it hurt|is it hurting|any pain|do you have pain|is it painful|does it burn|is it burning|swollen|swelling|look at your arm|look at it|let me see|let me check your arm|let me check it|check your arm|tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "You will get a special dye. It makes the pictures clearer.",
@@ -2759,7 +2839,10 @@
               "source": {
                 "ref": "radiologyinfo-contrast",
                 "locator": "What will I experience before and after receiving contrast material?"
-              }
+              },
+              "keywords": [
+                "normal|happen|dye|feel ok|otherwise|go away"
+              ]
             },
             {
               "en": "You may have a metal taste in your mouth.",
@@ -2811,7 +2894,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Possible complications of an MRI scan"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know"
+              ]
             },
             {
               "en": "These feelings usually go away quickly.",
@@ -2861,7 +2947,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Possible complications of an MRI scan"
-              }
+              },
+              "keywords": [
+                "understand|tell me|unwell|worry|afraid"
+              ]
             },
             {
               "en": "The doctor will give you the dye through the small tube.",
@@ -2970,7 +3059,10 @@
               "source": {
                 "ref": "nhs-mri",
                 "locator": "Preparing for an MRI scan"
-              }
+              },
+              "keywords": [
+                "understand|helps|help"
+              ]
             },
             {
               "en": "The table will move into the scanner.",
@@ -3020,7 +3112,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "Preparing for a CT scan"
-              }
+              },
+              "keywords": [
+                "tell the doctor|ask the doctor|let the doctor know|check with the doctor|get the doctor|tell doctor|ask doctor|let doctor|get doctor|call doctor|speak doctor|talk doctor|inform doctor|check doctor|fetch doctor|tell colleague|ask colleague|get colleague|get help|tell radiologist|ask radiologist|get radiologist|call radiologist|check radiologist|speak radiologist|talk radiologist|inform radiologist|let radiologist|doctor needs to know|radiologist needs to know|doctor must know|doctor can|doctor may|doctor will"
+              ]
             },
             {
               "en": "Please keep very still.",
@@ -3152,7 +3247,10 @@
               "source": {
                 "ref": "nhs-ct",
                 "locator": "During the CT scan"
-              }
+              },
+              "keywords": [
+                "next room|hear|see you|close by|nearby|with you"
+              ]
             },
             {
               "en": "It depends on the part of your body.",
@@ -3342,7 +3440,10 @@
               "source": {
                 "ref": "ruh-ct",
                 "locator": "How do I get my results?"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "It depends on the part of your body.",
@@ -3393,7 +3494,10 @@
               "source": {
                 "ref": "lothian-mri",
                 "locator": "How will I get my results?"
-              }
+              },
+              "keywords": [
+                "your doctor|your gp|doctor will explain|doctor will tell|doctor can tell|doctor can explain|doctor will talk|who sent you|ask the doctor|ask your doctor|can't say|cannot say|can't tell|cannot tell|can't answer|not allowed"
+              ]
             },
             {
               "en": "Please wait here for a short time after the scan.",
@@ -3444,7 +3548,10 @@
               "source": {
                 "ref": "jpaget-xray",
                 "locator": "Are you required to make any special preparations?"
-              }
+              },
+              "keywords": [
+                "problem|get them|bring them|look for them|fetch"
+              ]
             },
             {
               "en": "You can leave your things in this locker.",

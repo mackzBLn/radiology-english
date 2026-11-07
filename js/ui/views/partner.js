@@ -330,7 +330,7 @@ function howToPlay(item) {
     bulletList([
       "Du bist der Patient. Die andere Person führt dich auf Englisch durch die Untersuchung.",
       "Antworte auf Englisch und nur auf das, was gefragt wird. Du darfst die Sätze ablesen.",
-      "Bau die Wendungen an der genannten Stelle ein.",
+      "Bau die Wendungen an der genannten Stelle ein. Kennt die andere Person sie schon von einem früheren Versuch, denk dir eine neue aus.",
       item.type === FINAL
         ? "Das ist der Abschluss: Hilf nicht. Kein Deutsch, nichts vorsagen. Wird nachgefragt, wiederhole es langsam."
         : "Das ist eine Übung: Du darfst helfen, wenn es hakt.",
@@ -469,7 +469,7 @@ function verdictCard(entry, content) {
   return card(
     { class: "card-warn" },
     el("h2", { class: "card-title" }, "Noch nicht"),
-    el("p", null, "Übe, was wiederkommt. Dann versucht ihr es noch einmal."),
+    el("p", null, "Übe, was wiederkommt. Dann versucht ihr es noch einmal. Die Wendungen kennst du jetzt, darum denkt sich dein Partner beim nächsten Mal eine neue aus."),
     el("p", { class: "label" }, "Das saß noch nicht"),
     bulletList(missedChecks(content.checklist, entry.ratings)),
   );

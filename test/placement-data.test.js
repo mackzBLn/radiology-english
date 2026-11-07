@@ -12,6 +12,7 @@ import { buildPlan, chooseForm, LEVELS, scorePlacement } from "../js/core/placem
 import { createState } from "../js/core/state.js";
 import { isSpeechAvailable } from "../js/ui/speak-step.js";
 import {
+  SCALE_SOURCE,
   advance,
   answerFromTyping,
   attemptFrom,
@@ -27,6 +28,7 @@ import {
   skipRemainingSpeaking,
   speakingOpen,
   storeAttempt,
+  testSentences,
 } from "../js/ui/views/placement.js";
 
 function readData(name) {
@@ -151,7 +153,7 @@ test("Deskriptoren: Skala und Stufe passen zur Aufgabe, der Sprechteil nutzt Pho
 
 test("Deskriptoren: die Seitenzahl ist selbst gelesen", () => {
   const pages = {
-    listening: { A1: 177, A2: 177, B1: 177, B2: 177 },
+    listening: { A1: 73, A2: 73, B1: 73, B2: 73 },
     writing: { A1: 178, A2: 178, B1: 178, B2: 178 },
     speaking: { A1: 135, A2: 135, B1: 134, B2: 134 },
   };
@@ -440,6 +442,122 @@ test("Ergebnis: Liegen alle gemessenen Teile unter A1, steht das auch oben", () 
 
   const mixed = scorePlacement(forms[0], answersWhere(forms[0], (item) => (item.part === "speaking" && item.level === "A1" ? "correct" : "wrong")));
   assert.equal(overallText(mixed), "Stufe A1", "Ein Teil auf A1 reicht");
+});
+
+const itemById = (id) => allItems.find((item) => item.id === id);
+
+test("Hören: Die Patientin spricht sie direkt an, das misst die Skala Understanding an interlocutor", () => {
+  for (const item of allItems.filter((entry) => entry.part === "listening")) {
+    assert.equal(item.descriptor.scale, "Understanding an interlocutor", item.id);
+  }
+});
+
+test("Schreiben auf A1: Die naheliegenden richtigen Antworten zählen, falsche nicht", () => {
+  for (const text of ["Please lie down.", "Lie down, please.", "Lie down here.", "Could you lie down here?", "Could you lie down, please?", "Can you lie down, please?"]) {
+    assert.equal(answerFromTyping(itemById("pl.b.wr01"), text), "correct", text);
+  }
+  for (const text of ["Take a seat.", "Take a seat, please.", "Have a seat.", "Have a seat, please.", "Sit down.", "Please sit."]) {
+    assert.equal(answerFromTyping(itemById("pl.a.wr01"), text), "correct", text);
+  }
+  for (const text of ["Please sit here.", "Please stand up", "Please take a walk", "Please here down lie"]) {
+    assert.equal(answerFromTyping(itemById("pl.b.wr01"), text), "wrong", text);
+  }
+  assert.equal(answerFromTyping(itemById("pl.a.wr01"), "Do not sit down."), "wrong", "Der gegenteilige Satz zählt nicht");
+});
+
+for (const [formIndex, id, text] of [[0, "pl.a.wr01", "Take a seat."], [1, "pl.b.wr01", "Please lie down."]]) {
+  test("Ergebnis: Alles richtig mit " + text + " auf A1 ergibt B2, keine Lücke und nicht den Plan für Anfänger", () => {
+    const form = forms[formIndex];
+    const answers = answersWhere(form, () => "correct");
+    answers[id] = answerFromTyping(itemById(id), text);
+    const result = scorePlacement(form, answers);
+    assert.equal(result.parts.writing.level, "B2");
+    assert.equal(result.overall, "B2");
+    assert.notEqual(buildPlan(result, content).noteDe.startsWith("Du startest mit Satzbau"), true);
+  });
+}
+
+test("Schreiben: Auch andere richtige Formen zählen, britisch wie amerikanisch", () => {
+  const accepted = {
+    "pl.a.wr02": ["Do you have jewellery?", "Have you got any jewellery on?"],
+    "pl.a.wr03": ["Did you ever have an MRI?", "Did you have an MRI before?"],
+    "pl.b.wr03": ["Did you ever have problems with your kidneys?"],
+    "pl.a.wr04": ["You can eat and drink normally if you have not been told otherwise.", "If you have not been told anything else, you can eat and drink as normal."],
+    "pl.b.wr04": ["Even if you feel fine, you should stay here for a while after the injection."],
+  };
+  for (const [id, texts] of Object.entries(accepted)) {
+    for (const text of texts) {
+      assert.equal(answerFromTyping(itemById(id), text), "correct", id + ": " + text);
+    }
+  }
+});
+
+test("Sprechen auf B2: Die wörtliche Übersetzung der Vorgabe zählt", () => {
+  const understood = {
+    "pl.a.sp08": ["Once the report is there, your doctor will go through it with you."],
+    "pl.b.sp08": ["If you don't feel well, we can stop at any time.", "If you don't feel well, we can stop the scan at any time.", "If you feel bad, we can stop the scan whenever you want."],
+    "pl.b.sp06": ["Have you ever been operated on?"],
+    "pl.a.sp04": ["Do you have an allergy?"],
+  };
+  for (const [id, texts] of Object.entries(understood)) {
+    for (const text of texts) {
+      assert.equal(matchSpoken(itemById(id), text, { stage: "b" }).outcome, "understood", id + ": " + text);
+    }
+  }
+  assert.notEqual(matchSpoken(itemById("pl.b.sp08"), "If you feel unwell, we can start the scan.", { stage: "b" }).outcome, "understood");
+});
+
+test("Ergebnis: Beim Sprechen steht nichts über die Aussprache, beim Schreiben die Grenze des Tests", () => {
+  for (const form of forms) {
+    for (const level of LEVELS) {
+      const result = scorePlacement(form, answersWhere(form, passUpTo(level)));
+      for (const line of [...result.strengths, ...result.gaps]) {
+        if (line.startsWith("Sprechen")) {
+          assert.doesNotMatch(line, /Satzmelodie|Akzent|meist klar|Mühe/, line);
+          assert.match(line, /misst die App nicht/, line);
+        }
+      }
+    }
+    const top = scorePlacement(form, answersWhere(form, passUpTo("B2")));
+    assert.ok(top.strengths.some((line) => line.startsWith("Schreiben") && line.includes("längere Texte prüft der Test nicht")));
+    assert.ok(top.strengths.some((line) => line.startsWith("Hören") && line.includes("was zu dir gesagt wird")));
+  }
+});
+
+test("Ergebnis: Die Liste der Sätze nennt jede Aufgabe mit Bedeutung und aufgelöster Quelle", () => {
+  for (const form of forms) {
+    const snapshot = createFormSnapshot(form, resolve, noShuffle);
+    const groups = testSentences(snapshot);
+    assert.deepEqual(groups.map((group) => group.labelDe), ["Hören", "Schreiben", "Sprechen"]);
+    const listed = groups.flatMap((group) => group.items);
+    assert.deepEqual(listed.map((item) => item.id).sort(), form.items.map((item) => item.id).sort());
+    for (const item of listed) {
+      assert.ok(item.en && item.meaningDe, item.id);
+      assert.ok(item.source.title && item.source.url && item.source.locator, item.id);
+    }
+  }
+});
+
+test("Ergebnis: Die Quelle zur Skala nennt die Seiten", () => {
+  const scale = resolve(SCALE_SOURCE);
+  assert.equal(scale.id, "cefr-cv");
+  for (const page of ["S. 73", "S. 134", "S. 178"]) {
+    assert.ok(scale.locator.includes(page), page);
+  }
+});
+
+test("Hören: Die passende Antwort ist nicht an der Form zu erkennen", () => {
+  for (const form of forms) {
+    const listening = form.items.filter((item) => item.part === "listening");
+    const longest = listening.filter((item) => {
+      const lengths = item.options.map((option) => option.en.length);
+      return item.options.find((option) => option.fits).en.length === Math.max(...lengths);
+    });
+    assert.ok(longest.length <= 2, form.id + ": " + longest.map((item) => item.id).join(", "));
+  }
+  for (const id of ["pl.b.li06", "pl.b.li07", "pl.b.li08"]) {
+    assert.ok(itemById(id).options.some((option) => option.fits !== true && option.en.startsWith("I will ask")), id);
+  }
 });
 
 test("Schreiben: Rückwärts getippte Sätze zählen als falsch, ein versetztes please zählt", () => {

@@ -2,9 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { EXAMS, loadContent } from "../js/core/content.js";
-import { deriveKeywords, matchSpoken, matchTyped } from "../js/core/matcher.js";
+import { matchSpoken, matchTyped, reactionKeywords } from "../js/core/matcher.js";
 import { normalizeText, surfaceWords } from "../js/core/normalize.js";
-import { buildExercise, canAlsoBeRight, focusUnits, kindsFor, planSpeech, planTrain } from "../js/core/planner.js";
+import { buildExercise, canAlsoBeRight, focusUnits, hearingForm, kindsFor, planSpeech, planTrain } from "../js/core/planner.js";
 import { addDays } from "../js/core/dates.js";
 import { applyResult, recordExercise } from "../js/core/srs.js";
 import { createState, newUnit, setUnitState, stateProblem, unitState } from "../js/core/state.js";
@@ -241,8 +241,9 @@ test("Stufe je Einheit: Sätze nach Box, Äußerungen immer hearReact, Wörter n
   const sentence = "mr.safety.s01";
   const patient = "mr.safety.p01";
   const word = CONTENT.words("mri").at(-1).id;
-  assert.equal(kindOf(sentence, dueProgress(0)), "pickEnglish");
-  assert.equal(kindOf(sentence, dueProgress(2)), "buildSentence");
+  for (const box of [0, 1, 2]) {
+    assert.equal(kindOf(sentence, dueProgress(box)), "buildSentence", "Box " + box);
+  }
   for (const box of [3, 4, 5]) {
     assert.equal(kindOf(sentence, dueProgress(box)), "typeSentence", "Box " + box);
   }
@@ -255,13 +256,19 @@ test("Stufe je Einheit: Sätze nach Box, Äußerungen immer hearReact, Wörter n
   assert.equal(kindOf(word, dueProgress(5)), "wordPick");
 });
 
-test("Box 1 wechselt über rng zwischen pickEnglish und hearMeaning", () => {
+test("Wiederholt wird durch Abrufen: Fällige Sätze kommen nie zum Antippen, wie der Zufall auch fällt", () => {
   const id = "mr.safety.s01";
-  const state = stateOf({ [id]: dueProgress(1) });
-  const low = planTrain({ content: CONTENT, state, today: TODAY, rng: () => 0.1, focus: "mr.safety" });
-  const high = planTrain({ content: CONTENT, state, today: TODAY, rng: () => 0.9, focus: "mr.safety" });
-  assert.equal(low.find((exercise) => exercise.unitId === id).kind, "pickEnglish");
-  assert.equal(high.find((exercise) => exercise.unitId === id).kind, "hearMeaning");
+  for (const box of [0, 1, 2, 3, 4, 5]) {
+    const state = stateOf({ [id]: dueProgress(box) });
+    for (const value of [0.1, 0.5, 0.9]) {
+      const plan = planTrain({ content: CONTENT, state, today: TODAY, rng: () => value, focus: "mr.safety" });
+      assert.equal(plan.find((exercise) => exercise.unitId === id).kind, box <= 2 ? "buildSentence" : "typeSentence", "Box " + box);
+    }
+  }
+});
+
+test("Ein noch nie geübter Satz kommt auch als fälliger zuerst zum Antippen", () => {
+  assert.equal(kindOf("mr.safety.s01", dueProgress(0, { seen: 0 })), "pickEnglish");
 });
 
 test("Neue Sätze: erst present, gleich danach pickEnglish. Neue Äußerungen und Wörter ohne present", () => {
@@ -654,7 +661,7 @@ test("Schnappschuss einer Äußerung: Text zum Anhören, Antwort aus der passend
     assert.equal(snapshot.en, reaction.en);
     assert.equal(snapshot.meaningDe, reaction.meaningDe);
     assert.deepEqual(snapshot.variants, []);
-    assert.deepEqual(snapshot.keywords, deriveKeywords(reaction.en));
+    assert.deepEqual(snapshot.keywords, reactionKeywords(reaction));
     assert.equal(snapshot.softKeywords, true);
     assert.equal(snapshot.noteDe, unit.noteDe);
     assert.equal(snapshot.clinicDependent, unit.clinicDependent || reaction.clinicDependent === true);
@@ -690,6 +697,55 @@ test("Zusammenspiel über simulierte Tage: Alles kommt dran, der Stand bleibt g�
   assert.equal(Object.keys(state.units).length, 540);
   assert.equal(Object.values(state.stats.days).reduce((sum, item) => sum + item.exercises, 0), exercises);
   assert.deepEqual(JSON.parse(JSON.stringify(state)), state);
+});
+
+test("Falsche Antworten: Paare, die auch richtig wären oder bei Warnzeichen gefährlich, stehen nie zusammen", () => {
+  const pairs = [
+    ["rx.stillness.s01", "rx.stillness.s02"],
+    ["ge.callbutton.s02", "ge.callbutton.s03"],
+    ["mr.closing.s02", "mr.closing.s03"],
+    ["sb.wellbeing.s06", "sb.wellbeing.s05"],
+    ["kl.repeat.s02", "kl.repeat.s03"],
+    ["sb.waiting.s04", "sb.waiting.s03"],
+    ["sb.reassure.s07", "sb.reassure.s06"],
+    ["sb.reassure.s04", "sb.reassure.s05"],
+    ["ge.stillness.s08", "ge.stillness.s07"],
+    ["kl.rescue.s02", "kl.rescue.s03"],
+    ["sb.tenses.s04", "sb.tenses.s13"],
+    ["ge.contrast.s06", "ge.contrast.s05"],
+    ["ge.contrast.s09", "ge.contrast.s05"],
+    ["ge.contrast.s13", "ge.contrast.s05"],
+    ["ge.contrast.s14", "ge.contrast.s05"],
+  ];
+  for (const [id, other] of pairs) {
+    const unit = CONTENT.unit(id);
+    const excluded = CONTENT.unit(other);
+    assert.ok(unit && excluded, id + " und " + other);
+    for (let seed = 1; seed <= 40; seed += 1) {
+      for (const kind of ["pickEnglish", "hearMeaning"]) {
+        const exercise = buildExercise({ content: CONTENT, unit, kind, rng: seeded(seed) });
+        const text = kind === "pickEnglish" ? excluded.en : excluded.meaningDe;
+        assert.equal(exercise.options.some((option) => option.text === text), false, id + " " + kind + " " + seed);
+        assert.equal(exercise.options.filter((option) => option.correct !== true).length, 3, id + " hat genug andere falsche Antworten");
+      }
+    }
+  }
+});
+
+test("Patientenäußerung: Über mehrere Tage kommen verschiedene Fassungen zum Anhören", () => {
+  const unit = CONTENT.unit("ge.changing.p04");
+  const forms = [unit.en, ...unit.variants];
+  assert.ok(forms.length >= 3);
+  assert.equal(hearingForm(unit, 0), unit.en);
+  const heard = forms.map((_, seen) => buildExercise({ content: CONTENT, unit, kind: "hearReact", rng: seeded(1), seen }).heardEn ?? unit.en);
+  assert.deepEqual(heard, forms, "Jede Fassung kommt einmal dran");
+  assert.equal(hearingForm(unit, forms.length), unit.en, "Danach von vorn");
+  assert.equal("heardEn" in buildExercise({ content: CONTENT, unit, kind: "hearReact", rng: seeded(1) }), false, "Beim ersten Mal der Satz selbst");
+
+  const seenTwice = stateOf({ [unit.id]: dueProgress(1, { seen: 2 }) });
+  const [exercise] = planTrain({ content: CONTENT, state: seenTwice, today: TODAY, rng: seeded(1), focus: unit.sectionId }).filter((item) => item.unitId === unit.id);
+  assert.equal(exercise.heardEn, forms[2]);
+  assert.deepEqual(JSON.parse(JSON.stringify(exercise)), exercise, "Die Übung bleibt reines JSON");
 });
 
 test("Vorgaben: size 30 und 12, focus null", () => {

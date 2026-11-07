@@ -9,7 +9,7 @@
  *            So zählt ein zweiter falscher Versuch nicht als neuer Fehler in der Anzeige.
  */
 
-import { normalizeText, surfaceWords } from "./normalize.js";
+import { normalizeText, surfaceWords, tokens } from "./normalize.js";
 import { applyResult, isNew, recordExercise } from "./srs.js";
 import { setUnitState, unitState } from "./state.js";
 
@@ -169,11 +169,22 @@ export function tileWords(exercise) {
   return exercise.options.map((option) => (option.text === exercise.answer[0] ? lowerFirst(option.text) : option.text));
 }
 
-// Alle Wörter sind gelegt. Richtig ist die Folge der Übung und jede Fassung der Einheit, die sich aus den Wörtern legen lässt.
+const PLEASE = "please";
+
+// please darf am Satzrand stehen: Keep very still, please. Mitten im Satz bleibt es falsch, andere freie Stellungen stehen als Fassung in den Daten.
+function pleaseAtEdge(builtText, form) {
+  const built = tokens(builtText);
+  const target = tokens(form);
+  const without = (list) => list.filter((word) => word !== PLEASE).join(" ");
+  return target.includes(PLEASE) && (built[0] === PLEASE || built.at(-1) === PLEASE) && without(built) === without(target);
+}
+
+// Alle Wörter sind gelegt. Richtig ist die Folge der Übung und jede Fassung der Einheit, die sich aus den Wörtern legen lässt, please auch am Satzrand.
 export function builtResult(exercise, unit, words) {
-  const built = normalizeText(words.join(" "));
+  const builtText = words.join(" ");
+  const built = normalizeText(builtText);
   const forms = [exercise.answer.join(" "), unit.en, ...(unit.variants ?? [])];
-  return forms.some((form) => normalizeText(form) === built) ? "ok" : "wrong";
+  return forms.some((form) => normalizeText(form) === built || pleaseAtEdge(builtText, form)) ? "ok" : "wrong";
 }
 
 // ----- Wertung -----
@@ -245,13 +256,18 @@ export function optionsAreEnglish(kind) {
 /*
  * Was die Rückmeldung zeigt. sentence ist die Einheit, bei hearReact also die gehörte Äußerung, dazu kommt reaction, die passende Antwort.
  * against: die Fassung, der eine fast richtig getippte Antwort am nächsten kam. Dann zeigt die Ansicht genau diese.
+ * heardEn: die Fassung, die in dieser Übung zu hören war. others: die englischen Antworten, die sonst nirgends mit Quelle stehen.
  */
 export function feedbackFor({ exercise, unit, chosen = null, against = null }) {
   const wrong = chosen && chosen.correct !== true ? chosen : null;
   const fitting = exercise.kind === "hearReact" ? (wrong ? exercise.options.find((option) => option.correct === true) : chosen) ?? null : null;
+  const others = optionsAreEnglish(exercise.kind)
+    ? (exercise.options ?? []).filter((option) => option.correct !== true && option.text !== chosen?.text)
+    : [];
   return {
-    sentence: { en: against ?? unit.en, meaningDe: unit.meaningDe, source: unit.source },
+    sentence: { en: against ?? exercise.heardEn ?? unit.en, meaningDe: unit.meaningDe, source: unit.source },
     reaction: fitting ? { en: fitting.text, meaningDe: fitting.meaningDe ?? null, source: fitting.source ?? null } : null,
+    others: others.map((option) => ({ text: option.text, meaningDe: option.meaningDe ?? null, source: option.source ?? null })),
     wrongChoice: wrong
       ? {
           text: wrong.text,

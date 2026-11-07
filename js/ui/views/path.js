@@ -46,11 +46,12 @@ export function learnedCount(unitIds, content, state) {
 }
 
 // Schon geübt, ob gelernt oder nicht. Gelerntes zählt mit, die Zahl ist also nie kleiner als die der gelernten.
+// seen zählt hier nicht: Es steigt auch bei einem Ausfall der Erkennung, und dann wurde nichts geübt. Ein Ausfall setzt weder lastAt noch die Box.
 export function practicedCount(unitIds, content, state) {
   return unitIds.filter((id) => {
     const contentUnit = content.unit(id);
     const progress = unitState(state, id);
-    return contentUnit !== null && ((progress.seen ?? 0) > 0 || isLearned(contentUnit, progress));
+    return contentUnit !== null && (progress.lastAt !== null || progress.box > 0 || isLearned(contentUnit, progress));
   }).length;
 }
 

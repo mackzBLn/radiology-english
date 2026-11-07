@@ -11,9 +11,15 @@
 import { backupFileName, createBackup, createRawExport, parseBackup, rawExportFileName } from "../../core/backup.js";
 import { backButton, barRow, bottomBar, button, card, confirmDialog, formatDate, hint, navButton, viewHeader } from "../components.js";
 import { clear, el } from "../dom.js";
+import { openPlacement } from "./home.js";
 
 const REVOKE_AFTER_MS = 60000;
 const REPLACE_NOTE = "Das ersetzt deinen jetzigen Lernstand. Dein jetziger Stand bleibt als Kopie erhalten.";
+
+// Ersetzen leert die Sitzung, ein offener Test beginnt danach von vorn. Das sagt die Rückfrage vorher.
+function openTestNote(ctx) {
+  return openPlacement(ctx.store, ctx.version) ? hint("Dein Einstufungstest ist noch offen. Danach beginnt er von vorn.", "warn") : null;
+}
 
 function download(file) {
   const url = URL.createObjectURL(file);
@@ -109,7 +115,7 @@ function showResult(area, ...nodes) {
 }
 
 // Erst nach der Nachfrage. Der jetzige Stand wird vorher mit keepPrevious aufgehoben.
-function replaceLearningState(ctx, state, area, doneText) {
+export function replaceLearningState(ctx, state, area, doneText) {
   const previous = ctx.state;
   try {
     ctx.store.keepPrevious();
@@ -129,7 +135,7 @@ function replaceLearningState(ctx, state, area, doneText) {
 function askBeforeImport(ctx, result, area) {
   confirmDialog(area, {
     title: "Lernstand ersetzen?",
-    body: [summaryFacts(result.info), hint(REPLACE_NOTE, "warn")],
+    body: [summaryFacts(result.info), hint(REPLACE_NOTE, "warn"), openTestNote(ctx)],
     confirmLabel: "Ja, ersetzen",
     onConfirm: () => replaceLearningState(ctx, result.state, area, "Eingelesen."),
   });
@@ -162,7 +168,7 @@ function previousBlock(ctx, previous, area) {
   const restore = button("Vorherigen Stand zurückholen", () => {
     confirmDialog(area, {
       title: "Vorherigen Stand zurückholen?",
-      body: [el("p", null, facts), hint(REPLACE_NOTE, "warn")],
+      body: [el("p", null, facts), hint(REPLACE_NOTE, "warn"), openTestNote(ctx)],
       confirmLabel: "Ja, zurückholen",
       onConfirm: () => {
         if (replaceLearningState(ctx, previous, area, "Zurückgeholt.")) {

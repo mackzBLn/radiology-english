@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { STORAGE_KEYS, createStore, unreadableError } from "../js/core/storage.js";
+import { STORAGE_KEYS, createStore, discardForeignSession, unreadableError } from "../js/core/storage.js";
 import { FORMAT_VERSION, createState, newUnit } from "../js/core/state.js";
 
 const NOW = new Date("2026-11-07T08:30:00.000Z");
@@ -422,6 +422,56 @@ test("loadPrevious liest auch einen Stand aus einem älteren Format", () => {
   assert.equal(previous.formatVersion, FORMAT_VERSION + 1);
   assert.equal(previous.addedLater, true);
   assert.equal(previous.units.a.box, 3);
+});
+
+test("Läufe der Erkennung ohne Text: die letzten 20, unter eigenem Schlüssel, nie im Lernstand", () => {
+  const backend = memoryBackend();
+  const store = createStore(backend, { now: clock(NOW) });
+  assert.deepEqual(store.loadSpeechLog(), []);
+  for (let run = 1; run <= 23; run += 1) {
+    store.noteSpeechRun({ at: "t" + run, status: "notMeasured", reason: "noSpeech", events: [{ name: "audiostart", ms: run }] });
+  }
+  const log = createStore(backend).loadSpeechLog();
+  assert.equal(log.length, 20);
+  assert.equal(log[0].at, "t4");
+  assert.equal(log.at(-1).at, "t23");
+  assert.equal(backend.items.has(STORAGE_KEYS.state), false, "Der Lernstand bleibt unberührt");
+});
+
+test("Läufe der Erkennung: Ein voller Speicher und Unlesbares stören die Übung nicht", () => {
+  const backend = memoryBackend();
+  const store = createStore(backend);
+  backend.setItem = () => {
+    throw new DOMException("voll", "QuotaExceededError");
+  };
+  store.noteSpeechRun({ at: "t", status: "notMeasured", reason: "noSpeech", events: [] });
+  assert.deepEqual(store.loadSpeechLog(), []);
+  const broken = memoryBackend({ "radiology-english.app.speechLog": "kein JSON" });
+  assert.deepEqual(createStore(broken).loadSpeechLog(), []);
+});
+
+test("discardForeignSession: Eine Übung aus einer anderen Version wird verworfen und ihre Art genannt", () => {
+  const backend = memoryBackend();
+  const store = createStore(backend);
+  assert.deepEqual(discardForeignSession(store, "2"), { error: null, discardedKind: null });
+  store.saveSession({ kind: "placement", appVersion: "2" });
+  assert.deepEqual(discardForeignSession(store, "2"), { error: null, discardedKind: null });
+  assert.equal(store.loadSession().kind, "placement", "Die eigene Version bleibt");
+  assert.deepEqual(discardForeignSession(store, "3"), { error: null, discardedKind: "placement" });
+  assert.equal(store.loadSession(), null);
+  store.saveSession({ kind: "speech", appVersion: "2" });
+  assert.equal(discardForeignSession(store, "3").discardedKind, "speech");
+});
+
+test("discardForeignSession: Wirft der Speicher, läuft die App weiter und meldet es", () => {
+  const store = {
+    loadSession() {
+      throw new Error("gesperrt");
+    },
+  };
+  const result = discardForeignSession(store, "1");
+  assert.equal(result.error.code, "unavailable");
+  assert.equal(result.discardedKind, null);
 });
 
 test("loadBroken liefert alle aufgehobenen Rohfassungen", () => {

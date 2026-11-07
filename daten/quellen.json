@@ -198,6 +198,7 @@
       "title": "Cambridge Dictionary",
       "publisher": "Cambridge University Press",
       "url": "https://dictionary.cambridge.org/",
+      "entryBase": "https://dictionary.cambridge.org/dictionary/english/",
       "retrieved": "2026-11-07",
       "access": "search"
     },

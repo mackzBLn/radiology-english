@@ -4,6 +4,7 @@
  * Quellen:
  *   https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persisted
  *   https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine
+ *   https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgent
  *   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select
  */
 
@@ -111,6 +112,14 @@ function rateCard(ctx) {
   );
 }
 
+// Ein Lauf der Erkennung ohne Text je Zeile: Zeitpunkt, Grund und Ereignisse mit Zeiten. Das Protokoll zum Gerätetest braucht genau das.
+export function speechLogLines(log) {
+  return log.map((entry) => {
+    const events = (entry.events ?? []).map((event) => event.name + " " + event.ms).join(", ");
+    return entry.at + " " + entry.status + " " + entry.reason + ": " + events;
+  });
+}
+
 async function buildReport(ctx) {
   const workerVersion = await ctx.worker.version();
   let persisted = "unbekannt";
@@ -120,9 +129,11 @@ async function buildReport(ctx) {
     // Bleibt „unbekannt“.
   }
   const chosen = ctx.tts.chooseVoice(ctx.state.settings);
+  const speechLog = speechLogLines(ctx.store.loadSpeechLog());
   return [
     "Version App: " + ctx.version,
     "Version Service Worker: " + (workerVersion ?? "keiner aktiv"),
+    "Gerät und Browser: " + navigator.userAgent,
     "navigator.standalone: " + String(navigator.standalone),
     "storage.persisted: " + persisted,
     "Englische Stimmen: " + ctx.tts.listVoices().length,
@@ -131,6 +142,8 @@ async function buildReport(ctx) {
     "navigator.onLine: " + String(navigator.onLine),
     "Gespeicherte Einheiten: " + Object.keys(ctx.state.units).length,
     "Letzte Sicherung: " + (ctx.state.backup.lastAt ?? "noch keine"),
+    "Erkennung ohne Text, letzte Läufe: " + (speechLog.length === 0 ? "keine" : ""),
+    ...speechLog,
   ].join("\n");
 }
 
