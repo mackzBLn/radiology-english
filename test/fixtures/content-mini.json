@@ -1,0 +1,211 @@
+{
+  "satzbau": {
+    "formatVersion": 1,
+    "file": "satzbau",
+    "strand": "grammar",
+    "sections": [
+      {
+        "id": "sb.questions",
+        "key": "questions",
+        "titleDe": "Fragen stellen",
+        "explanationDe": "Eine Regel und ein Merksatz.",
+        "explanationSource": { "ref": "quelle-a", "locator": "Abschnitt 1" },
+        "sentences": [
+          { "id": "sb.questions.s01", "situationDe": "Frag nach der Bereitschaft.", "en": "Are you ready?", "variants": [], "keywords": ["ready"], "meaningDe": "Sind Sie bereit?", "cefr": "A1", "core": true, "source": { "ref": "quelle-a", "locator": "Abschnitt 1" } }
+        ]
+      }
+    ]
+  },
+  "klaeren": {
+    "formatVersion": 1,
+    "file": "klaeren",
+    "strand": "clarify",
+    "sections": [
+      {
+        "id": "kl.repeat",
+        "key": "repeat",
+        "titleDe": "Wiederholen",
+        "sentences": [
+          { "id": "kl.repeat.s01", "situationDe": "Bitte um Wiederholung.", "en": "Could you say that again?", "variants": ["Could you repeat that?"], "keywords": ["again|repeat"], "meaningDe": "Könnten Sie das noch einmal sagen?", "cefr": "A2", "core": false, "source": { "ref": "quelle-a", "locator": "Abschnitt 2" } }
+        ],
+        "patient": [
+          {
+            "id": "kl.repeat.p01",
+            "kind": "question",
+            "en": "Sorry, what did you say?",
+            "variants": ["Pardon?"],
+            "meaningDe": "Wie bitte, was haben Sie gesagt?",
+            "cefr": "A2",
+            "source": { "ref": "quelle-a", "locator": "Abschnitt 2" },
+            "reactions": [
+              { "en": "I will say it again.", "fits": true, "meaningDe": "Ich sage es noch einmal.", "source": { "ref": "quelle-a", "locator": "Abschnitt 2" } },
+              { "en": "Please sit down.", "fits": false, "whyDe": "Das geht auf die Frage nicht ein.", "meaningDe": "Bitte setzen Sie sich.", "source": { "ref": "quelle-b", "locator": "Teil 1" } },
+              { "en": "Please keep still.", "fits": false, "whyDe": "Das ist eine Anweisung.", "meaningDe": "Bitte halten Sie still.", "source": { "ref": "quelle-b", "locator": "Teil 2" } }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "gemeinsam": {
+    "formatVersion": 1,
+    "file": "gemeinsam",
+    "strand": "radiology",
+    "sections": [
+      {
+        "id": "ge.closing",
+        "key": "closing",
+        "titleDe": "Abschluss",
+        "sentences": [
+          { "id": "ge.closing.s01", "situationDe": "Verabschiede dich.", "en": "We are finished now.", "variants": [], "keywords": ["finished"], "meaningDe": "Wir sind jetzt fertig.", "cefr": "A1", "core": true, "exams": ["mri", "ct", "xray"], "source": { "ref": "quelle-a", "locator": "Abschnitt 3" } }
+        ]
+      },
+      {
+        "id": "ge.safety",
+        "key": "safety",
+        "titleDe": "Abfragen",
+        "sentences": [
+          { "id": "ge.safety.s01", "situationDe": "Frag nach Metall.", "en": "Do you have any metal in your body?", "variants": [], "keywords": ["metal"], "meaningDe": "Haben Sie Metall im Körper?", "cefr": "A2", "core": true, "exams": ["mri", "ct"], "source": { "ref": "quelle-a", "locator": "Abschnitt 4" } },
+          { "id": "ge.safety.s02", "situationDe": "Frag nach einer Schwangerschaft.", "en": "Could you be pregnant?", "variants": [], "keywords": ["pregnant"], "meaningDe": "Könnten Sie schwanger sein?", "cefr": "A2", "core": true, "clinicDependent": true, "noteDe": "Ein kurzer Hinweis.", "exams": ["ct", "xray"], "source": { "ref": "quelle-a", "locator": "Abschnitt 4" } }
+        ],
+        "patient": [
+          {
+            "id": "ge.safety.p01",
+            "kind": "unclear",
+            "en": "I am not sure.",
+            "variants": ["I don't know."],
+            "meaningDe": "Ich bin nicht sicher.",
+            "cefr": "A1",
+            "clinicDependent": true,
+            "noteDe": "Hinweis zur Äußerung.",
+            "exams": ["mri", "xray"],
+            "source": { "ref": "quelle-b", "locator": "Teil 3" },
+            "reactions": [
+              { "en": "I will ask the doctor.", "fits": true, "clinicDependent": true, "meaningDe": "Ich frage den Arzt.", "source": { "ref": "quelle-b", "locator": "Teil 3" } },
+              { "en": "Please sit down.", "fits": false, "whyDe": "Das geht darauf nicht ein.", "meaningDe": "Bitte setzen Sie sich.", "source": { "ref": "quelle-b", "locator": "Teil 1" } },
+              { "en": "Please keep still.", "fits": false, "whyDe": "Das ist eine Anweisung.", "meaningDe": "Bitte halten Sie still.", "source": { "ref": "quelle-b", "locator": "Teil 2" } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ge.greeting",
+        "key": "greeting",
+        "titleDe": "Begrüßung",
+        "sentences": [
+          { "id": "ge.greeting.s01", "situationDe": "Begrüße die Person.", "en": "Good morning.", "variants": ["Hello."], "keywords": ["morning|hello"], "meaningDe": "Guten Morgen.", "cefr": "A1", "core": true, "exams": ["mri", "ct", "xray"], "source": { "ref": "quelle-a", "locator": "Abschnitt 5" } }
+        ]
+      },
+      {
+        "id": "ge.anxiety",
+        "key": "anxiety",
+        "titleDe": "Beruhigen",
+        "sentences": [
+          { "id": "ge.anxiety.s01", "situationDe": "Beruhige die Person.", "en": "I am right outside.", "variants": [], "keywords": ["outside"], "meaningDe": "Ich bin direkt draußen.", "cefr": "A2", "core": false, "exams": ["mri", "ct"], "source": { "ref": "quelle-a", "locator": "Abschnitt 6" } }
+        ]
+      }
+    ],
+    "words": [
+      { "id": "ge.w.scan", "en": "scan", "variants": [], "meaningDe": "Aufnahme", "cefr": "A2", "source": { "ref": "quelle-a", "locator": "Abschnitt 7" } }
+    ]
+  },
+  "mrt": {
+    "formatVersion": 1,
+    "file": "mrt",
+    "strand": "radiology",
+    "exam": "mri",
+    "sections": [
+      {
+        "id": "mr.noise",
+        "key": "noise",
+        "titleDe": "Lärm",
+        "sentences": [
+          { "id": "mr.noise.s01", "situationDe": "Kündige den Lärm an.", "en": "The scanner is loud.", "variants": [], "keywords": ["loud"], "meaningDe": "Das Gerät ist laut.", "cefr": "A2", "core": true, "source": { "ref": "quelle-a", "locator": "Abschnitt 8" } }
+        ]
+      },
+      {
+        "id": "mr.safety",
+        "key": "safety",
+        "titleDe": "Abfragen",
+        "sentences": [
+          { "id": "mr.safety.s01", "situationDe": "Frag nach einem Implantat.", "en": "Do you have an implant?", "variants": [], "keywords": ["implant"], "meaningDe": "Haben Sie ein Implantat?", "cefr": "A2", "core": true, "source": { "ref": "quelle-a", "locator": "Abschnitt 9" } }
+        ],
+        "patient": [
+          {
+            "id": "mr.safety.p01",
+            "kind": "answer",
+            "en": "No, I don't.",
+            "variants": ["No."],
+            "meaningDe": "Nein.",
+            "cefr": "A1",
+            "source": { "ref": "quelle-a", "locator": "Abschnitt 9" },
+            "reactions": [
+              { "en": "Thank you.", "fits": true, "meaningDe": "Danke.", "source": { "ref": "quelle-a", "locator": "Abschnitt 9" } },
+              { "en": "Please sit down.", "fits": false, "whyDe": "Das passt hier nicht.", "meaningDe": "Bitte setzen Sie sich.", "source": { "ref": "quelle-b", "locator": "Teil 1" } },
+              { "en": "Please keep still.", "fits": false, "whyDe": "Das ist eine Anweisung.", "meaningDe": "Bitte halten Sie still.", "source": { "ref": "quelle-b", "locator": "Teil 2" } }
+            ]
+          }
+        ]
+      }
+    ],
+    "words": [
+      { "id": "mr.w.coil", "en": "coil", "variants": [], "meaningDe": "Spule", "noteDe": "Ein Wort aus dem MRT.", "cefr": "B1", "source": { "ref": "quelle-a", "locator": "Abschnitt 10" } }
+    ]
+  },
+  "ct": {
+    "formatVersion": 1,
+    "file": "ct",
+    "strand": "radiology",
+    "exam": "ct",
+    "sections": [
+      {
+        "id": "ct.safety",
+        "key": "safety",
+        "titleDe": "Abfragen",
+        "sentences": [
+          { "id": "ct.safety.s01", "situationDe": "Frag nach einer Allergie.", "en": "Do you have any allergies?", "variants": [], "keywords": ["allergies"], "meaningDe": "Haben Sie Allergien?", "cefr": "A2", "core": true, "source": { "ref": "quelle-a", "locator": "Abschnitt 11" } }
+        ]
+      }
+    ],
+    "words": [
+      { "id": "ct.w.table", "en": "table", "variants": [], "meaningDe": "Tisch", "cefr": "A1", "source": { "ref": "quelle-a", "locator": "Abschnitt 12" } }
+    ]
+  },
+  "roentgen": {
+    "formatVersion": 1,
+    "file": "roentgen",
+    "strand": "radiology",
+    "exam": "xray",
+    "sections": [
+      {
+        "id": "rx.safety",
+        "key": "safety",
+        "titleDe": "Abfragen",
+        "sentences": [
+          { "id": "rx.safety.s01", "situationDe": "Frag nach Schmuck.", "en": "Are you wearing any jewellery?", "variants": ["Are you wearing any jewelry?"], "keywords": ["jewellery|jewelry"], "meaningDe": "Tragen Sie Schmuck?", "cefr": "A2", "core": true, "source": { "ref": "quelle-a", "locator": "Abschnitt 13" } }
+        ]
+      }
+    ],
+    "words": [
+      { "id": "rx.w.plate", "en": "plate", "variants": [], "meaningDe": "Platte", "cefr": "B1", "source": { "ref": "quelle-a", "locator": "Abschnitt 14" } }
+    ]
+  },
+  "faelle": {
+    "formatVersion": 1,
+    "file": "faelle",
+    "checklist": [
+      { "id": "fa.check.1", "labelDe": "Punkt eins" },
+      { "id": "fa.check.2", "labelDe": "Punkt zwei" }
+    ],
+    "cases": [
+      { "id": "fa.mri.1", "exam": "mri", "type": "practice", "titleDe": "Beispielfall", "taskDe": "Führe durch die Untersuchung.", "patientProfileDe": "Erfunden: Beispielprofil.", "mustAskDe": ["Metall"], "answers": [], "twists": [] }
+    ]
+  },
+  "quellen": {
+    "formatVersion": 1,
+    "sources": [
+      { "id": "quelle-a", "title": "Beispielquelle A", "publisher": "Beispielverlag", "url": "beispiel/a.html", "retrieved": "2026-11-07", "access": "direct" },
+      { "id": "quelle-b", "title": "Beispielquelle B", "publisher": "Beispielverlag", "url": "beispiel/b.html", "retrieved": "2026-11-07", "access": "direct" }
+    ]
+  }
+}

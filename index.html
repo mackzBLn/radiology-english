@@ -1,71 +1,46 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" style="background:#141416">
 <head>
 <meta charset="utf-8">
 <!--
-Radiology English – Startseite. Wird in Phase 2 durch die App ersetzt. Kein Skript.
-Quellen: "Quelle N" verweist auf die Quellenlisten des Projekts. Die Adressen [H1] bis [H5] wurden am 03.11.2026 gelesen (MDN Web Docs).
+Radiology English: Hülle der App, der Inhalt entsteht in js/ui/app.js. Kein Inhalt von fremden Servern.
+"Quelle N" verweist auf die Quellenlisten des Projekts.
  [H1] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport
- [H2] https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
- [H3] https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
- [H4] https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
- [H5] https://developer.mozilla.org/en-US/docs/Web/CSS/env
+ [H2] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/color-scheme
+ [H3] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/theme-color
+ [H4] https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script
+ [H5] https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event
 -->
-<!-- width=device-width und initial-scale=1 [H1]; viewport-fit=cover, damit env(safe-area-inset-bottom) wirkt (Quelle 37, [H1]). -->
+<!-- viewport-fit=cover, damit env(safe-area-inset-bottom) wirkt (Quelle 37, [H1]). -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Für Suchmaschinen gesperrt (Quelle 16). -->
 <meta name="robots" content="noindex">
+<!-- Dunkel, bevor das Stylesheet geladen ist [H2]. -->
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#141416"><!-- [H3] -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Rad English">
 <title>Radiology English</title>
-<style>
-/* Farbwerte nach Vorgabe des Projekts (dunkles Design). color-scheme: dark stellt Formularelemente und Bildlaufleisten dunkel [H2]. */
-:root {
-  color-scheme: dark;
-  --bg: #141416;
-  --card: #232326;
-  --text: #F2F2F7;
-  --accent: #5CB8FF;
-}
-html { background: var(--bg); }
-/* Systemschrift über system-ui [H3], keine Webschriften (Vorgabe des Projekts). Abstand unten mit env(safe-area-inset-bottom) [H5] (Quelle 37). */
-body {
-  margin: 0;
-  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-main { max-width: 560px; margin: 0 auto; }
-.card { background: var(--card); border-radius: 14px; padding: 20px; }
-h1 { font-size: 1.6rem; margin: 0 0 12px; }
-p { margin: 0 0 20px; font-size: 1.05rem; }
-/* Link als große Bedienfläche, mindestens 48 CSS-Pixel hoch; Apples Mindestgröße (Quelle 36) ist offen.
-   touch-action: manipulation schaltet den Doppeltipp-Zoom ab [H4]. */
-.btn {
-  display: block;
-  box-sizing: border-box;
-  min-height: 56px;
-  padding: 16px 20px;
-  border-radius: 12px;
-  background: var(--accent);
-  color: var(--bg);
-  font-size: 1.15rem;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  touch-action: manipulation;
-}
-</style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<main>
-  <div class="card">
-    <h1>Radiology English</h1>
-    <p>Die App ist in Vorbereitung.</p>
-    <!-- Relativer Pfad ohne führenden Schrägstrich, denn die Seite liegt als Projektseite im Unterordner des Repositorys (Quelle 11). -->
-    <a class="btn" href="machbarkeit/">Machbarkeitstest öffnen</a>
-  </div>
-</main>
+<div id="app"><p class="startup">Die App startet.</p></div>
+<!-- Lädt app.js nicht, gibt es noch keine Fehlerkarte, und die Home-Bildschirm-App hat keinen Knopf zum Neuladen. Darum ohne Abhängigkeiten. -->
+<div id="start-failed" class="startup" hidden>
+<p>Die App ließ sich nicht starten. Dein Lernstand bleibt erhalten.</p>
+<button type="button" class="btn btn-primary" onclick="location.reload()">Neu laden</button>
+</div>
+<script>
+// onerror am Skript meldet eine Datei, die nicht lädt [H4]. Ein Fehler beim Ausführen der Module kommt am Fenster an [H5], app.js meldet sich dort ab.
+function startFailed() {
+  document.getElementById("app").hidden = true;
+  document.getElementById("start-failed").hidden = false;
+}
+window.addEventListener("error", startFailed);
+</script>
+<script type="module" src="js/ui/app.js" onerror="startFailed()"></script>
 </body>
 </html>

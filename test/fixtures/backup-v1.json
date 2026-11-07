@@ -1,0 +1,73 @@
+{
+  "app": "radiology-english",
+  "kind": "backup",
+  "formatVersion": 1,
+  "createdAt": "2026-11-07T08:30:00.000Z",
+  "appVersion": "0.9.0",
+  "extraInBackup": "bleibt unbeachtet",
+  "state": {
+    "formatVersion": 1,
+    "createdAt": "2026-10-01T07:00:00.000Z",
+    "updatedAt": "2026-11-07T08:29:00.000Z",
+    "extraTop": { "nested": [1, 2, { "deep": true }] },
+    "units": {
+      "mr.safety.s01": {
+        "box": 3,
+        "due": "2026-11-14",
+        "seen": 9,
+        "correct": 7,
+        "wrong": 2,
+        "lastResult": "ok",
+        "lastAt": "2026-11-07T08:20:00.000Z",
+        "spokenA": true,
+        "spokenB": false,
+        "extraUnit": "bleibt"
+      },
+      "gibt.es.nicht.mehr": {
+        "box": 5,
+        "due": "2026-12-01",
+        "seen": 12,
+        "correct": 12,
+        "wrong": 0,
+        "lastResult": "ok",
+        "lastAt": "2026-11-01T18:00:00.000Z",
+        "spokenA": true,
+        "spokenB": true
+      }
+    },
+    "placement": {
+      "attempts": [
+        {
+          "form": "A",
+          "at": "2026-10-01T07:15:00.000Z",
+          "parts": { "speaking": { "level": "A2", "measured": true } },
+          "overall": "A2",
+          "gaps": ["Fragen stellen"],
+          "strengths": ["Hören"]
+        }
+      ],
+      "plan": { "order": ["sb.questions", "ge.greeting"], "noteDe": "Erst der Satzbau." },
+      "extraPlacement": 42
+    },
+    "partner": [
+      {
+        "caseId": "fa.mri.1",
+        "exam": "mri",
+        "type": "practice",
+        "at": "2026-11-02T19:00:00.000Z",
+        "ratings": {
+          "fa.check.1": "yes",
+          "fa.check.2": "partly",
+          "fa.check.3": "yes",
+          "fa.check.4": "no",
+          "fa.check.5": "yes"
+        },
+        "helpNote": "Bei den Atemkommandos",
+        "passed": false
+      }
+    ],
+    "settings": { "voiceURI": "Testvoice", "lang": "en-US", "slowRate": 0.7, "extraSetting": "bleibt" },
+    "backup": { "lastAt": "2026-10-20T12:00:00.000Z" },
+    "stats": { "days": { "2026-11-07": { "exercises": 30, "extraDay": 1 } }, "extraStats": true }
+  }
+}

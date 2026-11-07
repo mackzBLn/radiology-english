@@ -1,0 +1,436 @@
+/*
+ * Radiology English: Design. Nur dunkel, Farbwerte nach Vorgabe des Projekts, Systemschrift, nichts von außen.
+ * "Quelle N" verweist auf die Quellenlisten des Projekts.
+ * Quellen:
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/env
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/position
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/length
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop
+ *   https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html
+ *
+ * Klassen für Ansichten (Bausteine dazu stehen in js/ui/components.js):
+ *
+ * Aufbau     .view (setzt der Router auf den Behälter jeder Ansicht) · .view-header, .view-title (oben, mit Zurück)
+ *            .view-header-clip (Titel einzeilig) mit .title-hidden (Titel gerade nicht zeigen)
+ *            .large-targets (auf den Behälter setzen: alle Bedienflächen 56 px, für die Bahn)
+ *            .stack (Abstand untereinander) · .row (nebeneinander, Knöpfe teilen sich die Breite)
+ * Karten     .card · .card-title · .card-ok, .card-warn, .card-error (farbiger Rand)
+ * Knöpfe     .btn plus .btn-primary (Hauptaktion), .btn-secondary, .btn-ghost (nur Text), .btn-danger
+ *            .btn-option (Antwort, linksbündig, 56 px) mit .option-correct, .option-wrong, .option-muted
+ *            .btn-audio · .is-speaking (Knopf, der gerade spricht) · .btn-info (rund, 48 px) · .btn-back · .btn-clinic (Marke „Klinik prüfen“)
+ *            .tile-grid, .tile (große Kacheln, zwei Spalten) · .list-button (Eintrag mit Titel und Fortschritt) mit .is-next und .next-marker
+ * Untere Leiste  .bottom-bar (bleibt unten stehen, letzter Baustein der Ansicht) · .bottom-bar-row (nebeneinander)
+ * Hinweise   .hint plus .hint-info, .hint-ok, .hint-warn, .hint-error · .muted (leiser Text)
+ * Fortschritt  .progress mit .progress-fill (Breite per style) · .progress-text · .timer (Ziffern gleich breit)
+ * Sätze      .sentence · .sentence-en (englisch, groß) · .meaning-de · .situation-de · .label · .reaction (Antwort in derselben Karte)
+ * Erkannt    .word-list mit .word (antippbar) plus .word-recognized oder .word-missing
+ * Kacheln    .word-tiles mit .word-tile (Wort antippen) und .word-tile-used · .word-slots (bisher gebauter Satz)
+ * Eingabe    .input (auch für select und textarea) · .visually-hidden
+ * Sonstiges  .dialog · .facts (Liste Name und Wert) · .pre-text (kopierbarer Text) · .version
+ *            .group (aufklappbare Gruppe auf details)
+ */
+
+:root {
+  color-scheme: dark;
+  --bg: #141416;
+  --card: #232326;
+  --text: #F2F2F7;
+  --accent: #5CB8FF;
+  --ok: #4AD968;
+  --warn: #FEDF43;
+  --error: #FF6165;
+  /* Ableitungen derselben Werte mit Deckkraft. */
+  --muted: rgba(242, 242, 247, 0.72);
+  --line: rgba(242, 242, 247, 0.18);
+  /* Abstände der Ansicht; env() liefert den sicheren Rand (Quelle 37). */
+  --pad-top: calc(8px + env(safe-area-inset-top));
+  --pad-left: max(16px, env(safe-area-inset-left));
+  --pad-right: max(16px, env(safe-area-inset-right));
+  --pad-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 26px; line-height: 1.2; }
+h2 { font-size: 21px; line-height: 1.25; }
+h3 { font-size: 18px; line-height: 1.3; }
+a { color: var(--accent); }
+
+.startup { padding: calc(24px + env(safe-area-inset-top)) 16px; color: var(--muted); }
+.startup > .btn { margin-top: 12px; }
+
+/* ---------- Aufbau ---------- */
+
+/* Mindesthöhe, damit die untere Leiste auch bei wenig Inhalt ganz unten steht. dvh: Länge nach der sichtbaren Fläche. */
+.view {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 640px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: var(--pad-top) var(--pad-right) var(--pad-bottom) var(--pad-left);
+}
+
+.view-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  margin: calc(-1 * var(--pad-top)) calc(-1 * var(--pad-right)) 0 calc(-1 * var(--pad-left));
+  padding: env(safe-area-inset-top) var(--pad-right) 0 max(4px, env(safe-area-inset-left));
+  background: var(--bg);
+}
+
+.view-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.view-header-clip .view-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.view-header-clip.title-hidden .view-title { visibility: hidden; }
+
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.stack:empty { display: none; }
+.row { display: flex; align-items: center; gap: 8px; }
+.row > .btn { flex: 1 1 0; width: auto; }
+.row > .btn-info { flex: 0 0 48px; width: 48px; }
+.row > .btn-clinic { flex: 0 0 auto; white-space: nowrap; }
+
+/* ---------- Karten ---------- */
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: var(--card);
+}
+.card-title { font-size: 19px; font-weight: 700; line-height: 1.25; }
+.card-ok { border-color: var(--ok); }
+.card-warn { border-color: var(--warn); }
+.card-error { border-color: var(--error); }
+
+/* ---------- Knöpfe: mindestens 48 CSS-Pixel hoch (Vorgabe, Grundlage WCAG 2.2 SC 2.5.5). ---------- */
+
+.btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.btn:active { opacity: 0.7; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn:focus-visible, .word:focus-visible, .word-tile:focus-visible, .input:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-primary { background: var(--accent); color: var(--bg); }
+.btn-secondary { background: var(--card); border-color: var(--line); }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn-danger { background: transparent; border-color: var(--error); color: var(--error); }
+
+.btn-option {
+  justify-content: flex-start;
+  min-height: 56px;
+  border-color: var(--line);
+  font-weight: 500;
+  text-align: left;
+}
+.option-correct { border-color: var(--ok); color: var(--ok); }
+.option-wrong { border-color: var(--error); color: var(--error); }
+.option-muted { opacity: 0.5; }
+
+.btn-audio { border-color: var(--accent); background: transparent; color: var(--accent); }
+.btn.is-speaking { background: var(--accent); color: var(--bg); }
+.btn-clinic { padding-right: 8px; padding-left: 8px; border-color: var(--warn); background: transparent; color: var(--warn); font-weight: 500; }
+
+.btn-info {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-color: var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.btn-back {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--accent);
+}
+.btn-back::before { content: "\2039"; font-size: 24px; line-height: 1; }
+
+.tile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile { min-height: 84px; border-color: var(--line); }
+
+.list-button {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  border-color: var(--line);
+  font-weight: 500;
+  text-align: left;
+}
+.list-button.is-next { border-color: var(--accent); }
+.next-marker { color: var(--accent); font-weight: 700; }
+
+/* ---------- Untere Leiste ---------- */
+
+/* sticky reserviert im Fluss ihre eigene Höhe, also verdeckt die Leiste nie den letzten Inhalt, und steht beim Scrollen fest unten. */
+.bottom-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: auto calc(-1 * var(--pad-right)) calc(-1 * var(--pad-bottom)) calc(-1 * var(--pad-left));
+  padding: 10px var(--pad-right) 10px var(--pad-left);
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.bottom-bar-row { display: flex; gap: 8px; }
+.bottom-bar-row > .btn { flex: 1 1 0; width: auto; }
+
+/* ---------- Hinweise ---------- */
+
+.hint {
+  padding: 10px 12px;
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  background: rgba(92, 184, 255, 0.1);
+}
+.hint-info { border-left-color: var(--accent); background: rgba(92, 184, 255, 0.1); }
+.hint-ok { border-left-color: var(--ok); background: rgba(74, 217, 104, 0.1); }
+.hint-warn { border-left-color: var(--warn); background: rgba(254, 223, 67, 0.1); }
+.hint-error { border-left-color: var(--error); background: rgba(255, 97, 101, 0.12); }
+.muted { color: var(--muted); }
+
+/* ---------- Fortschritt ---------- */
+
+.progress {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--line);
+}
+.progress-fill { display: block; height: 100%; border-radius: 4px; background: var(--ok); }
+.progress-text { color: var(--muted); font-weight: 400; }
+.timer { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- Sätze ---------- */
+
+.sentence { display: flex; flex-direction: column; gap: 6px; }
+.sentence-en { font-size: 19px; font-weight: 600; line-height: 1.3; }
+.meaning-de { color: var(--muted); }
+.situation-de { font-weight: 500; }
+.label { color: var(--muted); font-weight: 600; }
+.reaction { padding-top: 10px; border-top: 1px solid var(--line); }
+
+/* ---------- Erkannte und nicht erkannte Wörter: nicht nur die Farbe unterscheidet sie. ---------- */
+
+.word-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.word {
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.word-recognized { border-color: var(--ok); color: var(--ok); }
+.word-missing {
+  border: 2px dashed var(--error);
+  color: var(--error);
+  font-weight: 700;
+}
+
+/* ---------- Wort-Kacheln zum Antippen ---------- */
+
+.word-tiles { display: flex; flex-wrap: wrap; gap: 8px; }
+.word-tile {
+  box-sizing: border-box;
+  min-height: 56px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.word-tile:active { opacity: 0.7; }
+.word-tile-used { opacity: 0.3; }
+.word-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 56px;
+  padding: 8px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+/* ---------- Eingabe ---------- */
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  touch-action: manipulation;
+}
+textarea.input { min-height: 96px; resize: vertical; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Bahn: alle Bedienflächen 56 CSS-Pixel (Vorgabe). ---------- */
+
+.large-targets .btn,
+.large-targets .word,
+.large-targets .word-tile,
+.large-targets .input { min-height: 56px; }
+.large-targets .btn-info,
+.large-targets .row > .btn-info { flex: 0 0 56px; width: 56px; height: 56px; }
+
+/* ---------- Sonstiges ---------- */
+
+.group { border-radius: 14px; background: var(--card); }
+.group > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.group > summary::-webkit-details-marker { display: none; }
+.group > summary::after { margin-left: auto; color: var(--accent); content: "+"; font-size: 24px; line-height: 1; }
+.group[open] > summary::after { content: "\2212"; }
+.group > .stack { padding: 0 14px 14px; }
+.group .card { border-color: var(--line); }
+
+.dialog {
+  box-sizing: border-box;
+  width: min(92vw, 520px);
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+}
+.dialog[open] { display: flex; flex-direction: column; gap: 12px; }
+.dialog::backdrop { background: rgba(20, 20, 22, 0.8); }
+
+.facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 12px;
+  margin: 0;
+}
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+
+.pre-text {
+  margin: 0;
+  font: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.version { color: var(--muted); text-align: center; }
+
+/* Fehlerkarte über allem; die Ansicht dahinter bleibt, wie sie ist. */
+.error-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: var(--pad-top) var(--pad-right) var(--pad-bottom) var(--pad-left);
+  background: var(--bg);
+}
+.error-layer > .card { max-width: 640px; margin: 0 auto; }
