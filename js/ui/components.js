@@ -159,13 +159,21 @@ export function waitNote(text = "Einen Moment …") {
   return el("p", { class: "muted", role: "status" }, text);
 }
 
-// Aus span, damit der Balken auch in einem Knopf stehen darf.
-export function progressBar(done, total) {
-  const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+// Aus span, damit der Balken auch in einem Knopf stehen darf. practiced zeigt als zweite Stufe, was schon geübt, aber noch nicht gelernt ist.
+export function progressBar(done, total, practiced = done) {
+  const percent = (value) => (total > 0 ? Math.round((value / total) * 100) : 0);
+  const twoStages = practiced > done;
   return el(
     "span",
-    { class: "progress", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(total), "aria-valuenow": String(done) },
-    el("span", { class: "progress-fill", style: "width:" + percent + "%" }),
+    {
+      class: twoStages ? "progress progress-two" : "progress",
+      role: "progressbar",
+      "aria-valuemin": "0",
+      "aria-valuemax": String(total),
+      "aria-valuenow": String(done),
+    },
+    el("span", { class: "progress-fill", style: "width:" + percent(done) + "%" }),
+    twoStages ? el("span", { class: "progress-practiced", style: "width:" + percent(practiced - done) + "%" }) : null,
   );
 }
 
@@ -180,15 +188,23 @@ export function clinicNote() {
   return hint("In deiner Klinik kann das anders sein.", "warn");
 }
 
-// Für lange Listen: clinicNote steht einmal oben, die Karte trägt nur diese Marke. Der Tipp öffnet den Hinweis.
-export function clinicMark() {
-  const node = el("button", { type: "button", class: "btn btn-clinic" }, "Klinik prüfen");
-  node.addEventListener("click", () => openDialog(node, "Klinik prüfen", clinicNote()));
+// Für lange Listen: Oben steht ein Hinweis auf die Marke, die Karte trägt nur die Marke. Der Tipp sagt, was zu klären ist.
+export function clinicMark(noteDe = null) {
+  const label = "Klinikabhängig";
+  const node = el("button", { type: "button", class: "btn btn-clinic" }, label);
+  node.addEventListener("click", () =>
+    openDialog(node, label, clinicNote(), el("p", null, noteDe ?? "Frag in deiner Klinik nach, wie es dort gemacht wird.")),
+  );
   return node;
 }
 
 export function noPatientDataHint() {
   return hint("Keine Patientendaten eingeben", "warn");
+}
+
+// Ein not fehlt oder kommt dazu. Bei Sicherheitssätzen ist das das Gegenteil des Ziels.
+export function negationNote() {
+  return hint("Achte auf „not“: Dieses Wort dreht den Sinn des Satzes um.", "warn");
 }
 
 export function soundHint() {

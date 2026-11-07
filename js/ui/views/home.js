@@ -1,5 +1,6 @@
 /*
- * Startseite. Lädt beim Zeichnen keine Inhaltsdaten, alles hier kommt aus dem Lernstand. Nur „Weiterlernen“ braucht sie, erst nach dem Tipp.
+ * Startseite. Lädt beim Zeichnen keine Inhaltsdaten, alles hier kommt aus dem Lernstand und der Sitzung.
+ * Nur „Neue Sätze lesen“ braucht sie, erst nach dem Tipp. Darum nennt der Knopf keinen Abschnitt.
  * Quelle:
  *   https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
  */
@@ -10,6 +11,10 @@ import { el } from "../dom.js";
 import { routeHash } from "../router.js";
 
 const BACKUP_REMINDER_DAYS = 7;
+const PLACEMENT_KIND = "placement";
+const PLACEMENT_HASH = "#/einstufung";
+// Für den Partner auf dem eigenen Telefon: die Liste nur mit den Patientenkarten. Der Lernstand bleibt unberührt.
+const PATIENT_ONLY_HASH = routeHash("partner", "alle", "patient");
 
 // Erster Start: noch nichts geübt, kein Test gemacht und nicht „Ohne Test beginnen“ gewählt.
 export function isFirstStart(state) {
@@ -22,6 +27,21 @@ export function isFirstStart(state) {
 
 export function dueCount(state, today) {
   return Object.values(state.units).filter((unit) => unit.due && unit.due <= today).length;
+}
+
+// „1 Satz oder Wort wartet“, „24 Sätze und Wörter warten“. Überall derselbe Name für dieselbe Sache.
+export function waitingText(count) {
+  return count === 1 ? "1 Satz oder Wort wartet auf dich." : count + " Sätze und Wörter warten auf dich.";
+}
+
+// Ein offener Einstufungstest aus der Sitzung, ohne die Ansicht dafür zu laden. Eine Sitzung einer anderen Version verwirft die App beim Start.
+export function openPlacement(store, version) {
+  try {
+    const session = store.loadSession();
+    return session?.kind === PLACEMENT_KIND && session.appVersion === version ? session : null;
+  } catch {
+    return null; // Die Startseite zeigt den Fehler des Speichers schon, hier fehlt dann nur die Karte.
+  }
 }
 
 // Hinweis, wenn die letzte Sicherung 7 Tage oder länger her ist und seither geübt wurde.
@@ -63,21 +83,21 @@ function reminderCard(ctx) {
   );
 }
 
-// Führt in den nächsten Abschnitt des Lernpfads. Sind alle gelernt, in den Lernpfad.
+// Führt in den nächsten Abschnitt des Lernpfads, das ist eine Leseseite. Sind alle gelernt, in den Lernpfad.
+// Üben ist die Hauptsache, die Knöpfe dafür stehen unten. Darum ist das hier der zweite Rang.
 function continueButton(ctx) {
-  const label = "Weiterlernen";
+  const label = "Neue Sätze lesen";
   const action = button(label, async () => {
     action.disabled = true;
     action.textContent = "Einen Moment …";
     try {
-      const [{ buildStrands, nextEntry }, content] = await Promise.all([import("./path.js"), ctx.getContent()]);
-      const next = nextEntry(buildStrands(content), content, ctx.state);
-      ctx.navigate(next ? routeHash("abschnitt", next.id) : "#/pfad");
+      const [{ nextHash }, content] = await Promise.all([import("./path.js"), ctx.getContent()]);
+      ctx.navigate(nextHash(content, ctx.state));
     } finally {
       action.disabled = false;
       action.textContent = label;
     }
-  }, { kind: "primary" });
+  });
   return action;
 }
 
@@ -90,7 +110,22 @@ function dueCard(ctx) {
       continueButton(ctx),
     );
   }
-  return card(el("p", { class: "card-title" }, "Heute fällig: " + count), el("p", { class: "muted" }, count === 1 ? "Eine Übung wartet auf dich." : count + " Übungen warten auf dich."));
+  return card(el("p", { class: "card-title" }, "Heute fällig: " + count), el("p", { class: "muted" }, waitingText(count)));
+}
+
+// Weiter ohne zweite Nachfrage: Die Ansicht liest resumeOnLoad, setzt es zurück und macht gleich weiter.
+function resumeButton(ctx, session) {
+  return button("Weitermachen", () => {
+    ctx.store.saveSession({ ...session, resumeOnLoad: true });
+    ctx.navigate(PLACEMENT_HASH);
+  }, { kind: "primary" });
+}
+
+function openTestTexts(session) {
+  return [
+    el("p", { class: "card-title" }, session.retake ? "Dein Sprechteil ist noch offen" : "Dein Test ist noch offen"),
+    el("p", null, "Deine Antworten sind gesichert."),
+  ];
 }
 
 // Ein Stand aus einer neueren Version: Die App speichert nichts, also gibt es nichts zu üben, bis sie aktualisiert ist.
@@ -103,19 +138,23 @@ function renderLocked(container, ctx) {
 }
 
 function renderFirstStart(container, ctx) {
+  const open = openPlacement(ctx.store, ctx.version);
   container.append(
-    card(
-      el("p", { class: "card-title" }, "Wo stehst du gerade?"),
-      el("p", null, "Ein kurzer Test zeigt es dir und ordnet deinen Lernplan. Er dauert etwa 10 Minuten."),
-    ),
+    open
+      ? card({ class: "card-warn" }, openTestTexts(open))
+      : card(
+          el("p", { class: "card-title" }, "Wo stehst du gerade?"),
+          el("p", null, "Ein kurzer Test zeigt es dir und ordnet deinen Lernplan. Er dauert etwa 10 Minuten."),
+        ),
     el("p", { class: "version" }, "Version " + ctx.version),
     bottomBar(
-      navButton("Einstufungstest starten", ctx, "#/einstufung", { kind: "primary" }),
+      open ? resumeButton(ctx, open) : navButton("Einstufungstest starten", ctx, PLACEMENT_HASH, { kind: "primary" }),
       button("Ohne Test beginnen", () => {
         ctx.state.placement.skippedAt = ctx.now().toISOString();
         ctx.save();
         ctx.navigate("#/");
       }),
+      navButton("Ich spiele nur den Patienten", ctx, PATIENT_ONLY_HASH, { kind: "ghost" }),
     ),
   );
 }
@@ -124,6 +163,11 @@ function renderToday(container, ctx) {
   const state = ctx.state;
   const today = ctx.today();
   const tile = (label, hash) => navButton(label, ctx, hash, { class: "tile" });
+  const open = openPlacement(ctx.store, ctx.version);
+  if (open) {
+    // „Neu beginnen“ führt zur Rückfrage der Ansicht, ein falscher Tipp löscht also nichts.
+    container.append(card({ class: "card-warn" }, openTestTexts(open), resumeButton(ctx, open), navButton("Neu beginnen", ctx, PLACEMENT_HASH, { kind: "ghost" })));
+  }
   if (backupReminderDue(state, today)) {
     container.append(reminderCard(ctx));
   }
@@ -137,13 +181,13 @@ function renderToday(container, ctx) {
       tile("Fortschritt", "#/fortschritt"),
       tile("Sichern", "#/sichern"),
     ),
-    navButton("Einstufungstest", ctx, "#/einstufung", { kind: "ghost" }),
+    navButton("Einstufungstest", ctx, PLACEMENT_HASH, { kind: "ghost" }),
     navButton("Einstellungen", ctx, "#/einstellungen", { kind: "ghost" }),
     el("p", { class: "version" }, "Version " + ctx.version),
     bottomBar(
       barRow(
-        navButton("Bahn", ctx, "#/bahn", { kind: "primary" }),
-        navButton("Sprechen", ctx, "#/sprechen", { kind: "primary" }),
+        navButton("In der Bahn üben", ctx, "#/bahn", { kind: "primary" }),
+        navButton("Sprechen üben", ctx, "#/sprechen", { kind: "primary" }),
       ),
     ),
   );

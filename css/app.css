@@ -8,6 +8,8 @@
  *   https://developer.mozilla.org/en-US/docs/Web/CSS/position
  *   https://developer.mozilla.org/en-US/docs/Web/CSS/length
  *   https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/line-clamp
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
  *   https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html
  *
  * Klassen für Ansichten (Bausteine dazu stehen in js/ui/components.js):
@@ -19,12 +21,13 @@
  * Karten     .card · .card-title · .card-ok, .card-warn, .card-error (farbiger Rand)
  * Knöpfe     .btn plus .btn-primary (Hauptaktion), .btn-secondary, .btn-ghost (nur Text), .btn-danger
  *            .btn-option (Antwort, linksbündig, 56 px) mit .option-correct, .option-wrong, .option-muted
- *            .btn-audio · .is-speaking (Knopf, der gerade spricht) · .btn-info (rund, 48 px) · .btn-back · .btn-clinic (Marke „Klinik prüfen“)
+ *            .btn-audio · .is-speaking (Knopf, der gerade spricht) · .btn-info (rund, 48 px) · .btn-back · .btn-clinic (Marke „Klinikabhängig“)
  *            .tile-grid, .tile (große Kacheln, zwei Spalten) · .list-button (Eintrag mit Titel und Fortschritt) mit .is-next und .next-marker
  * Untere Leiste  .bottom-bar (bleibt unten stehen, letzter Baustein der Ansicht) · .bottom-bar-row (nebeneinander)
  * Hinweise   .hint plus .hint-info, .hint-ok, .hint-warn, .hint-error · .muted (leiser Text)
- * Fortschritt  .progress mit .progress-fill (Breite per style) · .progress-text · .timer (Ziffern gleich breit)
- * Sätze      .sentence · .sentence-en (englisch, groß) · .meaning-de · .situation-de · .label · .reaction (Antwort in derselben Karte)
+ * Fortschritt  .progress mit .progress-fill (Breite per style) · .progress-two mit .progress-practiced (zweite Stufe) · .progress-text · .timer (Ziffern gleich breit)
+ * Sätze      .sentence · .sentence-en (englisch, groß) · .meaning-de · .situation-de · .label · .reaction (Antwort in derselben Karte) · .text-clamped (höchstens drei Zeilen)
+ * Erkennung  .listen-status mit .listen-dot, dazu .listen-status-live (hört gerade zu) · .result-level (große Stufe im Ergebnis)
  * Erkannt    .word-list mit .word (antippbar) plus .word-recognized oder .word-missing
  * Kacheln    .word-tiles mit .word-tile (Wort antippen) und .word-tile-used · .word-slots (bisher gebauter Satz)
  * Eingabe    .input (auch für select und textarea) · .visually-hidden
@@ -434,3 +437,45 @@ textarea.input { min-height: 96px; resize: vertical; }
   background: var(--bg);
 }
 .error-layer > .card { max-width: 640px; margin: 0 auto; }
+
+/* ---------- Nacharbeit nach der Prüfung ---------- */
+
+/* Zweite Stufe im Balken: geübt, aber noch nicht gelernt. */
+.progress-two { display: flex; }
+.progress-two > .progress-fill { border-radius: 4px 0 0 4px; }
+.progress-practiced { display: block; height: 100%; background: var(--accent); opacity: 0.55; }
+
+/* Zwei Knöpfe nebeneinander bleiben einzeilig, sonst springt die Leiste unter dem Daumen. */
+.bottom-bar-row > .btn { padding-right: 8px; padding-left: 8px; }
+
+/* Beim Satzlegen rückt die lange Aufgabe zusammen, damit die Wörter über der Leiste bleiben. */
+.text-clamped {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Während der Erkennung: eine Anzeige, kein Knopf. Ein Tipp bewirkt hier nichts. */
+.listen-status {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.listen-dot { flex: 0 0 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--muted); }
+.listen-status-live { border-color: var(--ok); color: var(--text); }
+.listen-status-live > .listen-dot { background: var(--ok); animation: listen-pulse 1.2s ease-in-out infinite; }
+@keyframes listen-pulse { 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) {
+  .listen-status-live > .listen-dot { animation: none; }
+}
+
+.result-level { color: var(--accent); font-size: 34px; font-weight: 700; line-height: 1.15; }

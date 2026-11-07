@@ -135,7 +135,7 @@ const ctx = {
   replaceState(state) {
     ctx.state = state;
   },
-  navigate: (hash) => router.navigate(hash),
+  navigate: (hash, options) => router.navigate(hash, options),
   back: () => router.back(),
 };
 

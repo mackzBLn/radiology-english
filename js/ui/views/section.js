@@ -13,8 +13,8 @@ import {
   bottomBar,
   card,
   clinicMark,
-  clinicNote,
   englishText,
+  hint,
   infoButton,
   navButton,
   progressBar,
@@ -24,13 +24,12 @@ import {
 } from "../components.js";
 import { el } from "../dom.js";
 import { routeHash } from "../router.js";
-import { EXAM_LABELS, learnedCount, parseScenarioId } from "./path.js";
+import { EXAM_LABELS, LEARNED_NOTE, learnedCount, learnedText, parseScenarioId, practicedCount, scenarioId } from "./path.js";
 
 const SHARED_FILE = "gemeinsam";
 const COLLAPSE_FROM = 15; // ab so vielen Karten lässt sich eine Gruppe zuklappen
 
-// focus ist immer eine Abschnitts-ID, denn planTrain und planSpeech kennen nur Abschnitte und Untersuchungen.
-// Ein Szenario übt deshalb den eigenen Abschnitt der Untersuchung, gibt es keinen, den gemeinsamen.
+// focus ist das, was planTrain und planSpeech üben: ein Abschnitt (sb.questions) oder ein Szenario als Ganzes (mri:safety).
 export function resolveSection(content, id) {
   const sections = content.sections();
   const scenario = parseScenarioId(id);
@@ -58,7 +57,7 @@ export function resolveSection(content, id) {
     explanationDe: explained?.explanationDe ?? null,
     explanationSource: explained?.explanationSource ?? null,
     unitIds: entry.unitIds,
-    focus: (own ?? shared).id,
+    focus: scenarioId(scenario.exam, scenario.key),
   };
 }
 
@@ -71,25 +70,25 @@ export function hasClinicNote(units) {
   return units.some((unit) => unit.clinicDependent || fittingReactions(unit).some((reaction) => reaction.clinicDependent));
 }
 
-function sentenceRow(text, source, clinicDependent, content, ctx) {
+function sentenceRow(text, source, clinicDependent, noteDe, content, ctx) {
   return el(
     "div",
     { class: "row" },
     audioButton(text, ctx),
-    clinicDependent ? clinicMark() : null,
+    clinicDependent ? clinicMark(noteDe) : null,
     infoButton(content.source(source)),
   );
 }
 
 // Was die Nutzerin auf eine Patientenäußerung antwortet.
-function reactionBlock(reaction, content, ctx) {
+function reactionBlock(reaction, noteDe, content, ctx) {
   return el(
     "div",
     { class: "sentence reaction" },
     el("p", { class: "label" }, "Das antwortest du"),
     englishText(reaction.en),
     reaction.meaningDe ? el("p", { class: "meaning-de" }, reaction.meaningDe) : null,
-    sentenceRow(reaction.en, reaction.source, reaction.clinicDependent, content, ctx),
+    sentenceRow(reaction.en, reaction.source, reaction.clinicDependent, noteDe, content, ctx),
   );
 }
 
@@ -98,8 +97,8 @@ function unitCard(unit, content, ctx) {
     englishText(unit.en),
     unit.meaningDe ? el("p", { class: "meaning-de" }, unit.meaningDe) : null,
     unit.noteDe ? el("p", { class: "muted" }, unit.noteDe) : null,
-    sentenceRow(unit.en, unit.source, unit.clinicDependent, content, ctx),
-    unit.type === "patient" ? fittingReactions(unit).map((reaction) => reactionBlock(reaction, content, ctx)) : null,
+    sentenceRow(unit.en, unit.source, unit.clinicDependent, unit.noteDe, content, ctx),
+    unit.type === "patient" ? fittingReactions(unit).map((reaction) => reactionBlock(reaction, unit.noteDe, content, ctx)) : null,
   );
 }
 
@@ -150,6 +149,7 @@ export async function render(container, ctx, params) {
 
   const units = section.unitIds.map((id) => content.unit(id)).filter((unit) => unit !== null);
   const learned = learnedCount(section.unitIds, content, ctx.state);
+  const practiced = practicedCount(section.unitIds, content, ctx.state);
 
   // Die feste Kopfzeile nennt den Titel einzeilig, sobald die volle Überschrift weggescrollt ist.
   const header = viewHeader(ctx, { title: section.titleDe, right: el("span", { class: "timer" }, units.length + " Sätze") });
@@ -161,9 +161,15 @@ export async function render(container, ctx, params) {
 
   container.append(
     fullTitle,
-    el("div", { class: "stack" }, el("p", { class: "progress-text" }, learned + " von " + units.length + " gelernt"), progressBar(learned, units.length)),
+    el(
+      "div",
+      { class: "stack" },
+      el("p", { class: "progress-text" }, learnedText(learned, units.length, practiced)),
+      progressBar(learned, units.length, practiced),
+      el("p", { class: "muted" }, LEARNED_NOTE),
+    ),
     section.explanationDe ? explanationCard(section, content) : "",
-    hasClinicNote(units) ? clinicNote() : "",
+    hasClinicNote(units) ? hint("Sätze mit gelber Marke hängen von deiner Klinik ab.", "warn") : "",
     soundHint(),
     ...unitList(units, content, ctx).flat(),
     bottomBar(

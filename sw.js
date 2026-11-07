@@ -25,7 +25,7 @@
  */
 
 // Dieselbe Nummer wie in js/version.js. Nummer und Liste setzt nur die Sitzung.
-const VERSION = "0.9.0";
+const VERSION = "0.9.1";
 
 // Ein eigener Cache je Version. Die Testseite nutzt eine andere Vorsilbe, ihr Cache bleibt unberührt.
 const CACHE_PREFIX = "radiology-english.app.";
@@ -41,6 +41,7 @@ const PRECACHE_URLS = [
   "./",
   "css/app.css",
   "daten/ct.json",
+  "daten/einstufung.json",
   "daten/faelle.json",
   "daten/gemeinsam.json",
   "daten/klaeren.json",
@@ -55,19 +56,35 @@ const PRECACHE_URLS = [
   "js/core/backup.js",
   "js/core/content.js",
   "js/core/dates.js",
+  "js/core/matcher.js",
   "js/core/migrate.js",
+  "js/core/normalize.js",
+  "js/core/partner.js",
+  "js/core/placement.js",
+  "js/core/planner.js",
+  "js/core/speak-flow.js",
+  "js/core/srs.js",
   "js/core/state.js",
   "js/core/storage.js",
+  "js/core/train-run.js",
+  "js/speech/assessor.js",
+  "js/speech/recognizer.js",
   "js/speech/tts.js",
   "js/ui/app.js",
   "js/ui/components.js",
   "js/ui/dom.js",
   "js/ui/router.js",
+  "js/ui/speak-step.js",
   "js/ui/views/backup.js",
   "js/ui/views/home.js",
+  "js/ui/views/partner.js",
   "js/ui/views/path.js",
+  "js/ui/views/placement.js",
+  "js/ui/views/progress.js",
   "js/ui/views/section.js",
   "js/ui/views/settings.js",
+  "js/ui/views/speak.js",
+  "js/ui/views/train.js",
   "js/ui/worker-control.js",
   "js/version.js",
   "manifest.webmanifest",

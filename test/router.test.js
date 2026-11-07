@@ -1,13 +1,31 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 
 import { loadContent } from "../js/core/content.js";
+import { focusUnits } from "../js/core/planner.js";
+import { isLearned as isLearnedInCore } from "../js/core/srs.js";
 import { createState, setUnitState, unitState } from "../js/core/state.js";
 import { createRouter, parseRoute, routeHash } from "../js/ui/router.js";
-import { backupReminderDue, dueCount, isFirstStart } from "../js/ui/views/home.js";
-import { buildStrands, isLearned, learnedCount, nextEntry, parseScenarioId, scenarioId } from "../js/ui/views/path.js";
+import { backupReminderDue, dueCount, isFirstStart, openPlacement, waitingText } from "../js/ui/views/home.js";
+import { buildStrands, isLearned, learnedCount, learnedText, nextEntry, nextHash, parseScenarioId, practicedCount, scenarioId } from "../js/ui/views/path.js";
 import { fittingReactions, hasClinicNote, resolveSection } from "../js/ui/views/section.js";
+
+const KNOWN_ROUTES = [
+  "#/",
+  "#/pfad",
+  "#/abschnitt/x",
+  "#/bahn",
+  "#/bahn/x",
+  "#/sprechen",
+  "#/sprechen/x",
+  "#/partner",
+  "#/partner/a/b",
+  "#/fortschritt",
+  "#/einstufung",
+  "#/sichern",
+  "#/einstellungen",
+];
 
 describe("parseRoute", () => {
   const cases = [
@@ -20,8 +38,10 @@ describe("parseRoute", () => {
     ["#/abschnitt/mri%3Asafety", "section", { id: "mri:safety" }],
     ["#/bahn", "train", {}],
     ["#/bahn/mri", "train", { focus: "mri" }],
+    ["#/bahn/mri%3Asafety", "train", { focus: "mri:safety" }],
     ["#/sprechen", "speak", {}],
     ["#/sprechen/mr.safety", "speak", { focus: "mr.safety" }],
+    ["#/sprechen/mri%3Asafety", "speak", { focus: "mri:safety" }],
     ["#/partner", "partner", {}],
     ["#/partner/fa.mri.1/patient", "partner", { caseId: "fa.mri.1", role: "patient" }],
     ["#/fortschritt", "progress", {}],
@@ -48,13 +68,14 @@ describe("parseRoute", () => {
     assert.deepEqual(parseRoute("#/abschnitt/%E0%A4%A").params, { id: "%E0%A4%A" });
   });
 
-  it("markiert die Ansichten des nächsten Laufs", () => {
-    for (const hash of ["#/bahn", "#/sprechen/x", "#/partner", "#/partner/a/b", "#/fortschritt", "#/einstufung"]) {
-      assert.equal(parseRoute(hash).later, true, hash);
+  it("keine bekannte Route gilt als später", async () => {
+    for (const hash of KNOWN_ROUTES) {
+      const route = parseRoute(hash);
+      assert.notEqual(route.later, true, hash);
+      assert.notEqual(route.name, "unknown", hash);
+      await access(new URL("../js/ui/views/" + route.view + ".js", import.meta.url));
     }
-    for (const hash of ["#/", "#/pfad", "#/abschnitt/x", "#/sichern", "#/einstellungen"]) {
-      assert.equal(parseRoute(hash).later, false, hash);
-    }
+    assert.equal(parseRoute("#/gibt-es-nicht").view, null, "nur die unbekannte Route hat keine Ansicht");
   });
 
   it("nennt für Zurück ein festes Ziel, die Startseite hat keins", () => {
@@ -135,7 +156,7 @@ function createWin(startHash = "") {
 
 const flush = () => new Promise((resolve) => setImmediate(resolve));
 
-function setUp({ hash = "", views = {}, win = createWin(hash), importView, isViewCached = async () => false } = {}) {
+function setUp({ hash = "", views = {}, win = createWin(hash), importView } = {}) {
   const log = [];
   const errors = [];
   const soon = [];
@@ -174,7 +195,6 @@ function setUp({ hash = "", views = {}, win = createWin(hash), importView, isVie
         }
         return allViews[name];
       }),
-    isViewCached,
     createHost: () => ({ kind: "host" }),
     ensureBack: (host) => backs.push(host),
     comingSoon: (host, givenCtx, detail) => soon.push(detail),
@@ -235,6 +255,22 @@ describe("createRouter", () => {
     assert.deepEqual(log.map(([name]) => name), ["home", "path", "path"]);
   });
 
+  it("navigate mit replace: Der laufende Schritt verlässt den Verlauf, Zurück führt davor", async () => {
+    const { router, win, log } = setUp();
+    await router.start();
+    router.navigate("#/einstellungen");
+    await flush();
+    router.navigate("#/pfad", { replace: true });
+    await flush();
+    assert.equal(win.location.hash, "#/pfad");
+    assert.deepEqual(log.map(([name]) => name), ["home", "settings", "path"]);
+    router.back();
+    await flush();
+    assert.equal(win.location.hash, "");
+    assert.equal(log.at(-1)[0], "home");
+    assert.equal(win.history.length, 2);
+  });
+
   it("die leere Adresse und #/ sind dasselbe Ziel", async () => {
     const { router, win, log } = setUp();
     await router.start();
@@ -244,29 +280,30 @@ describe("createRouter", () => {
     assert.deepEqual(log.map(([name]) => name), ["home", "home"]);
   });
 
-  it("fehlt eine spätere Ansicht, kommt „Kommt noch“ statt eines Fehlers", async () => {
+  it("fehlt die Datei einer Ansicht, kommt die Fehlerkarte statt „Kommt noch“", async () => {
     const { router, errors, soon, backs } = setUp({ hash: "#/bahn/mri" });
     await router.start();
-    assert.deepEqual(errors, []);
-    assert.deepEqual(soon, ["Technik: Importing a module script failed."]);
+    assert.equal(errors.length, 1);
+    assert.equal(errors[0].name, "TypeError");
+    assert.deepEqual(soon, []);
     assert.deepEqual(backs, []);
   });
 
-  it("eine unbekannte Route zeigt ebenfalls „Kommt noch“", async () => {
+  it("nur eine unbekannte Route zeigt „Kommt noch“, ohne Technikzeile", async () => {
     const { router, errors, soon } = setUp({ hash: "#/gibt-es-nicht" });
     await router.start();
     assert.deepEqual(errors, []);
-    assert.deepEqual(soon, [null]);
+    assert.deepEqual(soon, [undefined]);
   });
 
-  it("fehlt eine Ansicht dieses Laufs, ist das ein Fehler", async () => {
+  it("fehlt die Startseite, ist das ein Fehler", async () => {
     const { router, errors, soon } = setUp({ importView: async () => { throw new TypeError("weg"); } });
     await router.start();
     assert.equal(errors.length, 1);
     assert.deepEqual(soon, []);
   });
 
-  it("ein Syntaxfehler ist auch bei einer späteren Ansicht ein Fehler", async () => {
+  it("ein Syntaxfehler in einer Ansicht ist ein Fehler", async () => {
     const { router, errors, soon } = setUp({
       hash: "#/bahn",
       importView: async () => {
@@ -278,7 +315,7 @@ describe("createRouter", () => {
     assert.deepEqual(soon, []);
   });
 
-  it("wirft eine spätere Ansicht beim Laden etwas anderes, ist das ein Fehler", async () => {
+  it("wirft eine Ansicht beim Laden etwas anderes, ist das ein Fehler", async () => {
     const { router, errors, soon } = setUp({
       hash: "#/bahn",
       importView: async () => {
@@ -290,40 +327,42 @@ describe("createRouter", () => {
     assert.deepEqual(soon, []);
   });
 
-  it("liegt eine spätere Ansicht im Cache, ist ein Ladefehler echt, etwa wenn etwas fehlt, das sie braucht", async () => {
-    const asked = [];
-    const { router, errors, soon } = setUp({
-      hash: "#/bahn/mri",
-      isViewCached: async (name) => {
-        asked.push(name);
-        return true;
-      },
-    });
-    await router.start();
-    assert.deepEqual(asked, ["train"]);
-    assert.equal(errors.length, 1);
-    assert.deepEqual(soon, []);
+  it("bei jeder bekannten Route ist ein Ladefehler echt, etwa wenn etwas fehlt, das die Ansicht braucht", async () => {
+    for (const hash of KNOWN_ROUTES) {
+      const { router, errors, soon } = setUp({
+        hash,
+        importView: async () => {
+          throw new TypeError("Importing a module script failed.");
+        },
+      });
+      await router.start();
+      assert.equal(errors.length, 1, hash);
+      assert.deepEqual(soon, [], hash);
+    }
   });
 
-  it("ein überholter Ladefehler bleibt ohne Folgen, auch während die Nachfrage beim Cache läuft", async () => {
-    let answerCache = null;
-    const { router, win, errors, soon, log } = setUp({
+  it("ein überholter Ladefehler bleibt ohne Folgen", async () => {
+    let failLoad = null;
+    const drawn = [];
+    const { router, win, errors, soon } = setUp({
       hash: "#/bahn",
-      isViewCached: () =>
-        new Promise((resolve) => {
-          answerCache = resolve;
-        }),
+      importView: (name) =>
+        name === "train"
+          ? new Promise((resolve, reject) => {
+              failLoad = () => reject(new TypeError("weg"));
+            })
+          : Promise.resolve({ render: () => void drawn.push(name) }),
     });
     const started = router.start();
     await flush();
     win.location.hash = "#/pfad";
     await flush();
-    answerCache(false);
+    failLoad();
     await started;
     await flush();
     assert.deepEqual(errors, []);
     assert.deepEqual(soon, []);
-    assert.deepEqual(log.map(([name]) => name), ["path"]);
+    assert.deepEqual(drawn, ["path"]);
   });
 
   it("ein Fehler beim Zeichnen geht an onError", async () => {
@@ -544,6 +583,75 @@ describe("Startseite", () => {
   });
 });
 
+describe("Startseite: offener Einstufungstest und Texte", () => {
+  const storeWith = (session) => ({
+    loadSession: () => session,
+  });
+
+  it("findet nur einen Test dieser Version", () => {
+    const session = { kind: "placement", appVersion: "1" };
+    assert.equal(openPlacement(storeWith(session), "1"), session);
+    assert.equal(openPlacement(storeWith(session), "2"), null);
+    assert.equal(openPlacement(storeWith({ kind: "speech", appVersion: "1" }), "1"), null);
+    assert.equal(openPlacement(storeWith(null), "1"), null);
+  });
+
+  it("ein Speicher, der wirft, nimmt nur die Karte weg", () => {
+    const broken = {
+      loadSession() {
+        throw new Error("Speicher nicht lesbar");
+      },
+    };
+    assert.equal(openPlacement(broken, "1"), null);
+  });
+
+  it("dieselbe Sache heißt überall gleich", () => {
+    assert.equal(waitingText(1), "1 Satz oder Wort wartet auf dich.");
+    assert.equal(waitingText(24), "24 Sätze und Wörter warten auf dich.");
+  });
+
+  it("die Route für den Partner führt in die Ansicht Partner", () => {
+    const route = parseRoute(routeHash("partner", "alle", "patient"));
+    assert.equal(route.view, "partner");
+    assert.deepEqual(route.params, { caseId: "alle", role: "patient" });
+  });
+});
+
+describe("Lernpfad: geübt und gelernt", () => {
+  const content = {
+    unit: (id) => ({ s1: { type: "sentence" }, s2: { type: "sentence" }, w1: { type: "word" } })[id] ?? null,
+  };
+
+  it("zählt, was schon geübt ist, Gelerntes immer mit", () => {
+    const state = createState(new Date("2026-11-07T08:00:00.000Z"));
+    state.units = {
+      s1: { box: 3, seen: 4, spokenB: false },
+      s2: { box: 0, seen: 0, due: "2026-11-07" },
+      w1: { box: 2, seen: 0 },
+    };
+    assert.equal(learnedCount(["s1", "s2", "w1"], content, state), 1);
+    assert.equal(practicedCount(["s1", "s2", "w1", "gibt-es-nicht"], content, state), 2);
+  });
+
+  it("die zweite Zahl steht nur da, wenn sie etwas sagt", () => {
+    assert.equal(learnedText(0, 6, 6), "0 von 6 gelernt, 6 geübt");
+    assert.equal(learnedText(2, 6, 2), "2 von 6 gelernt");
+    assert.equal(learnedText(0, 6, 0), "0 von 6 gelernt");
+  });
+
+  it("nextHash führt in den nächsten Abschnitt, ist alles gelernt, in den Lernpfad", () => {
+    const full = {
+      sections: () => [{ id: "sb.one", titleDe: "Eins", strand: "grammar", file: "satzbau", unitIds: ["s1"] }],
+      examSections: () => [],
+      unit: () => ({ type: "sentence", sectionId: "sb.one" }),
+    };
+    const state = createState(new Date("2026-11-07T08:00:00.000Z"));
+    assert.equal(nextHash(full, state), "#/abschnitt/sb.one");
+    state.units.s1 = { spokenB: true };
+    assert.equal(nextHash(full, state), "#/pfad");
+  });
+});
+
 describe("Sicherungs-Erinnerung", () => {
   function practiced(lastAt) {
     const state = freshState();
@@ -593,6 +701,7 @@ describe("Lernpfad und Abschnitt mit den echten Daten", () => {
   const contentPromise = loadContent(async (name) => JSON.parse(await readFile(new URL(name + ".json", dataDir), "utf8")));
 
   it("gelernt: Satz nur mit spokenB, Patientenäußerung und Wort ab Box 2", () => {
+    assert.equal(isLearned, isLearnedInCore, "der Lernpfad reicht die Regel aus core/srs.js nur weiter");
     assert.equal(isLearned({ type: "sentence" }, { box: 5, spokenB: false }), false);
     assert.equal(isLearned({ type: "sentence" }, { box: 0, spokenB: true }), true);
     assert.equal(isLearned({ type: "patient" }, { box: 1 }), false);
@@ -620,7 +729,6 @@ describe("Lernpfad und Abschnitt mit den echten Daten", () => {
 
   it("jeder Eintrag des Lernpfads führt zu einem Abschnitt mit gültigem Fokus", async () => {
     const content = await contentPromise;
-    const sectionIds = new Set(content.sections().map((section) => section.id));
     for (const group of buildStrands(content).flatMap((strand) => strand.groups)) {
       for (const entry of group.entries) {
         const section = resolveSection(content, parseRoute(routeHash("abschnitt", entry.id)).params.id);
@@ -628,16 +736,17 @@ describe("Lernpfad und Abschnitt mit den echten Daten", () => {
         assert.deepEqual(section.unitIds, entry.unitIds);
         assert.ok(section.unitIds.length > 0, entry.id);
         assert.ok(section.unitIds.every((id) => content.unit(id) !== null), entry.id);
-        assert.ok(sectionIds.has(section.focus), entry.id + " Fokus " + section.focus);
+        assert.equal(section.focus, entry.id);
+        assert.deepEqual(focusUnits(content, section.focus).map((unit) => unit.id), section.unitIds, "geübt wird, was der Abschnitt zeigt: " + entry.id);
       }
     }
   });
 
-  it("Szenario: Der Fokus ist der eigene Abschnitt, sonst der gemeinsame", async () => {
+  it("Szenario: Der Fokus ist das ganze Szenario", async () => {
     const content = await contentPromise;
-    assert.equal(resolveSection(content, scenarioId("mri", "noise")).focus, "mr.noise");
-    assert.equal(resolveSection(content, scenarioId("mri", "greeting")).focus, "ge.greeting");
-    assert.equal(resolveSection(content, scenarioId("ct", "safety")).focus, "ct.safety");
+    assert.equal(resolveSection(content, scenarioId("mri", "noise")).focus, "mri:noise");
+    assert.equal(resolveSection(content, scenarioId("mri", "greeting")).focus, "mri:greeting");
+    assert.equal(resolveSection(content, scenarioId("ct", "safety")).focus, "ct:safety");
   });
 
   it("ct.safety und ct:safety sind verschieden: der Abschnitt und das Szenario", async () => {
@@ -717,7 +826,7 @@ describe("Lernpfad und Abschnitt mit den echten Daten", () => {
     own.explanationSource = "q2";
     assert.equal(resolveSection(content, "mri:safety").explanationDe, "eigen erklärt");
     assert.equal(resolveSection(content, "mri:safety").explanationSource, "q2");
-    assert.equal(resolveSection(content, "mri:safety").focus, "mr.safety");
+    assert.equal(resolveSection(content, "mri:safety").focus, "mri:safety");
   });
 
   it("zählt gelernte Einheiten eines Abschnitts", async () => {
@@ -733,5 +842,110 @@ describe("Lernpfad und Abschnitt mit den echten Daten", () => {
     setUnitState(state, patient, { ...unitState(state, patient), box: 2 });
     assert.equal(learnedCount(unitIds, content, state), 2);
     assert.equal(learnedCount(["id.gibt-es-nicht"], content, state), 0);
+  });
+});
+
+describe("Der nächste Abschnitt nach dem Lernplan", () => {
+  const units = {
+    "a.1": { type: "patient", sectionId: "sec.a" },
+    "b.1": { type: "patient", sectionId: "sec.b" },
+    "b.2": { type: "patient", sectionId: "sec.c" },
+    "c.1": { type: "patient", sectionId: "sec.z" },
+    "d.1": { type: "patient", sectionId: "sec.z" },
+    "e.1": { type: "patient", sectionId: "sec.e" },
+  };
+  const content = { unit: (id) => units[id] ?? null };
+  const strands = [
+    {
+      titleDe: "Eins",
+      groups: [
+        {
+          id: "first",
+          titleDe: "Erste",
+          entries: [
+            { id: "entry.a", titleDe: "A", unitIds: ["a.1"] },
+            { id: "entry.b", titleDe: "B", unitIds: ["b.1", "b.2"] },
+          ],
+        },
+      ],
+    },
+    {
+      titleDe: "Zwei",
+      groups: [
+        {
+          id: "second",
+          titleDe: "Zweite",
+          entries: [
+            { id: "entry.c", titleDe: "C", unitIds: ["c.1"] },
+            { id: "entry.d", titleDe: "D", unitIds: ["d.1"] },
+            { id: "entry.e", titleDe: "E", unitIds: ["e.1"] },
+          ],
+        },
+      ],
+    },
+  ];
+
+  function stateWithPlan(order, learned = []) {
+    const state = freshState();
+    state.placement.plan = { order, noteDe: "" };
+    for (const id of learned) {
+      setUnitState(state, id, { ...unitState(state, id), box: 2 });
+    }
+    return state;
+  }
+
+  // Alle Einträge in der Reihenfolge, in der sie drankommen: Jeder gefundene gilt danach als gelernt.
+  function walk(state) {
+    const seen = [];
+    for (let next = nextEntry(strands, content, state); next; next = nextEntry(strands, content, state)) {
+      seen.push(next.id);
+      for (const id of next.unitIds) {
+        setUnitState(state, id, { ...unitState(state, id), box: 2 });
+      }
+    }
+    return seen;
+  }
+
+  it("ohne Plan gilt die Reihenfolge des Lernpfads", () => {
+    assert.deepEqual(walk(freshState()), ["entry.a", "entry.b", "entry.c", "entry.d", "entry.e"]);
+  });
+
+  it("der Plan bestimmt den Eintrag und bringt seine Gruppe mit", () => {
+    const next = nextEntry(strands, content, stateWithPlan(["sec.e", "sec.a"]));
+    assert.equal(next.id, "entry.e");
+    assert.equal(next.groupId, "second");
+    assert.deepEqual(next.unitIds, ["e.1"]);
+  });
+
+  it("es zählt der kleinste Rang der Einheiten eines Eintrags", () => {
+    assert.deepEqual(walk(stateWithPlan(["sec.c", "sec.a", "sec.b", "sec.e", "sec.z"])), ["entry.b", "entry.a", "entry.e", "entry.c", "entry.d"]);
+  });
+
+  it("bei gleichem Rang bleibt die Reihenfolge", () => {
+    assert.deepEqual(walk(stateWithPlan(["sec.z"])).slice(0, 2), ["entry.c", "entry.d"]);
+  });
+
+  it("was der Plan nicht nennt, kommt ans Ende, in der Reihenfolge des Lernpfads", () => {
+    assert.deepEqual(walk(stateWithPlan(["sec.e", "sec.c"])), ["entry.e", "entry.b", "entry.a", "entry.c", "entry.d"]);
+  });
+
+  it("Gelerntes wird auch nach Plan übersprungen, ist alles gelernt: null", () => {
+    assert.equal(nextEntry(strands, content, stateWithPlan(["sec.e", "sec.a"], ["e.1"])).id, "entry.a");
+    assert.equal(nextEntry(strands, content, stateWithPlan(["sec.e"], Object.keys(units))), null);
+  });
+
+  it("eine unbekannte Einheit und unbekannte Abschnitte im Plan stören nicht", () => {
+    const withUnknown = [
+      { titleDe: "Eins", groups: [{ id: "first", titleDe: "Erste", entries: [{ id: "entry.x", titleDe: "X", unitIds: ["gibt-es-nicht", "a.1"] }, { id: "entry.e", titleDe: "E", unitIds: ["e.1"] }] }] },
+    ];
+    assert.equal(nextEntry(withUnknown, content, stateWithPlan(["sec.alt", "sec.e", "sec.a"])).id, "entry.e");
+  });
+
+  it("ein leerer oder kaputter Plan ändert die Reihenfolge nicht", () => {
+    assert.equal(nextEntry(strands, content, stateWithPlan([])).id, "entry.a");
+    assert.equal(nextEntry(strands, content, stateWithPlan("kaputt")).id, "entry.a");
+    const noPlan = freshState();
+    noPlan.placement.plan = null;
+    assert.equal(nextEntry(strands, content, noPlan).id, "entry.a");
   });
 });

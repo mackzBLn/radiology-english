@@ -7,7 +7,6 @@
  *   https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
  *   https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration
  *   https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren
- *   https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match
  */
 
 import { el } from "./dom.js";
@@ -15,20 +14,19 @@ import { renderComingSoon, viewHeader } from "./components.js";
 
 const HOME = "#/";
 
-// later: Die Ansicht kommt in einem späteren Bauabschnitt. Fehlt ihre Datei, zeigt der Router „Kommt noch“.
 // parent: Ziel von Zurück, wenn es keinen früheren Schritt in der App gibt, etwa nach einem Neustart. Vorgabe ist die Startseite.
 const ROUTES = [
   { name: "home", path: [], view: "home" },
   { name: "path", path: ["pfad"], view: "path" },
   { name: "section", path: ["abschnitt", ":id"], view: "section", parent: "#/pfad" },
-  { name: "train", path: ["bahn"], view: "train", later: true },
-  { name: "train", path: ["bahn", ":focus"], view: "train", later: true },
-  { name: "speak", path: ["sprechen"], view: "speak", later: true },
-  { name: "speak", path: ["sprechen", ":focus"], view: "speak", later: true },
-  { name: "partner", path: ["partner"], view: "partner", later: true },
-  { name: "partner", path: ["partner", ":caseId", ":role"], view: "partner", later: true, parent: "#/partner" },
-  { name: "progress", path: ["fortschritt"], view: "progress", later: true },
-  { name: "placement", path: ["einstufung"], view: "placement", later: true },
+  { name: "train", path: ["bahn"], view: "train" },
+  { name: "train", path: ["bahn", ":focus"], view: "train" },
+  { name: "speak", path: ["sprechen"], view: "speak" },
+  { name: "speak", path: ["sprechen", ":focus"], view: "speak" },
+  { name: "partner", path: ["partner"], view: "partner" },
+  { name: "partner", path: ["partner", ":caseId", ":role"], view: "partner", parent: "#/partner" },
+  { name: "progress", path: ["fortschritt"], view: "progress" },
+  { name: "placement", path: ["einstufung"], view: "placement" },
   { name: "backup", path: ["sichern"], view: "backup" },
   { name: "settings", path: ["einstellungen"], view: "settings" },
 ];
@@ -64,13 +62,12 @@ export function parseRoute(hash) {
       return {
         name: route.name,
         view: route.view,
-        later: route.later === true,
         parent: route.view === "home" ? null : route.parent ?? HOME,
         params,
       };
     }
   }
-  return { name: "unknown", view: null, later: true, parent: HOME, params: {} };
+  return { name: "unknown", view: null, parent: HOME, params: {} };
 }
 
 // routeHash("abschnitt", id) ergibt #/abschnitt/<id>, die Teile werden für die Adresse kodiert.
@@ -84,22 +81,12 @@ function addBackIfMissing(host, ctx) {
   }
 }
 
-// Liegt die Ansicht im Cache des Workers, gehört sie zu dieser Version der App.
-async function viewInCache(name) {
-  try {
-    return Boolean(await globalThis.caches?.match(new URL("./views/" + name + ".js", import.meta.url).href));
-  } catch {
-    return false;
-  }
-}
-
 export function createRouter({
   container,
   ctx,
   onError,
   win = globalThis.window,
   importView = (name) => import("./views/" + name + ".js"),
-  isViewCached = viewInCache,
   createHost = () => el("div", { class: "view" }),
   ensureBack = addBackIfMissing,
   comingSoon = renderComingSoon,
@@ -150,22 +137,15 @@ export function createRouter({
     const route = parseRoute(win.location.hash);
 
     let module = null;
-    let detail = null;
     if (route.view) {
       try {
         module = await importView(route.view);
       } catch (error) {
-        // Eine Datei, die sich nicht laden lässt, meldet import() als TypeError. Alles andere heißt: Sie ist da, aber kaputt.
-        // Liegt sie im Cache, fehlt sie nicht, sondern etwas, das sie braucht. Auch das ist ein echter Fehler.
-        const missing = route.later && error instanceof TypeError && !(await isViewCached(route.view));
-        if (current !== token) {
-          return;
-        }
-        if (!missing) {
+        // Jede bekannte Route hat ihre Ansicht. Lässt sie sich nicht laden, ist das ein echter Fehler: Die Fehlerkarte zeigt ihn.
+        if (current === token) {
           onError(error);
-          return;
         }
-        detail = "Technik: " + error.message;
+        return;
       }
       if (current !== token) {
         return;
@@ -176,7 +156,8 @@ export function createRouter({
     container.replaceChildren(host);
     win.scrollTo(0, 0);
     if (!module) {
-      safely(() => comingSoon(host, ctx, detail));
+      // Nur eine unbekannte Route kommt hierher.
+      safely(() => comingSoon(host, ctx));
       return;
     }
     try {
@@ -207,8 +188,13 @@ export function createRouter({
     render();
   }
 
-  function navigate(hash) {
+  // replace: Der laufende Schritt verlässt den Verlauf, Zurück führt nicht mehr dorthin. Die Tiefe bleibt.
+  // replaceState löst kein hashchange aus, darum zeichnet navigate dann selbst.
+  function navigate(hash, { replace = false } = {}) {
     if (normalizeHash(win.location.hash) === normalizeHash(hash)) {
+      render();
+    } else if (replace) {
+      win.history.replaceState({ ...win.history.state }, "", hash);
       render();
     } else {
       win.location.hash = hash;
