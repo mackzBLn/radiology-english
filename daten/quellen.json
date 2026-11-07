@@ -1,0 +1,357 @@
+{
+  "formatVersion": 1,
+  "sources": [
+    {
+      "id": "nhs-mri",
+      "title": "MRI scan",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/tests-and-treatments/mri-scan/",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "nhs-ct",
+      "title": "CT scan",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/tests-and-treatments/ct-scan/",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "nhs-xray",
+      "title": "X-ray",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/tests-and-treatments/x-ray/",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "cleveland-mri",
+      "title": "MRI (Magnetic Resonance Imaging)",
+      "publisher": "Cleveland Clinic",
+      "url": "https://my.clevelandclinic.org/health/diagnostics/4876-magnetic-resonance-imaging-mri",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "bmc-mri",
+      "title": "MRI (Radiology)",
+      "publisher": "Boston Medical Center",
+      "url": "https://www.bmc.org/ht/radiology/services/mri",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "radiologyinfo-bodymr",
+      "title": "Body MRI",
+      "publisher": "RadiologyInfo.org",
+      "url": "https://www.radiologyinfo.org/en/info/bodymr",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "radiologyinfo-chest",
+      "title": "Chest X-ray",
+      "publisher": "RadiologyInfo.org",
+      "url": "https://www.radiologyinfo.org/en/info/chestrad",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "radiologyinfo-contrast",
+      "title": "Contrast Materials",
+      "publisher": "RadiologyInfo.org",
+      "url": "https://www.radiologyinfo.org/en/info/safety-contrast",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "ruh-mri",
+      "title": "Having an MRI Scan",
+      "publisher": "Royal United Hospitals Bath NHS Foundation Trust",
+      "url": "https://www.ruh.nhs.uk/patients/patient_information/RAD042_Having_an_MRI_scan.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "ruh-ct",
+      "title": "Having a CT Scan",
+      "publisher": "Royal United Hospitals Bath NHS Foundation Trust",
+      "url": "https://www.ruh.nhs.uk/patients/patient_information/RAD027_Having_a_CT_scan.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "lothian-mri",
+      "title": "MRI Scanning: Department of Clinical Neurosciences",
+      "publisher": "NHS Lothian",
+      "url": "https://policyonline.nhslothian.scot/wp-content/uploads/2023/03/MRI_Scanning_RIE.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "york-mri",
+      "title": "Coming to the hospital for an MRI scan",
+      "publisher": "York Teaching Hospital NHS Foundation Trust",
+      "url": "https://www.yorkhospitals.nhs.uk/seecmsfile/?id=7249",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "glos-mri",
+      "title": "Adults having an MRI scan",
+      "publisher": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/your-visit/patient-information-leaflets/adults-having-mri-scan-ghpi0318/",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "uhs-mri",
+      "title": "MRI scan",
+      "publisher": "University Hospital Southampton",
+      "url": "https://www.uhs.nhs.uk/departments/radiology-scans-and-imaging/patient-information/mri-scan",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "dudley-ct",
+      "title": "CT body scan 1",
+      "publisher": "The Dudley Group NHS Foundation Trust",
+      "url": "https://www.dgft.nhs.uk/leaflet/ct-body-scan-1",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "cuh-ct",
+      "title": "Information for patients who are having a CT scan",
+      "publisher": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://cuh.nhs.uk/patient-information/information-for-patients-who-are-having-a-ct-scan",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "jpaget-xray",
+      "title": "General X-ray patient information",
+      "publisher": "James Paget University Hospitals",
+      "url": "https://www.jpaget.nhs.uk/media/dp2fvlho/general-x-ray-patient-information.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "nnuh-xray",
+      "title": "Plain x-ray",
+      "publisher": "Norfolk and Norwich University Hospitals",
+      "url": "https://www.nnuh.nhs.uk/publication/download/plain-x-ray-information-v6",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "chft-teachback",
+      "title": "Improving communication with patients and families",
+      "publisher": "Calderdale and Huddersfield NHS Foundation Trust",
+      "url": "https://chft-news.cht.nhs.uk/issue/chft-news-issue-158-2-february-2025/article/improving-communication-with-patients-and-families-two-evidence-based-techniques-help-colleagues-check-that-patients-understand-your-message-0c9374c5f710",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "ihs-teachback",
+      "title": "Teach Back, Health Literacy",
+      "publisher": "Indian Health Service",
+      "url": "https://www.ihs.gov/healthcommunications/health-literacy/teach-back/",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "moorfields-hello",
+      "title": "Hello my name is",
+      "publisher": "Moorfields Eye Hospital NHS Foundation Trust",
+      "url": "https://moorfields.nhs.uk/about-us/join-our-team/hello-my-name-is",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "bc-small-talk",
+      "title": "2. A small talk conversation",
+      "publisher": "British Council LearnEnglish",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/learning-hub/2-small-talk-conversation",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "bc-what-small-talk",
+      "title": "1. What is small talk?",
+      "publisher": "British Council LearnEnglish",
+      "url": "https://learnenglish.britishcouncil.org/learning-hub/topics/1-what-small-talk",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "bc-present-perfect",
+      "title": "Present perfect",
+      "publisher": "British Council LearnEnglish",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/present-perfect",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "cambridge-dictionary",
+      "title": "Cambridge Dictionary",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-requests",
+      "title": "Cambridge Grammar: Requests",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/requests",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-politeness",
+      "title": "Cambridge Grammar: Politeness",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/politeness",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-mind",
+      "title": "Cambridge Grammar: Mind",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/mind",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-can-could-may",
+      "title": "Cambridge Grammar: Can, could or may?",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/can-could-or-may",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-would",
+      "title": "Cambridge Grammar: Would",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/would",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-imperative",
+      "title": "Cambridge Grammar: Imperative clauses (Be quiet!)",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/imperative-clauses-be-quiet",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-q-yesno",
+      "title": "Cambridge Grammar: Questions: yes-no questions (Are you feeling cold?)",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/questions-yes-no-questions-are-you-feeling-cold",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-q-wh",
+      "title": "Cambridge Grammar: Questions: wh- questions",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/questions-wh-questions",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-q-echo",
+      "title": "Cambridge Grammar: Questions: echo and checking questions",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/questions-echo-and-checking-questions",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-present",
+      "title": "Cambridge Grammar: Present",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/present",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-past-perfect",
+      "title": "Cambridge Grammar: Past simple or present perfect?",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/past-simple-or-present-perfect",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-future",
+      "title": "Cambridge Grammar: Future",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/future",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-going-to",
+      "title": "Cambridge Grammar: Going to",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/going-to",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-number",
+      "title": "Cambridge Grammar: Number",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/number",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "cam-time",
+      "title": "Cambridge Grammar: Time",
+      "publisher": "Cambridge University Press",
+      "url": "https://dictionary.cambridge.org/grammar/british-grammar/numbers/time",
+      "retrieved": "2026-11-07",
+      "access": "search"
+    },
+    {
+      "id": "mft-mri",
+      "title": "Magnetic Resonance Imaging (MRI)",
+      "publisher": "Manchester University NHS Foundation Trust",
+      "url": "https://mft.nhs.uk/app/uploads/2023/02/Patient-information-Leaflet_MRI-Scan.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "wwl-mri",
+      "title": "Magnetic Resonance Imaging (MRI) Scans",
+      "publisher": "WWL Teaching Hospitals NHS Foundation Trust",
+      "url": "https://www.wwl.nhs.uk/pdfreader/accessiblePDF/cnv-wwl-68ca8bd0698292.04591430",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "wihb-xray",
+      "title": "X-ray Examination",
+      "publisher": "NHS Western Isles",
+      "url": "https://www.wihb.scot.nhs.uk/wp-content/uploads/2025/04/X-ray-Examination.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    },
+    {
+      "id": "bsms-ct",
+      "title": "CT Patient's Guide",
+      "publisher": "Clinical Imaging Sciences Centre, Brighton and Sussex Medical School",
+      "url": "https://www.bsms.ac.uk/_pdf/cisc/ct-patient-information-guide.pdf",
+      "retrieved": "2026-11-07",
+      "access": "direct"
+    }
+  ]
+}

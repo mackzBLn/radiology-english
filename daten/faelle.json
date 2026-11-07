@@ -1,0 +1,1683 @@
+{
+  "formatVersion": 1,
+  "file": "faelle",
+  "checklist": [
+    {
+      "id": "fa.check.1",
+      "labelDe": "Alle Abfragen des Szenarios gestellt"
+    },
+    {
+      "id": "fa.check.2",
+      "labelDe": "Antworten verstanden"
+    },
+    {
+      "id": "fa.check.3",
+      "labelDe": "Bei Unklarem nachgefragt"
+    },
+    {
+      "id": "fa.check.4",
+      "labelDe": "Verstehen des Patienten geprüft"
+    },
+    {
+      "id": "fa.check.5",
+      "labelDe": "Hilfe gebraucht und wobei"
+    }
+  ],
+  "cases": [
+    {
+      "id": "fa.mri.1",
+      "exam": "mri",
+      "type": "practice",
+      "titleDe": "Knie-MRT bei einem nervösen Patienten",
+      "taskDe": "Führe den Patienten vom Empfang bis zur Verabschiedung durch das MRT.",
+      "patientProfileDe": "Erfunden: Mr Harris, 58, auf Geschäftsreise, Knie-OP vor Jahren.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Metall und Implantate",
+        "Herzschrittmacher",
+        "Nieren",
+        "Allergien"
+      ],
+      "answers": [
+        {
+          "id": "fa.mri.1.a01",
+          "whenDe": "Wenn nach dem Befinden gefragt wird",
+          "en": "Not too bad, thanks. Just a bit nervous.",
+          "meaningDe": "Nicht schlecht, danke. Nur etwas nervös.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.mri.1.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "It's Peter Harris.",
+          "meaningDe": "Peter Harris.",
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "fa.mri.1.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The second of October, 1968.",
+          "meaningDe": "Der zweite Oktober 1968.",
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "fa.mri.1.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "It's my right knee. It's been bad for months.",
+          "meaningDe": "Mein rechtes Knie. Es ist seit Monaten schlecht.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.mri.1.a05",
+          "whenDe": "Wenn nach Operationen gefragt wird",
+          "en": "They did something to that knee, about ten years ago.",
+          "meaningDe": "An dem Knie wurde etwas gemacht, vor etwa zehn Jahren.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.1.a06",
+          "whenDe": "Wenn genauer nach Metall oder Implantaten gefragt wird",
+          "en": "I think there is a metal plate in my knee.",
+          "meaningDe": "Ich glaube, in meinem Knie ist eine Metallplatte.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.1.a13",
+          "whenDe": "Wenn nach Metall in den Augen gefragt wird",
+          "en": "In my eyes? No, I don't think so.",
+          "meaningDe": "In meinen Augen? Nein, ich glaube nicht.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "fa.mri.1.a07",
+          "whenDe": "Wenn nach einem Herzschrittmacher gefragt wird",
+          "en": "No, nothing like that. My heart is fine.",
+          "meaningDe": "Nein, so etwas nicht. Mein Herz ist in Ordnung.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.1.a08",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "My kidneys? As far as I know, they're fine.",
+          "meaningDe": "Meine Nieren? Soweit ich weiß, sind sie in Ordnung.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.1.a09",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Not really. Plasters make my skin go a bit red.",
+          "meaningDe": "Eigentlich nicht. Von Pflastern wird meine Haut etwas rot.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.1.a10",
+          "whenDe": "Wenn nach Metall in den Taschen oder am Körper gefragt wird",
+          "en": "My watch and my keys. Oh, and some coins.",
+          "meaningDe": "Meine Uhr und meine Schlüssel. Ach, und ein paar Münzen.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          }
+        },
+        {
+          "id": "fa.mri.1.a11",
+          "whenDe": "Wenn er den Ablauf in eigenen Worten wiederholen soll",
+          "en": "So I keep still, and I press this if I need you.",
+          "meaningDe": "Ich halte also still und drücke das hier, wenn ich Sie brauche.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.mri.1.a12",
+          "whenDe": "Bei der Verabschiedung",
+          "en": "Thanks. Can I go back to work after this?",
+          "meaningDe": "Danke. Kann ich danach wieder zur Arbeit gehen?",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens after the scan?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.mri.1.t01",
+          "whenDe": "Nach der Lagerung",
+          "en": "I don't think I can do this. It feels too small in here.",
+          "meaningDe": "Ich glaube, ich schaffe das nicht. Es ist so eng hier drin.",
+          "expectedDe": "Beruhigen, Rufknopf zeigen, fragen, ob es weitergehen kann.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.1.t02",
+          "whenDe": "Beim ersten lauten Geräusch, über die Gegensprechanlage",
+          "en": "What is that noise? Is something wrong with the machine?",
+          "meaningDe": "Was ist das für ein Geräusch? Stimmt etwas mit dem Gerät nicht?",
+          "expectedDe": "Über die Gegensprechanlage beruhigen: Der Lärm gehört dazu. Fragen, ob es weitergehen kann.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.mri.2",
+      "exam": "mri",
+      "type": "practice",
+      "titleDe": "Kopf-MRT mit Kontrastmittel",
+      "taskDe": "Führe die Patientin vom Aufruf im Warteraum bis zur Verabschiedung durch das MRT. Sie bekommt Kontrastmittel.",
+      "patientProfileDe": "Erfunden: Mrs Bennett, 71, Rentnerin, kommt allein, seit einigen Wochen Kopfschmerzen.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Metall und Implantate",
+        "Operationen",
+        "Metall im Auge",
+        "Frühere Reaktion auf Kontrastmittel",
+        "Nieren",
+        "Allergien"
+      ],
+      "answers": [
+        {
+          "id": "fa.mri.2.a01",
+          "whenDe": "Wenn nach dem Befinden gefragt oder über das Wetter gesprochen wird",
+          "en": "I'm all right, thanks. It's very cold out there.",
+          "meaningDe": "Mir geht es gut, danke. Draußen ist es sehr kalt.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.mri.2.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Margaret Bennett. That's Bennett with two Ts.",
+          "meaningDe": "Margaret Bennett. Bennett mit zwei T.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "fa.mri.2.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The fifth of June, 1955.",
+          "meaningDe": "Der fünfte Juni 1955.",
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "fa.mri.2.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My head, I think. I keep getting headaches.",
+          "meaningDe": "Mein Kopf, glaube ich. Ich bekomme ständig Kopfschmerzen.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.mri.2.a05",
+          "whenDe": "Wenn nach Operationen gefragt wird",
+          "en": "Just my hip, but that was a long time ago.",
+          "meaningDe": "Nur meine Hüfte, aber das ist lange her.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.2.a06",
+          "whenDe": "Wenn zur Hüfte genauer nachgefragt wird",
+          "en": "Yes, it's a new hip. The left one, I mean.",
+          "meaningDe": "Ja, das ist eine neue Hüfte. Die linke, meine ich.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.2.a07",
+          "whenDe": "Wenn nach Metall im Auge gefragt wird",
+          "en": "In my eyes? No, never.",
+          "meaningDe": "In meinen Augen? Nein, nie.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "fa.mri.2.a08",
+          "whenDe": "Wenn nach einem Herzschrittmacher gefragt wird",
+          "en": "No, I don't have one of those.",
+          "meaningDe": "Nein, so etwas habe ich nicht.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.2.a09",
+          "whenDe": "Wenn nach einer früheren Reaktion auf Kontrastmittel gefragt wird",
+          "en": "I had that dye once. I don't remember any problems.",
+          "meaningDe": "Ich hatte das Kontrastmittel schon einmal. Ich erinnere mich an keine Probleme.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.2.a10",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "The doctor checked them last month. No problems.",
+          "meaningDe": "Der Arzt hat sie letzten Monat untersucht. Keine Probleme.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.2.a11",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Only cats. They make me sneeze.",
+          "meaningDe": "Nur Katzen. Von denen muss ich niesen.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.2.a12",
+          "whenDe": "Wenn sie den Ablauf in eigenen Worten wiederholen soll",
+          "en": "So I get the dye, and then you take more pictures.",
+          "meaningDe": "Ich bekomme also das Kontrastmittel, und dann machen Sie weitere Bilder.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.mri.2.a13",
+          "whenDe": "Beim Abschluss",
+          "en": "Can I go and get a coffee now?",
+          "meaningDe": "Kann ich mir jetzt einen Kaffee holen?",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.mri.2.t01",
+          "whenDe": "Beim Fragebogen",
+          "en": "I left my reading glasses in the car. I can't read this.",
+          "meaningDe": "Ich habe meine Lesebrille im Auto gelassen. Ich kann das nicht lesen.",
+          "expectedDe": "Anbieten, den Fragebogen gemeinsam durchzugehen, und jede Frage einzeln stellen.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "fa.mri.2.t02",
+          "whenDe": "Nachdem sie die Hörgeräte herausgenommen hat",
+          "en": "Sorry, what? I can't hear you without my hearing aids.",
+          "meaningDe": "Wie bitte? Ohne meine Hörgeräte höre ich Sie nicht.",
+          "expectedDe": "Näher herangehen, langsam und deutlich sprechen, zeigen, was gemeint ist, und das Verstehen prüfen.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.2.t03",
+          "whenDe": "Kurz nach der Injektion",
+          "en": "I feel sick. I think it's that injection.",
+          "meaningDe": "Mir ist übel. Ich glaube, das kommt von der Spritze.",
+          "expectedDe": "Ernst nehmen, nachfragen, wie es ihr geht, bei ihr bleiben und sofort Hilfe holen. Nicht selbst beurteilen.",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Risks from the contrast medium (dye)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.mri.3",
+      "exam": "mri",
+      "type": "final",
+      "titleDe": "Abschluss: Rücken-MRT",
+      "taskDe": "Führe die Patientin ohne Hilfe durch das MRT: begrüßen, Identität prüfen, Ablauf erklären, Sicherheitsfragen stellen, umziehen lassen, lagern, Rufknopf und Gehörschutz erklären, zum Schluss verabschieden.",
+      "patientProfileDe": "Erfunden: Mrs Walsh, 47, Busfahrerin, hat seit dem Sommer Rückenschmerzen.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Metall und Implantate",
+        "Metall im Auge",
+        "Herzschrittmacher",
+        "Operationen",
+        "Schwangerschaft",
+        "Nieren",
+        "Allergien"
+      ],
+      "answers": [
+        {
+          "id": "fa.mri.3.a01",
+          "whenDe": "Bei der Begrüßung",
+          "en": "Morning. I'm fine, thanks. And you?",
+          "meaningDe": "Guten Morgen. Mir geht es gut, danke. Und Ihnen?",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.mri.3.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Janet Walsh. Just call me Janet.",
+          "meaningDe": "Janet Walsh. Sagen Sie einfach Janet.",
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "fa.mri.3.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The 17th of March, 1979.",
+          "meaningDe": "Der 17. März 1979.",
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "fa.mri.3.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My lower back. It's been bad since the summer.",
+          "meaningDe": "Mein unterer Rücken. Er ist seit dem Sommer schlecht.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.mri.3.a05",
+          "whenDe": "Wenn allgemein nach Metall im Körper gefragt wird",
+          "en": "Metal in my body? No, I don't think so.",
+          "meaningDe": "Metall in meinem Körper? Nein, ich glaube nicht.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.3.a14",
+          "whenDe": "Wenn nach Metall in den Augen gefragt wird",
+          "en": "Metal in my eyes? No, never.",
+          "meaningDe": "Metall in meinen Augen? Nein, nie.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "fa.mri.3.a06",
+          "whenDe": "Wenn nach einem Herzschrittmacher gefragt wird",
+          "en": "A pacemaker? No, I haven't got one.",
+          "meaningDe": "Ein Herzschrittmacher? Nein, ich habe keinen.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.3.a07",
+          "whenDe": "Wenn nach Operationen gefragt wird",
+          "en": "Just my appendix, when I was young.",
+          "meaningDe": "Nur der Blinddarm, als ich jung war.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.3.a08",
+          "whenDe": "Wenn nach einer Schwangerschaft gefragt wird",
+          "en": "No, definitely not.",
+          "meaningDe": "Nein, ganz sicher nicht.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.3.a15",
+          "whenDe": "Wenn nach dem Stillen gefragt wird",
+          "en": "No, my youngest is at school now.",
+          "meaningDe": "Nein, mein Jüngstes geht inzwischen zur Schule.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.3.a09",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "No, no kidney trouble.",
+          "meaningDe": "Nein, keine Probleme mit den Nieren.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.3.a10",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Not that I know of.",
+          "meaningDe": "Nicht, dass ich wüsste.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "fa.mri.3.a11",
+          "whenDe": "Wenn nach Metall an der Kleidung oder in den Taschen gefragt wird",
+          "en": "Just my wallet and my belt, I think.",
+          "meaningDe": "Nur meine Geldbörse und mein Gürtel, glaube ich.",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "What happens when I arrive?"
+          }
+        },
+        {
+          "id": "fa.mri.3.a12",
+          "whenDe": "Wenn sie in eigenen Worten sagen soll, was sie bei einem Problem tut",
+          "en": "So I squeeze this if something is wrong?",
+          "meaningDe": "Ich drücke also das hier, wenn etwas nicht stimmt?",
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 11"
+          }
+        },
+        {
+          "id": "fa.mri.3.a13",
+          "whenDe": "Bei der Verabschiedung",
+          "en": "How long until I hear something?",
+          "meaningDe": "Wie lange dauert es, bis ich etwas höre?",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "When will I get the results?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.mri.3.t01",
+          "whenDe": "Spät, auf dem Weg zum Scanner. Wurde vorher schon genau danach gefragt, sagt der Partner es dort.",
+          "en": "Oh, wait. They put a little tube in my heart once.",
+          "meaningDe": "Moment. Mir wurde mal ein kleines Röhrchen ins Herz gesetzt.",
+          "expectedDe": "Anhalten, nicht in den Raum gehen, nachfragen, ob es ein Stent ist und wann das war, den Arzt oder eine Kollegin informieren. Nicht selbst beurteilen.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "fa.mri.3.t02",
+          "whenDe": "Beim Abschluss",
+          "en": "I took a tablet to relax. My car is right outside.",
+          "meaningDe": "Ich habe eine Tablette zur Beruhigung genommen. Mein Auto steht direkt draußen.",
+          "expectedDe": "Nachfragen, was sie genommen hat, den Arzt oder eine Kollegin fragen, bevor sie fährt, und fragen, wer sie abholen kann.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.ct.1",
+      "exam": "ct",
+      "type": "practice",
+      "titleDe": "Bauch-CT mit Kontrastmittel zum Trinken",
+      "taskDe": "Führe die Patientin vom Aufruf im Warteraum bis zur Verabschiedung durch das CT.",
+      "patientProfileDe": "Erfunden: Mrs Turner, 52, Lehrerin, hat seit einigen Wochen Bauchschmerzen.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Schwangerschaft",
+        "Allergien",
+        "Frühere Reaktion auf Kontrastmittel",
+        "Nieren",
+        "Diabetes",
+        "Schilddrüse"
+      ],
+      "answers": [
+        {
+          "id": "fa.ct.1.a01",
+          "whenDe": "Wenn sich die Lernende für die Wartezeit entschuldigt",
+          "en": "That's OK. I brought a book with me.",
+          "meaningDe": "Das macht nichts. Ich habe ein Buch dabei.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag keep"
+          }
+        },
+        {
+          "id": "fa.ct.1.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Susan Turner. Mrs Turner is fine.",
+          "meaningDe": "Susan Turner. Frau Turner ist in Ordnung.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.1.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The 30th of August, 1974.",
+          "meaningDe": "Der 30. August 1974.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.1.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My tummy. It's been sore for weeks.",
+          "meaningDe": "Mein Bauch. Er tut seit Wochen weh.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.1.a05",
+          "whenDe": "Wenn nach einer Schwangerschaft gefragt wird",
+          "en": "Oh no, not at my age.",
+          "meaningDe": "Ach nein, nicht in meinem Alter.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a06",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Nuts. I can't eat nuts.",
+          "meaningDe": "Nüsse. Ich kann keine Nüsse essen.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a14",
+          "whenDe": "Wenn nach Jod gefragt wird",
+          "en": "Iodine? Not that I know of.",
+          "meaningDe": "Jod? Nicht, dass ich wüsste.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Allergy to iodine or intravenous contrast medium"
+          }
+        },
+        {
+          "id": "fa.ct.1.a07",
+          "whenDe": "Wenn nach einer früheren Reaktion auf Kontrastmittel gefragt wird",
+          "en": "I've never had that dye before, as far as I know.",
+          "meaningDe": "Ich hatte das Kontrastmittel noch nie, soweit ich weiß.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a08",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "They said one of my kidneys is a bit lazy.",
+          "meaningDe": "Man hat mir gesagt, eine meiner Nieren sei etwas träge.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a09",
+          "whenDe": "Wenn nach Diabetes gefragt wird",
+          "en": "Yes, I've had it for about six years.",
+          "meaningDe": "Ja, den habe ich seit etwa sechs Jahren.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a10",
+          "whenDe": "Wenn nach der Schilddrüse gefragt wird",
+          "en": "My thyroid? I don't think so.",
+          "meaningDe": "Meine Schilddrüse? Ich glaube nicht.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.1.a11",
+          "whenDe": "Wenn sie das Getränk bekommt",
+          "en": "All of this? That's a lot.",
+          "meaningDe": "Das alles? Das ist aber viel.",
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "Oral preparation (contrast)"
+          }
+        },
+        {
+          "id": "fa.ct.1.a12",
+          "whenDe": "Wenn sie in eigenen Worten wiederholen soll, was sie tun muss",
+          "en": "So I drink this slowly, and then you call me.",
+          "meaningDe": "Ich trinke das also langsam, und dann rufen Sie mich.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.ct.1.a13",
+          "whenDe": "Beim Abschluss",
+          "en": "So I can have something to eat now?",
+          "meaningDe": "Ich darf jetzt also etwas essen?",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens after the scan?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.ct.1.t01",
+          "whenDe": "Nach der Frage nach Diabetes",
+          "en": "I take tablets for my diabetes. Should I stop them?",
+          "meaningDe": "Ich nehme Tabletten gegen meinen Diabetes. Soll ich sie absetzen?",
+          "expectedDe": "Nicht raten, den Arzt fragen und mit der Antwort zurückkommen.",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "How do I prepare for the CT scan?"
+          }
+        },
+        {
+          "id": "fa.ct.1.t02",
+          "whenDe": "Beim Trinken im Warteraum",
+          "en": "I feel so full. I can't drink any more.",
+          "meaningDe": "Ich bin so voll. Ich kann nicht mehr trinken.",
+          "expectedDe": "Verständnis zeigen, nicht drängen, nachfragen, wie viel sie geschafft hat, und eine Kollegin oder den Arzt fragen, wie es weitergeht.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "fa.ct.1.t03",
+          "whenDe": "Kurz bevor sie auf den Tisch soll",
+          "en": "Sorry, I really need the toilet. It's all that drink.",
+          "meaningDe": "Entschuldigung, ich muss dringend zur Toilette. Das kommt von dem ganzen Getränk.",
+          "expectedDe": "Freundlich reagieren, den Weg zeigen oder eine Kollegin bitten und danach in Ruhe weitermachen.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.ct.2",
+      "exam": "ct",
+      "type": "practice",
+      "titleDe": "Brustkorb-CT mit Kontrastmittel über die Vene",
+      "taskDe": "Führe die Patientin vom Empfang bis zur Verabschiedung durch das CT.",
+      "patientProfileDe": "Erfunden: Ms Foster, 34, Büroangestellte, kommt in der Mittagspause, der Brustkorb soll untersucht werden.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Schwangerschaft",
+        "Stillen",
+        "Allergien",
+        "Frühere Reaktion auf Kontrastmittel",
+        "Nieren",
+        "Diabetes"
+      ],
+      "answers": [
+        {
+          "id": "fa.ct.2.a01",
+          "whenDe": "Bei der Begrüßung oder wenn über das Wetter gesprochen wird",
+          "en": "It's nice to get out of the rain.",
+          "meaningDe": "Es ist schön, aus dem Regen herauszukommen.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.ct.2.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Emma Foster. It's Ms, not Mrs.",
+          "meaningDe": "Emma Foster. Die Anrede ist Ms, nicht Mrs.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.2.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird. Gemeint ist der 1. Februar 1992.",
+          "en": "It's one, two, 92.",
+          "meaningDe": "Der 1.2.92.",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "fa.ct.2.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My chest. The doctor wants to have a look.",
+          "meaningDe": "Mein Brustkorb. Der Arzt möchte ihn sich ansehen.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.2.a05",
+          "whenDe": "Wenn zum ersten Mal nach einer Schwangerschaft gefragt wird",
+          "en": "No, I don't think so.",
+          "meaningDe": "Nein, ich glaube nicht.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a06",
+          "whenDe": "Wenn nach dem Stillen gefragt wird",
+          "en": "No, I don't have any children.",
+          "meaningDe": "Nein, ich habe keine Kinder.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a07",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Just bee stings. My arm got really big once.",
+          "meaningDe": "Nur Bienenstiche. Mein Arm ist einmal richtig dick geworden.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a14",
+          "whenDe": "Wenn nach Jod gefragt wird",
+          "en": "Iodine? I've never had a problem with it.",
+          "meaningDe": "Jod? Damit hatte ich noch nie ein Problem.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Allergy to iodine or intravenous contrast medium"
+          }
+        },
+        {
+          "id": "fa.ct.2.a08",
+          "whenDe": "Wenn nach einer früheren Reaktion auf Kontrastmittel gefragt wird",
+          "en": "I had a scan once, but I don't know about dye.",
+          "meaningDe": "Ich hatte einmal einen Scan, aber ob mit Kontrastmittel, weiß ich nicht.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a09",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "No, nothing. My kidneys are OK.",
+          "meaningDe": "Nein, nichts. Meine Nieren sind in Ordnung.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a10",
+          "whenDe": "Wenn nach Diabetes gefragt wird",
+          "en": "No, I don't. My mum does, though.",
+          "meaningDe": "Nein, ich nicht. Aber meine Mutter.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a15",
+          "whenDe": "Wenn nach der Schilddrüse gefragt wird",
+          "en": "No, my thyroid is fine, I think.",
+          "meaningDe": "Nein, meine Schilddrüse ist in Ordnung, glaube ich.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a11",
+          "whenDe": "Wenn nach Metall an der Kleidung gefragt wird",
+          "en": "Do I need to take my bra off too?",
+          "meaningDe": "Muss ich auch meinen BH ausziehen?",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.2.a12",
+          "whenDe": "Wenn sie die Atemkommandos in eigenen Worten wiederholen soll",
+          "en": "I breathe in, I hold it, and I wait for you.",
+          "meaningDe": "Ich atme ein, halte die Luft an und warte auf Sie.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.ct.2.a13",
+          "whenDe": "Beim Abschluss",
+          "en": "I have to be back at work at two. Is that OK?",
+          "meaningDe": "Ich muss um zwei wieder bei der Arbeit sein. Geht das?",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens after the scan?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.ct.2.t01",
+          "whenDe": "Spät, nach dem Umziehen",
+          "en": "Actually, we've been trying for a baby. I might be pregnant.",
+          "meaningDe": "Eigentlich versuchen wir gerade, ein Kind zu bekommen. Vielleicht bin ich schwanger.",
+          "expectedDe": "Anhalten, nachfragen, den Scan nicht starten und den Arzt oder eine Kollegin holen. Nicht selbst entscheiden.",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "X-ray precautions:"
+          }
+        },
+        {
+          "id": "fa.ct.2.t02",
+          "whenDe": "Wenn der Zugang vorbereitet wird",
+          "en": "Is that a needle? I go funny when I see needles.",
+          "meaningDe": "Ist das eine Nadel? Mir wird komisch, wenn ich Nadeln sehe.",
+          "expectedDe": "Beruhigen, fragen, ob sie sich hinlegen möchte, und dem Arzt oder einer Kollegin Bescheid sagen.",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "What happens during the CT scan?"
+          }
+        },
+        {
+          "id": "fa.ct.2.t03",
+          "whenDe": "Nach der ersten Erklärung der Atemkommandos",
+          "en": "So I keep breathing in until you say stop?",
+          "meaningDe": "Ich atme also so lange ein, bis Sie Stopp sagen?",
+          "expectedDe": "Ruhig korrigieren, die Kommandos einzeln vormachen und das Verstehen prüfen.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.ct.3",
+      "exam": "ct",
+      "type": "final",
+      "titleDe": "Abschluss: Kopf-CT mit Kontrastmittel",
+      "taskDe": "Führe den Patienten ohne Hilfe durch das CT: begrüßen, Identität prüfen, Ablauf erklären, Sicherheitsfragen stellen, Metall ablegen lassen, lagern, Kontrastmittel erklären, zum Schluss verabschieden.",
+      "patientProfileDe": "Erfunden: Mr Ellis, 67, Rentner, ist vor einigen Wochen gestürzt, der Kopf soll untersucht werden.",
+      "mustAskDe": [
+        "Identität",
+        "Körperstelle",
+        "Allergien",
+        "Frühere Reaktion auf Kontrastmittel",
+        "Nieren",
+        "Diabetes"
+      ],
+      "answers": [
+        {
+          "id": "fa.ct.3.a01",
+          "whenDe": "Bei der Begrüßung oder wenn über das Wetter gesprochen wird",
+          "en": "Yes, it's lovely out there today.",
+          "meaningDe": "Ja, draußen ist es heute herrlich.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.ct.3.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "George Ellis. E, double L, I, S.",
+          "meaningDe": "George Ellis. E, Doppel-L, I, S.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "fa.ct.3.a03",
+          "whenDe": "Wenn das Datum langsamer wiederholt werden soll",
+          "en": "The fourth of March, 1959.",
+          "meaningDe": "Der vierte März 1959.",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "fa.ct.3.a04",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My head. I had a fall a few weeks ago.",
+          "meaningDe": "Mein Kopf. Ich bin vor ein paar Wochen gestürzt.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.ct.3.a05",
+          "whenDe": "Wenn nach Allergien gefragt wird",
+          "en": "Only hay fever, in the summer.",
+          "meaningDe": "Nur Heuschnupfen, im Sommer.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a06",
+          "whenDe": "Wenn nach Jod gefragt wird",
+          "en": "Iodine? I don't know. I don't think so.",
+          "meaningDe": "Jod? Das weiß ich nicht. Ich glaube nicht.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Allergy to iodine or intravenous contrast medium"
+          }
+        },
+        {
+          "id": "fa.ct.3.a07",
+          "whenDe": "Wenn nach einer früheren Reaktion auf Kontrastmittel gefragt wird",
+          "en": "I had the dye last year. It was fine.",
+          "meaningDe": "Ich hatte das Kontrastmittel letztes Jahr. Es war in Ordnung.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a08",
+          "whenDe": "Wenn nach den Nieren gefragt wird",
+          "en": "I had a kidney stone once. Does that count?",
+          "meaningDe": "Ich hatte mal einen Nierenstein. Zählt das?",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a09",
+          "whenDe": "Wenn nach Diabetes gefragt wird",
+          "en": "No, just my blood pressure.",
+          "meaningDe": "Nein, nur mein Blutdruck.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a14",
+          "whenDe": "Wenn nach der Schilddrüse gefragt wird",
+          "en": "No, nobody has ever said anything about my thyroid.",
+          "meaningDe": "Nein, zu meiner Schilddrüse hat noch nie jemand etwas gesagt.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a10",
+          "whenDe": "Wenn er Schmuck und Metall ablegen soll",
+          "en": "Can I keep my chain on? It's hard to get off.",
+          "meaningDe": "Kann ich meine Kette anbehalten? Sie geht schwer ab.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a11",
+          "whenDe": "Wenn ein Kissen angeboten wird",
+          "en": "Yes, a pillow would be nice.",
+          "meaningDe": "Ja, ein Kissen wäre schön.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "fa.ct.3.a12",
+          "whenDe": "Wenn er in eigenen Worten sagen soll, was er bei einem Problem tut",
+          "en": "So I stay still, and I just talk if I need you.",
+          "meaningDe": "Ich bleibe also still liegen und spreche einfach, wenn ich Sie brauche.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "fa.ct.3.a13",
+          "whenDe": "Beim Abschluss",
+          "en": "Can I go home now, or do I wait?",
+          "meaningDe": "Kann ich jetzt nach Hause gehen, oder soll ich warten?",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "After the CT scan"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.ct.3.t01",
+          "whenDe": "Bei der Frage nach dem Geburtsdatum. Der Partner spricht sehr schnell.",
+          "en": "Sorry, I'm in a hurry. It's the fourth of March, 1959.",
+          "meaningDe": "Entschuldigung, ich habe es eilig. Der vierte März 1959.",
+          "expectedDe": "Um langsameres Sprechen bitten, das Datum wiederholen und bestätigen lassen.",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "fa.ct.3.t03",
+          "whenDe": "Kurz bevor es in den Untersuchungsraum geht",
+          "en": "Can my wife come in with me?",
+          "meaningDe": "Darf meine Frau mit hereinkommen?",
+          "expectedDe": "Freundlich sagen, dass das meist nicht geht, und eine Kollegin fragen.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Can I bring a relative or friend?"
+          }
+        },
+        {
+          "id": "fa.ct.3.t02",
+          "whenDe": "Während das Kontrastmittel läuft",
+          "en": "I feel hot all over. Is something wrong?",
+          "meaningDe": "Mir ist am ganzen Körper heiß. Stimmt etwas nicht?",
+          "expectedDe": "Ruhig bleiben, fragen, was er noch spürt, sagen, dass sich das Mittel warm anfühlen kann, und dem Arzt oder einer Kollegin Bescheid sagen. Bei anderen Beschwerden sofort Hilfe holen.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Are there any risks?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.xray.1",
+      "exam": "xray",
+      "type": "practice",
+      "titleDe": "Hals-Röntgen bei einer älteren Patientin",
+      "taskDe": "Führe die Patientin vom Aufruf im Warteraum bis zur Verabschiedung durch das Röntgen.",
+      "patientProfileDe": "Erfunden: Mrs Lane, 69, Rentnerin, hat seit Monaten Nackenschmerzen.",
+      "mustAskDe": [
+        "Name, Geburtsdatum und Adresse",
+        "Körperstelle",
+        "Schmuck, Brille und Zahnprothese"
+      ],
+      "answers": [
+        {
+          "id": "fa.xray.1.a01",
+          "whenDe": "Wenn sich die Lernende für die Wartezeit entschuldigt",
+          "en": "No problem. It wasn't too long.",
+          "meaningDe": "Kein Problem. Es war nicht zu lang.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag keep"
+          }
+        },
+        {
+          "id": "fa.xray.1.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Carol Lane. Lane with an E at the end.",
+          "meaningDe": "Carol Lane. Lane mit einem E am Ende.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "fa.xray.1.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The 28th of July, 1957.",
+          "meaningDe": "Der 28. Juli 1957.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.1.a04",
+          "whenDe": "Wenn nach der Adresse gefragt wird",
+          "en": "Number six. Do you need the road as well?",
+          "meaningDe": "Hausnummer sechs. Brauchen Sie auch die Straße?",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "fa.xray.1.a05",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My neck. I can't turn my head very well.",
+          "meaningDe": "Mein Hals. Ich kann den Kopf nicht gut drehen.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.1.a06",
+          "whenDe": "Wenn sie Schmuck ablegen soll",
+          "en": "My earrings too? They're very small.",
+          "meaningDe": "Auch meine Ohrringe? Die sind ganz klein.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "fa.xray.1.a07",
+          "whenDe": "Wenn sie die Brille abnehmen soll",
+          "en": "I can't see much without my glasses.",
+          "meaningDe": "Ohne Brille sehe ich nicht viel.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "fa.xray.1.a08",
+          "whenDe": "Wenn nach einer Zahnprothese gefragt wird",
+          "en": "My teeth? Yes, the top ones come out.",
+          "meaningDe": "Meine Zähne? Ja, die oberen kann man herausnehmen.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "fa.xray.1.a09",
+          "whenDe": "Bei der Lagerung",
+          "en": "Is this right? My neck doesn't go any further.",
+          "meaningDe": "Ist das richtig? Mein Hals geht nicht weiter.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.1.a10",
+          "whenDe": "Wenn sie in eigenen Worten wiederholen soll, was sie tun muss",
+          "en": "So I stay like this until you come back.",
+          "meaningDe": "Ich bleibe also so, bis Sie zurückkommen.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.xray.1.a11",
+          "whenDe": "Wenn die Lernende hinter der Schutzwand ist",
+          "en": "You're still there, aren't you?",
+          "meaningDe": "Sie sind doch noch da, oder?",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "fa.xray.1.a12",
+          "whenDe": "Bei der Verabschiedung",
+          "en": "When will my doctor know?",
+          "meaningDe": "Wann weiß mein Arzt Bescheid?",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "When will you get the results?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.xray.1.t01",
+          "whenDe": "Beim Prüfen der Identität. Der Partner schaut auf die Unterlagen.",
+          "en": "That's not my date of birth. You've got the wrong year.",
+          "meaningDe": "Das ist nicht mein Geburtsdatum. Sie haben das falsche Jahr.",
+          "expectedDe": "Entschuldigen, nach dem richtigen Datum fragen und es bestätigen. Name und Adresse noch einmal prüfen und eine Kollegin fragen, bevor es weitergeht.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.1.t02",
+          "whenDe": "Beim Umziehen",
+          "en": "Could someone stay with me while I get changed?",
+          "meaningDe": "Könnte jemand bei mir bleiben, während ich mich umziehe?",
+          "expectedDe": "Freundlich zustimmen, nachfragen, wobei sie Hilfe braucht, und eine Kollegin dazuholen.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.1.t03",
+          "whenDe": "Nachdem sie die Zahnprothese herausgenommen hat. Der Partner spricht undeutlich.",
+          "en": "Sorry, it's hard to talk without my teeth.",
+          "meaningDe": "Entschuldigung, ohne meine Zähne kann ich schlecht sprechen.",
+          "expectedDe": "Geduldig nachfragen, Ja-Nein-Fragen stellen, zeigen, was gemeint ist, und das Gehörte bestätigen.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.xray.2",
+      "exam": "xray",
+      "type": "practice",
+      "titleDe": "Brustkorb-Röntgen im Stehen",
+      "taskDe": "Führe den Patienten vom Empfang bis zur Verabschiedung durch das Röntgen.",
+      "patientProfileDe": "Erfunden: Mr Cooper, 66, Gärtner im Ruhestand, hat seit einigen Wochen Husten.",
+      "mustAskDe": [
+        "Name, Geburtsdatum und Adresse",
+        "Körperstelle",
+        "Schmuck und Metall"
+      ],
+      "answers": [
+        {
+          "id": "fa.xray.2.a01",
+          "whenDe": "Wenn nach dem Befinden gefragt wird",
+          "en": "Not great. This cough won't go away.",
+          "meaningDe": "Nicht besonders. Dieser Husten geht nicht weg.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.xray.2.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Cooper. David Cooper.",
+          "meaningDe": "Cooper. David Cooper.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.2.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The eleventh of January, 1960.",
+          "meaningDe": "Der elfte Januar 1960.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.2.a04",
+          "whenDe": "Wenn nach der Adresse gefragt wird",
+          "en": "It's on this letter. Can you read it?",
+          "meaningDe": "Sie steht auf diesem Brief. Können Sie das lesen?",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "fa.xray.2.a05",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My chest, because of this cough.",
+          "meaningDe": "Mein Brustkorb, wegen dieses Hustens.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.2.a06",
+          "whenDe": "Wenn nach Metall gefragt wird",
+          "en": "My shirt has got metal buttons. Is that OK?",
+          "meaningDe": "Mein Hemd hat Metallknöpfe. Ist das in Ordnung?",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.2.a07",
+          "whenDe": "Wenn die Platte seine Brust berührt",
+          "en": "Ooh, that's cold!",
+          "meaningDe": "Oh, das ist kalt!",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          }
+        },
+        {
+          "id": "fa.xray.2.a08",
+          "whenDe": "Wenn er wiederholen soll, was er beim Atmen tun muss",
+          "en": "So I take a big breath and hold it.",
+          "meaningDe": "Ich atme also tief ein und halte die Luft an.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        },
+        {
+          "id": "fa.xray.2.a09",
+          "whenDe": "Wenn er sich für eine zweite Aufnahme drehen soll",
+          "en": "Which way? This way, or the other way?",
+          "meaningDe": "In welche Richtung? So herum oder andersherum?",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.2.a10",
+          "whenDe": "Wenn der Ablauf erklärt wird",
+          "en": "Is it a lot of radiation? I had one last year.",
+          "meaningDe": "Ist das viel Strahlung? Ich hatte letztes Jahr schon eins.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Possible complications of X-rays"
+          }
+        },
+        {
+          "id": "fa.xray.2.a11",
+          "whenDe": "Nach der letzten Aufnahme",
+          "en": "That's it? That was quick.",
+          "meaningDe": "Das war's? Das ging schnell.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.2.a12",
+          "whenDe": "Beim Abschluss",
+          "en": "Will my own doctor get the report?",
+          "meaningDe": "Bekommt mein eigener Arzt den Bericht?",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "How will you get the results?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.xray.2.t01",
+          "whenDe": "Nach der Aufforderung, Metall abzulegen. Der Partner beginnt, die Schuhe auszuziehen.",
+          "en": "Like this? Should I take my shoes off too?",
+          "meaningDe": "So? Soll ich auch meine Schuhe ausziehen?",
+          "expectedDe": "Freundlich korrigieren, noch einmal einfach sagen und zeigen, was abgelegt wird, dann das Verstehen prüfen.",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "When you arrive"
+          }
+        },
+        {
+          "id": "fa.xray.2.t02",
+          "whenDe": "Beim Luftanhalten",
+          "en": "Sorry, I can't stop coughing.",
+          "meaningDe": "Entschuldigung, ich kann nicht aufhören zu husten.",
+          "expectedDe": "Warten, beruhigen und die Kommandos danach noch einmal geben. Hört der Husten nicht auf, eine Kollegin holen.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        },
+        {
+          "id": "fa.xray.2.t03",
+          "whenDe": "Beim Stehen an der Platte",
+          "en": "I feel a bit faint standing here.",
+          "meaningDe": "Mir wird hier im Stehen etwas flau.",
+          "expectedDe": "Fragen, ob er sich setzen möchte, bei ihm bleiben und sofort Hilfe holen. Danach klären, ob die Aufnahme im Liegen geht.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fa.xray.3",
+      "exam": "xray",
+      "type": "final",
+      "titleDe": "Abschluss: Handgelenk-Röntgen",
+      "taskDe": "Führe die Patientin ohne Hilfe durch das Röntgen: begrüßen, Name, Geburtsdatum und Adresse prüfen, Ablauf erklären, nach einer Schwangerschaft fragen, Metall ablegen lassen, lagern, hinter die Schutzwand gehen, zum Schluss verabschieden.",
+      "patientProfileDe": "Erfunden: Ms Palmer, 38, Verkäuferin, ist gestern auf dem Gehweg gestürzt.",
+      "mustAskDe": [
+        "Name, Geburtsdatum und Adresse",
+        "Körperstelle",
+        "Schwangerschaft",
+        "Schmuck und Metall"
+      ],
+      "answers": [
+        {
+          "id": "fa.xray.3.a01",
+          "whenDe": "Wenn nach dem Befinden gefragt wird",
+          "en": "Oh, not so good. This wrist is really sore.",
+          "meaningDe": "Ach, nicht so gut. Dieses Handgelenk tut wirklich weh.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "fa.xray.3.a02",
+          "whenDe": "Wenn nach dem Namen gefragt wird",
+          "en": "Palmer. Claire Palmer.",
+          "meaningDe": "Palmer. Claire Palmer.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.3.a03",
+          "whenDe": "Wenn nach dem Geburtsdatum gefragt wird",
+          "en": "The 19th of May, 1988.",
+          "meaningDe": "Der 19. Mai 1988.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.3.a04",
+          "whenDe": "Wenn nach der Adresse gefragt wird",
+          "en": "It's number 14. Sorry, we only moved last month.",
+          "meaningDe": "Hausnummer 14. Entschuldigung, wir sind erst letzten Monat umgezogen.",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "fa.xray.3.a05",
+          "whenDe": "Wenn nach der Körperstelle gefragt wird",
+          "en": "My wrist. I fell on it yesterday.",
+          "meaningDe": "Mein Handgelenk. Ich bin gestern darauf gefallen.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.3.a06",
+          "whenDe": "Wenn nach einer Schwangerschaft gefragt wird",
+          "en": "No, I'm sure I'm not.",
+          "meaningDe": "Nein, ich bin sicher, dass ich es nicht bin.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are there any risks or side effects?"
+          }
+        },
+        {
+          "id": "fa.xray.3.a13",
+          "whenDe": "Wenn nach dem Stillen gefragt wird",
+          "en": "Breastfeeding? No, my children are teenagers now.",
+          "meaningDe": "Stillen? Nein, meine Kinder sind schon Teenager.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.3.a07",
+          "whenDe": "Wenn sie Schmuck und Metall ablegen soll",
+          "en": "I can't undo my watch with this hand.",
+          "meaningDe": "Mit dieser Hand bekomme ich meine Uhr nicht auf.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.3.a08",
+          "whenDe": "Wenn es ums Ausziehen geht",
+          "en": "Do I need to take my coat off?",
+          "meaningDe": "Muss ich meinen Mantel ausziehen?",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "When you arrive"
+          }
+        },
+        {
+          "id": "fa.xray.3.a09",
+          "whenDe": "Wenn ihre Hand gelagert wird",
+          "en": "It hurts a bit when I turn it.",
+          "meaningDe": "Es tut etwas weh, wenn ich es drehe.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          }
+        },
+        {
+          "id": "fa.xray.3.a10",
+          "whenDe": "Wenn sie wiederholen soll, was sie bei der Aufnahme tun muss",
+          "en": "So I keep my hand still until you tell me.",
+          "meaningDe": "Ich halte also die Hand still, bis Sie es mir sagen.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "fa.xray.3.a11",
+          "whenDe": "Wenn die Lernende hinter die Schutzwand geht",
+          "en": "Where are you going? Are you leaving the room?",
+          "meaningDe": "Wohin gehen Sie? Verlassen Sie den Raum?",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "fa.xray.3.a12",
+          "whenDe": "Beim Abschluss",
+          "en": "What do I do now? Do I wait here?",
+          "meaningDe": "Was mache ich jetzt? Warte ich hier?",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "How long does it take?"
+          }
+        }
+      ],
+      "twists": [
+        {
+          "id": "fa.xray.3.t01",
+          "whenDe": "Wenn die Körperstelle bestätigt wird. Auf der Anforderung steht die linke Seite.",
+          "en": "It's my right wrist that hurts, not the left one.",
+          "meaningDe": "Mein rechtes Handgelenk tut weh, nicht das linke.",
+          "expectedDe": "Nachfragen und bestätigen, welche Seite gemeint ist, mit der Anforderung vergleichen und den Arzt oder eine Kollegin fragen. Nicht selbst entscheiden.",
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "fa.xray.3.t02",
+          "whenDe": "Nach der Aufnahme",
+          "en": "You can see it on your screen. Is it broken or not?",
+          "meaningDe": "Sie sehen es doch auf Ihrem Bildschirm. Ist es gebrochen oder nicht?",
+          "expectedDe": "Keine Aussage zum Bild. Freundlich sagen, dass der Arzt das Ergebnis erklärt.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Getting your X-ray results"
+          }
+        }
+      ]
+    }
+  ]
+}

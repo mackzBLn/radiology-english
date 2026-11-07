@@ -1,0 +1,3789 @@
+{
+  "formatVersion": 1,
+  "file": "gemeinsam",
+  "strand": "radiology",
+  "sections": [
+    {
+      "id": "ge.greeting",
+      "key": "greeting",
+      "titleDe": "Begrüßung und Identität prüfen",
+      "sentences": [
+        {
+          "id": "ge.greeting.s01",
+          "situationDe": "Du kommst in den Warteraum. Als Nächstes ist Mr Harris dran, und du kennst ihn noch nicht. Hol ihn ab.",
+          "en": "Mr Harris? Please come with me.",
+          "variants": [
+            "Mr Harris? Could you come with me, please?",
+            "Mr Harris? Come with me, please.",
+            "Mr Harris? Would you like to come with me?"
+          ],
+          "keywords": [
+            "come"
+          ],
+          "meaningDe": "Herr Harris? Bitte kommen Sie mit mir.",
+          "cefr": "A1",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.greeting.s02",
+          "situationDe": "Der Patient steht vor dir und kennt dich noch nicht. Sag ihm, wer du bist und was du hier machst.",
+          "en": "Hello, my name is Anna. I am your radiographer today.",
+          "variants": [
+            "Hello, my name is Anna. I am your technologist today.",
+            "Hello, my name is Anna. I am the radiographer today.",
+            "Good morning, my name is Anna. I am your radiographer today.",
+            "Hello, my name is Anna. I'm your radiographer today."
+          ],
+          "keywords": [
+            "name",
+            "radiographer|technologist"
+          ],
+          "meaningDe": "Guten Tag, mein Name ist Anna. Ich bin heute Ihre MTR.",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Sag hier deinen eigenen Namen. radiographer ist britisch, technologist amerikanisch.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "moorfields-hello",
+            "locator": "#HelloMyNameIs..."
+          }
+        },
+        {
+          "id": "ge.greeting.s03",
+          "situationDe": "Du musst sicher sein, dass die richtige Person vor dir steht. Lass dir zuerst sagen, wie sie heißt.",
+          "en": "Could you tell me your full name, please?",
+          "variants": [
+            "Can you tell me your full name, please?",
+            "What is your full name, please?",
+            "Could you give me your full name, please?"
+          ],
+          "keywords": [
+            "name"
+          ],
+          "meaningDe": "Könnten Sie mir bitte Ihren vollständigen Namen sagen?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "ge.greeting.s04",
+          "situationDe": "Der Name stimmt. Zur Sicherheit brauchst du noch eine zweite Angabe, die auf deiner Liste steht und nur zu dieser Person passt.",
+          "en": "What is your date of birth, please?",
+          "variants": [
+            "Could you tell me your date of birth, please?",
+            "Can I have your date of birth, please?",
+            "When were you born, please?",
+            "What's your date of birth, please?"
+          ],
+          "keywords": [
+            "birth|born"
+          ],
+          "meaningDe": "Wie lautet bitte Ihr Geburtsdatum?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          }
+        },
+        {
+          "id": "ge.greeting.s05",
+          "situationDe": "In deiner Abteilung wird auch geprüft, wo der Patient wohnt. Frag danach.",
+          "en": "Could you tell me your address, please?",
+          "variants": [
+            "Can you tell me your address, please?",
+            "What is your address, please?",
+            "And what is your address, please?"
+          ],
+          "keywords": [
+            "address"
+          ],
+          "meaningDe": "Könnten Sie mir bitte Ihre Adresse sagen?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "ge.greeting.s06",
+          "situationDe": "Die Angaben zur Person stimmen. Prüfe jetzt, ob der Patient weiß, welche Stelle heute untersucht wird.",
+          "en": "Which part of your body are we looking at today?",
+          "variants": [
+            "What part of your body are we looking at today?",
+            "Which part of your body are we checking today?",
+            "Which part of your body is this for today?"
+          ],
+          "keywords": [
+            "part",
+            "body"
+          ],
+          "meaningDe": "Welchen Teil Ihres Körpers untersuchen wir heute?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          }
+        },
+        {
+          "id": "ge.greeting.s07",
+          "situationDe": "Der Raum ist noch nicht fertig, und der Patient steht bei dir. Du musst kurz weg.",
+          "en": "Please take a seat. I will be back in just a moment.",
+          "variants": [
+            "Please have a seat. I will be back in just a moment.",
+            "Please sit down. I will be back in just a moment.",
+            "Please take a seat. I will be back in a moment.",
+            "Please take a seat. I'll be back in just a moment."
+          ],
+          "keywords": [
+            "seat|sit",
+            "back"
+          ],
+          "meaningDe": "Bitte nehmen Sie Platz. Ich bin gleich wieder da.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag seat"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.greeting.p01",
+          "kind": "answer",
+          "en": "It's the ninth of May, 1960.",
+          "variants": [
+            "The ninth of May, 1960.",
+            "May the ninth, 1960."
+          ],
+          "meaningDe": "Der neunte Mai 1960.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "mft-mri",
+            "locator": "What happens during a MRI scan?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. That is what I have here.",
+              "fits": true,
+              "meaningDe": "Danke. Genau das steht auch bei mir.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "What is your date of birth, please?",
+              "fits": false,
+              "whyDe": "Das Geburtsdatum hat der Patient gerade genannt.",
+              "meaningDe": "Wie lautet bitte Ihr Geburtsdatum?",
+              "source": {
+                "ref": "mft-mri",
+                "locator": "What happens during a MRI scan?"
+              }
+            },
+            {
+              "en": "So your appointment is at half past two?",
+              "fits": false,
+              "whyDe": "Das wäre eine Uhrzeit. Er hat dir aber sein Geburtsdatum genannt.",
+              "meaningDe": "Ihr Termin ist also um halb drei?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.greeting.p02",
+          "kind": "unclear",
+          "en": "My doctor said something about my back, I think.",
+          "variants": [
+            "I'm not sure. The doctor said my back, or maybe my hip.",
+            "I think it's my back, but I can't really remember."
+          ],
+          "meaningDe": "Mein Arzt hat etwas von meinem Rücken gesagt, glaube ich.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          },
+          "reactions": [
+            {
+              "en": "Let me check that with the doctor first.",
+              "fits": true,
+              "meaningDe": "Ich kläre das zuerst mit dem Arzt.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Erst muss klar sein, welche Stelle untersucht wird.",
+              "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Which part of your body are we looking at today?",
+              "fits": false,
+              "whyDe": "Das hast du schon gefragt, und er ist sich nicht sicher. Kläre es, statt noch einmal zu fragen.",
+              "meaningDe": "Welchen Teil Ihres Körpers untersuchen wir heute?",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.greeting.p03",
+          "kind": "unexpected",
+          "en": "Sorry, I'm not Mr Harris. My name is Hill.",
+          "variants": [
+            "No, that's not me. I'm Mr Hill.",
+            "I'm sorry, my name isn't Harris. It's Hill."
+          ],
+          "meaningDe": "Entschuldigung, ich bin nicht Herr Harris. Ich heiße Hill.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wihb-xray",
+            "locator": "When you arrive at Radiology"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry, Mr Hill. Please take a seat again.",
+              "fits": true,
+              "meaningDe": "Entschuldigung, Herr Hill. Bitte nehmen Sie wieder Platz.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag seat"
+              }
+            },
+            {
+              "en": "Thank you, Mr Harris. Please come with me.",
+              "fits": false,
+              "whyDe": "Das ist nicht der aufgerufene Patient. Er darf nicht mitkommen.",
+              "meaningDe": "Danke, Herr Harris. Bitte kommen Sie mit mir.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "What is your date of birth, Mr Harris?",
+              "fits": false,
+              "whyDe": "Er hat gerade gesagt, dass er nicht Mr Harris ist.",
+              "meaningDe": "Wie lautet Ihr Geburtsdatum, Herr Harris?",
+              "source": {
+                "ref": "mft-mri",
+                "locator": "What happens during a MRI scan?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.procedure",
+      "key": "procedure",
+      "titleDe": "Ablauf erklären",
+      "sentences": [
+        {
+          "id": "ge.procedure.s01",
+          "situationDe": "Der Patient ist bei dir im Raum und weiß noch nicht, was auf ihn zukommt. Kündige an, dass du es ihm jetzt sagst.",
+          "en": "Let me explain what will happen today.",
+          "variants": [
+            "I will explain what will happen today.",
+            "Let me tell you what will happen today.",
+            "I am going to explain what will happen today.",
+            "I'll explain what will happen today."
+          ],
+          "keywords": [
+            "happen"
+          ],
+          "meaningDe": "Ich erkläre Ihnen, was heute passieren wird.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.procedure.s02",
+          "situationDe": "Der Patient möchte wissen, was das Gerät eigentlich macht. Erkläre es so einfach wie möglich.",
+          "en": "The machine takes pictures of the inside of your body.",
+          "variants": [
+            "The scanner takes pictures of the inside of your body.",
+            "This machine takes pictures of the inside of your body.",
+            "The machine takes images of the inside of your body."
+          ],
+          "keywords": [
+            "pictures|images"
+          ],
+          "meaningDe": "Das Gerät macht Bilder vom Inneren Ihres Körpers.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "CT scan"
+          }
+        },
+        {
+          "id": "ge.procedure.s03",
+          "situationDe": "Du zeigst dem Patienten die Liege. Sag ihm, wo er gleich sein wird.",
+          "en": "You will lie on this table.",
+          "variants": [
+            "You will lie on this bed.",
+            "You will lie down on this table.",
+            "You are going to lie on this table.",
+            "You'll lie on this table."
+          ],
+          "keywords": [
+            "lie",
+            "table|bed"
+          ],
+          "meaningDe": "Sie werden auf diesem Tisch liegen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.procedure.s04",
+          "situationDe": "Der Patient soll nicht erschrecken, wenn sich die Liege bewegt. Sag ihm vorher, was gleich passiert.",
+          "en": "The table will move into the scanner.",
+          "variants": [
+            "The bed will move into the scanner.",
+            "The table moves into the scanner.",
+            "The table will move into the machine."
+          ],
+          "keywords": [
+            "table|bed",
+            "move|moves",
+            "scanner|machine"
+          ],
+          "meaningDe": "Der Tisch fährt in das Gerät hinein.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          }
+        },
+        {
+          "id": "ge.procedure.s05",
+          "situationDe": "Der Patient schaut besorgt auf das Gerät. Nimm ihm die Sorge vor Schmerzen bei der Aufnahme.",
+          "en": "The scan does not hurt.",
+          "variants": [
+            "The scan will not hurt.",
+            "It does not hurt.",
+            "The X-ray does not hurt.",
+            "The scan doesn't hurt."
+          ],
+          "keywords": [
+            "hurt"
+          ],
+          "meaningDe": "Die Aufnahme tut nicht weh.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "ge.procedure.s06",
+          "situationDe": "Der Patient fragt, wie lange es dauert. Eine feste Zeit kannst du nicht nennen. Sag, wovon es abhängt.",
+          "en": "It depends on the part of your body.",
+          "variants": [
+            "That depends on the part of your body.",
+            "It depends on which part of your body we look at."
+          ],
+          "keywords": [
+            "depends"
+          ],
+          "meaningDe": "Das hängt vom Körperteil ab.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "How long will the X-ray take?"
+          }
+        },
+        {
+          "id": "ge.procedure.s07",
+          "situationDe": "Du hast alles erklärt und möchtest gleich anfangen. Gib dem Patienten vorher noch Gelegenheit, etwas loszuwerden.",
+          "en": "Do you have any questions before we start?",
+          "variants": [
+            "Do you have any questions before we begin?",
+            "Have you got any questions before we start?",
+            "Are there any questions before we start?"
+          ],
+          "keywords": [
+            "questions"
+          ],
+          "meaningDe": "Haben Sie noch Fragen, bevor wir anfangen?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.procedure.p01",
+          "kind": "question",
+          "en": "How long will it take?",
+          "variants": [
+            "How long does it take?",
+            "How long will I be in there?"
+          ],
+          "meaningDe": "Wie lange wird es dauern?",
+          "cefr": "A1",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "How long will the scan take?"
+          },
+          "reactions": [
+            {
+              "en": "It depends on the part of your body.",
+              "fits": true,
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Dauer, nicht nach Schmerzen.",
+              "meaningDe": "Die Aufnahme tut nicht weh.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            },
+            {
+              "en": "It is only for a few seconds.",
+              "fits": false,
+              "whyDe": "Das gilt für das Luftanhalten, nicht für die ganze Untersuchung.",
+              "meaningDe": "Es dauert nur ein paar Sekunden.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.procedure.p02",
+          "kind": "question",
+          "en": "Can my wife come in with me?",
+          "variants": [
+            "Can my wife stay with me?",
+            "Is my wife allowed to come in with me?"
+          ],
+          "meaningDe": "Darf meine Frau mit hineinkommen?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Can I bring a relative or friend?"
+          },
+          "reactions": [
+            {
+              "en": "I will ask if that is possible today.",
+              "fits": true,
+              "meaningDe": "Ich frage nach, ob das heute möglich ist.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "The table will move into the scanner.",
+              "fits": false,
+              "whyDe": "Das erklärt den Ablauf, sagt aber nicht, ob seine Frau mitkommen darf.",
+              "meaningDe": "Der Tisch fährt in das Gerät hinein.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Das ist eine neue Frage und geht auf die Begleitung nicht ein.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.procedure.p03",
+          "kind": "unclear",
+          "en": "A friend told me it's not very nice.",
+          "variants": [
+            "My friend said it isn't very nice.",
+            "I heard it's not very pleasant."
+          ],
+          "meaningDe": "Ein Freund hat mir gesagt, es sei nicht sehr angenehm.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          },
+          "reactions": [
+            {
+              "en": "What worries you most about it?",
+              "fits": true,
+              "meaningDe": "Was macht Ihnen daran am meisten Sorgen?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            },
+            {
+              "en": "Your friend can wait in the waiting room.",
+              "fits": false,
+              "whyDe": "Der Freund ist nicht hier. Der Patient gibt nur weiter, was er gehört hat, und du musst nachfragen, was ihn beunruhigt.",
+              "meaningDe": "Ihr Freund kann im Warteraum warten.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Can I bring a relative/friend?"
+              }
+            },
+            {
+              "en": "Please hold your breath.",
+              "fits": false,
+              "whyDe": "Das ist ein Kommando für die Aufnahme, keine Antwort auf seine Sorge.",
+              "meaningDe": "Bitte halten Sie die Luft an.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.safety",
+      "key": "safety",
+      "titleDe": "Metall, Implantate und Schwangerschaft abfragen",
+      "sentences": [
+        {
+          "id": "ge.safety.s01",
+          "situationDe": "Vor der Untersuchung musst du einige Dinge abklären. Bereite den Patienten darauf vor, dass jetzt Fragen kommen.",
+          "en": "I need to ask you a few safety questions.",
+          "variants": [
+            "I have a few safety questions for you.",
+            "I need to ask you some safety questions.",
+            "I have to ask you a few safety questions."
+          ],
+          "keywords": [
+            "safety",
+            "questions"
+          ],
+          "meaningDe": "Ich muss Ihnen ein paar Sicherheitsfragen stellen.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.safety.s02",
+          "situationDe": "Vor dir sitzt eine jüngere Frau. Kläre, ob ein Kind unterwegs ist. Auch ein bloßer Verdacht soll dabei herauskommen.",
+          "en": "Are you pregnant, or could you be pregnant?",
+          "variants": [
+            "Is there any chance you could be pregnant?",
+            "Could you be pregnant?",
+            "Are you pregnant, or might you be pregnant?"
+          ],
+          "keywords": [
+            "pregnant"
+          ],
+          "meaningDe": "Sind Sie schwanger, oder könnten Sie schwanger sein?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.safety.s03",
+          "situationDe": "Die Patientin zögert bei deiner Frage. Sag ihr, dass auch ein Zweifel für dich wichtig ist.",
+          "en": "Please tell me if you are not sure.",
+          "variants": [
+            "If you are not sure, please tell me.",
+            "Please let me know if you are not sure.",
+            "Tell me if you are not sure, please.",
+            "Please tell me if you're not sure."
+          ],
+          "keywords": [
+            "sure"
+          ],
+          "meaningDe": "Bitte sagen Sie mir, wenn Sie nicht sicher sind.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "X-ray precautions:"
+          }
+        },
+        {
+          "id": "ge.safety.s04",
+          "situationDe": "Die Patientin hat ein Baby zu Hause. Frag, ob sie es noch selbst nährt.",
+          "en": "Are you breastfeeding at the moment?",
+          "variants": [
+            "Are you breastfeeding now?",
+            "Are you breastfeeding?",
+            "Are you breastfeeding your baby at the moment?"
+          ],
+          "keywords": [
+            "breastfeeding"
+          ],
+          "meaningDe": "Stillen Sie zurzeit?",
+          "cefr": "B1",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.safety.s05",
+          "situationDe": "Du gehst deine Liste weiter durch. Kläre, ob der Patient auf irgendetwas überempfindlich reagiert.",
+          "en": "Do you have any allergies?",
+          "variants": [
+            "Have you got any allergies?",
+            "Are you allergic to anything?"
+          ],
+          "keywords": [
+            "allergies|allergic"
+          ],
+          "meaningDe": "Haben Sie Allergien?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.safety.s06",
+          "situationDe": "Der Patient hatte früher schon eine Untersuchung mit Kontrastmittel. Finde heraus, ob er es damals schlecht vertragen hat.",
+          "en": "Have you ever had a bad reaction to contrast dye?",
+          "variants": [
+            "Have you ever had a reaction to contrast dye?",
+            "Have you ever had a bad reaction to dye?",
+            "Have you ever had a bad reaction to contrast medium?"
+          ],
+          "keywords": [
+            "reaction",
+            "dye|contrast"
+          ],
+          "meaningDe": "Hatten Sie schon einmal eine schlimme Reaktion auf Kontrastmittel?",
+          "cefr": "B1",
+          "core": true,
+          "noteDe": "dye ist das Alltagswort, contrast medium das Fachwort.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "ge.safety.s07",
+          "situationDe": "Für das Kontrastmittel brauchst du noch eine Angabe zu einem Organ, das es wieder ausscheidet.",
+          "en": "Do you have any problems with your kidneys?",
+          "variants": [
+            "Have you got any problems with your kidneys?",
+            "Do you have any kidney problems?",
+            "Have you ever had problems with your kidneys?"
+          ],
+          "keywords": [
+            "kidneys|kidney"
+          ],
+          "meaningDe": "Haben Sie Probleme mit den Nieren?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.safety.s08",
+          "situationDe": "Auf deiner Liste steht auch die Zuckerkrankheit. Frag danach.",
+          "en": "Do you have diabetes?",
+          "variants": [
+            "Have you got diabetes?",
+            "Are you diabetic?"
+          ],
+          "keywords": [
+            "diabetes|diabetic"
+          ],
+          "meaningDe": "Haben Sie Diabetes?",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.safety.s10",
+          "situationDe": "Für diese Aufnahme sollte der Patient nüchtern kommen, das stand in seiner Einladung. Prüfe, ob das geklappt hat.",
+          "en": "Have you had anything to eat or drink today?",
+          "variants": [
+            "Have you eaten or drunk anything today?",
+            "Did you have anything to eat or drink today?",
+            "Have you had anything to eat or drink?"
+          ],
+          "keywords": [
+            "eat|eaten",
+            "drink|drunk"
+          ],
+          "meaningDe": "Haben Sie heute schon etwas gegessen oder getrunken?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Ob der Patient nüchtern sein muss, regelt deine Abteilung. Das Fachwort dafür ist fast.",
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        },
+        {
+          "id": "ge.safety.s09",
+          "situationDe": "Der Patient hat dir etwas Wichtiges zu seiner Gesundheit gesagt. Bewerten darfst du es nicht. Sag ihm, wie es jetzt weitergeht.",
+          "en": "Thank you. I will tell the doctor about that.",
+          "variants": [
+            "Thank you. I will let the doctor know.",
+            "Thank you. I will tell the doctor.",
+            "Thank you. I will ask the doctor about that.",
+            "Thank you. I'll tell the doctor about that."
+          ],
+          "keywords": [
+            "doctor"
+          ],
+          "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "How should I prepare for my imaging procedure with contrast material?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.safety.p01",
+          "kind": "answer",
+          "en": "Yes, I'm allergic to penicillin.",
+          "variants": [
+            "Yes, penicillin.",
+            "I can't take penicillin. I'm allergic to it."
+          ],
+          "meaningDe": "Ja, ich bin allergisch gegen Penicillin.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will tell the doctor about that.",
+              "fits": true,
+              "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "How should I prepare for my imaging procedure with contrast material?"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Diese Frage hat er gerade beantwortet.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Das geht auf die Allergie nicht ein.",
+              "meaningDe": "Die Aufnahme tut nicht weh.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p09",
+          "kind": "unclear",
+          "en": "Some tablets didn't agree with me once.",
+          "variants": [
+            "I had a bad time with some tablets once.",
+            "Some tablets made me feel funny once."
+          ],
+          "meaningDe": "Einige Tabletten habe ich einmal nicht vertragen.",
+          "cefr": "B1",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Can you tell me what happened?",
+              "fits": true,
+              "meaningDe": "Können Sie mir sagen, was passiert ist?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Du gehst über die Tabletten hinweg. Frag erst nach, was passiert ist.",
+              "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das gehört zur Aufnahme und klärt die Sache mit den Tabletten nicht.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p06",
+          "kind": "answer",
+          "en": "Yes, I'm about twelve weeks pregnant.",
+          "variants": [
+            "Yes, I'm pregnant. About twelve weeks.",
+            "Yes, we're expecting a baby. I'm twelve weeks along."
+          ],
+          "meaningDe": "Ja, ich bin etwa in der zwölften Woche schwanger.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will tell the doctor about that.",
+              "fits": true,
+              "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Are you breastfeeding at the moment?",
+              "fits": false,
+              "whyDe": "Das ist die nächste Frage. Erst muss der Arzt von der Schwangerschaft erfahren.",
+              "meaningDe": "Stillen Sie zurzeit?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "Du kannst nicht einfach weitermachen. Zuerst muss der Arzt davon wissen.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p02",
+          "kind": "unclear",
+          "en": "I could be pregnant. I'm not really sure.",
+          "variants": [
+            "Maybe I'm pregnant. It's too early to say.",
+            "I don't know yet if I'm pregnant."
+          ],
+          "meaningDe": "Ich könnte schwanger sein. Ich bin mir nicht wirklich sicher.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "X-ray precautions:"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will ask the doctor.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie mir das sagen. Ich frage den Arzt.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are there any risks or side effects?"
+              }
+            },
+            {
+              "en": "Are you breastfeeding at the moment?",
+              "fits": false,
+              "whyDe": "Erst muss die Unsicherheit wegen der Schwangerschaft geklärt werden.",
+              "meaningDe": "Stillen Sie zurzeit?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "Du kannst nicht einfach weitermachen. Zuerst muss das geklärt sein.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p07",
+          "kind": "answer",
+          "en": "Yes, I'm still breastfeeding my baby.",
+          "variants": [
+            "Yes, I'm still breastfeeding.",
+            "I am, yes. My baby is only a few months old."
+          ],
+          "meaningDe": "Ja, ich stille mein Baby noch.",
+          "cefr": "B1",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will tell the doctor about that.",
+              "fits": true,
+              "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Das ist die nächste Frage. Erst muss der Arzt vom Stillen erfahren.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Das geht auf das Stillen nicht ein.",
+              "meaningDe": "Die Aufnahme tut nicht weh.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p03",
+          "kind": "unclear",
+          "en": "I had some trouble with my kidneys, years ago.",
+          "variants": [
+            "There was something wrong with my kidneys once.",
+            "My kidneys were a bit funny a few years ago."
+          ],
+          "meaningDe": "Ich hatte vor Jahren mal Probleme mit den Nieren.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Do you know what the problem was?",
+              "fits": true,
+              "meaningDe": "Wissen Sie, was das Problem war?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Do you have any problems with your kidneys?",
+              "fits": false,
+              "whyDe": "Das hat er gerade angedeutet. Jetzt musst du gezielt nachfragen, was es war.",
+              "meaningDe": "Haben Sie Probleme mit den Nieren?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das gehört zur Aufnahme und klärt die Sache mit den Nieren nicht.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p04",
+          "kind": "question",
+          "en": "Why do you need to know that?",
+          "variants": [
+            "Why are you asking me that?",
+            "Why do you ask?"
+          ],
+          "meaningDe": "Warum müssen Sie das wissen?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Are there any risks?"
+          },
+          "reactions": [
+            {
+              "en": "It is important for your safety.",
+              "fits": true,
+              "meaningDe": "Das ist wichtig für Ihre Sicherheit.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "Do you have any questions before we start?",
+              "fits": false,
+              "whyDe": "Er hat gerade eine Frage gestellt. Sie muss zuerst beantwortet werden.",
+              "meaningDe": "Haben Sie noch Fragen, bevor wir anfangen?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "I need to ask you a few safety questions.",
+              "fits": false,
+              "whyDe": "Das kündigt die Fragen nur an. Er will wissen, warum du sie stellst.",
+              "meaningDe": "Ich muss Ihnen ein paar Sicherheitsfragen stellen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p05",
+          "kind": "unexpected",
+          "en": "Last time I had the dye, I got a bad rash.",
+          "variants": [
+            "I got a really bad rash from the dye last time.",
+            "The dye gave me a rash the last time."
+          ],
+          "meaningDe": "Als ich das Kontrastmittel das letzte Mal bekam, hatte ich einen schlimmen Ausschlag.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will tell the doctor now.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie mir das sagen. Ich sage es jetzt dem Arzt.",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "How should I prepare for my imaging procedure with contrast material?"
+              }
+            },
+            {
+              "en": "Have you had anything to eat or drink today?",
+              "fits": false,
+              "whyDe": "Der Ausschlag ist wichtiger. Er muss zuerst weitergegeben werden.",
+              "meaningDe": "Haben Sie heute schon etwas gegessen oder getrunken?",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Preparing for an X-ray"
+              }
+            },
+            {
+              "en": "Please put on this gown.",
+              "fits": false,
+              "whyDe": "Bevor es weitergeht, muss der Arzt von dem Ausschlag erfahren.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.safety.p08",
+          "kind": "answer",
+          "en": "I only had a coffee this morning.",
+          "variants": [
+            "Just a coffee this morning, nothing else.",
+            "Only a cup of coffee, at about seven."
+          ],
+          "meaningDe": "Ich hatte heute Morgen nur einen Kaffee.",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will ask the doctor if that is OK.",
+              "fits": true,
+              "meaningDe": "Danke. Ich frage den Arzt, ob das in Ordnung ist.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Preparing for an X-ray"
+              }
+            },
+            {
+              "en": "Do you have diabetes?",
+              "fits": false,
+              "whyDe": "Das ist eine neue Frage. Die Sache mit dem Kaffee ist noch nicht geklärt.",
+              "meaningDe": "Haben Sie Diabetes?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Please put on this gown.",
+              "fits": false,
+              "whyDe": "Du übergehst seine Antwort. Erst muss klar sein, ob der Kaffee ein Problem ist.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.changing",
+      "key": "changing",
+      "titleDe": "Umziehen und Lagerung",
+      "sentences": [
+        {
+          "id": "ge.changing.s01",
+          "situationDe": "Die Patientin trägt eine Kette und Ohrringe. Sag ihr, was damit vor der Untersuchung geschehen muss.",
+          "en": "Please take off your jewellery.",
+          "variants": [
+            "Please remove your jewellery.",
+            "Please take off your jewelry.",
+            "Could you take off your jewellery, please?"
+          ],
+          "keywords": [
+            "jewellery|jewelry",
+            "take off|remove"
+          ],
+          "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "jewellery ist britisch, jewelry amerikanisch.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.changing.s02",
+          "situationDe": "Der Patient trägt seine Straßenkleidung, und du siehst nicht alles daran. Kläre, ob dort etwas stören könnte, zum Beispiel an der Jacke oder Hose.",
+          "en": "Is there any metal on your clothes, like a zip?",
+          "variants": [
+            "Do your clothes have any metal on them, like a zip?",
+            "Is there any metal on your clothes, like a zipper?",
+            "Is there any metal on your clothes?"
+          ],
+          "keywords": [
+            "metal",
+            "clothes"
+          ],
+          "meaningDe": "Ist an Ihrer Kleidung Metall, zum Beispiel ein Reißverschluss?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "zip ist britisch, zipper amerikanisch.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.changing.s03",
+          "situationDe": "Die Patientin trägt noch Dinge mit Metall, die man nicht gleich sieht: unter dem Oberteil und im Haar. Bitte sie, auch das abzulegen.",
+          "en": "Please also take off your bra and any hair clips.",
+          "variants": [
+            "Please also remove your bra and any hair clips.",
+            "Please take off your bra and any hair clips too.",
+            "Could you also take off your bra and any hair clips?"
+          ],
+          "keywords": [
+            "bra",
+            "clips"
+          ],
+          "meaningDe": "Bitte legen Sie auch Ihren BH und alle Haarklammern ab.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.changing.s04",
+          "situationDe": "Die Kleidung des Patienten ist für die Aufnahme nicht geeignet. Reich ihm das Kleidungsstück aus der Abteilung und sag, was er tun soll.",
+          "en": "Please change into this gown.",
+          "variants": [
+            "Please put on this gown.",
+            "Could you change into this gown, please?",
+            "Please put this gown on."
+          ],
+          "keywords": [
+            "gown"
+          ],
+          "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "ge.changing.s05",
+          "situationDe": "Der Patient hält das Hemd in der Hand und sieht sich suchend um. Zeig ihm den Ort dafür.",
+          "en": "You can get changed in this cubicle.",
+          "variants": [
+            "You can change in this cubicle.",
+            "You can get changed in this room.",
+            "You can change in here."
+          ],
+          "keywords": [
+            "changed|change"
+          ],
+          "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.changing.s06",
+          "situationDe": "Der Patient weiß nicht, wohin mit Jacke und Tasche. Zeig ihm, wo sie sicher sind.",
+          "en": "You can leave your things in this locker.",
+          "variants": [
+            "You can put your things in this locker.",
+            "Please leave your things in this locker.",
+            "Please put your things in this locker."
+          ],
+          "keywords": [
+            "things",
+            "locker"
+          ],
+          "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.changing.s07",
+          "situationDe": "In der Hose des Patienten klimpern Schlüssel und Münzen. Bitte ihn, das zu ändern.",
+          "en": "Please empty your pockets.",
+          "variants": [
+            "Could you empty your pockets, please?",
+            "Please take everything out of your pockets.",
+            "Could you take everything out of your pockets, please?"
+          ],
+          "keywords": [
+            "pockets"
+          ],
+          "meaningDe": "Bitte leeren Sie Ihre Taschen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 5"
+          }
+        },
+        {
+          "id": "ge.changing.s08",
+          "situationDe": "Die Liege ist bereit, und der Patient steht noch daneben. Sag ihm, was er jetzt tun soll.",
+          "en": "Please lie down on the table.",
+          "variants": [
+            "Please lie down on the bed.",
+            "Could you lie down on the table, please?",
+            "Please lie on the table."
+          ],
+          "keywords": [
+            "lie",
+            "table|bed"
+          ],
+          "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "ge.changing.s09",
+          "situationDe": "Der Patient liegt auf der Seite. Für die Aufnahme brauchst du eine andere Lage.",
+          "en": "Please lie flat on your back.",
+          "variants": [
+            "Please lie on your back.",
+            "Could you lie flat on your back, please?",
+            "Please lie down flat on your back."
+          ],
+          "keywords": [
+            "lie",
+            "back"
+          ],
+          "meaningDe": "Bitte legen Sie sich flach auf den Rücken.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ge.changing.s10",
+          "situationDe": "Der Patient liegt jetzt und muss gleich eine Weile so bleiben. Erkundige dich, ob es für ihn so geht.",
+          "en": "Are you comfortable like that?",
+          "variants": [
+            "Are you comfortable?",
+            "Are you comfortable like this?",
+            "Is that comfortable for you?"
+          ],
+          "keywords": [
+            "comfortable"
+          ],
+          "meaningDe": "Liegen Sie so bequem?",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.changing.p01",
+          "kind": "question",
+          "en": "Can I keep my wedding ring on?",
+          "variants": [
+            "Do I have to take my wedding ring off?",
+            "Is it OK if I leave my wedding ring on?"
+          ],
+          "meaningDe": "Darf ich meinen Ehering anbehalten?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "What happens when I arrive?"
+          },
+          "reactions": [
+            {
+              "en": "Let me check that for you.",
+              "fits": true,
+              "meaningDe": "Ich kläre das für Sie.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "What happens when I arrive?"
+              }
+            },
+            {
+              "en": "You can leave your things in this locker.",
+              "fits": false,
+              "whyDe": "Das sagt nicht, ob der Ring am Finger bleiben darf.",
+              "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Are you comfortable like that?",
+              "fits": false,
+              "whyDe": "Das geht auf die Frage zum Ring nicht ein.",
+              "meaningDe": "Liegen Sie so bequem?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.changing.p02",
+          "kind": "question",
+          "en": "Do I have to take my glasses off?",
+          "variants": [
+            "Should I take off my glasses?",
+            "Do my glasses have to come off?"
+          ],
+          "meaningDe": "Muss ich meine Brille abnehmen?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "noteDe": "Die Antwort ist ein Beispiel. Ob die Brille abmuss, hängt von der Aufnahme ab.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          },
+          "reactions": [
+            {
+              "en": "For this scan, yes please. You can put them back on afterwards.",
+              "fits": true,
+              "clinicDependent": true,
+              "meaningDe": "Bei dieser Untersuchung ja, bitte. Sie können sie danach wieder aufsetzen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Das sagt nicht, ob die Brille abgenommen werden muss.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Let me explain what will happen today.",
+              "fits": false,
+              "whyDe": "Er hat eine klare Frage gestellt und will keine allgemeine Erklärung.",
+              "meaningDe": "Ich erkläre Ihnen, was heute passieren wird.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.changing.p03",
+          "kind": "unexpected",
+          "en": "I can't lie flat. My back hurts too much.",
+          "variants": [
+            "Lying flat really hurts my back.",
+            "I can't lie on my back for long. It hurts."
+          ],
+          "meaningDe": "Ich kann nicht flach liegen. Mein Rücken tut zu sehr weh.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry. Would a pillow help?",
+              "fits": true,
+              "meaningDe": "Das tut mir leid. Würde ein Kissen helfen?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "Please lie flat on your back.",
+              "fits": false,
+              "whyDe": "Genau das kann er gerade nicht.",
+              "meaningDe": "Bitte legen Sie sich flach auf den Rücken.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "The table will move into the scanner.",
+              "fits": false,
+              "whyDe": "Das geht auf seine Schmerzen nicht ein.",
+              "meaningDe": "Der Tisch fährt in das Gerät hinein.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.changing.p04",
+          "kind": "unexpected",
+          "en": "Sorry, can I use the toilet first?",
+          "variants": [
+            "Can I go to the loo before we start?",
+            "I need the toilet. Is that OK?"
+          ],
+          "meaningDe": "Entschuldigung, darf ich vorher noch auf die Toilette?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "Facilities available"
+          },
+          "reactions": [
+            {
+              "en": "Of course. I will show you where it is.",
+              "fits": true,
+              "meaningDe": "Natürlich. Ich zeige Ihnen, wo sie ist.",
+              "source": {
+                "ref": "cuh-ct",
+                "locator": "Facilities available"
+              }
+            },
+            {
+              "en": "Please change into this gown.",
+              "fits": false,
+              "whyDe": "Er muss zuerst auf die Toilette. Das Hemd kann warten.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Please empty your pockets.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nach der Toilette nicht.",
+              "meaningDe": "Bitte leeren Sie Ihre Taschen.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 5"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.stillness",
+      "key": "stillness",
+      "titleDe": "Still liegen und Atemkommandos",
+      "sentences": [
+        {
+          "id": "ge.stillness.s01",
+          "situationDe": "Gleich startet die Aufnahme, und der Patient rutscht noch herum. Sag ihm, worauf es jetzt ankommt.",
+          "en": "Please keep very still.",
+          "variants": [
+            "Please stay very still.",
+            "Please keep still.",
+            "Please don't move."
+          ],
+          "keywords": [
+            "still|move"
+          ],
+          "meaningDe": "Bitte halten Sie ganz still.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "ge.stillness.s02",
+          "situationDe": "Der Patient fragt, warum er sich nicht rühren darf. Nenn ihm den Grund.",
+          "en": "The pictures are clearer if you do not move.",
+          "variants": [
+            "The pictures will be clearer if you do not move.",
+            "If you do not move, the pictures are clearer.",
+            "The pictures are clearer if you don't move."
+          ],
+          "keywords": [
+            "pictures",
+            "clearer"
+          ],
+          "meaningDe": "Die Bilder werden deutlicher, wenn Sie sich nicht bewegen.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.stillness.s03",
+          "situationDe": "Bei dieser Aufnahme spielt auch die Atmung eine Rolle. Sag dem Patienten, dass er von dir das Zeichen bekommt, wann es so weit ist.",
+          "en": "I will tell you when to hold your breath.",
+          "variants": [
+            "I will say when to hold your breath.",
+            "I'll tell you when to hold your breath.",
+            "I am going to tell you when to hold your breath."
+          ],
+          "keywords": [
+            "hold",
+            "breath"
+          ],
+          "meaningDe": "Ich sage Ihnen, wann Sie die Luft anhalten sollen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          }
+        },
+        {
+          "id": "ge.stillness.s04",
+          "situationDe": "Der Patient hat Sorge, dass er das Luftanhalten nicht schafft. Beruhige ihn: Lang ist es nicht.",
+          "en": "It is only for a few seconds.",
+          "variants": [
+            "It's only for a few seconds.",
+            "It will only be for a few seconds.",
+            "It only takes a few seconds."
+          ],
+          "keywords": [
+            "seconds"
+          ],
+          "meaningDe": "Es dauert nur ein paar Sekunden.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        },
+        {
+          "id": "ge.stillness.s05",
+          "situationDe": "Die Aufnahme beginnt gleich. Der Patient soll zuerst Luft holen. Gib das kurze Kommando.",
+          "en": "Breathe in.",
+          "variants": [
+            "Please breathe in.",
+            "Breathe in, please.",
+            "Now breathe in.",
+            "Take a deep breath.",
+            "Take a deep breath in."
+          ],
+          "keywords": [
+            "breathe in|deep breath"
+          ],
+          "meaningDe": "Einatmen.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.stillness.s06",
+          "situationDe": "Der Patient hat eingeatmet, und jetzt wird das Bild gemacht. In diesem Moment darf er nicht atmen. Gib das kurze Kommando.",
+          "en": "Hold your breath.",
+          "variants": [
+            "Please hold your breath.",
+            "Hold your breath, please.",
+            "Now hold your breath."
+          ],
+          "keywords": [
+            "hold",
+            "breath"
+          ],
+          "meaningDe": "Halten Sie die Luft an.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.stillness.s07",
+          "situationDe": "Für den nächsten Schritt soll der Patient die Luft wieder ablassen. Gib das kurze Kommando.",
+          "en": "Breathe out.",
+          "variants": [
+            "Please breathe out.",
+            "Breathe out, please.",
+            "Now breathe out."
+          ],
+          "keywords": [
+            "breathe out"
+          ],
+          "meaningDe": "Ausatmen.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.stillness.s08",
+          "situationDe": "Das Bild ist fertig, und der Patient hält immer noch die Luft an. Erlöse ihn.",
+          "en": "You can breathe normally now.",
+          "variants": [
+            "Now you can breathe normally.",
+            "Breathe normally, please.",
+            "You can breathe again now."
+          ],
+          "keywords": [
+            "breathe"
+          ],
+          "meaningDe": "Sie können jetzt wieder normal atmen.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "What will happen on the day of my procedure/examination?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.stillness.p01",
+          "kind": "question",
+          "en": "What if I need to cough?",
+          "variants": [
+            "What should I do if I have to cough?",
+            "What happens if I cough?"
+          ],
+          "meaningDe": "Was ist, wenn ich husten muss?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "Just tell me. I can hear you.",
+              "fits": true,
+              "meaningDe": "Sagen Sie es mir einfach. Ich kann Sie hören.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Hold your breath.",
+              "fits": false,
+              "whyDe": "Das sagt ihm nicht, was er tun soll, wenn er husten muss.",
+              "meaningDe": "Halten Sie die Luft an.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das ist die Antwort auf die Frage nach der Dauer, nicht nach dem Husten.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.stillness.p02",
+          "kind": "unclear",
+          "en": "I get out of breath quite easily.",
+          "variants": [
+            "I get breathless these days.",
+            "I run out of breath very quickly."
+          ],
+          "meaningDe": "Ich komme ziemlich schnell außer Atem.",
+          "cefr": "B1",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          },
+          "reactions": [
+            {
+              "en": "Can you hold your breath for a few seconds?",
+              "fits": true,
+              "meaningDe": "Können Sie die Luft ein paar Sekunden anhalten?",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Breathe in.",
+              "fits": false,
+              "whyDe": "Erst musst du klären, ob er das Luftanhalten überhaupt schafft.",
+              "meaningDe": "Einatmen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das geht an seiner Sorge vorbei. Es geht ums Atmen, nicht ums Stillhalten.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.stillness.p03",
+          "kind": "unexpected",
+          "en": "Sorry, I think I moved a bit.",
+          "variants": [
+            "Oh no, I moved. Is that bad?",
+            "I'm sorry, I moved just then."
+          ],
+          "meaningDe": "Entschuldigung, ich glaube, ich habe mich etwas bewegt.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "That is OK. Let me check the pictures.",
+              "fits": true,
+              "meaningDe": "Das ist in Ordnung. Ich sehe mir die Bilder an.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "You can breathe normally now.",
+              "fits": false,
+              "whyDe": "Er hat sich bewegt. Ums Atmen geht es gerade nicht.",
+              "meaningDe": "Sie können jetzt wieder normal atmen.",
+              "source": {
+                "ref": "cuh-ct",
+                "locator": "What will happen on the day of my procedure/examination?"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Von Schmerzen hat er nichts gesagt.",
+              "meaningDe": "Die Aufnahme tut nicht weh.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.contrast",
+      "key": "contrast",
+      "titleDe": "Kontrastmittel und Zugang",
+      "sentences": [
+        {
+          "id": "ge.contrast.s01",
+          "situationDe": "Für diese Untersuchung braucht der Patient Kontrastmittel und hat davon noch nie gehört. Sag ihm in einfachen Worten, was er bekommt und wozu.",
+          "en": "You will get a special dye. It makes the pictures clearer.",
+          "variants": [
+            "You will have a special dye. It makes the pictures clearer.",
+            "You will get contrast dye. It makes the pictures clearer.",
+            "You will get contrast medium. It makes the pictures clearer.",
+            "You'll get a special dye. It makes the pictures clearer."
+          ],
+          "keywords": [
+            "dye|contrast",
+            "pictures"
+          ],
+          "meaningDe": "Sie bekommen ein besonderes Kontrastmittel. Es macht die Bilder deutlicher.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "dye ist das Alltagswort, contrast medium das Fachwort. Sag nie, dass es den Körper färbt.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Before an MRI scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s02",
+          "situationDe": "Das Kontrastmittel kommt über die Vene. Sag dem Patienten, was dafür vorher an seinem Arm gemacht wird.",
+          "en": "The doctor will put a small tube in your arm.",
+          "variants": [
+            "I will put a small tube in your arm.",
+            "The doctor is going to put a small tube in your arm.",
+            "I am going to put a small tube in your arm.",
+            "I'll put a small tube in your arm."
+          ],
+          "keywords": [
+            "tube",
+            "arm"
+          ],
+          "meaningDe": "Der Arzt legt Ihnen ein kleines Röhrchen in den Arm.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Sag die Form, die zu deiner Abteilung passt: The doctor will oder I will.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "ge.contrast.s08",
+          "situationDe": "Der Zugang im Arm liegt schon. Sag dem Patienten, wozu er gleich gebraucht wird.",
+          "en": "The doctor will give you the dye through the small tube.",
+          "variants": [
+            "I will give you the dye through the small tube.",
+            "The doctor will give you the contrast medium through the small tube.",
+            "I will give you the contrast medium through the small tube.",
+            "I'll give you the dye through the small tube."
+          ],
+          "keywords": [
+            "dye|contrast",
+            "tube"
+          ],
+          "meaningDe": "Der Arzt gibt Ihnen das Kontrastmittel über das kleine Röhrchen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Sag I will, wenn du es selbst machst.",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "ge.contrast.s03",
+          "situationDe": "Gleich läuft das Kontrastmittel. Der Patient soll nicht erschrecken, wenn ihm plötzlich die Hitze aufsteigt. Bereite ihn darauf vor.",
+          "en": "The dye can make you feel warm for a short time.",
+          "variants": [
+            "The dye can make you feel hot for a short time.",
+            "The dye may make you feel warm for a short time.",
+            "You may feel warm from the dye for a short time."
+          ],
+          "keywords": [
+            "dye",
+            "warm|hot"
+          ],
+          "meaningDe": "Durch das Kontrastmittel kann Ihnen kurz warm werden.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Before the CT scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s04",
+          "situationDe": "Bereite den Patienten auf noch etwas vor, das er beim Kontrastmittel bemerken kann: Im Mund kann es seltsam schmecken.",
+          "en": "You may have a metal taste in your mouth.",
+          "variants": [
+            "You may get a metal taste in your mouth.",
+            "You may notice a metal taste in your mouth.",
+            "You might have a metallic taste in your mouth."
+          ],
+          "keywords": [
+            "metal|metallic",
+            "taste"
+          ],
+          "meaningDe": "Sie haben vielleicht einen metallischen Geschmack im Mund.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Before the CT scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s05",
+          "situationDe": "Der Patient ist beunruhigt wegen der Hitze und des Geschmacks. Sag ihm, dass das nicht lange anhält.",
+          "en": "These feelings usually go away quickly.",
+          "variants": [
+            "These feelings usually pass quickly.",
+            "This feeling usually goes away quickly.",
+            "It usually goes away quickly."
+          ],
+          "keywords": [
+            "quickly"
+          ],
+          "meaningDe": "Diese Empfindungen vergehen normalerweise schnell.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "ge.contrast.s06",
+          "situationDe": "Du gehst gleich aus dem Raum. Der Patient hat Kontrastmittel bekommen und soll sich sofort melden, falls es ihm schlecht geht.",
+          "en": "Please tell me if you feel unwell.",
+          "variants": [
+            "Please tell me if you don't feel well.",
+            "Tell me if you feel unwell, please.",
+            "Please tell me if you feel ill."
+          ],
+          "keywords": [
+            "tell",
+            "unwell|well|ill"
+          ],
+          "meaningDe": "Bitte sagen Sie mir, wenn Sie sich unwohl fühlen.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s09",
+          "situationDe": "Der Patient bekommt gleich das Mittel. Sag ihm, welches Warnzeichen rund um die Luft er dir sofort melden soll.",
+          "en": "Please tell me right away if you have trouble breathing.",
+          "variants": [
+            "Please tell me straight away if you have trouble breathing.",
+            "Please tell me immediately if you have trouble breathing.",
+            "Please tell me at once if you have trouble breathing.",
+            "Please tell me right away if you have problems breathing."
+          ],
+          "keywords": [
+            "breathing"
+          ],
+          "meaningDe": "Bitte sagen Sie mir sofort, wenn Sie schlecht Luft bekommen.",
+          "cefr": "B1",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s10",
+          "situationDe": "Nenn dem Patienten noch ein zweites Warnzeichen, das er an der Haut bemerken könnte und melden soll.",
+          "en": "Please tell me if your skin gets itchy.",
+          "variants": [
+            "Please tell me if your skin starts to itch.",
+            "Tell me if your skin gets itchy, please.",
+            "Please let me know if your skin gets itchy."
+          ],
+          "keywords": [
+            "skin",
+            "itchy|itch"
+          ],
+          "meaningDe": "Bitte sagen Sie mir, wenn Ihre Haut anfängt zu jucken.",
+          "cefr": "B1",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s12",
+          "situationDe": "Das Mittel läuft gleich über das Röhrchen. Nenn dem Patienten ein Warnzeichen, das er genau an dieser Stelle bemerken könnte und melden soll.",
+          "en": "Please tell me if your arm hurts or starts to swell.",
+          "variants": [
+            "Please let me know if your arm hurts or starts to swell.",
+            "Please tell me if your arm hurts or starts swelling.",
+            "Tell me if your arm hurts or starts to swell, please."
+          ],
+          "keywords": [
+            "arm",
+            "hurts",
+            "swell|swelling"
+          ],
+          "meaningDe": "Bitte sagen Sie mir, wenn Ihr Arm schmerzt oder anschwillt.",
+          "cefr": "B1",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "Are there any risks?"
+          }
+        },
+        {
+          "id": "ge.contrast.s13",
+          "situationDe": "Der Patient steht neben der Liege, wird blass und sagt, ihm sei schwindelig. Biete ihm etwas an, damit er nicht umfällt.",
+          "en": "Would you like to sit down?",
+          "variants": [
+            "Would you like to lie down?",
+            "Do you want to sit down?",
+            "Would you like to sit down for a moment?"
+          ],
+          "keywords": [
+            "sit|lie"
+          ],
+          "meaningDe": "Möchten Sie sich setzen?",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cam-would",
+            "locator": "Would"
+          }
+        },
+        {
+          "id": "ge.contrast.s14",
+          "situationDe": "Dem Patienten geht es schlecht, und er hat Angst. Sag ihm, dass du ihn jetzt nicht allein lässt und dass sich jemand um ihn kümmert.",
+          "en": "I will stay with you and get help.",
+          "variants": [
+            "I will stay with you and call for help.",
+            "I'll stay with you and get help.",
+            "I will stay here with you and get help."
+          ],
+          "keywords": [
+            "stay",
+            "help"
+          ],
+          "meaningDe": "Ich bleibe bei Ihnen und hole Hilfe.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "ge.contrast.s07",
+          "situationDe": "Der Patient hatte Kontrastmittel und will gleich nach Hause. Sag ihm, dass er noch nicht sofort gehen soll.",
+          "en": "Please wait here for a short time after the scan.",
+          "variants": [
+            "Please stay here for a short time after the scan.",
+            "You need to wait here for a short time after the scan.",
+            "Please wait here for a little while after the scan.",
+            "Please wait here for a short time after the X-ray."
+          ],
+          "keywords": [
+            "wait|stay"
+          ],
+          "meaningDe": "Bitte warten Sie nach der Aufnahme noch kurz hier.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Wie lange, legt deine Abteilung fest.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "After the CT scan"
+          }
+        },
+        {
+          "id": "ge.contrast.s11",
+          "situationDe": "Nach der Wartezeit möchte der Patient gehen, aber das Röhrchen steckt noch im Arm. Sag ihm, was vorher noch passiert.",
+          "en": "The doctor will take the small tube out before you go.",
+          "variants": [
+            "I will take the small tube out before you go.",
+            "The doctor will take the small tube out of your arm before you go.",
+            "I will take the small tube out of your arm before you go.",
+            "I'll take the small tube out before you go."
+          ],
+          "keywords": [
+            "tube",
+            "out"
+          ],
+          "meaningDe": "Der Arzt zieht das kleine Röhrchen heraus, bevor Sie gehen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Sag die Form, die zu deiner Abteilung passt: The doctor will oder I will.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens after the scan?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.contrast.p01",
+          "kind": "question",
+          "en": "What is the dye for?",
+          "variants": [
+            "Why do I need the dye?",
+            "What does the dye do?"
+          ],
+          "meaningDe": "Wozu ist das Kontrastmittel?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Before an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "It makes the pictures clearer.",
+              "fits": true,
+              "meaningDe": "Es macht die Bilder deutlicher.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Before an MRI scan"
+              }
+            },
+            {
+              "en": "These feelings usually go away quickly.",
+              "fits": false,
+              "whyDe": "Er fragt nach dem Zweck, nicht nach Empfindungen.",
+              "meaningDe": "Diese Empfindungen vergehen normalerweise schnell.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Please tell me if you feel unwell.",
+              "fits": false,
+              "whyDe": "Das ist eine Bitte für später. Er will wissen, wozu das Mittel dient.",
+              "meaningDe": "Bitte sagen Sie mir, wenn Sie sich unwohl fühlen.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.contrast.p02",
+          "kind": "unclear",
+          "en": "My arm feels a bit funny.",
+          "variants": [
+            "There's a strange feeling in my arm.",
+            "Something feels odd in my arm."
+          ],
+          "meaningDe": "Mein Arm fühlt sich etwas komisch an.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Can you tell me what you feel?",
+              "fits": true,
+              "meaningDe": "Können Sie mir sagen, was Sie spüren?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "You will get a special dye. It makes the pictures clearer.",
+              "fits": false,
+              "whyDe": "Das erklärt das Kontrastmittel. Jetzt musst du klären, was der Patient im Arm spürt.",
+              "meaningDe": "Sie bekommen ein besonderes Kontrastmittel. Es macht die Bilder deutlicher.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Before an MRI scan"
+              }
+            },
+            {
+              "en": "These feelings usually go away quickly.",
+              "fits": false,
+              "whyDe": "Das kannst du nicht sagen, bevor du weißt, was er genau spürt.",
+              "meaningDe": "Diese Empfindungen vergehen normalerweise schnell.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.contrast.p03",
+          "kind": "unexpected",
+          "en": "I suddenly feel very hot.",
+          "variants": [
+            "I've gone all hot.",
+            "It feels really hot all of a sudden."
+          ],
+          "meaningDe": "Mir ist plötzlich sehr heiß.",
+          "cefr": "A2",
+          "exams": [
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "What will I experience before and after receiving contrast material?"
+          },
+          "reactions": [
+            {
+              "en": "That can happen with the dye. Do you feel OK otherwise?",
+              "fits": true,
+              "meaningDe": "Das kann beim Kontrastmittel vorkommen. Geht es Ihnen sonst gut?",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "What will I experience before and after receiving contrast material?"
+              }
+            },
+            {
+              "en": "You may have a metal taste in your mouth.",
+              "fits": false,
+              "whyDe": "Vom Geschmack hat er nichts gesagt. Er spürt Hitze, und du solltest nachfragen, wie es ihm geht.",
+              "meaningDe": "Sie haben vielleicht einen metallischen Geschmack im Mund.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Before the CT scan"
+              }
+            },
+            {
+              "en": "Please lie flat on your back.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zur Lage und geht auf die Hitze nicht ein.",
+              "meaningDe": "Bitte legen Sie sich flach auf den Rücken.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.contrast.p04",
+          "kind": "unexpected",
+          "en": "I feel a bit dizzy.",
+          "variants": [
+            "I'm feeling dizzy.",
+            "My head is spinning a bit."
+          ],
+          "meaningDe": "Mir ist etwas schwindelig.",
+          "cefr": "A2",
+          "noteDe": "Biete an, dass er sich setzt oder hinlegt, und bleib bei ihm.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will get the doctor.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie mir das sagen. Ich hole den Arzt.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "These feelings usually go away quickly.",
+              "fits": false,
+              "whyDe": "Das kannst du bei Schwindel nicht einfach sagen. Zuerst muss sich jemand darum kümmern.",
+              "meaningDe": "Diese Empfindungen vergehen normalerweise schnell.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Hold your breath.",
+              "fits": false,
+              "whyDe": "Das ist ein Kommando für die Aufnahme und hilft bei Schwindel nicht weiter.",
+              "meaningDe": "Halten Sie die Luft an.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.contrast.p05",
+          "kind": "unexpected",
+          "en": "I really don't like needles.",
+          "variants": [
+            "I'm scared of needles.",
+            "Needles make me feel faint."
+          ],
+          "meaningDe": "Ich mag Nadeln wirklich nicht.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Will I need an injection?"
+          },
+          "reactions": [
+            {
+              "en": "I understand. Please tell me if you start to feel unwell.",
+              "fits": true,
+              "meaningDe": "Das verstehe ich. Bitte sagen Sie mir, wenn Sie sich unwohl fühlen.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "The doctor will give you the dye through the small tube.",
+              "fits": false,
+              "whyDe": "Das erklärt nur den nächsten Schritt und geht nicht auf seine Angst ein.",
+              "meaningDe": "Der Arzt gibt Ihnen das Kontrastmittel über das kleine Röhrchen.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            },
+            {
+              "en": "Some people get a headache or feel sick after the dye.",
+              "fits": false,
+              "whyDe": "Das macht ihm eher noch mehr Angst und hat mit den Nadeln nichts zu tun.",
+              "meaningDe": "Manche Menschen bekommen nach dem Kontrastmittel Kopfschmerzen, oder ihnen wird übel.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Risks from the contrast medium (dye)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.anxiety",
+      "key": "anxiety",
+      "titleDe": "Bei Platzangst beruhigen",
+      "sentences": [
+        {
+          "id": "ge.anxiety.s01",
+          "situationDe": "Der Patient wirft unruhige Blicke auf das Gerät. Finde heraus, ob ihm die Enge darin Probleme macht.",
+          "en": "Do small spaces make you nervous?",
+          "variants": [
+            "Are you afraid of small spaces?",
+            "Do you feel anxious in small spaces?",
+            "Are you worried about small spaces?"
+          ],
+          "keywords": [
+            "small spaces"
+          ],
+          "meaningDe": "Machen kleine Räume Sie nervös?",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ge.anxiety.s02",
+          "situationDe": "Der Patient sagt, es gehe schon, aber du siehst ihm die Unruhe an. Mach ihm klar, dass er sich jederzeit an dich wenden kann, wenn es schlimmer wird.",
+          "en": "Please tell me if you start to feel nervous.",
+          "variants": [
+            "Please tell me if you start to feel anxious.",
+            "Please tell me if you feel nervous.",
+            "Tell me if you start to feel nervous, please."
+          ],
+          "keywords": [
+            "tell",
+            "nervous|anxious"
+          ],
+          "meaningDe": "Bitte sagen Sie mir, wenn Sie nervös werden.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.anxiety.p01",
+          "kind": "unclear",
+          "en": "I'm not very good in small spaces.",
+          "variants": [
+            "I don't really like small spaces.",
+            "Tight spaces make me a bit nervous."
+          ],
+          "meaningDe": "Mit kleinen Räumen komme ich nicht so gut zurecht.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "I understand. What helps you when you feel like this?",
+              "fits": true,
+              "meaningDe": "Das verstehe ich. Was hilft Ihnen, wenn es Ihnen so geht?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "The table will move into the scanner.",
+              "fits": false,
+              "whyDe": "Das geht auf seine Angst nicht ein und macht sie eher größer.",
+              "meaningDe": "Der Tisch fährt in das Gerät hinein.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Das geht auf seine Angst nicht ein.",
+              "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.anxiety.p02",
+          "kind": "question",
+          "en": "Can I have something to calm me down?",
+          "variants": [
+            "Is there something I can take to relax?",
+            "Can you give me something for my nerves?"
+          ],
+          "meaningDe": "Kann ich etwas zur Beruhigung bekommen?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor about that.",
+              "fits": true,
+              "meaningDe": "Ich frage den Arzt danach.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nach einem Mittel nicht.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Are you comfortable like that?",
+              "fits": false,
+              "whyDe": "Er hat nach einem Mittel gefragt. Darüber entscheidet der Arzt.",
+              "meaningDe": "Liegen Sie so bequem?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.callbutton",
+      "key": "callButton",
+      "titleDe": "Klingel und Gegensprechanlage",
+      "sentences": [
+        {
+          "id": "ge.callbutton.s01",
+          "situationDe": "Die Aufnahme beginnt gleich, und du musst den Untersuchungsraum verlassen. Sag dem Patienten, wo du dann bist.",
+          "en": "I will be in the next room.",
+          "variants": [
+            "I'll be in the next room.",
+            "I will be in the room next door.",
+            "I am going to be in the next room."
+          ],
+          "keywords": [
+            "next"
+          ],
+          "meaningDe": "Ich bin im Nebenraum.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ge.callbutton.s02",
+          "situationDe": "Der Patient hat Sorge, dass ihn niemand bemerkt, wenn du draußen bist. Sag ihm, dass der Kontakt zu dir nicht abreißt.",
+          "en": "I can hear you, and you can talk to me.",
+          "variants": [
+            "You can talk to me, and I can hear you.",
+            "I can hear you, and you can speak to me.",
+            "I can hear you and we can talk."
+          ],
+          "keywords": [
+            "hear",
+            "talk|speak"
+          ],
+          "meaningDe": "Ich kann Sie hören, und Sie können mit mir sprechen.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          }
+        },
+        {
+          "id": "ge.callbutton.s03",
+          "situationDe": "Der Patient hat Sorge, dass ihn im Gerät niemand im Blick hat. Beruhige ihn.",
+          "en": "I can see you the whole time.",
+          "variants": [
+            "I can see you all the time.",
+            "We can see you the whole time.",
+            "I will be able to see you the whole time."
+          ],
+          "keywords": [
+            "see"
+          ],
+          "meaningDe": "Ich kann Sie die ganze Zeit sehen.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.callbutton.p01",
+          "kind": "question",
+          "en": "Will I be alone in there?",
+          "variants": [
+            "Are you going to leave me on my own?",
+            "Will you stay in the room with me?"
+          ],
+          "meaningDe": "Bin ich da drin allein?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "I will be in the next room, and I can hear you.",
+              "fits": true,
+              "meaningDe": "Ich bin im Nebenraum und kann Sie hören.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das antwortet auf die Frage nach der Dauer, nicht darauf, ob er allein ist.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "You can leave your things in this locker.",
+              "fits": false,
+              "whyDe": "Das geht auf seine Frage nicht ein.",
+              "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge.closing",
+      "key": "closing",
+      "titleDe": "Abschluss und Verabschiedung",
+      "sentences": [
+        {
+          "id": "ge.closing.s01",
+          "situationDe": "Die letzte Aufnahme ist gemacht. Der Patient liegt noch und ist vom langen Liegen etwas steif. Biete ihm deine Unterstützung an.",
+          "en": "Let me help you get up.",
+          "variants": [
+            "I will help you get up.",
+            "Let me help you up.",
+            "I will help you to get up.",
+            "I'll help you get up."
+          ],
+          "keywords": [
+            "help"
+          ],
+          "meaningDe": "Ich helfe Ihnen beim Aufstehen.",
+          "cefr": "A2",
+          "core": false,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ge.closing.s02",
+          "situationDe": "Es ist alles erledigt, und der Patient steht noch im Hemd aus der Abteilung da. Sag ihm, dass es vorbei ist und was er jetzt machen kann.",
+          "en": "We are finished now. You can get dressed.",
+          "variants": [
+            "We are done now. You can get dressed.",
+            "We are finished. You can get dressed now.",
+            "That is all. You can get dressed now.",
+            "We're finished now. You can get dressed."
+          ],
+          "keywords": [
+            "dressed"
+          ],
+          "meaningDe": "Wir sind jetzt fertig. Sie können sich anziehen.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ge.closing.s03",
+          "situationDe": "Der Patient hat seit dem Morgen nichts gegessen und fragt, ob er sich jetzt etwas kaufen darf. Ein Beruhigungsmittel hatte er nicht.",
+          "en": "You can eat and drink as normal.",
+          "variants": [
+            "You can eat and drink normally.",
+            "You can eat and drink as usual.",
+            "You can eat and drink normally now."
+          ],
+          "keywords": [
+            "eat",
+            "drink"
+          ],
+          "meaningDe": "Sie können normal essen und trinken.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "exams": [
+            "mri",
+            "ct"
+          ],
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          }
+        },
+        {
+          "id": "ge.closing.s04",
+          "situationDe": "Der Patient möchte gern sofort wissen, was auf den Bildern ist. Das darfst du nicht sagen. Nenn ihm die Person, von der er es erfährt.",
+          "en": "Your doctor will tell you the results.",
+          "variants": [
+            "Your doctor will give you the results.",
+            "Your GP will tell you the results.",
+            "Your family doctor will tell you the results."
+          ],
+          "keywords": [
+            "doctor|GP",
+            "results"
+          ],
+          "meaningDe": "Ihr Arzt wird Ihnen die Ergebnisse mitteilen.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "GP ist der britische Hausarzt, family doctor das amerikanische Wort.",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How do I get my results?"
+          }
+        },
+        {
+          "id": "ge.closing.s05",
+          "situationDe": "Der Patient hat seine Sachen beisammen und geht. Verabschiede dich freundlich von ihm.",
+          "en": "Thank you. Goodbye and take care.",
+          "variants": [
+            "Goodbye and take care.",
+            "Thank you and goodbye. Take care.",
+            "Thank you. Bye and take care."
+          ],
+          "keywords": [
+            "take care"
+          ],
+          "meaningDe": "Danke. Auf Wiedersehen und alles Gute.",
+          "cefr": "A2",
+          "core": true,
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag take care"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ge.closing.p01",
+          "kind": "question",
+          "en": "When will I get the results?",
+          "variants": [
+            "How soon will I know the results?",
+            "When do I find out the results?"
+          ],
+          "meaningDe": "Wann bekomme ich die Ergebnisse?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "glos-mri",
+            "locator": "When will I get the results?"
+          },
+          "reactions": [
+            {
+              "en": "They go to your doctor. I can ask how long it takes.",
+              "fits": true,
+              "meaningDe": "Sie gehen an Ihren Arzt. Ich kann nachfragen, wie lange es dauert.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das antwortet auf die Frage nach der Dauer der Untersuchung, nicht nach dem Ergebnis.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "Thank you. Goodbye and take care.",
+              "fits": false,
+              "whyDe": "Damit lässt du ihn mit seiner Frage stehen. Er will wissen, wann das Ergebnis kommt.",
+              "meaningDe": "Danke. Auf Wiedersehen und alles Gute.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag take care"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.closing.p02",
+          "kind": "question",
+          "en": "Did you see anything bad on the pictures?",
+          "variants": [
+            "So, is everything OK in there?",
+            "Did you see anything on the scan?"
+          ],
+          "meaningDe": "Haben Sie auf den Bildern etwas Schlimmes gesehen?",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How will I get my results?"
+          },
+          "reactions": [
+            {
+              "en": "I can't tell you that. Your doctor will explain the results.",
+              "fits": true,
+              "meaningDe": "Das kann ich Ihnen nicht sagen. Ihr Arzt wird Ihnen die Ergebnisse erklären.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How will I get my results?"
+              }
+            },
+            {
+              "en": "Please wait here for a short time after the scan.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nach den Bildern nicht.",
+              "meaningDe": "Bitte warten Sie nach der Aufnahme noch kurz hier.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "After the CT scan"
+              }
+            },
+            {
+              "en": "Let me help you get up.",
+              "fits": false,
+              "whyDe": "Das weicht seiner Frage aus. Er muss hören, wer ihm das Ergebnis erklärt.",
+              "meaningDe": "Ich helfe Ihnen beim Aufstehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge.closing.p03",
+          "kind": "unexpected",
+          "en": "Oh, I think I left my glasses in there.",
+          "variants": [
+            "Wait, I forgot my glasses.",
+            "I can't find my glasses. I had them before."
+          ],
+          "meaningDe": "Oh, ich glaube, ich habe meine Brille da drin liegen lassen.",
+          "cefr": "A2",
+          "exams": [
+            "mri",
+            "ct",
+            "xray"
+          ],
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          },
+          "reactions": [
+            {
+              "en": "No problem. I will get them for you.",
+              "fits": true,
+              "meaningDe": "Kein Problem. Ich hole sie Ihnen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            },
+            {
+              "en": "You can leave your things in this locker.",
+              "fits": false,
+              "whyDe": "Er vermisst seine Brille und will nichts mehr einschließen.",
+              "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "You can put them back on afterwards.",
+              "fits": false,
+              "whyDe": "Das hilft ihm nicht. Die Brille liegt noch im Raum, und er vermisst sie jetzt.",
+              "meaningDe": "Sie können sie danach wieder aufsetzen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "ge.w.radiographer",
+      "en": "radiographer",
+      "variants": [
+        "technologist"
+      ],
+      "meaningDe": "MTR in der Radiologie",
+      "noteDe": "Das bist du. technologist ist das amerikanische Wort.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "What happens during a CT scan"
+      }
+    },
+    {
+      "id": "ge.w.scanner",
+      "en": "scanner",
+      "variants": [
+        "machine"
+      ],
+      "meaningDe": "Scanner, das Gerät",
+      "noteDe": "Patienten sagen oft machine.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "During an MRI scan"
+      }
+    },
+    {
+      "id": "ge.w.radiation",
+      "en": "radiation",
+      "variants": [],
+      "meaningDe": "Strahlung",
+      "noteDe": "Fragen zur Menge beantwortet der Arzt.",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "Are there any risks?"
+      }
+    },
+    {
+      "id": "ge.w.breastfeeding",
+      "en": "breastfeeding",
+      "variants": [],
+      "meaningDe": "Stillen",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Preparing for a CT scan"
+      }
+    },
+    {
+      "id": "ge.w.kidneys",
+      "en": "kidneys",
+      "variants": [
+        "kidney"
+      ],
+      "meaningDe": "Nieren",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Preparing for a CT scan"
+      }
+    },
+    {
+      "id": "ge.w.fast",
+      "en": "fast",
+      "variants": [],
+      "meaningDe": "nüchtern bleiben",
+      "noteDe": "Als Verb heißt es hier nicht schnell, sondern: eine Zeit lang nichts essen.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Preparing for an X-ray"
+      }
+    },
+    {
+      "id": "ge.w.jewellery",
+      "en": "jewellery",
+      "variants": [
+        "jewelry"
+      ],
+      "meaningDe": "Schmuck",
+      "noteDe": "jewelry ist die amerikanische Schreibweise.",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Preparing for a CT scan"
+      }
+    },
+    {
+      "id": "ge.w.zip",
+      "en": "zip",
+      "variants": [
+        "zipper"
+      ],
+      "meaningDe": "Reißverschluss",
+      "noteDe": "zipper ist das amerikanische Wort.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Preparing for a CT scan"
+      }
+    },
+    {
+      "id": "ge.w.gown",
+      "en": "gown",
+      "variants": [
+        "hospital gown"
+      ],
+      "meaningDe": "Patientenhemd",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "What happens during an X-ray"
+      }
+    },
+    {
+      "id": "ge.w.cubicle",
+      "en": "cubicle",
+      "variants": [
+        "changing room"
+      ],
+      "meaningDe": "Umkleidekabine",
+      "cefr": "B2",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "Where do I go when I arrive at the hospital?"
+      }
+    },
+    {
+      "id": "ge.w.locker",
+      "en": "locker",
+      "variants": [],
+      "meaningDe": "Spind, Schließfach",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "Where do I go when I arrive at the hospital?"
+      }
+    },
+    {
+      "id": "ge.w.dye",
+      "en": "dye",
+      "variants": [],
+      "meaningDe": "Kontrastmittel, das Alltagswort",
+      "noteDe": "Eigentlich heißt dye Farbstoff. Sag nie, dass es den Körper färbt.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Before the CT scan"
+      }
+    },
+    {
+      "id": "ge.w.contrast-medium",
+      "en": "contrast medium",
+      "variants": [
+        "contrast agent",
+        "contrast material"
+      ],
+      "meaningDe": "Kontrastmittel, das Fachwort",
+      "noteDe": "Patienten sagen oft dye.",
+      "cefr": "B2",
+      "source": {
+        "ref": "glos-mri",
+        "locator": "Risks from the contrast medium (dye)"
+      }
+    },
+    {
+      "id": "ge.w.injection",
+      "en": "injection",
+      "variants": [],
+      "meaningDe": "Spritze, Injektion",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "Before an MRI scan"
+      }
+    },
+    {
+      "id": "ge.w.cannula",
+      "en": "cannula",
+      "variants": [
+        "IV"
+      ],
+      "meaningDe": "Kanüle, venöser Zugang",
+      "noteDe": "Gegenüber dem Patienten sagst du small tube oder thin plastic tube. cannula ist britisch, IV amerikanisch.",
+      "cefr": "B2",
+      "source": {
+        "ref": "cambridge-dictionary",
+        "locator": "Eintrag cannula"
+      }
+    },
+    {
+      "id": "ge.w.vein",
+      "en": "vein",
+      "variants": [],
+      "meaningDe": "Vene",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Before the CT scan"
+      }
+    },
+    {
+      "id": "ge.w.needle",
+      "en": "needle",
+      "variants": [],
+      "meaningDe": "Nadel",
+      "cefr": "A2",
+      "source": {
+        "ref": "dudley-ct",
+        "locator": "What happens during the CT scan?"
+      }
+    },
+    {
+      "id": "ge.w.metal-taste",
+      "en": "metal taste",
+      "variants": [
+        "metallic taste"
+      ],
+      "meaningDe": "Metallgeschmack",
+      "cefr": "B1",
+      "source": {
+        "ref": "radiologyinfo-contrast",
+        "locator": "What will I experience before and after receiving contrast material?"
+      }
+    },
+    {
+      "id": "ge.w.pee",
+      "en": "pee",
+      "variants": [],
+      "meaningDe": "pinkeln",
+      "noteDe": "Alltagswort. Du selbst sagst besser need the toilet.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Before the CT scan"
+      }
+    },
+    {
+      "id": "ge.w.rash",
+      "en": "rash",
+      "variants": [],
+      "meaningDe": "Hautausschlag",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Possible complications of X-rays"
+      }
+    },
+    {
+      "id": "ge.w.itchy",
+      "en": "itchy",
+      "variants": [
+        "itch"
+      ],
+      "meaningDe": "juckend",
+      "cefr": "B1",
+      "source": {
+        "ref": "dudley-ct",
+        "locator": "Are there any risks?"
+      }
+    },
+    {
+      "id": "ge.w.dizzy",
+      "en": "dizzy",
+      "variants": [],
+      "meaningDe": "schwindelig",
+      "cefr": "B1",
+      "source": {
+        "ref": "glos-mri",
+        "locator": "Risks from the contrast medium (dye)"
+      }
+    },
+    {
+      "id": "ge.w.claustrophobic",
+      "en": "claustrophobic",
+      "variants": [],
+      "meaningDe": "mit Platzangst",
+      "noteDe": "Das Alltagswort dafür: afraid of small spaces.",
+      "cefr": "B2",
+      "source": {
+        "ref": "cambridge-dictionary",
+        "locator": "Eintrag claustrophobic"
+      }
+    },
+    {
+      "id": "ge.w.radiologist",
+      "en": "radiologist",
+      "variants": [],
+      "meaningDe": "Radiologe, Radiologin",
+      "noteDe": "Befundet die Bilder. Nicht mit radiographer verwechseln.",
+      "cefr": "B2",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Getting your CT scan results"
+      }
+    },
+    {
+      "id": "ge.w.gp",
+      "en": "GP",
+      "variants": [
+        "family doctor"
+      ],
+      "meaningDe": "Hausarzt, Hausärztin",
+      "noteDe": "Kurz für general practitioner. family doctor ist das amerikanische Wort.",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "How do I get my results?"
+      }
+    }
+  ]
+}

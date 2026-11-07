@@ -1,0 +1,1457 @@
+{
+  "formatVersion": 1,
+  "file": "roentgen",
+  "strand": "radiology",
+  "exam": "xray",
+  "sections": [
+    {
+      "id": "rx.procedure",
+      "key": "procedure",
+      "titleDe": "Ablauf erklären",
+      "sentences": [
+        {
+          "id": "rx.procedure.s01",
+          "situationDe": "Der Patient hat sich viel Zeit freigehalten und fragt, ob das nun lange geht. Beruhige ihn: Die Aufnahme selbst ist schnell vorbei.",
+          "en": "The X-ray only takes a few minutes.",
+          "variants": [
+            "It only takes a few minutes.",
+            "The X-ray just takes a few minutes.",
+            "An X-ray only takes a few minutes."
+          ],
+          "keywords": [
+            "minutes"
+          ],
+          "meaningDe": "Die Röntgenaufnahme dauert nur wenige Minuten.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.procedure.s02",
+          "situationDe": "Für diese Untersuchung reicht wahrscheinlich ein Bild nicht. Bereite den Patienten darauf vor, dass du ihn zwischendurch anders hinstellst oder hinlegst.",
+          "en": "We may take pictures in different positions.",
+          "variants": [
+            "We may need pictures in different positions.",
+            "We might take pictures in different positions.",
+            "I may take pictures in different positions."
+          ],
+          "keywords": [
+            "pictures",
+            "positions"
+          ],
+          "meaningDe": "Wir machen vielleicht Bilder in verschiedenen Positionen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.procedure.s03",
+          "situationDe": "Gleich löst du die Aufnahme aus und bist dann nicht mehr neben dem Patienten. Sag ihm vorher, was du machst, damit er sich nicht wundert.",
+          "en": "I will go behind this screen for a moment.",
+          "variants": [
+            "I will step behind this screen for a moment.",
+            "I am going to go behind this screen for a moment.",
+            "I'll go behind this screen for a moment.",
+            "I will go behind this wall for a moment."
+          ],
+          "keywords": [
+            "behind",
+            "screen|wall"
+          ],
+          "meaningDe": "Ich gehe kurz hinter diese Schutzwand.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Die Merkblätter sagen screen. Gemeint ist die Schutzwand.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.procedure.s04",
+          "situationDe": "Der Patient wird unruhig, weil er gleich allein im Raum steht. Sag ihm, dass du ihn trotzdem im Blick und im Ohr behältst.",
+          "en": "I can still see and hear you from there.",
+          "variants": [
+            "I can still see you and hear you from there.",
+            "I will still be able to see and hear you.",
+            "I can see and hear you from there."
+          ],
+          "keywords": [
+            "see",
+            "hear"
+          ],
+          "meaningDe": "Ich kann Sie von dort aus weiterhin sehen und hören.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "rx.procedure.s05",
+          "situationDe": "Der Patient hat Sorge, dass er deine Anweisungen nicht mehr mitbekommt, sobald du hinter der Schutzwand stehst. Nimm ihm die Sorge.",
+          "en": "You can still hear me from behind the screen.",
+          "variants": [
+            "You will still be able to hear me from behind the screen.",
+            "You can still hear me from behind the wall.",
+            "You can still hear me."
+          ],
+          "keywords": [
+            "hear"
+          ],
+          "meaningDe": "Auch wenn ich hinter der Schutzwand stehe, können Sie mich weiterhin hören.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "What happens during the X-ray?"
+          }
+        },
+        {
+          "id": "rx.procedure.s06",
+          "situationDe": "Der Patient fragt, ob er von der Aufnahme selbst etwas merkt. Antworte ihm.",
+          "en": "You will not feel anything.",
+          "variants": [
+            "You won't feel anything.",
+            "You will not feel anything during the X-ray.",
+            "You won't feel anything during the X-ray."
+          ],
+          "keywords": [
+            "feel"
+          ],
+          "meaningDe": "Sie werden nichts spüren.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.procedure.s07",
+          "situationDe": "Die Patientin hat von Strahlung gehört und möchte wissen, was das heute für sie heißt. Sag ihr sachlich, womit gearbeitet wird und wie viel davon.",
+          "en": "An X-ray uses a small amount of radiation.",
+          "variants": [
+            "This X-ray uses a small amount of radiation.",
+            "The X-ray uses a small amount of radiation.",
+            "X-rays use a small amount of radiation."
+          ],
+          "keywords": [
+            "small",
+            "radiation"
+          ],
+          "meaningDe": "Eine Röntgenaufnahme arbeitet mit einer kleinen Strahlenmenge.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "Are there any risks?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.procedure.p01",
+          "kind": "question",
+          "en": "Are you leaving me on my own?",
+          "variants": [
+            "You're not leaving me alone, are you?",
+            "Will I be on my own in here?"
+          ],
+          "meaningDe": "Lassen Sie mich allein?",
+          "cefr": "A2",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "What happens during the X-ray?"
+          },
+          "reactions": [
+            {
+              "en": "Only for a moment. I can still see and hear you.",
+              "fits": true,
+              "meaningDe": "Nur kurz. Ich kann Sie weiterhin sehen und hören.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            },
+            {
+              "en": "The X-ray only takes a few minutes.",
+              "fits": false,
+              "whyDe": "Das sagt etwas über die Dauer. Er möchte wissen, ob er allein bleibt.",
+              "meaningDe": "Die Röntgenaufnahme dauert nur wenige Minuten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "You will not feel anything.",
+              "fits": false,
+              "whyDe": "Das beruhigt wegen Schmerzen, beantwortet aber nicht, ob du bei ihm bleibst.",
+              "meaningDe": "Sie werden nichts spüren.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.procedure.p02",
+          "kind": "question",
+          "en": "Is the radiation dangerous?",
+          "variants": [
+            "Is the radiation bad for me?",
+            "Is all this radiation safe?"
+          ],
+          "meaningDe": "Ist die Strahlung gefährlich?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "Are there any risks?"
+          },
+          "reactions": [
+            {
+              "en": "It is a small amount. The doctor can tell you more.",
+              "fits": true,
+              "meaningDe": "Es ist eine kleine Menge. Der Arzt kann Ihnen mehr dazu sagen.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "You will not feel anything.",
+              "fits": false,
+              "whyDe": "Ob man etwas spürt, sagt nichts über die Strahlung. Auf seine Frage geht das nicht ein.",
+              "meaningDe": "Sie werden nichts spüren.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "I will go behind this screen for a moment.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nicht und kann ihn zusätzlich beunruhigen.",
+              "meaningDe": "Ich gehe kurz hinter diese Schutzwand.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.procedure.p03",
+          "kind": "unclear",
+          "en": "The doctor said I might need more than one picture.",
+          "variants": [
+            "My doctor mentioned a few different pictures, I think.",
+            "I was told there could be more than one X-ray."
+          ],
+          "meaningDe": "Der Arzt hat gesagt, ich brauche vielleicht mehr als ein Bild.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "Let me check how many pictures we need.",
+              "fits": true,
+              "meaningDe": "Ich schaue nach, wie viele Bilder wir brauchen.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das passt zur Frage nach der Dauer. Hier musst du klären, wie viele Bilder es werden.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Aufnahme und klärt nicht, wie viele Bilder es werden.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rx.safety",
+      "key": "safety",
+      "titleDe": "Metall, Implantate und Schwangerschaft abfragen",
+      "sentences": [
+        {
+          "id": "rx.safety.s01",
+          "situationDe": "In den Unterlagen fehlt eine Angabe zu früheren Aufnahmen. Kläre das.",
+          "en": "Have you had an X-ray like this recently?",
+          "variants": [
+            "Have you had a similar X-ray recently?",
+            "Did you have an X-ray like this recently?",
+            "Have you had this kind of X-ray recently?"
+          ],
+          "keywords": [
+            "X-ray|x ray",
+            "recently"
+          ],
+          "meaningDe": "Hatten Sie vor Kurzem schon einmal eine solche Röntgenaufnahme?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "rx.safety.s02",
+          "situationDe": "Die Patientin wundert sich, warum du nach einer Schwangerschaft fragst, obwohl es nur um ihr Handgelenk geht. Nenn ihr den Grund.",
+          "en": "I need to know this because of the radiation.",
+          "variants": [
+            "I have to know this because of the radiation.",
+            "We need to know this because of the radiation.",
+            "I need to ask because of the radiation."
+          ],
+          "keywords": [
+            "radiation"
+          ],
+          "meaningDe": "Ich muss das wegen der Strahlung wissen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are there any risks or side effects?"
+          }
+        },
+        {
+          "id": "rx.safety.s03",
+          "situationDe": "Die Patientin weiß nicht sicher, ob sie ein Kind erwartet. Sag ihr, was dann vor der Aufnahme vielleicht noch nötig ist.",
+          "en": "You may need a pregnancy test before the X-ray.",
+          "variants": [
+            "You might need a pregnancy test before the X-ray.",
+            "You may have to do a pregnancy test before the X-ray.",
+            "We may ask you to do a pregnancy test before the X-ray."
+          ],
+          "keywords": [
+            "pregnancy test"
+          ],
+          "meaningDe": "Vielleicht brauchen Sie vor der Aufnahme einen Schwangerschaftstest.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "Are there any risks?"
+          }
+        },
+        {
+          "id": "rx.safety.s04",
+          "situationDe": "Heute gibt es Kontrastmittel zum Trinken. Frag nach früheren Problemen damit.",
+          "en": "Have you ever had a bad reaction to barium?",
+          "variants": [
+            "Have you ever had a reaction to barium?",
+            "Have you ever had an allergic reaction to barium?",
+            "Did you ever have a bad reaction to barium?"
+          ],
+          "keywords": [
+            "reaction",
+            "barium"
+          ],
+          "meaningDe": "Hatten Sie schon einmal eine schlimme Reaktion auf Barium?",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "Barium ist ein Kontrastmittel, das man trinkt oder als Einlauf bekommt.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Preparing for an X-ray"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.safety.p01",
+          "kind": "answer",
+          "en": "Yes, I had one of this arm last week.",
+          "variants": [
+            "Yes, the same arm, about a week ago.",
+            "I had an X-ray of this arm last week, yes."
+          ],
+          "meaningDe": "Ja, ich hatte letzte Woche eine von diesem Arm.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "Are you required to make any special preparations?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will tell the doctor about that.",
+              "fits": true,
+              "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            },
+            {
+              "en": "Have you had an X-ray like this recently?",
+              "fits": false,
+              "whyDe": "Das hat er gerade beantwortet. Du musst jetzt darauf reagieren.",
+              "meaningDe": "Hatten Sie vor Kurzem schon einmal eine solche Röntgenaufnahme?",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            },
+            {
+              "en": "You will not feel anything.",
+              "fits": false,
+              "whyDe": "Das geht auf seine Angabe nicht ein.",
+              "meaningDe": "Sie werden nichts spüren.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.safety.p02",
+          "kind": "question",
+          "en": "Can the X-ray hurt my baby?",
+          "variants": [
+            "Is this safe for my baby?",
+            "Will the radiation harm my baby?"
+          ],
+          "meaningDe": "Kann die Röntgenaufnahme meinem Baby schaden?",
+          "cefr": "A2",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are there any risks or side effects?"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor to talk to you about that.",
+              "fits": true,
+              "meaningDe": "Ich bitte den Arzt, mit Ihnen darüber zu sprechen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are there any risks or side effects?"
+              }
+            },
+            {
+              "en": "I need to know this because of the radiation.",
+              "fits": false,
+              "whyDe": "Das erklärt nur deine eigene Frage. Ihre Frage beantwortet es nicht.",
+              "meaningDe": "Ich muss das wegen der Strahlung wissen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are there any risks or side effects?"
+              }
+            },
+            {
+              "en": "It is only for a few seconds.",
+              "fits": false,
+              "whyDe": "Das klingt beruhigend, ist aber keine Antwort. Dazu muss der Arzt etwas sagen.",
+              "meaningDe": "Es dauert nur ein paar Sekunden.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rx.changing",
+      "key": "changing",
+      "titleDe": "Umziehen und Lagerung",
+      "sentences": [
+        {
+          "id": "rx.changing.s01",
+          "situationDe": "Der Patient hat sich umgezogen und sucht einen Platz für seine Sachen. In dieser Abteilung gibt es keinen Spind. Sag ihm, was er damit machen soll.",
+          "en": "Please keep your clothes and things with you.",
+          "variants": [
+            "Please take your clothes and things with you.",
+            "You can keep your clothes and things with you.",
+            "Please keep your clothes with you."
+          ],
+          "keywords": [
+            "clothes"
+          ],
+          "meaningDe": "Bitte behalten Sie Ihre Kleidung und Ihre Sachen bei sich.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "rx.changing.s02",
+          "situationDe": "Heute wird der Bereich des Kiefers aufgenommen, und du siehst, dass der Patient nicht mehr alle eigenen Zähne hat. Sag ihm, was vorher herausmuss.",
+          "en": "Please take out your dentures.",
+          "variants": [
+            "Please remove your dentures.",
+            "Could you take out your dentures, please?",
+            "Please take out your false teeth."
+          ],
+          "keywords": [
+            "dentures|false teeth"
+          ],
+          "meaningDe": "Bitte nehmen Sie Ihre Zahnprothese heraus.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "false teeth ist das Alltagswort.",
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "rx.changing.s07",
+          "situationDe": "Heute wird der Bereich von Kopf und Hals aufgenommen, und die Patientin sieht dich durch zwei Gläser an. Sag ihr, was sie vorher tun soll.",
+          "en": "Please take off your glasses.",
+          "variants": [
+            "Please remove your glasses.",
+            "Could you take off your glasses, please?",
+            "Could you take your glasses off, please?"
+          ],
+          "keywords": [
+            "glasses"
+          ],
+          "meaningDe": "Bitte nehmen Sie Ihre Brille ab.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "Are you required to make any special preparations?"
+          }
+        },
+        {
+          "id": "rx.changing.s03",
+          "situationDe": "Diese Aufnahme machst du im Stehen. Der Patient steht mitten im Raum und wartet. Zeig ihm, wo er hin soll.",
+          "en": "Please stand against this plate.",
+          "variants": [
+            "Could you stand against this plate, please?",
+            "Please stand up against this plate.",
+            "Please stand in front of this plate."
+          ],
+          "keywords": [
+            "stand",
+            "plate"
+          ],
+          "meaningDe": "Bitte stellen Sie sich an diese Platte.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "plate ist die Platte, an der das Bild entsteht.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        },
+        {
+          "id": "rx.changing.s04",
+          "situationDe": "Der Patient trägt nur das dünne Hemd und soll sich gleich an das Gerät stellen. Warne ihn vor, damit er nicht zusammenzuckt.",
+          "en": "The plate may feel a little cold.",
+          "variants": [
+            "The plate may feel a bit cold.",
+            "The plate can feel a little cold.",
+            "This plate may feel a little cold."
+          ],
+          "keywords": [
+            "plate",
+            "cold"
+          ],
+          "meaningDe": "Die Platte kann sich etwas kalt anfühlen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          }
+        },
+        {
+          "id": "rx.changing.s05",
+          "situationDe": "Das erste Bild ist fertig. Für das nächste soll der Patient anders zur Platte stehen. Sag ihm, wohin er sich bewegen soll.",
+          "en": "Please turn to your left.",
+          "variants": [
+            "Please turn to your right.",
+            "Could you turn to your left, please?",
+            "Please turn to the left.",
+            "Please turn to the right."
+          ],
+          "keywords": [
+            "turn",
+            "left|right"
+          ],
+          "meaningDe": "Bitte drehen Sie sich nach links.",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Je nach Aufnahme heißt es left oder right.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.changing.s06",
+          "situationDe": "Der Patient kommt mit einem Gehstock und ist unsicher auf den Beinen. Sag ihm, dass es für die Aufnahme auch eine andere Möglichkeit gibt.",
+          "en": "If you cannot stand, you can lie on the table.",
+          "variants": [
+            "If you can't stand, you can lie on the table.",
+            "You can lie on the table if you cannot stand.",
+            "If you cannot stand, you can lie on the bed."
+          ],
+          "keywords": [
+            "stand",
+            "lie",
+            "table|bed"
+          ],
+          "meaningDe": "Wenn Sie nicht stehen können, können Sie auf dem Tisch liegen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          }
+        },
+        {
+          "id": "rx.changing.s08",
+          "situationDe": "Heute wird das Handgelenk der Patientin aufgenommen. Sie sitzt neben dem Tisch und wartet. Sag ihr, was sie jetzt tun soll.",
+          "en": "Please put your hand on the table.",
+          "variants": [
+            "Please put your arm on the table.",
+            "Could you put your hand on the table, please?",
+            "Could you put your arm on the table, please?",
+            "Please place your hand on the table."
+          ],
+          "keywords": [
+            "hand|arm",
+            "table"
+          ],
+          "meaningDe": "Bitte legen Sie Ihre Hand auf den Tisch.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Nenn den Körperteil, der heute aufgenommen wird.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.changing.s09",
+          "situationDe": "Die Hand liegt jetzt auf dem Tisch, aber die Finger sind gekrümmt. Für das Bild soll sie anders liegen. Sag der Patientin, was sie ändern soll.",
+          "en": "Please keep your hand flat.",
+          "variants": [
+            "Please keep your hand flat on the table.",
+            "Could you keep your hand flat, please?",
+            "Please hold your hand flat."
+          ],
+          "keywords": [
+            "hand",
+            "flat"
+          ],
+          "meaningDe": "Bitte halten Sie Ihre Hand flach.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.changing.p01",
+          "kind": "question",
+          "en": "Can I keep my trousers on?",
+          "variants": [
+            "Is it OK if I leave my trousers on?",
+            "Can I leave my trousers on?"
+          ],
+          "meaningDe": "Darf ich meine Hose anbehalten?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "noteDe": "Ob die Hose anbleiben darf, regelt deine Abteilung.",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "When you arrive"
+          },
+          "reactions": [
+            {
+              "en": "Yes, if there is no metal on them.",
+              "fits": true,
+              "clinicDependent": true,
+              "meaningDe": "Ja, wenn kein Metall daran ist.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Preparing for an X-ray"
+              }
+            },
+            {
+              "en": "Please keep your clothes and things with you.",
+              "fits": false,
+              "whyDe": "Das sagt nur, wohin die Sachen kommen, nicht, ob die Hose anbleiben darf.",
+              "meaningDe": "Bitte behalten Sie Ihre Kleidung und Ihre Sachen bei sich.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            },
+            {
+              "en": "Please stand against this plate.",
+              "fits": false,
+              "whyDe": "Das ist der nächste Schritt. Seine Frage ist damit nicht beantwortet.",
+              "meaningDe": "Bitte stellen Sie sich an diese Platte.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.changing.p02",
+          "kind": "unexpected",
+          "en": "I feel a bit weak. I don't think I can stand.",
+          "variants": [
+            "My legs are too weak to stand today.",
+            "Standing is very hard for me today."
+          ],
+          "meaningDe": "Ich fühle mich etwas schwach. Ich glaube, ich kann nicht stehen.",
+          "cefr": "A2",
+          "noteDe": "Wirkt er unwohl, frag nach und hol Hilfe.",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "How is the procedure performed?"
+          },
+          "reactions": [
+            {
+              "en": "Do you feel unwell? You can lie on the table instead.",
+              "fits": true,
+              "clinicDependent": true,
+              "meaningDe": "Fühlen Sie sich unwohl? Sie können stattdessen auf dem Tisch liegen.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Please stand against this plate.",
+              "fits": false,
+              "whyDe": "Genau das schafft er gerade nicht. Biete ihm etwas anderes an.",
+              "meaningDe": "Bitte stellen Sie sich an diese Platte.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Please turn to your left.",
+              "fits": false,
+              "whyDe": "Dafür müsste er stehen, und das schafft er gerade nicht.",
+              "meaningDe": "Bitte drehen Sie sich nach links.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.changing.p03",
+          "kind": "unclear",
+          "en": "I can't really turn that way.",
+          "variants": [
+            "It hurts a bit if I turn like that.",
+            "My shoulder doesn't like that position."
+          ],
+          "meaningDe": "Ich kann mich nicht richtig in diese Richtung drehen.",
+          "cefr": "A2",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "Could you tell me what the problem is? Does it hurt when you turn?",
+              "fits": true,
+              "meaningDe": "Können Sie mir sagen, was das Problem ist? Tut es weh, wenn Sie sich drehen?",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "What will I experience during and after the procedure?"
+              }
+            },
+            {
+              "en": "Please turn to your left.",
+              "fits": false,
+              "whyDe": "Genau das fällt ihm schwer. Frag zuerst nach, was los ist.",
+              "meaningDe": "Bitte drehen Sie sich nach links.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "You will not feel anything.",
+              "fits": false,
+              "whyDe": "Er hat gerade angedeutet, dass ihm etwas schwerfällt. Darauf geht das nicht ein.",
+              "meaningDe": "Sie werden nichts spüren.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rx.stillness",
+      "key": "stillness",
+      "titleDe": "Still liegen und Atemkommandos",
+      "sentences": [
+        {
+          "id": "rx.stillness.s01",
+          "situationDe": "Du hast den Patienten richtig hingestellt und gehst gleich zum Auslösen. Er soll an seiner Haltung jetzt nichts mehr ändern. Sag ihm das.",
+          "en": "Please stay in this position.",
+          "variants": [
+            "Please stay in that position.",
+            "Could you stay in this position, please?",
+            "Please stay in this position for me."
+          ],
+          "keywords": [
+            "stay",
+            "position"
+          ],
+          "meaningDe": "Bitte bleiben Sie in dieser Position.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.stillness.s02",
+          "situationDe": "Der Patient fragt, wann er sich wieder rühren darf. Sag ihm, woran er das erkennt.",
+          "en": "Please do not move until I tell you.",
+          "variants": [
+            "Please don't move until I tell you.",
+            "Please do not move until I say so.",
+            "Please stay still until I tell you."
+          ],
+          "keywords": [
+            "until",
+            "tell|say"
+          ],
+          "meaningDe": "Bitte bewegen Sie sich nicht, bis ich es Ihnen sage.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.stillness.s03",
+          "situationDe": "Das Bild ist gemacht, und der Patient hält immer noch verkrampft still. Erlöse ihn.",
+          "en": "That one is done. You can move again now.",
+          "variants": [
+            "That one is done. You can move now.",
+            "OK, that is done. You can move again now.",
+            "That one is finished. You can move again now."
+          ],
+          "keywords": [
+            "move"
+          ],
+          "meaningDe": "Das Bild ist fertig. Sie können sich jetzt wieder bewegen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.stillness.p01",
+          "kind": "question",
+          "en": "Was that it? I didn't feel anything.",
+          "variants": [
+            "Is it done already? I didn't feel a thing.",
+            "Have you taken it yet? I felt nothing."
+          ],
+          "meaningDe": "War es das schon? Ich habe nichts gespürt.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "Yes, that one is done. You did very well.",
+              "fits": true,
+              "meaningDe": "Ja, dieses Bild ist fertig. Das haben Sie sehr gut gemacht.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Hold your breath.",
+              "fits": false,
+              "whyDe": "Das Bild ist schon gemacht. Er will wissen, ob es vorbei ist.",
+              "meaningDe": "Halten Sie die Luft an.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Please stay in this position.",
+              "fits": false,
+              "whyDe": "Das sagt nicht, ob es schon vorbei ist. Genau das möchte er wissen.",
+              "meaningDe": "Bitte bleiben Sie in dieser Position.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.stillness.p02",
+          "kind": "unclear",
+          "en": "I don't know how long I can stay like this.",
+          "variants": [
+            "I can't hold this position for very long.",
+            "It's hard for me to stay like this."
+          ],
+          "meaningDe": "Ich weiß nicht, wie lange ich so bleiben kann.",
+          "cefr": "A2",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "It is only for a few seconds. Can you manage that?",
+              "fits": true,
+              "clinicDependent": true,
+              "meaningDe": "Es dauert nur ein paar Sekunden. Schaffen Sie das?",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das weiß er schon. Er sagt dir, dass es ihm schwerfällt. Geh darauf ein.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "The plate may feel a little cold.",
+              "fits": false,
+              "whyDe": "Das hat mit seiner Sorge nichts zu tun.",
+              "meaningDe": "Die Platte kann sich etwas kalt anfühlen.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "What will I experience during and after the procedure?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rx.contrast",
+      "key": "contrast",
+      "titleDe": "Kontrastmittel und Zugang",
+      "sentences": [
+        {
+          "id": "rx.contrast.s01",
+          "situationDe": "Für die heutige Aufnahme wird nichts gespritzt. Der Patient bekommt ein Kontrastmittel zum Schlucken. Sag ihm, was ihn erwartet und wie es heißt.",
+          "en": "You will drink a liquid called barium.",
+          "variants": [
+            "You will drink a special liquid called barium.",
+            "You are going to drink a liquid called barium.",
+            "You'll drink a liquid called barium."
+          ],
+          "keywords": [
+            "drink",
+            "barium"
+          ],
+          "meaningDe": "Sie trinken eine Flüssigkeit, die Barium heißt.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "rx.contrast.s02",
+          "situationDe": "Die Aufnahme zeigt den Darm, und das Mittel kommt diesmal nicht über den Mund. Erkläre dem Patienten in einfachen Worten, wie es in den Körper gelangt.",
+          "en": "The doctor will put the barium in through a tube in your bottom.",
+          "variants": [
+            "I will put the barium in through a tube in your bottom.",
+            "The doctor will put the barium in through a small tube in your bottom.",
+            "I'll put the barium in through a tube in your bottom."
+          ],
+          "keywords": [
+            "barium",
+            "tube",
+            "bottom"
+          ],
+          "meaningDe": "Der Arzt gibt das Barium über einen Schlauch im Po.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Sag I will, wenn du es selbst machst. bottom ist das Alltagswort, der Einlauf heißt enema.",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Types of X-ray"
+          }
+        },
+        {
+          "id": "rx.contrast.s03",
+          "situationDe": "Die Aufnahme mit dem Mittel zum Trinken ist geschafft. Sag dem Patienten, was er danach tun soll, damit es den Körper wieder verlässt.",
+          "en": "Please drink more than usual after the barium.",
+          "variants": [
+            "Please drink a bit more than usual after the barium.",
+            "Please drink more water than usual after the barium."
+          ],
+          "keywords": [
+            "drink",
+            "barium"
+          ],
+          "meaningDe": "Bitte trinken Sie nach dem Barium mehr als sonst.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Nur sagen, wenn deine Abteilung das so vorgibt. Bei Fragen zum Trinken an den Arzt verweisen.",
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "What will I experience before and after receiving contrast material?"
+          }
+        },
+        {
+          "id": "rx.contrast.s04",
+          "situationDe": "Der Patient soll nicht erschrecken, wenn er nach der Aufnahme mit Barium zu Hause auf die Toilette geht. Bereite ihn vor.",
+          "en": "Your poo may look white for a few days.",
+          "variants": [
+            "Your poo may be white for a few days.",
+            "Your stools may look white for a few days.",
+            "Your poo might look white for a few days."
+          ],
+          "keywords": [
+            "poo|stools",
+            "white"
+          ],
+          "meaningDe": "Ihr Stuhl kann ein paar Tage lang weiß aussehen.",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "poo ist das Alltagswort der Patienten.",
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "What will I experience before and after receiving contrast material?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.contrast.p01",
+          "kind": "question",
+          "en": "What does the barium taste like?",
+          "variants": [
+            "Does it taste bad?",
+            "Is it going to taste horrible?"
+          ],
+          "meaningDe": "Wie schmeckt das Barium?",
+          "cefr": "A2",
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "What will I experience before and after receiving contrast material?"
+          },
+          "reactions": [
+            {
+              "en": "It tastes a little unpleasant, but most people are fine with it.",
+              "fits": true,
+              "meaningDe": "Es schmeckt etwas unangenehm, aber die meisten kommen gut damit zurecht.",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "What will I experience before and after receiving contrast material?"
+              }
+            },
+            {
+              "en": "Please drink more than usual after the barium.",
+              "fits": false,
+              "whyDe": "Das ist ein Hinweis für später. Er möchte wissen, wie es schmeckt.",
+              "meaningDe": "Bitte trinken Sie nach dem Barium mehr als sonst.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "What will I experience before and after receiving contrast material?"
+              }
+            },
+            {
+              "en": "You will drink a liquid called barium.",
+              "fits": false,
+              "whyDe": "Das weiß er schon. Er fragt nach dem Geschmack.",
+              "meaningDe": "Sie trinken eine Flüssigkeit, die Barium heißt.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "rx.contrast.p02",
+          "kind": "unclear",
+          "en": "I felt a bit strange after that drink last time.",
+          "variants": [
+            "I didn't feel right after that drink the last time.",
+            "That drink made me feel a bit odd last time."
+          ],
+          "meaningDe": "Nach diesem Getränk habe ich mich letztes Mal etwas komisch gefühlt.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Possible complications of X-rays"
+          },
+          "reactions": [
+            {
+              "en": "Can you tell me what you felt last time?",
+              "fits": true,
+              "meaningDe": "Können Sie mir sagen, was Sie letztes Mal gespürt haben?",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Preparing for an X-ray"
+              }
+            },
+            {
+              "en": "You will drink a liquid called barium.",
+              "fits": false,
+              "whyDe": "So gehst du über seine Angabe hinweg. Frag zuerst nach, was damals los war.",
+              "meaningDe": "Sie trinken eine Flüssigkeit, die Barium heißt.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Your poo may look white for a few days.",
+              "fits": false,
+              "whyDe": "Das ist etwas anderes. Erst muss klar sein, wie es ihm damals ging.",
+              "meaningDe": "Ihr Stuhl kann ein paar Tage lang weiß aussehen.",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "What will I experience before and after receiving contrast material?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rx.closing",
+      "key": "closing",
+      "titleDe": "Abschluss und Verabschiedung",
+      "sentences": [
+        {
+          "id": "rx.closing.s01",
+          "situationDe": "Alle Bilder sind gemacht, und der Patient steht angezogen vor dir. Er schaut dich fragend an. Sag ihm, wie es für ihn weitergeht.",
+          "en": "That is everything. You can leave now.",
+          "variants": [
+            "That's everything. You can leave now.",
+            "That is all. You can leave now.",
+            "That is everything. You can go now."
+          ],
+          "keywords": [
+            "leave|go"
+          ],
+          "meaningDe": "Das war alles. Sie können jetzt gehen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "After the X-ray"
+          }
+        },
+        {
+          "id": "rx.closing.s02",
+          "situationDe": "Der Patient fragt, wann er etwas erfährt. Beim Röntgen geht das manchmal schnell und manchmal nicht. Sag ihm das, ohne eine feste Zeit zu nennen.",
+          "en": "You may get the results today, or it may take longer.",
+          "variants": [
+            "You might get the results today, or it may take longer.",
+            "You may get your results today, or it may take longer.",
+            "You may get the results today, or it might take longer."
+          ],
+          "keywords": [
+            "results",
+            "today"
+          ],
+          "meaningDe": "Vielleicht bekommen Sie die Ergebnisse heute, es kann aber auch länger dauern.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Getting your X-ray results"
+          }
+        },
+        {
+          "id": "rx.closing.s03",
+          "situationDe": "Die Patientin möchte wissen, was jetzt mit ihren Bildern passiert. Sag ihr, wohin das Ergebnis geht.",
+          "en": "We will send a report to the doctor who sent you.",
+          "variants": [
+            "We will send a report to your doctor.",
+            "A report will go to the doctor who sent you.",
+            "A report will go to your doctor."
+          ],
+          "keywords": [
+            "report",
+            "doctor"
+          ],
+          "meaningDe": "Wir schicken einen Bericht an den Arzt, der Sie überwiesen hat.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "jpaget-xray",
+            "locator": "How will you get the results?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "rx.closing.p01",
+          "kind": "question",
+          "en": "So, is it broken?",
+          "variants": [
+            "Can you see if it's broken?",
+            "Is my arm broken, then?"
+          ],
+          "meaningDe": "Und, ist es gebrochen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Getting your X-ray results"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry, I can't say. The doctor will explain the pictures.",
+              "fits": true,
+              "meaningDe": "Es tut mir leid, das kann ich nicht sagen. Der Arzt erklärt Ihnen die Bilder.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Getting your X-ray results"
+              }
+            },
+            {
+              "en": "That is everything. You can leave now.",
+              "fits": false,
+              "whyDe": "Das weicht seiner Frage aus und kann klingen, als wäre alles in Ordnung. Das Ergebnis erklärt der Arzt.",
+              "meaningDe": "Das war alles. Sie können jetzt gehen.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "After the X-ray"
+              }
+            },
+            {
+              "en": "We may take pictures in different positions.",
+              "fits": false,
+              "whyDe": "Das erklärt den Ablauf. Er fragt nach dem Ergebnis.",
+              "meaningDe": "Wir machen vielleicht Bilder in verschiedenen Positionen.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "rx.w.x-ray",
+      "en": "X-ray",
+      "variants": [
+        "x-ray"
+      ],
+      "meaningDe": "Röntgenaufnahme, auch die Strahlen selbst",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "What happens during an X-ray"
+      }
+    },
+    {
+      "id": "rx.w.screen",
+      "en": "screen",
+      "variants": [
+        "wall"
+      ],
+      "meaningDe": "Schutzwand",
+      "noteDe": "Hier die Wand, hinter die du zum Auslösen gehst. Sonst heißt screen auch Bildschirm.",
+      "cefr": "A2",
+      "source": {
+        "ref": "jpaget-xray",
+        "locator": "What happens during the X-ray?"
+      }
+    },
+    {
+      "id": "rx.w.plate",
+      "en": "plate",
+      "variants": [
+        "image plate"
+      ],
+      "meaningDe": "Bildplatte, an der das Bild entsteht",
+      "cefr": "A2",
+      "source": {
+        "ref": "radiologyinfo-chest",
+        "locator": "How is the procedure performed?"
+      }
+    },
+    {
+      "id": "rx.w.dentures",
+      "en": "dentures",
+      "variants": [
+        "false teeth"
+      ],
+      "meaningDe": "Zahnprothese",
+      "cefr": "B1",
+      "source": {
+        "ref": "jpaget-xray",
+        "locator": "Are you required to make any special preparations?"
+      }
+    },
+    {
+      "id": "rx.w.poppers",
+      "en": "poppers",
+      "variants": [
+        "snaps"
+      ],
+      "meaningDe": "Druckknöpfe an der Kleidung",
+      "noteDe": "Sie sind oft aus Metall und müssen dann weg.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Preparing for an X-ray"
+      }
+    },
+    {
+      "id": "rx.w.chaperone",
+      "en": "chaperone",
+      "variants": [],
+      "meaningDe": "Begleitperson bei der Untersuchung",
+      "noteDe": "Das kann jemand Vertrautes sein oder eine geschulte Mitarbeiterin.",
+      "cefr": "B2",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Preparing for an X-ray"
+      }
+    },
+    {
+      "id": "rx.w.barium",
+      "en": "barium",
+      "variants": [],
+      "meaningDe": "Barium, Kontrastmittel zum Trinken oder als Einlauf",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Types of X-ray"
+      }
+    },
+    {
+      "id": "rx.w.enema",
+      "en": "enema",
+      "variants": [],
+      "meaningDe": "Einlauf",
+      "noteDe": "Gegenüber dem Patienten sagst du besser tube in your bottom.",
+      "cefr": "B2",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Types of X-ray"
+      }
+    },
+    {
+      "id": "rx.w.bottom",
+      "en": "bottom",
+      "variants": [],
+      "meaningDe": "Po",
+      "noteDe": "Das Alltagswort der Merkblätter.",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Types of X-ray"
+      }
+    },
+    {
+      "id": "rx.w.poo",
+      "en": "poo",
+      "variants": [
+        "stools"
+      ],
+      "meaningDe": "Stuhl",
+      "noteDe": "poo ist das Alltagswort, stools das sachlichere Wort.",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-xray",
+        "locator": "Preparing for an X-ray"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1788 @@
+{
+  "formatVersion": 1,
+  "file": "ct",
+  "strand": "radiology",
+  "exam": "ct",
+  "sections": [
+    {
+      "id": "ct.procedure",
+      "key": "procedure",
+      "titleDe": "Ablauf erklären",
+      "sentences": [
+        {
+          "id": "ct.procedure.s01",
+          "situationDe": "Der Patient sieht das Gerät zum ersten Mal und schaut etwas ratlos. Beschreibe ihm mit einem Alltagsvergleich die Form.",
+          "en": "The scanner is shaped like a big ring.",
+          "variants": [
+            "The machine is shaped like a big ring.",
+            "The scanner looks like a big ring.",
+            "The scanner is shaped like a large ring.",
+            "The scanner is shaped like a doughnut.",
+            "The scanner is shaped like a donut."
+          ],
+          "keywords": [
+            "ring|doughnut|donut"
+          ],
+          "meaningDe": "Das Gerät hat die Form eines großen Rings.",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Merkblätter nennen die Form auch doughnut-shaped.",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          }
+        },
+        {
+          "id": "ct.procedure.s02",
+          "situationDe": "Der Patient fragt, ob er die ganze Zeit an derselben Stelle liegt. Erkläre ihm, was die Liege während der Untersuchung tut.",
+          "en": "The table moves in and out of the ring.",
+          "variants": [
+            "The table will move in and out of the ring.",
+            "The table moves in and out of the scanner.",
+            "The bed moves in and out of the ring.",
+            "The table moves you in and out of the ring."
+          ],
+          "keywords": [
+            "table|bed",
+            "ring|scanner"
+          ],
+          "meaningDe": "Der Tisch fährt in den Ring hinein und wieder heraus.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          }
+        },
+        {
+          "id": "ct.procedure.s03",
+          "situationDe": "Der Patient will wissen, womit das Gerät seine Bilder macht. Sag es ihm in einem einfachen Satz.",
+          "en": "This scanner uses X-rays to take pictures.",
+          "variants": [
+            "This machine uses X-rays to take pictures.",
+            "The scanner uses X-rays to take pictures.",
+            "This scan uses X-rays to take pictures."
+          ],
+          "keywords": [
+            "X-rays|x rays"
+          ],
+          "meaningDe": "Dieses Gerät macht die Bilder mit Röntgenstrahlen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          }
+        },
+        {
+          "id": "ct.procedure.s04",
+          "situationDe": "Der Patient sorgt sich wegen der Strahlen. Beruhige ihn und verweise für alles Weitere auf den Arzt.",
+          "en": "The risk is very small. The doctor can tell you more.",
+          "variants": [
+            "The risk from the radiation is very small. The doctor can tell you more.",
+            "The risk from the X-rays is very small. The doctor can tell you more.",
+            "The risk is very small. The doctor can explain more."
+          ],
+          "keywords": [
+            "risk",
+            "small",
+            "doctor"
+          ],
+          "meaningDe": "Das Risiko ist sehr klein. Der Arzt kann Ihnen mehr dazu sagen.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Possible complications of a CT scan"
+          }
+        },
+        {
+          "id": "ct.procedure.s05",
+          "situationDe": "Der Patient fragt, wie lange er ungefähr auf dem Tisch bleiben wird. Nenne ihm die übliche Zeit.",
+          "en": "The scan usually takes about 15 minutes.",
+          "variants": [
+            "It usually takes about 15 minutes.",
+            "The scan takes about 15 minutes.",
+            "The scan usually takes around 15 minutes.",
+            "The scan usually lasts about 15 minutes."
+          ],
+          "keywords": [
+            "minutes"
+          ],
+          "meaningDe": "Die Aufnahme dauert meist etwa 15 Minuten.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Nenne die Zeit, die in deiner Abteilung gilt.",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "How long will it take?"
+          }
+        },
+        {
+          "id": "ct.procedure.s06",
+          "situationDe": "Der Patient hat gleich danach noch einen Termin. Bereite ihn darauf vor, dass er mehr Zeit braucht als nur für die Aufnahme.",
+          "en": "Your whole visit will take longer than the scan.",
+          "variants": [
+            "Your whole visit will take longer than the scan itself.",
+            "Your visit will take longer than the scan.",
+            "The whole visit will take longer than the scan.",
+            "You will be here for longer than the scan itself."
+          ],
+          "keywords": [
+            "longer",
+            "scan"
+          ],
+          "meaningDe": "Ihr Besuch hier dauert insgesamt länger als die Aufnahme.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "How long will it take?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.procedure.p01",
+          "kind": "question",
+          "en": "Is this the same as an MRI?",
+          "variants": [
+            "Is this like an MRI?",
+            "Is this the MRI machine?",
+            "So this is a kind of MRI, right?"
+          ],
+          "meaningDe": "Ist das dasselbe wie ein MRT?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What is an MRI scan?"
+          },
+          "reactions": [
+            {
+              "en": "This is a CT scan. It uses X-rays.",
+              "fits": true,
+              "meaningDe": "Das hier ist ein CT. Es arbeitet mit Röntgenstrahlen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "The table moves in and out of the ring.",
+              "fits": false,
+              "whyDe": "Das beschreibt den Tisch, sagt aber nicht, um welche Untersuchung es geht.",
+              "meaningDe": "Der Tisch fährt in den Ring hinein und wieder heraus.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Please lie flat on your back.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zur Lagerung, keine Antwort auf seine Frage.",
+              "meaningDe": "Bitte legen Sie sich flach auf den Rücken.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.procedure.p02",
+          "kind": "unclear",
+          "en": "Someone told me they push you into a long tube.",
+          "variants": [
+            "A friend said you get pushed into a long tube.",
+            "I heard you go into a long dark tube."
+          ],
+          "meaningDe": "Jemand hat mir gesagt, dass man in eine lange Röhre geschoben wird.",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          },
+          "reactions": [
+            {
+              "en": "Are you worried about going into the scanner?",
+              "fits": true,
+              "meaningDe": "Machen Sie sich Sorgen, in das Gerät zu fahren?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Your doctor will tell you the results.",
+              "fits": false,
+              "whyDe": "Das betrifft das Ergebnis, nicht seine Sorge wegen des Geräts.",
+              "meaningDe": "Ihr Arzt teilt Ihnen die Ergebnisse mit.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zum Umziehen, keine Nachfrage zu dem, was er gehört hat.",
+              "meaningDe": "Bitte nehmen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.procedure.p03",
+          "kind": "question",
+          "en": "Are the X-rays bad for me?",
+          "variants": [
+            "Is this radiation dangerous?",
+            "Can the X-rays harm me?",
+            "Is all this radiation safe?"
+          ],
+          "meaningDe": "Sind die Röntgenstrahlen schlecht für mich?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Possible complications of a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor to talk to you about that.",
+              "fits": true,
+              "meaningDe": "Ich bitte den Arzt, mit Ihnen darüber zu sprechen.",
+              "source": {
+                "ref": "cam-politeness",
+                "locator": "Politeness"
+              }
+            },
+            {
+              "en": "The table moves in and out of the ring.",
+              "fits": false,
+              "whyDe": "Das beschreibt den Tisch, geht aber nicht auf seine Sorge ein.",
+              "meaningDe": "Der Tisch fährt in den Ring hinein und wieder heraus.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Aufnahme, keine Antwort auf seine Frage.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.safety",
+      "key": "safety",
+      "titleDe": "Metall, Implantate und Schwangerschaft abfragen",
+      "sentences": [
+        {
+          "id": "ct.safety.s01",
+          "situationDe": "Das Kontrastmittel beim CT enthält einen Stoff, auf den manche Menschen empfindlich reagieren. Frag nach einer Allergie dagegen.",
+          "en": "Are you allergic to iodine?",
+          "variants": [
+            "Do you have an allergy to iodine?",
+            "Do you have an iodine allergy?",
+            "Have you got an allergy to iodine?"
+          ],
+          "keywords": [
+            "iodine"
+          ],
+          "meaningDe": "Sind Sie allergisch gegen Jod?",
+          "cefr": "B1",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Allergy to iodine or intravenous contrast medium"
+          }
+        },
+        {
+          "id": "ct.safety.s02",
+          "situationDe": "Vor dem CT mit Kontrastmittel ist auch ein Organ am Hals wichtig. Frag, ob es dort Probleme gibt.",
+          "en": "Do you have any problems with your thyroid?",
+          "variants": [
+            "Do you have a problem with your thyroid?",
+            "Do you have a thyroid problem?",
+            "Have you got any problems with your thyroid?"
+          ],
+          "keywords": [
+            "thyroid"
+          ],
+          "meaningDe": "Haben Sie Probleme mit der Schilddrüse?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ct.safety.s03",
+          "situationDe": "Vor dem Kontrastmittel soll vielleicht schon im Labor nach den Nieren geschaut worden sein. Frag, ob das in letzter Zeit gemacht wurde.",
+          "en": "Have you had a blood test for your kidneys recently?",
+          "variants": [
+            "Have you had a kidney blood test recently?",
+            "Did you have a blood test for your kidneys recently?",
+            "Have you recently had a blood test for your kidneys?"
+          ],
+          "keywords": [
+            "blood test",
+            "kidneys|kidney"
+          ],
+          "meaningDe": "Hatten Sie in letzter Zeit eine Blutuntersuchung für Ihre Nieren?",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "How do I prepare for the CT scan?"
+          }
+        },
+        {
+          "id": "ct.safety.s04",
+          "situationDe": "Die Patientin wundert sich, warum du nach einer Schwangerschaft fragst. Nenne ihr den Grund bei dieser Untersuchung.",
+          "en": "I am asking because this scan uses X-rays.",
+          "variants": [
+            "I'm asking because this scan uses X-rays.",
+            "I need to ask because this scan uses X-rays.",
+            "I ask because this scan uses X-rays."
+          ],
+          "keywords": [
+            "because",
+            "X-rays|x rays"
+          ],
+          "meaningDe": "Ich frage, weil bei dieser Aufnahme Röntgenstrahlen verwendet werden.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "X-ray precautions:"
+          }
+        },
+        {
+          "id": "ct.safety.s05",
+          "situationDe": "Die Patientin weiß nicht sicher, ob sie schwanger ist. Sag ihr, was dann vielleicht vorher gemacht wird.",
+          "en": "We may ask you to take a pregnancy test.",
+          "variants": [
+            "You may need to take a pregnancy test.",
+            "The doctor may ask you to take a pregnancy test.",
+            "We may ask you to do a pregnancy test."
+          ],
+          "keywords": [
+            "pregnancy test"
+          ],
+          "meaningDe": "Vielleicht bitten wir Sie um einen Schwangerschaftstest.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "X-ray precautions:"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.safety.p01",
+          "kind": "answer",
+          "en": "Yes, I have a problem with my thyroid.",
+          "variants": [
+            "Yes, there's something wrong with my thyroid.",
+            "My thyroid doesn't work very well.",
+            "Yes, my thyroid is a bit slow."
+          ],
+          "meaningDe": "Ja, ich habe ein Problem mit der Schilddrüse.",
+          "cefr": "B1",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will let the doctor know.",
+              "fits": true,
+              "meaningDe": "Danke. Ich sage dem Arzt Bescheid.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Your whole visit will take longer than the scan.",
+              "fits": false,
+              "whyDe": "Das sagt etwas über die Zeit. Seine Angabe muss erst an den Arzt weiter.",
+              "meaningDe": "Ihr Besuch hier dauert insgesamt länger als die Aufnahme.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "How long will it take?"
+              }
+            },
+            {
+              "en": "Please change into this gown.",
+              "fits": false,
+              "whyDe": "Das ist vielleicht der nächste Schritt, aber seine Angabe bleibt dabei liegen.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.safety.p02",
+          "kind": "unclear",
+          "en": "I think I had a problem with iodine once.",
+          "variants": [
+            "I had some trouble with iodine once, I think.",
+            "Iodine didn't really agree with me one time."
+          ],
+          "meaningDe": "Ich glaube, ich hatte einmal ein Problem mit Jod.",
+          "cefr": "B1",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Allergy to iodine or intravenous contrast medium"
+          },
+          "reactions": [
+            {
+              "en": "Can you tell me what happened?",
+              "fits": true,
+              "meaningDe": "Können Sie mir sagen, was passiert ist?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Allergy to iodine or intravenous contrast medium"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das sagt, wo du gleich bist. Seine Angabe zum Jod bleibt ungeklärt.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Erst muss geklärt werden, was damals passiert ist.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.safety.p03",
+          "kind": "unexpected",
+          "en": "Oh, I forgot to have that blood test.",
+          "variants": [
+            "I didn't have the blood test they told me about.",
+            "Oh dear, I didn't go for that blood test."
+          ],
+          "meaningDe": "Oh, ich habe die Blutuntersuchung vergessen.",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "How do I prepare for the CT scan?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will check with the doctor.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie es mir sagen. Ich frage beim Arzt nach.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "How do I prepare for the CT scan?"
+              }
+            },
+            {
+              "en": "The dye can make you feel warm for a short time.",
+              "fits": false,
+              "whyDe": "Das erklärt ein Gefühl beim Kontrastmittel. Der fehlende Bluttest bleibt ungeklärt.",
+              "meaningDe": "Das Kontrastmittel kann Ihnen kurz ein warmes Gefühl geben.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Before the CT scan"
+              }
+            },
+            {
+              "en": "Thank you. Goodbye and take care.",
+              "fits": false,
+              "whyDe": "Damit verabschiedest du ihn, obwohl die Frage noch offen ist.",
+              "meaningDe": "Danke. Auf Wiedersehen und alles Gute.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag take care"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.changing",
+      "key": "changing",
+      "titleDe": "Umziehen und Lagerung",
+      "sentences": [
+        {
+          "id": "ct.changing.s01",
+          "situationDe": "Der Patient trägt bequeme Sportsachen ohne Reißverschlüsse und fragt, ob er sich ausziehen muss. Sag ihm, wann das nicht nötig ist.",
+          "en": "You can keep your clothes on if they have no metal.",
+          "variants": [
+            "You can keep your clothes on if there is no metal on them.",
+            "You can stay in your clothes if they have no metal.",
+            "You can keep your clothes on if they do not have any metal."
+          ],
+          "keywords": [
+            "clothes",
+            "metal"
+          ],
+          "meaningDe": "Sie können Ihre Kleidung anbehalten, wenn kein Metall daran ist.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          }
+        },
+        {
+          "id": "ct.changing.s02",
+          "situationDe": "Der Patient liegt auf dem harten Tisch und findet keine gute Haltung für den Kopf. Biete ihm etwas an.",
+          "en": "Would you like a pillow?",
+          "variants": [
+            "Do you want a pillow?",
+            "Would you like a cushion?",
+            "Would you like a pillow for your head?"
+          ],
+          "keywords": [
+            "pillow|cushion"
+          ],
+          "meaningDe": "Möchten Sie ein Kissen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.changing.s03",
+          "situationDe": "Du legst dem Patienten etwas über den Körper, damit er ruhig liegen bleibt. Erkläre ihm kurz, wozu das gut ist.",
+          "en": "These straps will help you keep still.",
+          "variants": [
+            "These straps will help you stay still.",
+            "This strap will help you keep still.",
+            "I will use these straps to help you keep still."
+          ],
+          "keywords": [
+            "straps|strap",
+            "still"
+          ],
+          "meaningDe": "Diese Gurte helfen Ihnen, still zu liegen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.changing.s04",
+          "situationDe": "Die Patientin liegt auf dem Tisch. Bitte sie, die Arme über den Kopf zu legen.",
+          "en": "Please put your arms above your head.",
+          "variants": [
+            "Could you put your arms above your head, please?",
+            "Please raise your arms above your head.",
+            "Can you put your arms over your head, please?"
+          ],
+          "keywords": [
+            "arms",
+            "head"
+          ],
+          "meaningDe": "Bitte legen Sie die Arme über den Kopf.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "bsms-ct",
+            "locator": "The Procedure"
+          }
+        },
+        {
+          "id": "ct.changing.s05",
+          "situationDe": "Bei dieser Aufnahme bleiben die Arme unten. Sag dem Patienten, wo er sie lassen soll.",
+          "en": "Please keep your arms by your side.",
+          "variants": [
+            "Please leave your arms by your side.",
+            "Could you keep your arms by your sides, please?"
+          ],
+          "keywords": [
+            "arms",
+            "side|sides"
+          ],
+          "meaningDe": "Bitte lassen Sie die Arme neben dem Körper.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "bsms-ct",
+            "locator": "The Procedure"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.changing.p01",
+          "kind": "question",
+          "en": "Can I keep my clothes on?",
+          "variants": [
+            "Do I really have to get undressed?",
+            "Do I have to take all my clothes off?",
+            "Is it OK if I stay dressed?"
+          ],
+          "meaningDe": "Kann ich meine Kleidung anbehalten?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "noteDe": "Ob die Kleidung anbleiben darf, regelt deine Abteilung.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Preparing for a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Is there any metal on your clothes, like a zip?",
+              "fits": true,
+              "meaningDe": "Ist an Ihrer Kleidung Metall, zum Beispiel ein Reißverschluss?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            },
+            {
+              "en": "Breathe in.",
+              "fits": false,
+              "whyDe": "Das ist ein Atemkommando. Hier geht es um seine Kleidung.",
+              "meaningDe": "Einatmen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "The risk is very small. The doctor can tell you more.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Kleidung, nicht nach der Strahlung.",
+              "meaningDe": "Das Risiko ist sehr klein. Der Arzt kann Ihnen mehr dazu sagen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Possible complications of a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.changing.p02",
+          "kind": "unexpected",
+          "en": "This strap feels a bit tight.",
+          "variants": [
+            "This strap is a bit too tight.",
+            "Could you loosen this a bit? It's digging in.",
+            "That's rather tight across my legs."
+          ],
+          "meaningDe": "Dieser Gurt ist etwas eng.",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "I am sorry. Let me make it a little looser.",
+              "fits": true,
+              "meaningDe": "Das tut mir leid. Ich mache ihn etwas lockerer.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "You may have a metal taste in your mouth.",
+              "fits": false,
+              "whyDe": "Das betrifft das Kontrastmittel. Der Gurt drückt ihn weiter.",
+              "meaningDe": "Vielleicht haben Sie einen Metallgeschmack im Mund.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Before the CT scan"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Das ist eine Sicherheitsfrage und geht auf den drückenden Gurt nicht ein.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.stillness",
+      "key": "stillness",
+      "titleDe": "Still liegen und Atemkommandos",
+      "sentences": [
+        {
+          "id": "ct.stillness.s01",
+          "situationDe": "Noch brauchst du kein Atemkommando. Sag dem Patienten, wie er bis zu deiner Anweisung atmen soll.",
+          "en": "Please keep breathing normally until I tell you.",
+          "variants": [
+            "Please breathe normally until I tell you.",
+            "Just keep breathing normally until I tell you.",
+            "Please keep breathing normally until I say."
+          ],
+          "keywords": [
+            "breathing|breathe",
+            "normally"
+          ],
+          "meaningDe": "Bitte atmen Sie normal weiter, bis ich es Ihnen sage.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        },
+        {
+          "id": "ct.stillness.s02",
+          "situationDe": "Der Patient denkt, er müsse nur ein einziges Mal die Luft anhalten. Bereite ihn darauf vor, dass es öfter sein kann.",
+          "en": "You may need to hold your breath a few times.",
+          "variants": [
+            "You may have to hold your breath a few times.",
+            "You might need to hold your breath a few times.",
+            "You may need to hold your breath more than once."
+          ],
+          "keywords": [
+            "hold",
+            "breath"
+          ],
+          "meaningDe": "Vielleicht müssen Sie mehrmals die Luft anhalten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.stillness.s03",
+          "situationDe": "Der Patient soll nicht erschrecken, wenn sich beim Luftanhalten etwas unter ihm bewegt. Bereite ihn darauf vor.",
+          "en": "The table will move while you hold your breath.",
+          "variants": [
+            "The table moves while you hold your breath.",
+            "The table will move when you hold your breath.",
+            "The bed will move while you hold your breath."
+          ],
+          "keywords": [
+            "table|bed",
+            "breath"
+          ],
+          "meaningDe": "Der Tisch fährt, während Sie die Luft anhalten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.stillness.p01",
+          "kind": "question",
+          "en": "How long do I have to hold my breath?",
+          "variants": [
+            "How long do I need to hold it for?",
+            "For how long do I hold my breath?",
+            "Will I have to hold it for long?"
+          ],
+          "meaningDe": "Wie lange muss ich die Luft anhalten?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "Usually just for a few seconds each time.",
+              "fits": true,
+              "meaningDe": "Meist jedes Mal nur ein paar Sekunden.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "The table moves in and out of the ring.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Zeit beim Luftanhalten, nicht nach dem Tisch.",
+              "meaningDe": "Der Tisch fährt in den Ring hinein und wieder heraus.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "You may need to hold your breath a few times.",
+              "fits": false,
+              "whyDe": "Das sagt, wie oft, aber nicht, wie lange. Er fragt nach der Dauer.",
+              "meaningDe": "Vielleicht müssen Sie mehrmals die Luft anhalten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.stillness.p02",
+          "kind": "unexpected",
+          "en": "Sorry, I started breathing again too soon.",
+          "variants": [
+            "Sorry, I let my breath out too early.",
+            "Oh no, I couldn't hold it for long enough."
+          ],
+          "meaningDe": "Entschuldigung, ich habe zu früh wieder geatmet.",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. Let me check the pictures.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie es mir sagen. Ich schaue mir die Bilder an.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Das passt erst, wenn die Aufnahme fertig ist. Sein Hinweis bleibt so ohne Antwort.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Your doctor will tell you the results.",
+              "fits": false,
+              "whyDe": "Er sagt, dass bei der Aufnahme etwas schiefging. Das Ergebnis ist hier nicht das Thema.",
+              "meaningDe": "Ihr Arzt teilt Ihnen die Ergebnisse mit.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.contrast",
+      "key": "contrast",
+      "titleDe": "Kontrastmittel und Zugang",
+      "sentences": [
+        {
+          "id": "ct.contrast.s01",
+          "situationDe": "Bei diesem Patienten kommt das Kontrastmittel nicht über die Vene. Sag ihm, wie er es bekommt.",
+          "en": "You will get the dye as a drink.",
+          "variants": [
+            "You will get the contrast medium as a drink.",
+            "You will have the dye as a drink.",
+            "You'll get the dye as a drink."
+          ],
+          "keywords": [
+            "dye|contrast medium",
+            "drink"
+          ],
+          "meaningDe": "Sie bekommen das Kontrastmittel als Getränk.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Before the CT scan"
+          }
+        },
+        {
+          "id": "ct.contrast.s02",
+          "situationDe": "Du gibst dem Patienten einen Becher mit Flüssigkeit in die Hand. Sag ihm, was er damit vor der Aufnahme tun soll.",
+          "en": "Please drink this before your scan.",
+          "variants": [
+            "Please drink this before the scan.",
+            "Please drink all of this before your scan.",
+            "Could you drink this before your scan, please?"
+          ],
+          "keywords": [
+            "drink"
+          ],
+          "meaningDe": "Bitte trinken Sie das vor Ihrer Aufnahme.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "Oral preparation (contrast)"
+          }
+        },
+        {
+          "id": "ct.contrast.s03",
+          "situationDe": "Der Patient will den ganzen Becher auf einmal hinunterstürzen. Sag ihm, wie er es besser macht.",
+          "en": "Please drink it slowly while you wait.",
+          "variants": [
+            "Please drink this slowly while you wait.",
+            "Please drink it slowly while you are waiting.",
+            "Could you drink it slowly while you wait, please?"
+          ],
+          "keywords": [
+            "drink",
+            "slowly"
+          ],
+          "meaningDe": "Bitte trinken Sie es langsam, während Sie warten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "ct.contrast.s04",
+          "situationDe": "Vor dieser Aufnahme soll der Patient noch etwas Gewöhnliches trinken, kein Kontrastmittel. Sag es ihm.",
+          "en": "Please drink some water before your scan.",
+          "variants": [
+            "Please drink some water before the scan.",
+            "Please drink a little water before your scan.",
+            "Could you drink some water before your scan, please?"
+          ],
+          "keywords": [
+            "water"
+          ],
+          "meaningDe": "Bitte trinken Sie vor Ihrer Aufnahme etwas Wasser.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "What happens during the CT scan?"
+          }
+        },
+        {
+          "id": "ct.contrast.s05",
+          "situationDe": "Der Patient fragt, wie das Kontrastmittel in seinen Körper kommt, wenn er es nicht trinken soll. Antworte ihm.",
+          "en": "You will get the dye through a vein in your arm.",
+          "variants": [
+            "You will get the contrast medium through a vein in your arm.",
+            "The dye will go through a vein in your arm.",
+            "You'll get the dye through a vein in your arm."
+          ],
+          "keywords": [
+            "dye|contrast medium",
+            "vein"
+          ],
+          "meaningDe": "Sie bekommen das Kontrastmittel über eine Vene im Arm.",
+          "cefr": "B1",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.contrast.s06",
+          "situationDe": "Der Patient sieht das Gerät neben dem Tisch und fragt, was es mit dem Röhrchen in seinem Arm zu tun hat.",
+          "en": "A pump will push the dye through the small tube.",
+          "variants": [
+            "A pump will send the dye through the small tube.",
+            "A pump will push the dye through the tube.",
+            "A pump will push the contrast medium through the small tube."
+          ],
+          "keywords": [
+            "pump",
+            "dye|contrast medium"
+          ],
+          "meaningDe": "Eine Pumpe drückt das Kontrastmittel durch das kleine Röhrchen.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.contrast.s07",
+          "situationDe": "Kurz vor der Injektion willst du den Patienten auf ein etwas peinliches Gefühl vorbereiten, das mit der Blase zu tun hat.",
+          "en": "You may feel like you need the toilet.",
+          "variants": [
+            "You may feel as if you need the toilet.",
+            "You may feel like you need to pee.",
+            "You may feel as if you need to pee.",
+            "You may feel as if you need to pass urine.",
+            "It may feel as if you need to go to the toilet.",
+            "It may feel as if you need to go to the bathroom."
+          ],
+          "keywords": [
+            "pee|urine|toilet|bathroom"
+          ],
+          "meaningDe": "Vielleicht haben Sie das Gefühl, auf die Toilette zu müssen.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "need the toilet ist die höfliche Fassung, pee das Alltagswort, pass urine die förmlichere.",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Before the CT scan"
+          }
+        },
+        {
+          "id": "ct.contrast.s08",
+          "situationDe": "Der Patient schaut beschämt, weil er glaubt, ihm sei ein Missgeschick passiert. Nimm ihm die Verlegenheit.",
+          "en": "It only feels like that. It is normal.",
+          "variants": [
+            "It only feels that way. It is normal.",
+            "It just feels like that. It is normal.",
+            "It only feels like that. You are not really peeing.",
+            "It only feels like that. You are not passing urine."
+          ],
+          "keywords": [
+            "feels"
+          ],
+          "meaningDe": "Das fühlt sich nur so an. Das ist normal.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Before the CT scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.contrast.p01",
+          "kind": "question",
+          "en": "Why do I have to drink all this?",
+          "variants": [
+            "Do I really have to drink all of that?",
+            "What's this drink for?",
+            "That's a lot to drink. Why is that?"
+          ],
+          "meaningDe": "Warum muss ich das alles trinken?",
+          "cefr": "A2",
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "Oral preparation (contrast)"
+          },
+          "reactions": [
+            {
+              "en": "The drink makes the pictures clearer.",
+              "fits": true,
+              "meaningDe": "Das Getränk macht die Bilder deutlicher.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Before the CT scan"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das sagt, wo du gleich bist, aber nicht, wozu das Getränk gut ist.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "Das ist ein späterer Schritt. Seine Frage bleibt offen.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.contrast.p02",
+          "kind": "unexpected",
+          "en": "Oh! It feels like I'm wetting myself.",
+          "variants": [
+            "It feels like I'm peeing!",
+            "I think I've just wet myself."
+          ],
+          "meaningDe": "Oh! Es fühlt sich an, als würde ich in die Hose machen.",
+          "cefr": "B1",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Are there any risks?"
+          },
+          "reactions": [
+            {
+              "en": "Don't worry. The dye can feel like that.",
+              "fits": true,
+              "meaningDe": "Keine Sorge. Das Kontrastmittel kann sich so anfühlen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "Do you have any questions before we start?",
+              "fits": false,
+              "whyDe": "Die Aufnahme läuft schon. Er braucht jetzt eine Antwort auf das, was er spürt.",
+              "meaningDe": "Haben Sie noch Fragen, bevor wir anfangen?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "The scan usually takes about 15 minutes.",
+              "fits": false,
+              "whyDe": "Das sagt etwas über die Zeit, aber nichts über sein Gefühl.",
+              "meaningDe": "Die Aufnahme dauert meist etwa 15 Minuten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "How long will it take?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.contrast.p03",
+          "kind": "unclear",
+          "en": "My throat feels a bit strange.",
+          "variants": [
+            "It feels funny when I swallow.",
+            "Something's not right with my throat, I think."
+          ],
+          "meaningDe": "Mein Hals fühlt sich etwas komisch an.",
+          "cefr": "A2",
+          "noteDe": "Das kann zu den Beschwerden gehören, die du sofort meldest.",
+          "source": {
+            "ref": "radiologyinfo-contrast",
+            "locator": "Side effects and adverse and allergic reactions"
+          },
+          "reactions": [
+            {
+              "en": "Do you have any trouble breathing?",
+              "fits": true,
+              "meaningDe": "Haben Sie Probleme beim Atmen?",
+              "source": {
+                "ref": "radiologyinfo-contrast",
+                "locator": "Side effects and adverse and allergic reactions"
+              }
+            },
+            {
+              "en": "These feelings usually go away quickly.",
+              "fits": false,
+              "whyDe": "Das sagt man zu warmem Gefühl und Metallgeschmack. Hier musst du erst nachfragen.",
+              "meaningDe": "Diese Gefühle gehen meist schnell vorbei.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "Please drink some water before your scan.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Zeit vor der Aufnahme und geht auf den Hals nicht ein.",
+              "meaningDe": "Bitte trinken Sie vor Ihrer Aufnahme etwas Wasser.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "What happens during the CT scan?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.anxiety",
+      "key": "anxiety",
+      "titleDe": "Bei Platzangst beruhigen",
+      "sentences": [
+        {
+          "id": "ct.anxiety.s01",
+          "situationDe": "Der Patient kennt enge Geräte von früher und hat Angst, eingesperrt zu sein. Beruhige ihn mit einem Satz über die Form dieses Geräts.",
+          "en": "The scanner is only a ring, not a long tunnel.",
+          "variants": [
+            "The machine is only a ring, not a long tunnel.",
+            "The scanner is just a ring, not a long tunnel.",
+            "It is only a ring, not a long tunnel."
+          ],
+          "keywords": [
+            "ring",
+            "tunnel"
+          ],
+          "meaningDe": "Das Gerät ist nur ein Ring, kein langer Tunnel.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          }
+        },
+        {
+          "id": "ct.anxiety.s02",
+          "situationDe": "Die Begleitung des Patienten möchte bei der Aufnahme mit in den Raum. Erkläre freundlich, warum das nicht geht.",
+          "en": "Your friend will need to wait outside because of the X-rays.",
+          "variants": [
+            "Your relative will need to wait outside because of the X-rays.",
+            "Your friend will have to wait outside because of the X-rays.",
+            "Your friend needs to wait outside because of the X-rays."
+          ],
+          "keywords": [
+            "wait",
+            "X-rays|x rays"
+          ],
+          "meaningDe": "Ihre Begleitung muss wegen der Röntgenstrahlen draußen warten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Can I bring a relative or friend?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.anxiety.p01",
+          "kind": "question",
+          "en": "Will I be shut in that thing?",
+          "variants": [
+            "Does it close around me?",
+            "Am I going to be shut in there?",
+            "Will that thing close up around me?"
+          ],
+          "meaningDe": "Werde ich in dem Ding eingeschlossen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How does it work?"
+          },
+          "reactions": [
+            {
+              "en": "No. The scanner is only a ring, not a long tunnel.",
+              "fits": true,
+              "meaningDe": "Nein. Das Gerät ist nur ein Ring, kein langer Tunnel.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Please drink it slowly while you wait.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zum Getränk. Seine Angst bleibt dabei unbeachtet.",
+              "meaningDe": "Bitte trinken Sie es langsam, während Sie warten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "You may need to hold your breath a few times.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nicht und kann ihn eher noch beunruhigen.",
+              "meaningDe": "Vielleicht müssen Sie mehrmals die Luft anhalten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.callbutton",
+      "key": "callButton",
+      "titleDe": "Klingel und Gegensprechanlage",
+      "sentences": [
+        {
+          "id": "ct.callbutton.s01",
+          "situationDe": "Der Patient fühlt sich unwohl, weil du gleich aus dem Raum gehst. Sag ihm, was du von dort aus trotzdem kannst.",
+          "en": "I can see and hear you from the next room.",
+          "variants": [
+            "I can see and hear you from the other room.",
+            "I can hear and see you from the next room.",
+            "I can see and hear you from the control room."
+          ],
+          "keywords": [
+            "see",
+            "hear"
+          ],
+          "meaningDe": "Ich kann Sie vom Nebenraum aus sehen und hören.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.callbutton.s02",
+          "situationDe": "Der Patient fragt, wie lange er ohne dich im Raum ist. Nenne ihm die ungefähre Zeit.",
+          "en": "You will be alone in the room for about five minutes.",
+          "variants": [
+            "You will be on your own in the room for about five minutes.",
+            "You will be alone in here for about five minutes.",
+            "You will be alone in the room for around five minutes."
+          ],
+          "keywords": [
+            "alone|on your own",
+            "minutes"
+          ],
+          "meaningDe": "Sie sind etwa fünf Minuten allein im Raum.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "What happens during the CT scan?"
+          }
+        },
+        {
+          "id": "ct.callbutton.s03",
+          "situationDe": "Der Patient fragt, wie er dich erreicht, wenn während der Aufnahme etwas ist. Sag ihm, was er dann einfach tun soll.",
+          "en": "If you need me, just call out.",
+          "variants": [
+            "If you need me, just say something.",
+            "Just call out if you need me.",
+            "If you need me, just speak."
+          ],
+          "keywords": [
+            "need",
+            "call out|say|speak"
+          ],
+          "meaningDe": "Wenn Sie mich brauchen, rufen Sie einfach.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.callbutton.p01",
+          "kind": "question",
+          "en": "What do I do if I need you?",
+          "variants": [
+            "What if I need you during the scan?",
+            "What happens if I need help in there?",
+            "How will you know if something's wrong?"
+          ],
+          "meaningDe": "Was mache ich, wenn ich Sie brauche?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "During the CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Just call out. I can hear you from the next room.",
+              "fits": true,
+              "meaningDe": "Rufen Sie einfach. Ich höre Sie im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "The table will move while you hold your breath.",
+              "fits": false,
+              "whyDe": "Das beschreibt den Tisch. Er will wissen, wie er dich erreicht.",
+              "meaningDe": "Der Tisch fährt, während Sie die Luft anhalten.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            },
+            {
+              "en": "You will be alone in the room for about five minutes.",
+              "fits": false,
+              "whyDe": "Das sagt, wie lange du weg bist, aber nicht, wie er dich erreicht.",
+              "meaningDe": "Sie sind etwa fünf Minuten allein im Raum.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "What happens during the CT scan?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ct.closing",
+      "key": "closing",
+      "titleDe": "Abschluss und Verabschiedung",
+      "sentences": [
+        {
+          "id": "ct.closing.s01",
+          "situationDe": "Die Aufnahme ist gerade fertig, und der Patient will sofort aufstehen. Du musst vorher noch etwas kontrollieren. Sag es ihm.",
+          "en": "Please stay on the table while I check the pictures.",
+          "variants": [
+            "Please stay on the table while I check the images.",
+            "Please stay on the table until I have checked the pictures.",
+            "Could you stay on the table while I check the pictures, please?"
+          ],
+          "keywords": [
+            "stay",
+            "pictures|images"
+          ],
+          "meaningDe": "Bitte bleiben Sie auf dem Tisch, während ich die Bilder prüfe.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens during the procedure?"
+          }
+        },
+        {
+          "id": "ct.closing.s02",
+          "situationDe": "Der Patient fragt, wer sich seine Bilder nun ansieht. Nenne ihm den zuständigen Facharzt.",
+          "en": "A radiologist will look at your pictures.",
+          "variants": [
+            "A radiologist will look at your images.",
+            "A radiologist will check your pictures.",
+            "A doctor called a radiologist will look at your pictures."
+          ],
+          "keywords": [
+            "radiologist"
+          ],
+          "meaningDe": "Ein Radiologe schaut sich Ihre Bilder an.",
+          "cefr": "B1",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How do I get my results?"
+          }
+        },
+        {
+          "id": "ct.closing.s03",
+          "situationDe": "Der Patient hofft, dass er schon morgen Bescheid weiß. Bereite ihn darauf vor, dass es länger dauern kann.",
+          "en": "It can take a few weeks to get your results.",
+          "variants": [
+            "It may take a few weeks to get your results.",
+            "Your results can take a few weeks.",
+            "It can take a few weeks to get the results."
+          ],
+          "keywords": [
+            "weeks",
+            "results"
+          ],
+          "meaningDe": "Es kann einige Wochen dauern, bis Sie Ihre Ergebnisse bekommen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Getting your CT scan results"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "ct.closing.p01",
+          "kind": "question",
+          "en": "I haven't eaten since last night. Can I eat now?",
+          "variants": [
+            "Am I allowed to eat something now?",
+            "I'm starving. Is it OK to have something to eat?"
+          ],
+          "meaningDe": "Ich habe seit gestern Abend nichts gegessen. Darf ich jetzt essen?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "What happens after the scan?"
+          },
+          "reactions": [
+            {
+              "en": "Yes, you can eat and drink as normal now.",
+              "fits": true,
+              "meaningDe": "Ja, Sie können jetzt normal essen und trinken.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens after the scan?"
+              }
+            },
+            {
+              "en": "Please drink this before your scan.",
+              "fits": false,
+              "whyDe": "Die Aufnahme ist vorbei, das passt nicht mehr.",
+              "meaningDe": "Bitte trinken Sie das vor Ihrer Aufnahme.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "cuh-ct",
+                "locator": "Oral preparation (contrast)"
+              }
+            },
+            {
+              "en": "If you need me, just call out.",
+              "fits": false,
+              "whyDe": "Das gilt für die Zeit während der Aufnahme. Seine Frage bleibt offen.",
+              "meaningDe": "Wenn Sie mich brauchen, rufen Sie einfach.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ct.closing.p02",
+          "kind": "unclear",
+          "en": "So what happens now? Do I just wait?",
+          "variants": [
+            "And then what? Do I just wait to hear from someone?",
+            "So is that it? Do I just wait now?"
+          ],
+          "meaningDe": "Und was passiert jetzt? Warte ich einfach?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Getting your CT scan results"
+          },
+          "reactions": [
+            {
+              "en": "Do you mean the results of your scan?",
+              "fits": true,
+              "meaningDe": "Meinen Sie die Ergebnisse Ihrer Aufnahme?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Getting your CT scan results"
+              }
+            },
+            {
+              "en": "Yes, you can eat and drink as normal now.",
+              "fits": false,
+              "whyDe": "Das beantwortet nicht, wie es jetzt weitergeht. Frag erst nach, was er genau wissen will.",
+              "meaningDe": "Ja, Sie können jetzt normal essen und trinken.",
+              "clinicDependent": true,
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens after the scan?"
+              }
+            },
+            {
+              "en": "Are you allergic to iodine?",
+              "fits": false,
+              "whyDe": "Das fragt man vor der Aufnahme. Jetzt geht es um das, was danach kommt.",
+              "meaningDe": "Sind Sie allergisch gegen Jod?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Allergy to iodine or intravenous contrast medium"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "ct.w.doughnut-shaped",
+      "en": "doughnut-shaped",
+      "variants": [
+        "donut-shaped"
+      ],
+      "meaningDe": "ringförmig",
+      "noteDe": "So beschreiben Merkblätter die Form des Geräts.",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "How does it work?"
+      }
+    },
+    {
+      "id": "ct.w.tunnel",
+      "en": "tunnel",
+      "variants": [],
+      "meaningDe": "Tunnel, die Öffnung im Gerät",
+      "cefr": "A2",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "How does it work?"
+      }
+    },
+    {
+      "id": "ct.w.x-rays",
+      "en": "X-rays",
+      "variants": [
+        "x rays"
+      ],
+      "meaningDe": "Röntgenstrahlen",
+      "cefr": "A2",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "How does it work?"
+      }
+    },
+    {
+      "id": "ct.w.iodine",
+      "en": "iodine",
+      "variants": [],
+      "meaningDe": "Jod",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "Allergy to iodine or intravenous contrast medium"
+      }
+    },
+    {
+      "id": "ct.w.thyroid",
+      "en": "thyroid",
+      "variants": [],
+      "meaningDe": "Schilddrüse",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Preparing for a CT scan"
+      }
+    },
+    {
+      "id": "ct.w.blood-test",
+      "en": "blood test",
+      "variants": [],
+      "meaningDe": "Blutuntersuchung",
+      "cefr": "A2",
+      "source": {
+        "ref": "dudley-ct",
+        "locator": "How do I prepare for the CT scan?"
+      }
+    },
+    {
+      "id": "ct.w.pregnancy-test",
+      "en": "pregnancy test",
+      "variants": [],
+      "meaningDe": "Schwangerschaftstest",
+      "cefr": "B1",
+      "source": {
+        "ref": "dudley-ct",
+        "locator": "X-ray precautions:"
+      }
+    },
+    {
+      "id": "ct.w.strap",
+      "en": "strap",
+      "variants": [],
+      "meaningDe": "Gurt",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "What happens during the procedure?"
+      }
+    },
+    {
+      "id": "ct.w.pillow",
+      "en": "pillow",
+      "variants": [
+        "cushion"
+      ],
+      "meaningDe": "Kissen",
+      "cefr": "A2",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "What happens during the procedure?"
+      }
+    },
+    {
+      "id": "ct.w.pump",
+      "en": "pump",
+      "variants": [],
+      "meaningDe": "Pumpe",
+      "noteDe": "Sie drückt das Kontrastmittel durch das Röhrchen.",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-ct",
+        "locator": "What happens during the procedure?"
+      }
+    },
+    {
+      "id": "ct.w.thin-plastic-tube",
+      "en": "thin plastic tube",
+      "variants": [
+        "small tube"
+      ],
+      "meaningDe": "dünnes Plastikröhrchen, der Zugang",
+      "noteDe": "So sagst du es dem Patienten. Das Fachwort ist cannula.",
+      "cefr": "A2",
+      "source": {
+        "ref": "dudley-ct",
+        "locator": "What happens during the CT scan?"
+      }
+    },
+    {
+      "id": "ct.w.flushed",
+      "en": "flushed",
+      "variants": [],
+      "meaningDe": "gerötet und heiß im Gesicht",
+      "noteDe": "Die Merkblätter sagen hot and flushed.",
+      "cefr": "B2",
+      "source": {
+        "ref": "nhs-ct",
+        "locator": "Before the CT scan"
+      }
+    }
+  ]
+}

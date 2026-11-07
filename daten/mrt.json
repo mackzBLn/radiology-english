@@ -1,0 +1,2708 @@
+{
+  "formatVersion": 1,
+  "file": "mrt",
+  "strand": "radiology",
+  "exam": "mri",
+  "sections": [
+    {
+      "id": "mr.procedure",
+      "key": "procedure",
+      "titleDe": "Ablauf erklären",
+      "sentences": [
+        {
+          "id": "mr.procedure.s01",
+          "situationDe": "Der Patient schaut auf das große Gerät und fragt, wie es funktioniert. Sag ihm, womit es arbeitet.",
+          "en": "This machine uses a very strong magnet to take pictures.",
+          "variants": [
+            "This scanner uses a very strong magnet to take pictures.",
+            "The machine uses a very strong magnet to take pictures.",
+            "This machine uses a strong magnet to take pictures.",
+            "This machine uses a powerful magnet to take pictures."
+          ],
+          "keywords": [
+            "magnet"
+          ],
+          "meaningDe": "Dieses Gerät macht die Bilder mit einem sehr starken Magneten.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What is an MRI scan?"
+          }
+        },
+        {
+          "id": "mr.procedure.s02",
+          "situationDe": "Der Patient hat Sorge wegen der Strahlung, die er vom Röntgen kennt. Nimm ihm die Sorge für diese Untersuchung.",
+          "en": "The scan does not use X-rays.",
+          "variants": [
+            "This scan does not use X-rays.",
+            "There are no X-rays in this scan.",
+            "The scan doesn't use X-rays.",
+            "This scan doesn't use any X-rays."
+          ],
+          "keywords": [
+            "X-rays|x rays"
+          ],
+          "meaningDe": "Bei dieser Aufnahme werden keine Röntgenstrahlen verwendet.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What is an MRI scan?"
+          }
+        },
+        {
+          "id": "mr.procedure.s03",
+          "situationDe": "Der Patient sieht das Gerät zum ersten Mal. Beschreibe ihm mit einem Alltagsvergleich, wie es gebaut ist.",
+          "en": "The scanner is like a short tunnel.",
+          "variants": [
+            "The machine is like a short tunnel.",
+            "The scanner is a short tunnel.",
+            "The scanner looks like a short tunnel.",
+            "The scanner is like a short tube."
+          ],
+          "keywords": [
+            "tunnel|tube"
+          ],
+          "meaningDe": "Das Gerät ist wie ein kurzer Tunnel.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What is an MRI scan?"
+          }
+        },
+        {
+          "id": "mr.procedure.s04",
+          "situationDe": "Sag dem Patienten, wie herum er gleich in das Gerät hineinfährt. Das hängt davon ab, welcher Körperteil aufgenommen wird.",
+          "en": "You will go into the scanner head first.",
+          "variants": [
+            "You will go into the scanner feet first.",
+            "You will go in head first.",
+            "You will go in feet first.",
+            "You'll go into the scanner head first."
+          ],
+          "keywords": [
+            "head|feet",
+            "first"
+          ],
+          "meaningDe": "Sie fahren mit dem Kopf voran in das Gerät.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Je nach Körperteil heißt es head first oder feet first.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "mr.procedure.s05",
+          "situationDe": "Du hast die Spule in der Hand, und der Patient schaut fragend darauf. Sag ihm, was du damit gleich machst.",
+          "en": "I will put this device around the part we are scanning.",
+          "variants": [
+            "I will put this coil around the part we are scanning.",
+            "I will place this device around the part we are scanning.",
+            "I am going to put this device around the part we are scanning.",
+            "I'll put this device around the part we are scanning."
+          ],
+          "keywords": [
+            "device|coil",
+            "around"
+          ],
+          "meaningDe": "Ich lege dieses Teil um die Körperstelle, die wir aufnehmen.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Das Fachwort ist coil, die Spule. Gegenüber dem Patienten reicht device.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          }
+        },
+        {
+          "id": "mr.procedure.s06",
+          "situationDe": "Der Patient rechnet mit einer kurzen Sache wie beim Röntgen. Bereite ihn darauf vor, dass es hier anders ist, ohne eine Zeit zu nennen.",
+          "en": "The scan can take a while.",
+          "variants": [
+            "The scan can take some time.",
+            "It can take a while.",
+            "The scan may take a while.",
+            "It can take some time."
+          ],
+          "keywords": [
+            "take",
+            "while|time"
+          ],
+          "meaningDe": "Die Aufnahme kann eine Weile dauern.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "What happens during an MRI scan"
+          }
+        },
+        {
+          "id": "mr.procedure.s07",
+          "situationDe": "Der Patient möchte wissen, wie lange es bei ihm genau dauert. Du hast es nicht im Kopf und willst es nachsehen.",
+          "en": "Let me check how long your scan will take.",
+          "variants": [
+            "I will check how long your scan will take.",
+            "Let me see how long your scan will take.",
+            "I'll check how long your scan will take."
+          ],
+          "keywords": [
+            "check|see",
+            "long"
+          ],
+          "meaningDe": "Ich schaue nach, wie lange Ihre Aufnahme dauert.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How long will the scan take?"
+          }
+        },
+        {
+          "id": "mr.procedure.s08",
+          "situationDe": "Du hast auf dem Plan nachgesehen, und der Patient wartet auf die Antwort, wie lange er bleiben muss. Sag es ihm.",
+          "en": "Your scan will take about 30 minutes.",
+          "variants": [
+            "The scan will take about 30 minutes.",
+            "It will take about 30 minutes.",
+            "Your scan takes about 30 minutes.",
+            "Your scan will take around 30 minutes."
+          ],
+          "keywords": [
+            "minutes"
+          ],
+          "meaningDe": "Ihre Aufnahme dauert etwa 30 Minuten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Nenne die Zeit, die für diese Aufnahme gilt.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How long will the scan take?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.procedure.p01",
+          "kind": "question",
+          "en": "Is this the same as an X-ray?",
+          "variants": [
+            "Is this like an X-ray?",
+            "Will I get any radiation from this?",
+            "So this is a kind of X-ray, right?"
+          ],
+          "meaningDe": "Ist das dasselbe wie eine Röntgenaufnahme?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What is an MRI scan?"
+          },
+          "reactions": [
+            {
+              "en": "The scan does not use X-rays.",
+              "fits": true,
+              "meaningDe": "Bei dieser Aufnahme werden keine Röntgenstrahlen verwendet.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What is an MRI scan?"
+              }
+            },
+            {
+              "en": "The table will move into the scanner.",
+              "fits": false,
+              "whyDe": "Das erklärt den Ablauf, sagt aber nichts über Röntgenstrahlen.",
+              "meaningDe": "Der Tisch fährt in das Gerät hinein.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How does it work?"
+              }
+            },
+            {
+              "en": "Let me check how long your scan will take.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Art der Untersuchung, nicht nach der Dauer.",
+              "meaningDe": "Ich schaue nach, wie lange Ihre Aufnahme dauert.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How long will the scan take?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.procedure.p02",
+          "kind": "question",
+          "en": "Will my head have to go in too?",
+          "variants": [
+            "Does my head go in the tunnel as well?",
+            "Do I have to go all the way in?"
+          ],
+          "meaningDe": "Muss mein Kopf auch mit hinein?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          },
+          "reactions": [
+            {
+              "en": "It depends on the part of your body.",
+              "fits": true,
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            },
+            {
+              "en": "The scan does not use X-rays.",
+              "fits": false,
+              "whyDe": "Nach Strahlung hat er nicht gefragt. Er will wissen, wie weit er hineinfährt.",
+              "meaningDe": "Bei dieser Aufnahme werden keine Röntgenstrahlen verwendet.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What is an MRI scan?"
+              }
+            },
+            {
+              "en": "The scan can take a while.",
+              "fits": false,
+              "whyDe": "Das sagt etwas über die Dauer, nicht über seinen Kopf.",
+              "meaningDe": "Die Aufnahme kann eine Weile dauern.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "What happens during an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.procedure.p03",
+          "kind": "unclear",
+          "en": "I heard these things go on for ages.",
+          "variants": [
+            "Someone told me I'd be in there forever.",
+            "I was told it takes a really long time."
+          ],
+          "meaningDe": "Ich habe gehört, das dauert bei diesen Geräten ewig.",
+          "cefr": "B1",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How long will the scan take?"
+          },
+          "reactions": [
+            {
+              "en": "Let me check how long your scan will take.",
+              "fits": true,
+              "meaningDe": "Ich schaue nach, wie lange Ihre Aufnahme dauert.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How long will the scan take?"
+              }
+            },
+            {
+              "en": "This machine uses a very strong magnet to take pictures.",
+              "fits": false,
+              "whyDe": "Das erklärt die Technik, geht aber nicht auf seine Sorge um die Dauer ein.",
+              "meaningDe": "Dieses Gerät macht die Bilder mit einem sehr starken Magneten.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What is an MRI scan?"
+              }
+            },
+            {
+              "en": "You will go into the scanner head first.",
+              "fits": false,
+              "whyDe": "Das sagt nur, wie er hineinfährt, nicht, wie lange es dauert.",
+              "meaningDe": "Sie fahren mit dem Kopf voran in das Gerät.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.safety",
+      "key": "safety",
+      "titleDe": "Metall, Implantate und Schwangerschaft abfragen",
+      "sentences": [
+        {
+          "id": "mr.safety.s01",
+          "situationDe": "Der Patient hat das Blatt mit den Sicherheitsfragen zu Hause bekommen. Erkundige dich, ob er es erledigt hat.",
+          "en": "Have you filled in the safety form?",
+          "variants": [
+            "Did you fill in the safety form?",
+            "Have you completed the safety form?",
+            "Have you filled in the safety questionnaire?"
+          ],
+          "keywords": [
+            "form|questionnaire"
+          ],
+          "meaningDe": "Haben Sie den Sicherheitsbogen ausgefüllt?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          }
+        },
+        {
+          "id": "mr.safety.s02",
+          "situationDe": "Der Bogen liegt vor euch, und der Patient ist bei manchen Fragen unsicher. Schlag vor, wie ihr weitermacht.",
+          "en": "Let's go through the form together.",
+          "variants": [
+            "Let us go through the form together.",
+            "We can go through the form together.",
+            "Let's go through the questionnaire together."
+          ],
+          "keywords": [
+            "form|questionnaire",
+            "together"
+          ],
+          "meaningDe": "Gehen wir den Bogen gemeinsam durch.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "mr.safety.s03",
+          "situationDe": "Bei dieser Untersuchung ist alles gefährlich, was im Körper magnetisch sein oder mit Strom laufen könnte. Stell die allgemeine Frage dazu.",
+          "en": "Do you have any metal or electronic devices in your body?",
+          "variants": [
+            "Have you got any metal or electronic devices in your body?",
+            "Is there any metal or any electronic device in your body?",
+            "Do you have any metal or electronic implants in your body?"
+          ],
+          "keywords": [
+            "metal",
+            "electronic"
+          ],
+          "meaningDe": "Haben Sie Metall oder elektronische Geräte im Körper?",
+          "cefr": "B1",
+          "core": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "mr.safety.s04",
+          "situationDe": "Der Patient versteht nicht, warum du so genau nach seinem Körper fragst. Erkläre ihm, was das Gerät damit zu tun hat.",
+          "en": "The magnet can affect metal in your body.",
+          "variants": [
+            "The magnet can affect metal inside your body.",
+            "The magnetic field can affect metal in your body.",
+            "The strong magnet can affect metal in your body."
+          ],
+          "keywords": [
+            "magnet|magnetic",
+            "metal"
+          ],
+          "meaningDe": "Der Magnet kann Metall in Ihrem Körper beeinflussen.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "mr.safety.s05",
+          "situationDe": "Als Nächstes geht es um das kleine Gerät, das manche Menschen in der Brust tragen und das den Herzschlag regelt. Frag danach.",
+          "en": "Do you have a pacemaker?",
+          "variants": [
+            "Have you got a pacemaker?",
+            "Do you have a heart pacemaker?",
+            "Have you got a heart pacemaker?"
+          ],
+          "keywords": [
+            "pacemaker"
+          ],
+          "meaningDe": "Haben Sie einen Herzschrittmacher?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "mr.safety.s06",
+          "situationDe": "Frag nach dem künstlichen Ersatzteil am Herzen, das den Blutfluss regelt.",
+          "en": "Do you have an artificial heart valve?",
+          "variants": [
+            "Have you got an artificial heart valve?",
+            "Do you have a new heart valve?",
+            "Have you got a new heart valve?"
+          ],
+          "keywords": [
+            "valve"
+          ],
+          "meaningDe": "Haben Sie eine künstliche Herzklappe?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "mr.safety.s07",
+          "situationDe": "Auf dem Bogen steht auch die kleine Stütze, die ein Blutgefäß offen hält. Frag danach und erkläre das Fachwort gleich mit.",
+          "en": "Do you have a stent, a small tube in a blood vessel?",
+          "variants": [
+            "Do you have a stent?",
+            "Have you got a stent?",
+            "Do you have any stents?",
+            "Have you ever had a stent?"
+          ],
+          "keywords": [
+            "stent|stents"
+          ],
+          "meaningDe": "Haben Sie einen Stent, ein kleines Röhrchen in einem Blutgefäß?",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "Ein stent ist eine kleine Gefäßstütze. Das Wort ist im Englischen gleich.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "mr.safety.s08",
+          "situationDe": "Der Patient geht etwas steif. Kläre, ob ein Gelenk ersetzt wurde, zum Beispiel an Hüfte oder Knie.",
+          "en": "Do you have an artificial joint, like a new hip or knee?",
+          "variants": [
+            "Have you got an artificial joint, like a new hip or knee?",
+            "Do you have an artificial joint, like a new knee?",
+            "Do you have an artificial joint?"
+          ],
+          "keywords": [
+            "joint"
+          ],
+          "meaningDe": "Haben Sie ein künstliches Gelenk, zum Beispiel eine neue Hüfte oder ein neues Knie?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          }
+        },
+        {
+          "id": "mr.safety.s09",
+          "situationDe": "Der Patient hört schlecht. Kläre, ob ihm ein Gerät fest ins Ohr eingesetzt wurde, und nenn dafür auch das Fachwort.",
+          "en": "Do you have a hearing implant, called a cochlear implant?",
+          "variants": [
+            "Have you got a hearing implant, called a cochlear implant?",
+            "Do you have a hearing implant?",
+            "Do you have a cochlear implant?"
+          ],
+          "keywords": [
+            "implant"
+          ],
+          "meaningDe": "Haben Sie ein Hörimplantat, ein sogenanntes Cochlea-Implantat?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "mr.safety.s10",
+          "situationDe": "Der Patient hat lange in einer Werkstatt gearbeitet. Kläre, ob ihm dabei je ein Splitter an eine empfindliche Stelle im Gesicht geraten ist.",
+          "en": "Have you ever had any metal in your eyes?",
+          "variants": [
+            "Have you ever had metal in your eye?",
+            "Have you ever had any metal in your eye?",
+            "Did you ever get any metal in your eyes?"
+          ],
+          "keywords": [
+            "metal",
+            "eyes|eye"
+          ],
+          "meaningDe": "Hatten Sie schon einmal Metall in den Augen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "mr.safety.s11",
+          "situationDe": "Früher Eingriffe können bei dieser Untersuchung wichtig sein. Frag ganz allgemein danach.",
+          "en": "Have you ever had an operation?",
+          "variants": [
+            "Have you ever had surgery?",
+            "Have you had any operations?",
+            "Have you had any surgery?"
+          ],
+          "keywords": [
+            "operation|operations|surgery"
+          ],
+          "meaningDe": "Wurden Sie schon einmal operiert?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "mr.safety.s12",
+          "situationDe": "Eine Stelle ist bei früheren Eingriffen besonders wichtig: der Kopf von innen. Frag gezielt danach.",
+          "en": "Have you ever had an operation on your brain?",
+          "variants": [
+            "Have you ever had brain surgery?",
+            "Have you ever had surgery on your brain?",
+            "Did you ever have an operation on your brain?"
+          ],
+          "keywords": [
+            "brain"
+          ],
+          "meaningDe": "Wurden Sie schon einmal am Gehirn operiert?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.safety.p01",
+          "kind": "answer",
+          "en": "Yes, I have a pacemaker.",
+          "variants": [
+            "I've got a pacemaker, yes.",
+            "Yes, they put a pacemaker in last year."
+          ],
+          "meaningDe": "Ja, ich habe einen Herzschrittmacher.",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. Please wait here while I ask the doctor.",
+              "fits": true,
+              "meaningDe": "Danke. Bitte warten Sie hier, während ich den Arzt frage.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "Please change into this gown.",
+              "fits": false,
+              "whyDe": "Mit einem Herzschrittmacher kann es nicht einfach weitergehen. Das muss zuerst geklärt werden.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Do you have a pacemaker?",
+              "fits": false,
+              "whyDe": "Das hat er gerade gesagt. Du musst jetzt reagieren, nicht noch einmal fragen.",
+              "meaningDe": "Haben Sie einen Herzschrittmacher?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p02",
+          "kind": "answer",
+          "en": "No, I don't have any metal in my body.",
+          "variants": [
+            "No, there's no metal in me at all.",
+            "No, I've got no metal in my body."
+          ],
+          "meaningDe": "Nein, ich habe kein Metall im Körper.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. Have you ever had any metal in your eyes?",
+              "fits": true,
+              "meaningDe": "Danke. Hatten Sie schon einmal Metall in den Augen?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "Do you have any metal or electronic devices in your body?",
+              "fits": false,
+              "whyDe": "Genau das hat er gerade verneint. Geh zur nächsten Frage auf der Liste.",
+              "meaningDe": "Haben Sie Metall oder elektronische Geräte im Körper?",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "MRI Safety Questionnaire"
+              }
+            },
+            {
+              "en": "I will ask the doctor about that.",
+              "fits": false,
+              "whyDe": "Es gibt hier nichts, was der Arzt klären müsste. Der Patient hat Nein gesagt.",
+              "meaningDe": "Ich frage den Arzt danach.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p03",
+          "kind": "unclear",
+          "en": "They did something to my hip a few years ago.",
+          "variants": [
+            "I had something done on my hip, years back.",
+            "I think I had an operation on my hip once."
+          ],
+          "meaningDe": "Vor ein paar Jahren wurde etwas an meiner Hüfte gemacht.",
+          "cefr": "A2",
+          "noteDe": "Bis das geklärt ist, geht der Patient nicht in den Raum. Hol den Arzt.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Do you know if there is any metal in your hip?",
+              "fits": true,
+              "meaningDe": "Wissen Sie, ob Metall in Ihrer Hüfte ist?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Have you ever had an operation?",
+              "fits": false,
+              "whyDe": "Das hat er gerade angedeutet. Jetzt musst du gezielt nach dem Metall fragen.",
+              "meaningDe": "Wurden Sie schon einmal operiert?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Aufnahme, keine Nachfrage zu seiner Hüfte.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p07",
+          "kind": "unclear",
+          "en": "I've got some pins in my ankle from an accident.",
+          "variants": [
+            "They put some screws in my ankle after an accident.",
+            "There are pins in my leg from an old accident."
+          ],
+          "meaningDe": "Ich habe nach einem Unfall ein paar Stifte im Knöchel.",
+          "cefr": "B1",
+          "noteDe": "pins sind Stifte, screws Schrauben. Bis das geklärt ist, geht der Patient nicht in den Raum.",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "MRI Safety Questionnaire"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will ask the doctor first.",
+              "fits": true,
+              "meaningDe": "Danke. Ich frage zuerst den Arzt.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "MRI Safety Questionnaire"
+              }
+            },
+            {
+              "en": "Do you have a pacemaker?",
+              "fits": false,
+              "whyDe": "Das ist eine neue Frage. Zuerst muss der Arzt von den Stiften erfahren.",
+              "meaningDe": "Haben Sie einen Herzschrittmacher?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "Du kannst nicht einfach weitermachen. Erst muss das geklärt sein.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p04",
+          "kind": "unclear",
+          "en": "There's a small device in my chest, for my heart.",
+          "variants": [
+            "I've got a little box in my chest, for my heart.",
+            "They put something in my chest to help my heart."
+          ],
+          "meaningDe": "In meiner Brust ist ein kleines Gerät für mein Herz.",
+          "cefr": "A2",
+          "noteDe": "Bis das geklärt ist, geht der Patient nicht in den Raum. Hol den Arzt.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          },
+          "reactions": [
+            {
+              "en": "Do you know what kind of device it is? I will ask the doctor.",
+              "fits": true,
+              "meaningDe": "Wissen Sie, was für ein Gerät das ist? Ich frage den Arzt.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "The magnet can affect metal in your body.",
+              "fits": false,
+              "whyDe": "Das erklärt etwas, klärt aber nicht, was für ein Gerät er hat. Du musst nachfragen.",
+              "meaningDe": "Der Magnet kann Metall in Ihrem Körper beeinflussen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "MRI Safety Questionnaire"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Das ist eine neue Frage. Erst muss klar sein, was das für ein Gerät ist.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p05",
+          "kind": "question",
+          "en": "What about my fillings?",
+          "variants": [
+            "I have fillings in my teeth. Is that a problem?",
+            "I've got a bridge in my mouth. Is that OK?"
+          ],
+          "meaningDe": "Was ist mit meinen Zahnfüllungen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Let me check that for you.",
+              "fits": true,
+              "meaningDe": "Ich kläre das für Sie.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Have you ever had any metal in your eyes?",
+              "fits": false,
+              "whyDe": "Das ist die nächste Frage auf der Liste und geht auf seine Zähne nicht ein.",
+              "meaningDe": "Hatten Sie schon einmal Metall in den Augen?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "The scan does not use X-rays.",
+              "fits": false,
+              "whyDe": "Er fragt nach dem Metall in seinen Zähnen, nicht nach Strahlung.",
+              "meaningDe": "Bei dieser Aufnahme werden keine Röntgenstrahlen verwendet.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What is an MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.safety.p06",
+          "kind": "unexpected",
+          "en": "I worked with metal for years. Bits got in my eye once.",
+          "variants": [
+            "A small piece of metal went in my eye once, at work.",
+            "I got some metal in my eye at work years ago."
+          ],
+          "meaningDe": "Ich habe jahrelang mit Metall gearbeitet. Einmal sind mir Stückchen ins Auge geraten.",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will ask the doctor first.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie mir das sagen. Ich frage zuerst den Arzt.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "Do you have a stent?",
+              "fits": false,
+              "whyDe": "Das ist die nächste Frage. Zuerst muss der Arzt von dem Metall im Auge erfahren.",
+              "meaningDe": "Haben Sie einen Stent?",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "MRI Safety Questionnaire"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Du kannst nicht einfach mit dem Umziehen weitermachen. Erst muss das geklärt sein.",
+              "meaningDe": "Bitte legen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.changing",
+      "key": "changing",
+      "titleDe": "Umziehen und Lagerung",
+      "sentences": [
+        {
+          "id": "mr.changing.s01",
+          "situationDe": "Der Patient will mit allem, was er dabeihat, zum Gerät gehen. Mach ihm die wichtigste Regel für den Untersuchungsraum klar.",
+          "en": "Please do not take any metal into the scan room.",
+          "variants": [
+            "Please don't take any metal into the scan room.",
+            "You cannot take any metal into the scan room.",
+            "You can't take any metal into the scan room."
+          ],
+          "keywords": [
+            "metal",
+            "room"
+          ],
+          "meaningDe": "Bitte nehmen Sie kein Metall mit in den Untersuchungsraum.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Before your scan"
+          }
+        },
+        {
+          "id": "mr.changing.s02",
+          "situationDe": "Der Patient hat Uhr, Schlüsselbund und Geldbeutel dabei. Sag ihm, wo das alles während der Untersuchung bleibt.",
+          "en": "Please leave your watch, keys and bank cards in the locker.",
+          "variants": [
+            "Please put your watch, keys and bank cards in the locker.",
+            "Could you leave your watch, keys and bank cards in the locker?",
+            "Please leave your watch, keys and credit cards in the locker."
+          ],
+          "keywords": [
+            "watch",
+            "keys",
+            "cards"
+          ],
+          "meaningDe": "Bitte lassen Sie Ihre Uhr, Ihre Schlüssel und Ihre Bankkarten im Spind.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          }
+        },
+        {
+          "id": "mr.changing.s03",
+          "situationDe": "Der Patient hat noch seine Hose mit einer Metallschnalle an. Sag ihm, was davon noch weg muss.",
+          "en": "Please take off your belt.",
+          "variants": [
+            "Please remove your belt.",
+            "Could you take off your belt, please?",
+            "Could you remove your belt, please?"
+          ],
+          "keywords": [
+            "belt"
+          ],
+          "meaningDe": "Bitte nehmen Sie Ihren Gürtel ab.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "What happens when I arrive?"
+          }
+        },
+        {
+          "id": "mr.changing.s04",
+          "situationDe": "Bei dieser Untersuchung soll das Gesicht ungeschminkt sein. Kläre das mit der Patientin, bevor es weitergeht.",
+          "en": "Are you wearing any make-up today?",
+          "variants": [
+            "Are you wearing make-up today?",
+            "Do you have any make-up on today?",
+            "Have you got any make-up on today?"
+          ],
+          "keywords": [
+            "make-up|makeup|make up"
+          ],
+          "meaningDe": "Tragen Sie heute Make-up?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          }
+        },
+        {
+          "id": "mr.changing.s05",
+          "situationDe": "Die Patientin trägt keine Brille. Auf deiner Liste steht auch die Sehhilfe, die man direkt im Auge trägt. Kläre das.",
+          "en": "Do you wear contact lenses?",
+          "variants": [
+            "Are you wearing contact lenses?",
+            "Do you have contact lenses in?",
+            "Have you got contact lenses in?"
+          ],
+          "keywords": [
+            "lenses"
+          ],
+          "meaningDe": "Tragen Sie Kontaktlinsen?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          }
+        },
+        {
+          "id": "mr.changing.s06",
+          "situationDe": "Du siehst ein kleines Gerät hinter dem Ohr des Patienten. Es darf nicht mit in den Raum. Sag ihm das.",
+          "en": "Please take out your hearing aids.",
+          "variants": [
+            "Please remove your hearing aids.",
+            "Could you take out your hearing aids, please?",
+            "Could you remove your hearing aids, please?"
+          ],
+          "keywords": [
+            "hearing aids"
+          ],
+          "meaningDe": "Bitte nehmen Sie Ihre Hörgeräte heraus.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.changing.p01",
+          "kind": "question",
+          "en": "Can I keep my watch on?",
+          "variants": [
+            "Do I have to take my watch off?",
+            "Is it OK if I leave my watch on?"
+          ],
+          "meaningDe": "Darf ich meine Uhr anbehalten?",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry, it has to stay in the locker.",
+              "fits": true,
+              "meaningDe": "Es tut mir leid, sie muss im Spind bleiben.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What preparation will be needed?"
+              }
+            },
+            {
+              "en": "Are you wearing any make-up today?",
+              "fits": false,
+              "whyDe": "Das ist die nächste Frage und sagt nicht, ob die Uhr dranbleiben darf.",
+              "meaningDe": "Tragen Sie heute Make-up?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What preparation will be needed?"
+              }
+            },
+            {
+              "en": "Please take off your belt.",
+              "fits": false,
+              "whyDe": "Es geht um die Uhr. Du beantwortest seine Frage nicht.",
+              "meaningDe": "Bitte nehmen Sie Ihren Gürtel ab.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "What happens when I arrive?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.changing.p02",
+          "kind": "unclear",
+          "en": "I've got a piercing, but it's only small.",
+          "variants": [
+            "It's just a tiny piercing. That's OK, isn't it?",
+            "I have a small piercing. It should be fine, I think."
+          ],
+          "meaningDe": "Ich habe ein Piercing, aber es ist nur klein.",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What preparation will be needed?"
+          },
+          "reactions": [
+            {
+              "en": "Is it metal? Could you take it out, please?",
+              "fits": true,
+              "meaningDe": "Ist es aus Metall? Könnten Sie es bitte herausnehmen?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What preparation will be needed?"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Damit übergehst du das Piercing. Erst muss klar sein, ob es Metall ist.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Do you wear contact lenses?",
+              "fits": false,
+              "whyDe": "Das ist eine neue Frage. Die Sache mit dem Piercing ist noch nicht geklärt.",
+              "meaningDe": "Tragen Sie Kontaktlinsen?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What preparation will be needed?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.changing.p03",
+          "kind": "unexpected",
+          "en": "Oh, my phone is still in my pocket.",
+          "variants": [
+            "Wait, I've still got my phone on me.",
+            "Sorry, I forgot my phone was in my pocket."
+          ],
+          "meaningDe": "Oh, mein Handy ist noch in meiner Tasche.",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Before your scan"
+          },
+          "reactions": [
+            {
+              "en": "No problem. Please put it in the locker.",
+              "fits": true,
+              "meaningDe": "Kein Problem. Bitte legen Sie es in den Spind.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "Before your scan"
+              }
+            },
+            {
+              "en": "Please take out your hearing aids.",
+              "fits": false,
+              "whyDe": "Es geht gerade um das Handy, nicht um Hörgeräte. Sag ihm, wohin es kommt.",
+              "meaningDe": "Bitte nehmen Sie Ihre Hörgeräte heraus.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "So käme das Handy mit in den Raum. Es muss vorher in den Spind.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.stillness",
+      "key": "stillness",
+      "titleDe": "Still liegen und Atemkommandos",
+      "sentences": [
+        {
+          "id": "mr.stillness.s01",
+          "situationDe": "Der Patient liegt bereit. Sag ihm, in welchem Moment es ganz besonders auf Ruhe ankommt. Er erkennt den Moment am Geräusch.",
+          "en": "Please keep very still, especially when it is noisy.",
+          "variants": [
+            "Please keep very still, especially when it's noisy.",
+            "Please stay very still, especially when it is noisy.",
+            "Please keep very still, especially when the machine is noisy."
+          ],
+          "keywords": [
+            "still",
+            "noisy"
+          ],
+          "meaningDe": "Bitte halten Sie ganz still, vor allem, wenn es laut ist.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 12"
+          }
+        },
+        {
+          "id": "mr.stillness.s02",
+          "situationDe": "Der Patient fragt, was das Gerät macht, während es so laut ist. Sag es ihm.",
+          "en": "The pictures are taken when it is noisy.",
+          "variants": [
+            "The machine takes the pictures when it is noisy.",
+            "It takes the pictures when it is noisy.",
+            "The pictures are taken when it's noisy."
+          ],
+          "keywords": [
+            "pictures",
+            "noisy"
+          ],
+          "meaningDe": "Die Bilder werden gemacht, wenn es laut ist.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 12"
+          }
+        },
+        {
+          "id": "mr.stillness.s03",
+          "situationDe": "Der Patient nimmt das Stillhalten nicht so ernst. Sag ihm, was dann passieren kann und was das für ihn bedeutet.",
+          "en": "If you move, we may have to do that part again.",
+          "variants": [
+            "If you move, we may need to do that part again.",
+            "If you move, we might have to do that part again.",
+            "We may have to do that part again if you move."
+          ],
+          "keywords": [
+            "move",
+            "again"
+          ],
+          "meaningDe": "Wenn Sie sich bewegen, müssen wir diesen Teil vielleicht wiederholen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.stillness.p01",
+          "kind": "question",
+          "en": "Can I move a bit when it goes quiet?",
+          "variants": [
+            "Is it OK to move when the noise stops?",
+            "Can I move in between, when there's no noise?"
+          ],
+          "meaningDe": "Darf ich mich ein bisschen bewegen, wenn es leise wird?",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "Please try to stay still the whole time.",
+              "fits": true,
+              "meaningDe": "Bitte versuchen Sie, die ganze Zeit still zu bleiben.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "You can breathe normally now.",
+              "fits": false,
+              "whyDe": "Er fragt nach dem Bewegen, nicht nach dem Atmen.",
+              "meaningDe": "Sie können jetzt wieder normal atmen.",
+              "source": {
+                "ref": "cuh-ct",
+                "locator": "What will happen on the day of my procedure/examination?"
+              }
+            },
+            {
+              "en": "The pictures are taken when it is noisy.",
+              "fits": false,
+              "whyDe": "Das klingt so, als dürfte er sich in den leisen Pausen frei bewegen. Das sollst du nicht sagen.",
+              "meaningDe": "Die Bilder werden gemacht, wenn es laut ist.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 12"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.stillness.p02",
+          "kind": "unclear",
+          "en": "My hands shake a bit. I can't always stop it.",
+          "variants": [
+            "My leg jumps sometimes. I can't really control it.",
+            "I've got a bit of a shake in my hands."
+          ],
+          "meaningDe": "Meine Hände zittern ein bisschen. Ich kann es nicht immer aufhalten.",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Will it hurt?"
+          },
+          "reactions": [
+            {
+              "en": "How often does that happen?",
+              "fits": true,
+              "meaningDe": "Wie oft passiert das?",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Genau das fällt ihm schwer. Du musst erst verstehen, wie es ihm damit geht.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "If you move, we may have to do that part again.",
+              "fits": false,
+              "whyDe": "Das setzt ihn unter Druck und klärt nicht, was mit seinen Händen ist.",
+              "meaningDe": "Wenn Sie sich bewegen, müssen wir diesen Teil vielleicht wiederholen.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.stillness.p03",
+          "kind": "unexpected",
+          "en": "Sorry, my arm has gone to sleep. I have to move it.",
+          "variants": [
+            "My arm has gone numb. Can I move it?",
+            "My foot has gone to sleep. I need to move it."
+          ],
+          "meaningDe": "Entschuldigung, mein Arm ist eingeschlafen. Ich muss ihn bewegen.",
+          "cefr": "B1",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "OK. I will stop the scan, and then you can move.",
+              "fits": true,
+              "meaningDe": "In Ordnung. Ich halte die Aufnahme an, und dann können Sie sich bewegen.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "Hold your breath.",
+              "fits": false,
+              "whyDe": "Das ist ein Atemkommando und hilft ihm gerade nicht.",
+              "meaningDe": "Halten Sie die Luft an.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "The machine takes pictures of the inside of your body.",
+              "fits": false,
+              "whyDe": "Das erklärt das Gerät, geht aber nicht auf seinen Arm ein.",
+              "meaningDe": "Das Gerät macht Bilder vom Inneren Ihres Körpers.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "MRI scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.contrast",
+      "key": "contrast",
+      "titleDe": "Kontrastmittel und Zugang",
+      "sentences": [
+        {
+          "id": "mr.contrast.s01",
+          "situationDe": "Bei manchen Aufnahmen kommt noch etwas dazu, das die Bilder deutlicher macht. Bereite den Patienten darauf vor, dass das auch bei ihm so sein kann.",
+          "en": "You may need an injection of dye during the scan.",
+          "variants": [
+            "You may need an injection of contrast medium during the scan.",
+            "You might need an injection of dye during the scan.",
+            "You may need an injection of dye during your scan."
+          ],
+          "keywords": [
+            "injection",
+            "dye|contrast"
+          ],
+          "meaningDe": "Vielleicht brauchen Sie während der Aufnahme eine Spritze mit Kontrastmittel.",
+          "cefr": "B1",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What happens before my scan?"
+          }
+        },
+        {
+          "id": "mr.contrast.s03",
+          "situationDe": "Der Patient glaubt, nach der Spritze sei alles vorbei. Sag ihm, was danach noch kommt.",
+          "en": "We will take more pictures after the injection.",
+          "variants": [
+            "We will take some more pictures after the injection.",
+            "The machine will take more pictures after the injection.",
+            "We are going to take more pictures after the injection.",
+            "We'll take more pictures after the injection."
+          ],
+          "keywords": [
+            "pictures",
+            "injection"
+          ],
+          "meaningDe": "Nach der Spritze machen wir noch mehr Bilder.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "mr.contrast.s04",
+          "situationDe": "Der Patient möchte wissen, was das Mittel im Körper auslösen kann. Nenn ihm zwei leichte Beschwerden, die vorkommen können.",
+          "en": "Some people get a headache or feel sick after the dye.",
+          "variants": [
+            "Some people get a headache or feel sick from the dye.",
+            "Some people have a headache or feel sick after the dye.",
+            "Some people get a headache or feel sick after the contrast medium."
+          ],
+          "keywords": [
+            "headache",
+            "sick"
+          ],
+          "meaningDe": "Manche Menschen bekommen nach dem Kontrastmittel Kopfschmerzen, oder ihnen wird übel.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Risks from the contrast medium (dye)"
+          }
+        },
+        {
+          "id": "mr.contrast.s07",
+          "situationDe": "Der Patient bekommt gleich das Kontrastmittel. Bereite ihn darauf vor, was er kurz im Mund bemerken könnte.",
+          "en": "You may notice a metal taste for a short time.",
+          "variants": [
+            "You might notice a metal taste for a short time.",
+            "You may get a metal taste for a short time.",
+            "You may notice a metallic taste for a short time."
+          ],
+          "keywords": [
+            "metal|metallic",
+            "taste"
+          ],
+          "meaningDe": "Vielleicht bemerken Sie kurz einen metallischen Geschmack.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.contrast.p01",
+          "kind": "question",
+          "en": "Is the dye safe?",
+          "variants": [
+            "Is that dye dangerous?",
+            "Can the dye do me any harm?"
+          ],
+          "meaningDe": "Ist das Kontrastmittel sicher?",
+          "cefr": "A2",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Risks from the contrast medium (dye)"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor to talk to you about that.",
+              "fits": true,
+              "meaningDe": "Ich bitte den Arzt, mit Ihnen darüber zu sprechen.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Risks from the contrast medium (dye)"
+              }
+            },
+            {
+              "en": "You will get a special dye. It makes the pictures clearer.",
+              "fits": false,
+              "whyDe": "Das sagt, wozu das Mittel dient, aber nicht, ob es sicher ist.",
+              "meaningDe": "Sie bekommen ein besonderes Kontrastmittel. Es macht die Bilder deutlicher.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "Will I need an injection?"
+              }
+            },
+            {
+              "en": "We will take more pictures after the injection.",
+              "fits": false,
+              "whyDe": "Das erklärt den Ablauf und geht auf seine Sorge nicht ein.",
+              "meaningDe": "Nach der Spritze machen wir noch mehr Bilder.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.contrast.p02",
+          "kind": "unclear",
+          "en": "I don't feel quite right after that injection.",
+          "variants": [
+            "I feel a bit strange after that injection.",
+            "Something feels a bit off after that injection."
+          ],
+          "meaningDe": "Nach dieser Spritze fühle ich mich nicht ganz in Ordnung.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Possible complications of an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "How do you feel? Is it hard to breathe?",
+              "fits": true,
+              "meaningDe": "Wie fühlen Sie sich? Bekommen Sie schlecht Luft?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "We will take more pictures after the injection.",
+              "fits": false,
+              "whyDe": "So gehst du über seine Beschwerden hinweg. Frag zuerst nach, was er spürt.",
+              "meaningDe": "Nach der Spritze machen wir noch mehr Bilder.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            },
+            {
+              "en": "Some people get a headache or feel sick after the dye.",
+              "fits": false,
+              "whyDe": "Das erklärt etwas allgemein, klärt aber nicht, was er gerade spürt. Frag zuerst nach.",
+              "meaningDe": "Manche Menschen bekommen nach dem Kontrastmittel Kopfschmerzen, oder ihnen wird übel.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Risks from the contrast medium (dye)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.anxiety",
+      "key": "anxiety",
+      "titleDe": "Bei Platzangst beruhigen",
+      "sentences": [
+        {
+          "id": "mr.anxiety.s01",
+          "situationDe": "Die Patientin ist angespannt und stellt sich das Gerät schlimmer vor, als es ist. Du hast noch etwas Zeit. Mach ihr ein Angebot.",
+          "en": "Would you like to see the scanner first?",
+          "variants": [
+            "Would you like to have a look at the scanner first?",
+            "Do you want to see the scanner first?",
+            "Would you like to see the machine first?"
+          ],
+          "keywords": [
+            "scanner|machine"
+          ],
+          "meaningDe": "Möchten Sie sich das Gerät zuerst ansehen?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 8"
+          }
+        },
+        {
+          "id": "mr.anxiety.s02",
+          "situationDe": "Die Patientin hat Angst, in der Röhre eingesperrt zu sein. Beschreibe ihr zwei Dinge an der Röhre, die sie beruhigen können.",
+          "en": "It is open at both ends, and it is bright inside.",
+          "variants": [
+            "It's open at both ends, and it's bright inside.",
+            "The tunnel is open at both ends, and it is bright inside.",
+            "It is open at both ends, and there is light inside."
+          ],
+          "keywords": [
+            "open",
+            "bright|light"
+          ],
+          "meaningDe": "Es ist an beiden Enden offen, und innen ist es hell.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Is it claustrophobic?"
+          }
+        },
+        {
+          "id": "mr.anxiety.s03",
+          "situationDe": "Bei einer Aufnahme vom Kopf liegt der Patient mitten im Gerät und fürchtet, nichts zu sehen. Erkläre ihm das kleine Hilfsmittel, das es dafür gibt.",
+          "en": "There is a small mirror, so you can see out.",
+          "variants": [
+            "There is a mirror, so you can see out.",
+            "You can see out through a small mirror.",
+            "There's a small mirror, so you can see out."
+          ],
+          "keywords": [
+            "mirror",
+            "see"
+          ],
+          "meaningDe": "Es gibt einen kleinen Spiegel, damit Sie nach draußen sehen können.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens during the MRI scan?"
+          }
+        },
+        {
+          "id": "mr.anxiety.s04",
+          "situationDe": "Die Patientin fragt, ob ihr Mann bei ihr bleiben darf. Sag ihr, was in der Regel geht und was nicht.",
+          "en": "Someone can come with you, but they usually wait outside.",
+          "variants": [
+            "Someone can come with you, but they normally wait outside.",
+            "You can bring someone, but they usually wait outside.",
+            "You can bring someone with you, but they usually wait outside."
+          ],
+          "keywords": [
+            "wait"
+          ],
+          "meaningDe": "Jemand kann Sie begleiten, wartet aber in der Regel draußen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "Relatives and Escorts"
+          }
+        },
+        {
+          "id": "mr.anxiety.s05",
+          "situationDe": "Die Patientin fragt, ob es etwas gegen ihre Angst gibt. Entscheiden darfst du das nicht. Sag ihr, wer das kann und was möglich wäre.",
+          "en": "The doctor may give you something to help you relax.",
+          "variants": [
+            "The doctor might give you something to help you relax.",
+            "The doctor may give you some medicine to help you relax.",
+            "A doctor may give you something to help you relax."
+          ],
+          "keywords": [
+            "doctor",
+            "relax"
+          ],
+          "meaningDe": "Der Arzt kann Ihnen vielleicht etwas zur Beruhigung geben.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "Preparing for an MRI scan"
+          }
+        },
+        {
+          "id": "mr.anxiety.s06",
+          "situationDe": "Die Patientin fürchtet, in der Röhre festzusitzen, wenn die Angst kommt. Mach ihr klar, dass sie jederzeit herauskann.",
+          "en": "We can stop the scan if you need us to.",
+          "variants": [
+            "I can stop the scan if you need me to.",
+            "We can stop the scan if you want.",
+            "We can stop the scan if you need to."
+          ],
+          "keywords": [
+            "stop"
+          ],
+          "meaningDe": "Wir können die Aufnahme anhalten, wenn Sie das brauchen.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          }
+        },
+        {
+          "id": "mr.anxiety.s07",
+          "situationDe": "Du hast die Patientin beruhigt, und sie atmet wieder ruhig. Bevor es im Gerät weitergeht, willst du von ihr wissen, ob das für sie geht.",
+          "en": "Are you OK to carry on?",
+          "variants": [
+            "Are you OK to continue?",
+            "Are you happy to carry on?",
+            "Are you OK if we carry on?"
+          ],
+          "keywords": [
+            "carry on|continue"
+          ],
+          "meaningDe": "Ist es für Sie in Ordnung weiterzumachen?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.anxiety.p01",
+          "kind": "answer",
+          "en": "Yes, please. I would like to see the scanner first.",
+          "variants": [
+            "Yes, I'd like to see the scanner first, please.",
+            "Yes, if that's OK. I'd like to see it first."
+          ],
+          "meaningDe": "Ja, bitte. Ich möchte mir das Gerät zuerst ansehen.",
+          "cefr": "A2",
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 8"
+          },
+          "reactions": [
+            {
+              "en": "Of course. Please come with me.",
+              "fits": true,
+              "meaningDe": "Natürlich. Bitte kommen Sie mit mir.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 8"
+              }
+            },
+            {
+              "en": "Would you like to see the scanner first?",
+              "fits": false,
+              "whyDe": "Das hat sie gerade mit Ja beantwortet.",
+              "meaningDe": "Möchten Sie sich das Gerät zuerst ansehen?",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 8"
+              }
+            },
+            {
+              "en": "The doctor may give you something to help you relax.",
+              "fits": false,
+              "whyDe": "Danach hat sie nicht gefragt. Sie wollte nur das Gerät ansehen.",
+              "meaningDe": "Der Arzt kann Ihnen vielleicht etwas zur Beruhigung geben.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Preparing for an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.anxiety.p02",
+          "kind": "question",
+          "en": "What if I panic in there?",
+          "variants": [
+            "What happens if I panic?",
+            "What do I do if I get scared inside?"
+          ],
+          "meaningDe": "Was ist, wenn ich da drin in Panik gerate?",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "Just press the buzzer, and we can stop the scan.",
+              "fits": true,
+              "meaningDe": "Drücken Sie einfach den Rufknopf, dann können wir die Aufnahme anhalten.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "There is a small mirror, so you can see out.",
+              "fits": false,
+              "whyDe": "Der Spiegel hilft beim Hinaussehen, sagt ihr aber nicht, was sie bei Panik tun kann.",
+              "meaningDe": "Es gibt einen kleinen Spiegel, damit Sie nach draußen sehen können.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            },
+            {
+              "en": "The scan can take a while.",
+              "fits": false,
+              "whyDe": "Das macht ihr eher mehr Angst und beantwortet ihre Frage nicht.",
+              "meaningDe": "Die Aufnahme kann eine Weile dauern.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "What happens during an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.anxiety.p03",
+          "kind": "unclear",
+          "en": "I had a bad time in one of these before.",
+          "variants": [
+            "The last time I had one of these, it didn't go well.",
+            "I had one of these once, and it was horrible."
+          ],
+          "meaningDe": "In so einem Gerät ist es mir schon einmal schlecht ergangen.",
+          "cefr": "A2",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry to hear that. What happened last time?",
+              "fits": true,
+              "meaningDe": "Das tut mir leid. Was ist beim letzten Mal passiert?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            },
+            {
+              "en": "The machine may vibrate a little.",
+              "fits": false,
+              "whyDe": "Das erklärt etwas am Gerät und geht nicht auf sein schlechtes Erlebnis ein.",
+              "meaningDe": "Das Gerät kann leicht vibrieren.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            },
+            {
+              "en": "You will go into the scanner head first.",
+              "fits": false,
+              "whyDe": "So gehst du über sein schlechtes Erlebnis hinweg. Frag erst nach.",
+              "meaningDe": "Sie fahren mit dem Kopf voran in das Gerät.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.anxiety.p04",
+          "kind": "unexpected",
+          "en": "Please get me out of here. I want to get out.",
+          "variants": [
+            "Please take me out. I can't stay in here.",
+            "Get me out, please. I can't do this."
+          ],
+          "meaningDe": "Bitte holen Sie mich hier heraus. Ich will raus.",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "OK. I will stop the scan and bring you out now.",
+              "fits": true,
+              "meaningDe": "In Ordnung. Ich halte die Aufnahme an und hole Sie jetzt heraus.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "If you move, we may have to do that part again.",
+              "fits": false,
+              "whyDe": "Die Patientin will raus. Das Anhalten hat jetzt Vorrang, nicht die Bilder.",
+              "meaningDe": "Wenn Sie sich bewegen, müssen wir diesen Teil vielleicht wiederholen.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das übergeht ihren Wunsch. Sie muss zuerst aus dem Gerät.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.callbutton",
+      "key": "callButton",
+      "titleDe": "Klingel und Gegensprechanlage",
+      "sentences": [
+        {
+          "id": "mr.callbutton.s01",
+          "situationDe": "Der Patient liegt auf dem Tisch, du gibst ihm den kleinen Gummiball mit Schlauch. Sag ihm, was das ist und wo er ihn lassen soll.",
+          "en": "This is your buzzer. Please hold it in your hand.",
+          "variants": [
+            "This is your call button. Please hold it in your hand.",
+            "This is your call bell. Please hold it in your hand.",
+            "Here is your buzzer. Please hold it in your hand.",
+            "Here is your call button. Please hold it in your hand."
+          ],
+          "keywords": [
+            "buzzer|call button|call bell",
+            "hand"
+          ],
+          "meaningDe": "Das ist Ihr Rufknopf. Bitte halten Sie ihn in der Hand.",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "buzzer ist britisch, in den USA sagt man eher call button.",
+          "source": {
+            "ref": "uhs-mri",
+            "locator": "What happens during the MRI?"
+          }
+        },
+        {
+          "id": "mr.callbutton.s02",
+          "situationDe": "Der Patient hält den Rufknopf in der Hand und weiß nicht, wann er ihn benutzen darf. Sag es ihm.",
+          "en": "Please squeeze the buzzer if you need help.",
+          "variants": [
+            "Please press the buzzer if you need help.",
+            "Please squeeze the call button if you need help.",
+            "Please press the call button if you need help.",
+            "Press the buzzer if you need help, please."
+          ],
+          "keywords": [
+            "buzzer|call button|call bell",
+            "help"
+          ],
+          "meaningDe": "Bitte drücken Sie den Rufknopf, wenn Sie Hilfe brauchen.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 11"
+          }
+        },
+        {
+          "id": "mr.callbutton.s03",
+          "situationDe": "Der Patient fürchtet, im Gerät niemanden mehr zu erreichen. Sag ihm, wie ihr während der Aufnahme miteinander sprechen werdet.",
+          "en": "I will talk to you through the intercom.",
+          "variants": [
+            "I will speak to you through the intercom.",
+            "I can talk to you through the intercom.",
+            "We can talk through the intercom.",
+            "I'll talk to you through the intercom."
+          ],
+          "keywords": [
+            "intercom"
+          ],
+          "meaningDe": "Ich spreche über die Gegensprechanlage mit Ihnen.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.callbutton.p01",
+          "kind": "question",
+          "en": "How do I call you when I'm in there?",
+          "variants": [
+            "What if I need you during the scan?",
+            "What do I do if I need something in there?"
+          ],
+          "meaningDe": "Wie rufe ich Sie, wenn ich da drin bin?",
+          "cefr": "A2",
+          "source": {
+            "ref": "york-mri",
+            "locator": "Seite 11"
+          },
+          "reactions": [
+            {
+              "en": "Please squeeze the buzzer if you need help.",
+              "fits": true,
+              "meaningDe": "Bitte drücken Sie den Rufknopf, wenn Sie Hilfe brauchen.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 11"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das sagt, wo du bist, aber nicht, wie er dich rufen kann.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "Please keep very still, especially when it is noisy.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zum Stillhalten und beantwortet seine Frage nicht.",
+              "meaningDe": "Bitte halten Sie ganz still, vor allem, wenn es laut ist.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 12"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.callbutton.p02",
+          "kind": "unclear",
+          "en": "Did you say something? I can't hear you.",
+          "variants": [
+            "Sorry, I can't hear you very well in here.",
+            "What was that? I didn't catch it."
+          ],
+          "meaningDe": "Haben Sie etwas gesagt? Ich kann Sie nicht hören.",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          },
+          "reactions": [
+            {
+              "en": "Can you hear me now?",
+              "fits": true,
+              "meaningDe": "Können Sie mich jetzt hören?",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What will the MRI scan involve?"
+              }
+            },
+            {
+              "en": "I can see you the whole time.",
+              "fits": false,
+              "whyDe": "Das Sehen ist nicht das Problem. Du musst prüfen, ob er dich jetzt hört.",
+              "meaningDe": "Ich kann Sie die ganze Zeit sehen.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What will the MRI scan involve?"
+              }
+            },
+            {
+              "en": "Breathe in.",
+              "fits": false,
+              "whyDe": "Er hat dich gerade nicht verstanden. Ein Kommando käme bei ihm nicht an.",
+              "meaningDe": "Einatmen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.noise",
+      "key": "noise",
+      "titleDe": "Lärm und Gehörschutz",
+      "sentences": [
+        {
+          "id": "mr.noise.s01",
+          "situationDe": "Der Patient rechnet mit einem leisen Gerät. Bereite ihn auf das vor, was er gleich hören wird.",
+          "en": "The machine makes a loud banging noise.",
+          "variants": [
+            "The machine makes a loud knocking noise.",
+            "The scanner makes a loud banging noise.",
+            "The machine makes loud banging noises."
+          ],
+          "keywords": [
+            "loud",
+            "noise|noises"
+          ],
+          "meaningDe": "Das Gerät macht ein lautes, klopfendes Geräusch.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          }
+        },
+        {
+          "id": "mr.noise.s02",
+          "situationDe": "Du hältst dem Patienten den Gehörschutz hin. Sag ihm, was er damit tun soll und wofür das gut ist.",
+          "en": "Please wear these earplugs to protect your ears.",
+          "variants": [
+            "Please put in these earplugs to protect your ears.",
+            "Please wear these ear plugs to protect your ears.",
+            "Please wear these headphones to protect your ears.",
+            "Please put on these headphones to protect your ears."
+          ],
+          "keywords": [
+            "earplugs|ear plugs|headphones",
+            "ears"
+          ],
+          "meaningDe": "Bitte tragen Sie diese Ohrstöpsel, um Ihre Ohren zu schützen.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Je nach Abteilung gibt es earplugs, headphones oder beides.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          }
+        },
+        {
+          "id": "mr.noise.s03",
+          "situationDe": "Der Patient erschrickt, als es laut wird, und fragt, ob etwas kaputt ist. Beruhige ihn und sag, was das Geräusch bedeutet.",
+          "en": "That noise just means the scanner is working.",
+          "variants": [
+            "That noise means the scanner is working.",
+            "The noise just means the machine is working.",
+            "That noise just means the machine is working."
+          ],
+          "keywords": [
+            "noise",
+            "working"
+          ],
+          "meaningDe": "Dieses Geräusch bedeutet nur, dass das Gerät arbeitet.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          }
+        },
+        {
+          "id": "mr.noise.s04",
+          "situationDe": "Außer dem Lärm kann der Patient noch etwas spüren, das ihn überraschen könnte. Kündige es an.",
+          "en": "The machine may vibrate a little.",
+          "variants": [
+            "The machine may vibrate slightly.",
+            "The scanner may vibrate a little.",
+            "The machine might vibrate a little."
+          ],
+          "keywords": [
+            "vibrate"
+          ],
+          "meaningDe": "Das Gerät kann ein wenig vibrieren.",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.noise.p01",
+          "kind": "question",
+          "en": "Can I listen to music in there?",
+          "variants": [
+            "Is there any music I can listen to?",
+            "Can you play some music for me during the scan?"
+          ],
+          "meaningDe": "Kann ich da drin Musik hören?",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          },
+          "reactions": [
+            {
+              "en": "Let me check if we can do that today.",
+              "fits": true,
+              "meaningDe": "Ich schaue nach, ob das heute möglich ist.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What will the MRI scan involve?"
+              }
+            },
+            {
+              "en": "The machine makes a loud banging noise.",
+              "fits": false,
+              "whyDe": "Das stimmt zwar, sagt aber nicht, ob es Musik gibt.",
+              "meaningDe": "Das Gerät macht ein lautes, klopfendes Geräusch.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "The machine may vibrate a little.",
+              "fits": false,
+              "whyDe": "Das hat mit seiner Frage nach der Musik nichts zu tun.",
+              "meaningDe": "Das Gerät kann ein wenig vibrieren.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.noise.p02",
+          "kind": "unexpected",
+          "en": "One of my earplugs has fallen out.",
+          "variants": [
+            "My earplug fell out just now.",
+            "These headphones have slipped off my ear."
+          ],
+          "meaningDe": "Einer meiner Ohrstöpsel ist herausgefallen.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. I will stop the scan and come to you.",
+              "fits": true,
+              "meaningDe": "Danke. Ich halte die Aufnahme an und komme zu Ihnen.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "That noise just means the scanner is working.",
+              "fits": false,
+              "whyDe": "Die Ohren müssen geschützt sein. Das Geräusch zu erklären, löst das Problem nicht.",
+              "meaningDe": "Dieses Geräusch bedeutet nur, dass das Gerät arbeitet.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What will the MRI scan involve?"
+              }
+            },
+            {
+              "en": "Please keep very still, especially when it is noisy.",
+              "fits": false,
+              "whyDe": "Damit lässt du ihn ohne Gehörschutz weiter im Lärm liegen.",
+              "meaningDe": "Bitte halten Sie ganz still, vor allem, wenn es laut ist.",
+              "source": {
+                "ref": "york-mri",
+                "locator": "Seite 12"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr.closing",
+      "key": "closing",
+      "titleDe": "Abschluss und Verabschiedung",
+      "sentences": [
+        {
+          "id": "mr.closing.s01",
+          "situationDe": "Die Aufnahme ist fertig, und der Patient liegt noch hoch oben auf der Liege. Sag ihm, was du machst, damit er herunterkommt.",
+          "en": "I will lower the table so you can get up.",
+          "variants": [
+            "I will lower the bed so you can get up.",
+            "I am going to lower the table so you can get up.",
+            "I'll lower the table so you can get up."
+          ],
+          "keywords": [
+            "lower",
+            "table|bed"
+          ],
+          "meaningDe": "Ich senke den Tisch ab, damit Sie aufstehen können.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          }
+        },
+        {
+          "id": "mr.closing.s02",
+          "situationDe": "Der Patient hat ein Beruhigungsmittel bekommen und sucht schon seine Autoschlüssel. Halte ihn davon ab.",
+          "en": "You must not drive after that medicine.",
+          "variants": [
+            "You cannot drive after that medicine.",
+            "You can't drive after that medicine.",
+            "Please do not drive after that medicine.",
+            "Please don't drive after that medicine."
+          ],
+          "keywords": [
+            "drive",
+            "medicine"
+          ],
+          "meaningDe": "Nach diesem Medikament dürfen Sie nicht Auto fahren.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Wie lange das gilt, legt die Klinik fest. Nenn keine eigene Zeit.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          }
+        },
+        {
+          "id": "mr.closing.s03",
+          "situationDe": "Nach dem Beruhigungsmittel darf der Patient nicht allein losgehen. Sag ihm, was er für den Heimweg braucht.",
+          "en": "Someone will need to take you home.",
+          "variants": [
+            "Someone needs to take you home.",
+            "Someone will have to take you home.",
+            "Somebody will need to take you home."
+          ],
+          "keywords": [
+            "take",
+            "home"
+          ],
+          "meaningDe": "Jemand muss Sie nach Hause bringen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Are there any risks?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "mr.closing.p01",
+          "kind": "question",
+          "en": "Can I drive home now?",
+          "variants": [
+            "Is it OK for me to drive home?",
+            "Am I allowed to drive back home?"
+          ],
+          "meaningDe": "Darf ich jetzt nach Hause fahren?",
+          "cefr": "A2",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Are there side effects?"
+          },
+          "reactions": [
+            {
+              "en": "Did you have any medicine to help you relax?",
+              "fits": true,
+              "meaningDe": "Haben Sie ein Medikament zur Beruhigung bekommen?",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            },
+            {
+              "en": "You can eat and drink as normal.",
+              "fits": false,
+              "whyDe": "Das gehört auch zum Abschluss, beantwortet aber nicht, ob er fahren darf.",
+              "meaningDe": "Sie können normal essen und trinken.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            },
+            {
+              "en": "Someone will need to take you home.",
+              "fits": false,
+              "whyDe": "Das gilt nur nach einem Beruhigungsmittel, und das weißt du noch nicht. Frag zuerst nach.",
+              "meaningDe": "Jemand muss Sie nach Hause bringen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Are there any risks?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mr.closing.p02",
+          "kind": "unexpected",
+          "en": "There's nobody to pick me up today.",
+          "variants": [
+            "I came on my own. No one can take me home.",
+            "I don't have anyone to pick me up."
+          ],
+          "meaningDe": "Heute kann mich niemand abholen.",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Are there any risks?"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor what we can do.",
+              "fits": true,
+              "meaningDe": "Ich frage den Arzt, was wir tun können.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "You must not drive after that medicine.",
+              "fits": false,
+              "whyDe": "Das stimmt, hilft ihm aber nicht weiter. Er braucht eine Lösung für den Heimweg.",
+              "meaningDe": "Nach diesem Medikament dürfen Sie nicht Auto fahren.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            },
+            {
+              "en": "Thank you. Goodbye and take care.",
+              "fits": false,
+              "whyDe": "So darfst du ihn nach dem Beruhigungsmittel nicht einfach gehen lassen.",
+              "meaningDe": "Danke. Auf Wiedersehen und alles Gute.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag take care"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "mr.w.magnet",
+      "en": "magnet",
+      "variants": [],
+      "meaningDe": "Magnet",
+      "noteDe": "Das Gerät arbeitet mit einem sehr starken Magneten, deshalb die vielen Fragen nach Metall.",
+      "cefr": "A2",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "What is an MRI scan?"
+      }
+    },
+    {
+      "id": "mr.w.safety-questionnaire",
+      "en": "safety questionnaire",
+      "variants": [
+        "safety form"
+      ],
+      "meaningDe": "Sicherheitsfragebogen",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "MRI Safety Questionnaire"
+      }
+    },
+    {
+      "id": "mr.w.implant",
+      "en": "implant",
+      "variants": [],
+      "meaningDe": "Implantat",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "MRI Safety Questionnaire"
+      }
+    },
+    {
+      "id": "mr.w.pacemaker",
+      "en": "pacemaker",
+      "variants": [
+        "heart pacemaker"
+      ],
+      "meaningDe": "Herzschrittmacher",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "Preparing for an MRI scan"
+      }
+    },
+    {
+      "id": "mr.w.heart-valve",
+      "en": "heart valve",
+      "variants": [
+        "artificial heart valve"
+      ],
+      "meaningDe": "Herzklappe",
+      "cefr": "B1",
+      "source": {
+        "ref": "lothian-mri",
+        "locator": "What happens before my scan?"
+      }
+    },
+    {
+      "id": "mr.w.stent",
+      "en": "stent",
+      "variants": [],
+      "meaningDe": "Stent, Gefäßstütze",
+      "cefr": "B2",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "MRI Safety Questionnaire"
+      }
+    },
+    {
+      "id": "mr.w.artificial-joint",
+      "en": "artificial joint",
+      "variants": [
+        "new hip",
+        "new knee"
+      ],
+      "meaningDe": "künstliches Gelenk",
+      "noteDe": "Patienten sagen oft einfach new hip oder new knee.",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "MRI Safety Questionnaire"
+      }
+    },
+    {
+      "id": "mr.w.cochlear-implant",
+      "en": "cochlear implant",
+      "variants": [
+        "hearing implant"
+      ],
+      "meaningDe": "Cochlea-Implantat",
+      "cefr": "B2",
+      "source": {
+        "ref": "lothian-mri",
+        "locator": "What happens before my scan?"
+      }
+    },
+    {
+      "id": "mr.w.hearing-aid",
+      "en": "hearing aid",
+      "variants": [],
+      "meaningDe": "Hörgerät",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "Preparing for an MRI scan"
+      }
+    },
+    {
+      "id": "mr.w.filling",
+      "en": "filling",
+      "variants": [
+        "dental filling"
+      ],
+      "meaningDe": "Zahnfüllung",
+      "noteDe": "Die Brücke im Mund heißt bridge.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "Preparing for an MRI scan"
+      }
+    },
+    {
+      "id": "mr.w.surgery",
+      "en": "surgery",
+      "variants": [
+        "operation"
+      ],
+      "meaningDe": "Operation",
+      "noteDe": "Im britischen Englisch ist a surgery auch die Hausarztpraxis.",
+      "cefr": "B1",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "Preparing for an MRI scan"
+      }
+    },
+    {
+      "id": "mr.w.coil",
+      "en": "coil",
+      "variants": [
+        "receiver coil"
+      ],
+      "meaningDe": "Spule",
+      "noteDe": "Gegenüber dem Patienten reicht device.",
+      "cefr": "B2",
+      "source": {
+        "ref": "lothian-mri",
+        "locator": "What will the MRI scan involve?"
+      }
+    },
+    {
+      "id": "mr.w.mirror",
+      "en": "mirror",
+      "variants": [],
+      "meaningDe": "Spiegel",
+      "cefr": "A2",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "What happens during the MRI scan?"
+      }
+    },
+    {
+      "id": "mr.w.buzzer",
+      "en": "buzzer",
+      "variants": [
+        "call button",
+        "call bell"
+      ],
+      "meaningDe": "Rufknopf, Klingel",
+      "cefr": "B1",
+      "source": {
+        "ref": "lothian-mri",
+        "locator": "What will the MRI scan involve?"
+      }
+    },
+    {
+      "id": "mr.w.intercom",
+      "en": "intercom",
+      "variants": [
+        "two-way intercom"
+      ],
+      "meaningDe": "Gegensprechanlage",
+      "cefr": "B1",
+      "source": {
+        "ref": "lothian-mri",
+        "locator": "What will the MRI scan involve?"
+      }
+    },
+    {
+      "id": "mr.w.earplugs",
+      "en": "earplugs",
+      "variants": [
+        "ear plugs"
+      ],
+      "meaningDe": "Ohrstöpsel",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "What happens during the MRI scan?"
+      }
+    },
+    {
+      "id": "mr.w.headphones",
+      "en": "headphones",
+      "variants": [],
+      "meaningDe": "Kopfhörer",
+      "cefr": "A2",
+      "source": {
+        "ref": "nhs-mri",
+        "locator": "During an MRI scan"
+      }
+    },
+    {
+      "id": "mr.w.banging-noise",
+      "en": "banging noise",
+      "variants": [
+        "knocking noise",
+        "banging sounds"
+      ],
+      "meaningDe": "lautes Klopfen",
+      "cefr": "B1",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "What happens during the MRI scan?"
+      }
+    },
+    {
+      "id": "mr.w.vibrate",
+      "en": "vibrate",
+      "variants": [],
+      "meaningDe": "vibrieren",
+      "cefr": "B1",
+      "source": {
+        "ref": "glos-mri",
+        "locator": "Will the scan be uncomfortable?"
+      }
+    },
+    {
+      "id": "mr.w.sedative",
+      "en": "sedative",
+      "variants": [
+        "relaxing tablets"
+      ],
+      "meaningDe": "Beruhigungsmittel",
+      "noteDe": "Patienten sagen eher something to help me relax.",
+      "cefr": "B2",
+      "source": {
+        "ref": "ruh-mri",
+        "locator": "Are there any risks?"
+      }
+    }
+  ]
+}

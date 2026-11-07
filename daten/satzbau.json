@@ -1,0 +1,2698 @@
+{
+  "formatVersion": 1,
+  "file": "satzbau",
+  "strand": "grammar",
+  "sections": [
+    {
+      "id": "sb.questions",
+      "key": "questions",
+      "titleDe": "Fragen stellen",
+      "explanationDe": "Eine Ja-Nein-Frage beginnt mit do, does, are, is oder have, danach kommt die Person. Merksatz: Bei Ja-Nein-Fragen kommt das Hilfswort vor die Person.",
+      "explanationSource": {
+        "ref": "cam-q-yesno",
+        "locator": "Questions: yes-no questions"
+      },
+      "sentences": [
+        {
+          "id": "sb.questions.s01",
+          "situationDe": "Eine ältere Patientin kommt nur mühsam von der Bank hoch. Biete ihr an, mit anzufassen.",
+          "en": "Do you need any help?",
+          "variants": [
+            "Do you need some help?",
+            "Do you need help?",
+            "Would you like some help?"
+          ],
+          "keywords": [
+            "help"
+          ],
+          "meaningDe": "Brauchen Sie Hilfe?",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s02",
+          "situationDe": "Der Patient humpelt zur Liege und hält sich das Bein. Frag, ob ihm das Gelenk Beschwerden macht.",
+          "en": "Does your knee hurt?",
+          "variants": [
+            "Does your knee hurt now?",
+            "Does your knee hurt at the moment?",
+            "Is your knee hurting?"
+          ],
+          "keywords": [
+            "knee",
+            "hurt|hurting"
+          ],
+          "meaningDe": "Tut Ihr Knie weh?",
+          "cefr": "A1",
+          "core": false,
+          "noteDe": "Bei he, she und it heißt es does. Das Verb danach bleibt ohne s.",
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s03",
+          "situationDe": "Die Frau des Patienten steht unschlüssig neben ihm an der Tür. Frag ihn, ob sie bis zum Ende hierbleiben möchte.",
+          "en": "Does your wife want to wait here?",
+          "variants": [
+            "Would your wife like to wait here?",
+            "Does your wife want to wait in here?"
+          ],
+          "keywords": [
+            "wife",
+            "wait"
+          ],
+          "meaningDe": "Möchte Ihre Frau hier warten?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s04",
+          "situationDe": "Die Patientin liegt im dünnen Hemd auf der Liege und reibt sich die Arme. Erkundige dich, wie es ihr damit geht.",
+          "en": "Are you cold?",
+          "variants": [
+            "Are you feeling cold?",
+            "Are you cold at all?",
+            "Do you feel cold?"
+          ],
+          "keywords": [
+            "cold"
+          ],
+          "meaningDe": "Ist Ihnen kalt?",
+          "cefr": "A1",
+          "core": true,
+          "noteDe": "Englisch fragt mit are, wörtlich also: Sind Sie kalt?",
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s05",
+          "situationDe": "Alles ist vorbereitet. Prüfe beim Patienten, ob es von seiner Seite aus losgehen kann.",
+          "en": "Are you ready to start?",
+          "variants": [
+            "Are you ready to begin?",
+            "Are you ready?",
+            "Are you ready now?"
+          ],
+          "keywords": [
+            "ready"
+          ],
+          "meaningDe": "Sind Sie bereit, anzufangen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s06",
+          "situationDe": "Neben der Umkleide steht eine Tasche, und der Patient will gerade gehen. Kläre, wem sie gehört.",
+          "en": "Is this your bag?",
+          "variants": [
+            "Is that your bag?",
+            "Is this bag yours?"
+          ],
+          "keywords": [
+            "bag"
+          ],
+          "meaningDe": "Ist das Ihre Tasche?",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s07",
+          "situationDe": "Du hast dem Patienten etwas Weiches unter den Kopf gelegt. Erkundige dich, ob es so passt.",
+          "en": "Is this pillow OK?",
+          "variants": [
+            "Is the pillow OK?",
+            "Is this pillow all right?",
+            "Is this pillow OK for you?"
+          ],
+          "keywords": [
+            "pillow"
+          ],
+          "meaningDe": "Ist dieses Kissen in Ordnung?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.questions.s08",
+          "situationDe": "Es dauert noch einen Augenblick, und der Patient erzählt gern. Frag, was er beruflich macht.",
+          "en": "What do you do for work?",
+          "variants": [
+            "What do you do?",
+            "What do you do for a living?",
+            "What is your job?",
+            "What's your job?"
+          ],
+          "keywords": [
+            "do|job"
+          ],
+          "meaningDe": "Was sind Sie von Beruf?",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s09",
+          "situationDe": "Der Patient sagt, dass er Schmerzen hat, aber nicht, an welcher Stelle. Frag nach.",
+          "en": "Where does it hurt?",
+          "variants": [
+            "Where is the pain?",
+            "Where do you have pain?",
+            "Where does it hurt most?",
+            "Where do you feel the pain?"
+          ],
+          "keywords": [
+            "where",
+            "hurt|pain"
+          ],
+          "meaningDe": "Wo tut es weh?",
+          "cefr": "A1",
+          "core": true,
+          "noteDe": "W-Fragen stellen das Fragewort nach vorn: what, where, who, why oder how.",
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s10",
+          "situationDe": "Die Patientin schaut ständig auf die Uhr und sagt, dass sie heute noch woanders hinmuss. Frag, ab wann es eng für sie wird.",
+          "en": "When is your next appointment?",
+          "variants": [
+            "What time is your next appointment?",
+            "When's your next appointment?"
+          ],
+          "keywords": [
+            "next",
+            "appointment"
+          ],
+          "meaningDe": "Wann ist Ihr nächster Termin?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s11",
+          "situationDe": "Im Warteraum winkt jemand deinem Patienten zu. Erkundige dich, wer ihn heute begleitet.",
+          "en": "Who is here with you today?",
+          "variants": [
+            "Who is with you today?",
+            "Who came with you today?",
+            "Who's here with you today?"
+          ],
+          "keywords": [
+            "who|who's"
+          ],
+          "meaningDe": "Wer ist heute mit Ihnen hier?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Ist who selbst die Person im Satz, fällt do weg: Who came with you?",
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s12",
+          "situationDe": "Du möchtest hören, ob der Patient weiß, wozu die Untersuchung gemacht wird. Frag nach dem Grund.",
+          "en": "Why are you having this scan today?",
+          "variants": [
+            "Why are you having this X-ray today?",
+            "Why do you need this scan today?",
+            "Why are you here today?",
+            "Why are you having this scan?"
+          ],
+          "keywords": [
+            "why"
+          ],
+          "meaningDe": "Warum bekommen Sie heute diese Untersuchung?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s13",
+          "situationDe": "Auf deinem Bogen fehlt noch das Körpergewicht. Frag den Patienten danach.",
+          "en": "How much do you weigh?",
+          "variants": [
+            "What is your weight?",
+            "What do you weigh?",
+            "How much do you weigh, please?"
+          ],
+          "keywords": [
+            "weigh|weight"
+          ],
+          "meaningDe": "Wie viel wiegen Sie?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.questions.s14",
+          "situationDe": "Der Patient wirkt unsicher. Finde heraus, ob er so etwas zum ersten Mal erlebt.",
+          "en": "Have you ever had a scan?",
+          "variants": [
+            "Have you ever had an X-ray?",
+            "Have you ever had an MRI scan?",
+            "Have you ever had a CT scan?",
+            "Have you had a scan before?"
+          ],
+          "keywords": [
+            "scan|X-ray"
+          ],
+          "meaningDe": "Hatten Sie schon einmal so eine Untersuchung?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "bc-present-perfect",
+            "locator": "Present perfect with time adverbials"
+          }
+        },
+        {
+          "id": "sb.questions.s15",
+          "situationDe": "Der Patient sieht sich neugierig in der Abteilung um. Finde heraus, ob er sie schon kennt.",
+          "en": "Have you ever been here before?",
+          "variants": [
+            "Have you been here before?",
+            "Have you ever been here?",
+            "Have you been to this department before?"
+          ],
+          "keywords": [
+            "been"
+          ],
+          "meaningDe": "Waren Sie schon einmal hier?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "bc-present-perfect",
+            "locator": "Present perfect with time adverbials"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "sb.imperatives",
+      "key": "imperatives",
+      "titleDe": "Aufforderungen",
+      "explanationDe": "Eine Aufforderung beginnt mit dem Verb, ohne you: Come in, Sit here. Ein Verbot beginnt mit Don't: Don't move. Merksatz: Mit please oder just klingt es freundlich, nur kurze Kommandos dürfen ohne stehen.",
+      "explanationSource": {
+        "ref": "cam-imperative",
+        "locator": "Imperative clauses"
+      },
+      "sentences": [
+        {
+          "id": "sb.imperatives.s01",
+          "situationDe": "Du öffnest die Tür zum Untersuchungsraum, und der Patient bleibt draußen stehen. Fordere ihn auf, näherzutreten.",
+          "en": "Please come in.",
+          "variants": [
+            "Come in, please.",
+            "Please come in here.",
+            "Please come this way."
+          ],
+          "keywords": [
+            "come"
+          ],
+          "meaningDe": "Bitte kommen Sie herein.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s02",
+          "situationDe": "Du willst dem Patienten etwas erklären, und neben dir ist ein Stuhl frei. Biete ihm den Platz an.",
+          "en": "Please sit here.",
+          "variants": [
+            "Sit here, please.",
+            "Please sit over here.",
+            "Please sit on this chair."
+          ],
+          "keywords": [
+            "sit"
+          ],
+          "meaningDe": "Bitte setzen Sie sich hierher.",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s03",
+          "situationDe": "Du musst kurz in den Nebenraum. Der Patient soll an Ort und Stelle bleiben, bis du zurück bist.",
+          "en": "Please wait here.",
+          "variants": [
+            "Wait here, please.",
+            "Please wait in here.",
+            "Could you wait here, please?"
+          ],
+          "keywords": [
+            "wait"
+          ],
+          "meaningDe": "Bitte warten Sie hier.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s04",
+          "situationDe": "Der Weg zum Raum ist verwinkelt, und du gehst voran. Sag dem Patienten, was er tun soll.",
+          "en": "Please follow me.",
+          "variants": [
+            "Follow me, please.",
+            "Please follow me this way."
+          ],
+          "keywords": [
+            "follow"
+          ],
+          "meaningDe": "Bitte folgen Sie mir.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s05",
+          "situationDe": "Der Patient schaut dauernd zum Gerät und hört dir nicht zu. Hol seinen Blick zu dir.",
+          "en": "Please look at me.",
+          "variants": [
+            "Look at me, please.",
+            "Please look at me for a moment."
+          ],
+          "keywords": [
+            "look"
+          ],
+          "meaningDe": "Bitte schauen Sie mich an.",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s06",
+          "situationDe": "Für die nächste Aufnahme soll das Gesicht des Patienten zur linken Seite zeigen. Sag ihm, was er tun soll.",
+          "en": "Please turn your head to the left.",
+          "variants": [
+            "Turn your head to the left, please.",
+            "Please turn your head to your left.",
+            "Please turn your head left."
+          ],
+          "keywords": [
+            "turn",
+            "head",
+            "left"
+          ],
+          "meaningDe": "Bitte drehen Sie den Kopf nach links.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s07",
+          "situationDe": "Der rechte Arm des Patienten liegt im Weg. Er soll ihn nach oben nehmen.",
+          "en": "Please lift your right arm.",
+          "variants": [
+            "Lift your right arm, please.",
+            "Please raise your right arm.",
+            "Please lift up your right arm."
+          ],
+          "keywords": [
+            "right",
+            "arm",
+            "lift|raise"
+          ],
+          "meaningDe": "Bitte heben Sie den rechten Arm.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s08",
+          "situationDe": "Das Bein des Patienten liegt gestreckt auf dem Tisch. Für die Aufnahme soll es angewinkelt sein.",
+          "en": "Please bend your knee.",
+          "variants": [
+            "Bend your knee, please.",
+            "Please bend your knee a little."
+          ],
+          "keywords": [
+            "bend",
+            "knee"
+          ],
+          "meaningDe": "Bitte beugen Sie das Knie.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s09",
+          "situationDe": "Der Patient sitzt verkrampft auf der Liege. Fordere ihn freundlich auf, sich nach hinten sinken zu lassen und loszulassen.",
+          "en": "Just lie back and relax.",
+          "variants": [
+            "Just lie back and try to relax.",
+            "Please lie back and relax.",
+            "Lie back and relax."
+          ],
+          "keywords": [
+            "lie",
+            "relax"
+          ],
+          "meaningDe": "Legen Sie sich einfach zurück und entspannen Sie sich.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "just macht die Aufforderung freundlicher, wie „einfach“ im Deutschen.",
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s10",
+          "situationDe": "Die Aufnahme läuft gerade, und der Patient will sich am Kopf kratzen. Gib kurz und klar das Kommando.",
+          "en": "Don't move.",
+          "variants": [
+            "Do not move.",
+            "Please don't move.",
+            "Don't move, please."
+          ],
+          "keywords": [
+            "move"
+          ],
+          "meaningDe": "Bewegen Sie sich nicht.",
+          "cefr": "A1",
+          "core": true,
+          "noteDe": "Bei Anleitungen und Warnungen ist die kurze Form nicht unhöflich.",
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "sb.imperatives.s11",
+          "situationDe": "Die Aufnahme ist fertig, aber der Tisch fährt noch. Der Patient will sich schon aufrichten. Halte ihn zurück.",
+          "en": "Don't get up yet.",
+          "variants": [
+            "Please don't get up yet.",
+            "Do not get up yet.",
+            "Don't stand up yet."
+          ],
+          "keywords": [
+            "get up|stand up",
+            "yet"
+          ],
+          "meaningDe": "Stehen Sie noch nicht auf.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.imperatives.s12",
+          "situationDe": "Der Patient ist fertig und geht zur Tür. Seine Tasche steht noch auf dem Stuhl.",
+          "en": "Please don't forget your bag.",
+          "variants": [
+            "Don't forget your bag, please.",
+            "Don't forget your bag.",
+            "Please do not forget your bag."
+          ],
+          "keywords": [
+            "forget",
+            "bag"
+          ],
+          "meaningDe": "Bitte vergessen Sie Ihre Tasche nicht.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "sb.polite",
+      "key": "polite",
+      "titleDe": "Höfliche Formen",
+      "explanationDe": "Could you und Would you machen aus einer Aufforderung eine höfliche Bitte, am Ende steht oft please. Nach Would you mind folgt das Verb mit -ing. Merksatz: Could klingt höflicher als can.",
+      "explanationSource": {
+        "ref": "cam-requests",
+        "locator": "Requests"
+      },
+      "sentences": [
+        {
+          "id": "sb.polite.s01",
+          "situationDe": "Du gehst Richtung Untersuchungsraum, aber der Patient bleibt am Ende des Flurs unsicher stehen. Bitte ihn höflich, weiterzugehen.",
+          "en": "Could you come this way, please?",
+          "variants": [
+            "Can you come this way, please?",
+            "Would you come this way, please?",
+            "Could you follow me, please?"
+          ],
+          "keywords": [
+            "come|follow"
+          ],
+          "meaningDe": "Könnten Sie bitte hier entlangkommen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        },
+        {
+          "id": "sb.polite.s02",
+          "situationDe": "Der Unterarm muss frei sein, aber die Patientin trägt einen langen Pullover. Bitte sie höflich, das zu ändern.",
+          "en": "Could you roll up your sleeve, please?",
+          "variants": [
+            "Can you roll up your sleeve, please?",
+            "Would you roll up your sleeve, please?",
+            "Could you pull up your sleeve, please?"
+          ],
+          "keywords": [
+            "sleeve"
+          ],
+          "meaningDe": "Könnten Sie bitte Ihren Ärmel hochschieben?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        },
+        {
+          "id": "sb.polite.s03",
+          "situationDe": "Der Patient liegt etwas zu weit rechts auf der Liege. Bitte ihn höflich, ein kleines Stück zur anderen Seite zu rutschen.",
+          "en": "Could you move a little to the left, please?",
+          "variants": [
+            "Can you move a little to the left, please?",
+            "Could you move a bit to the left, please?",
+            "Would you move a little to the left, please?"
+          ],
+          "keywords": [
+            "move",
+            "left"
+          ],
+          "meaningDe": "Könnten Sie bitte ein wenig nach links rutschen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        },
+        {
+          "id": "sb.polite.s04",
+          "situationDe": "Der Patient hat den Bogen fertig ausgefüllt, aber unten fehlt noch etwas von ihm. Zeig auf die Stelle und bitte ihn höflich darum.",
+          "en": "Could you sign here, please?",
+          "variants": [
+            "Can you sign here, please?",
+            "Would you sign here, please?",
+            "Please could you sign here?"
+          ],
+          "keywords": [
+            "sign"
+          ],
+          "meaningDe": "Könnten Sie bitte hier unterschreiben?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        },
+        {
+          "id": "sb.polite.s05",
+          "situationDe": "Am Empfang liegt ein Bogen für den Patienten bereit. Reich ihm Stift und Papier und bitte ihn höflich, die Fragen darauf zu beantworten.",
+          "en": "Could you fill in this form, please?",
+          "variants": [
+            "Can you fill in this form, please?",
+            "Could you fill out this form, please?",
+            "Would you fill in this form, please?"
+          ],
+          "keywords": [
+            "form"
+          ],
+          "meaningDe": "Könnten Sie bitte dieses Formular ausfüllen?",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "fill in ist britisch, fill out amerikanisch.",
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        },
+        {
+          "id": "sb.polite.s06",
+          "situationDe": "Die Aufnahme ist vorbei, und die Patientin sagt, ihr Mund sei ganz trocken. Biete ihr etwas an.",
+          "en": "Would you like some water?",
+          "variants": [
+            "Would you like a glass of water?",
+            "Can I get you some water?",
+            "Do you want some water?"
+          ],
+          "keywords": [
+            "water"
+          ],
+          "meaningDe": "Möchten Sie etwas Wasser?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-would",
+            "locator": "Would"
+          }
+        },
+        {
+          "id": "sb.polite.s07",
+          "situationDe": "Die Patientin friert auf der Liege. Biete ihr an, ihr etwas zum Zudecken zu holen.",
+          "en": "Would you like a blanket?",
+          "variants": [
+            "Would you like another blanket?",
+            "Can I get you a blanket?",
+            "Do you want a blanket?"
+          ],
+          "keywords": [
+            "blanket"
+          ],
+          "meaningDe": "Möchten Sie eine Decke?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-would",
+            "locator": "Would"
+          }
+        },
+        {
+          "id": "sb.polite.s08",
+          "situationDe": "Der Raum ist noch nicht frei. Bitte den Patienten sehr höflich um etwas Geduld an Ort und Stelle.",
+          "en": "Would you mind waiting here?",
+          "variants": [
+            "Would you mind waiting here for a moment?",
+            "Would you mind waiting in here?"
+          ],
+          "keywords": [
+            "mind",
+            "waiting"
+          ],
+          "meaningDe": "Würde es Ihnen etwas ausmachen, hier zu warten?",
+          "cefr": "B1",
+          "core": true,
+          "noteDe": "Nach would you mind steht das Verb mit -ing.",
+          "source": {
+            "ref": "cam-mind",
+            "locator": "Mind"
+          }
+        },
+        {
+          "id": "sb.polite.s09",
+          "situationDe": "Der Patient will sich mit seinen Straßenschuhen auf die Liege legen. Bitte ihn sehr höflich, das zu ändern.",
+          "en": "Would you mind taking off your shoes?",
+          "variants": [
+            "Would you mind taking your shoes off?",
+            "Would you mind removing your shoes?"
+          ],
+          "keywords": [
+            "mind",
+            "shoes"
+          ],
+          "meaningDe": "Würde es Ihnen etwas ausmachen, Ihre Schuhe auszuziehen?",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "Antwortet jemand mit No, not at all, heißt das: kein Problem.",
+          "source": {
+            "ref": "cam-mind",
+            "locator": "Mind"
+          }
+        },
+        {
+          "id": "sb.polite.s10",
+          "situationDe": "Für die nächste Aufnahme brauchst du den Patienten in einer anderen Lage, nicht mehr auf dem Rücken. Bitte ihn sehr höflich darum.",
+          "en": "Would you mind lying on your side?",
+          "variants": [
+            "Would you mind lying on your side for me?",
+            "Would you mind turning on your side?"
+          ],
+          "keywords": [
+            "mind",
+            "side"
+          ],
+          "meaningDe": "Würde es Ihnen etwas ausmachen, sich auf die Seite zu legen?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "cam-mind",
+            "locator": "Mind"
+          }
+        },
+        {
+          "id": "sb.polite.s11",
+          "situationDe": "Die Patientin zieht sich in der Kabine um. Du stehst vor dem Vorhang und musst zu ihr. Frag zuerst um Erlaubnis.",
+          "en": "May I come in?",
+          "variants": [
+            "Can I come in?",
+            "Could I come in?"
+          ],
+          "keywords": [
+            "come"
+          ],
+          "meaningDe": "Darf ich hereinkommen?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Nach May I steht das Verb in der Grundform: come.",
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        },
+        {
+          "id": "sb.polite.s12",
+          "situationDe": "Die Patientin kämpft mit den Bändern ihres Hemdes. Frag um Erlaubnis, bevor du zugreifst.",
+          "en": "May I help you with that?",
+          "variants": [
+            "Can I help you with that?",
+            "Could I help you with that?",
+            "May I help you?"
+          ],
+          "keywords": [
+            "help"
+          ],
+          "meaningDe": "Darf ich Ihnen dabei helfen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        },
+        {
+          "id": "sb.polite.s13",
+          "situationDe": "Der Patient steht in dicker Winterkleidung im warmen Raum. Frag, ob du ihm das Oberste abnehmen darfst.",
+          "en": "May I take your coat?",
+          "variants": [
+            "Can I take your coat?",
+            "Could I take your coat?",
+            "May I take your jacket?"
+          ],
+          "keywords": [
+            "coat|jacket"
+          ],
+          "meaningDe": "Darf ich Ihren Mantel nehmen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        },
+        {
+          "id": "sb.polite.s14",
+          "situationDe": "Der Patient hält ein Schreiben mit seinem Termin in der Hand. Frag, ob du einen Blick darauf werfen darfst.",
+          "en": "May I see your letter, please?",
+          "variants": [
+            "Can I see your letter, please?",
+            "Could I see your letter, please?",
+            "May I see your appointment letter, please?"
+          ],
+          "keywords": [
+            "letter"
+          ],
+          "meaningDe": "Darf ich bitte Ihr Schreiben sehen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "sb.tenses",
+      "key": "tenses",
+      "titleDe": "Einfache Zeiten",
+      "explanationDe": "Die einfache Gegenwart steht für Fakten und Regelmäßiges. Merksatz: Bei he, she und it bekommt das Verb in der Gegenwart ein s.",
+      "explanationSource": {
+        "ref": "cam-present",
+        "locator": "Present"
+      },
+      "sentences": [
+        {
+          "id": "sb.tenses.s01",
+          "situationDe": "Der Patient fragt, ob du Ärztin bist, und will wissen, wo du hingehörst. Sag ihm, wo du beschäftigt bist.",
+          "en": "I work in this department.",
+          "variants": [
+            "I work here in this department.",
+            "I work in the department here."
+          ],
+          "keywords": [
+            "work",
+            "department"
+          ],
+          "meaningDe": "Ich arbeite in dieser Abteilung.",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.tenses.s02",
+          "situationDe": "Neben dir steht jemand im Kittel, und der Patient schaut fragend. Sag, was die Kollegin hier immer macht.",
+          "en": "My colleague helps me with the scans.",
+          "variants": [
+            "My colleague helps me with the X-rays.",
+            "My colleague always helps me with the scans.",
+            "My colleague helps me with all the scans."
+          ],
+          "keywords": [
+            "colleague",
+            "helps|help"
+          ],
+          "meaningDe": "Meine Kollegin hilft mir bei den Untersuchungen.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "My colleague ist wie she: helps mit s.",
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.tenses.s03",
+          "situationDe": "Der Patient erzählt, dass er zu Fuß gekommen ist. Frag, ob sein Zuhause nicht weit weg ist.",
+          "en": "Do you live near here?",
+          "variants": [
+            "Do you live close by?",
+            "Do you live near here, then?",
+            "Do you live around here?"
+          ],
+          "keywords": [
+            "live"
+          ],
+          "meaningDe": "Wohnen Sie hier in der Nähe?",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.tenses.s04",
+          "situationDe": "Beim Röntgen fragt der Patient, wie lange so etwas meistens dauert. Antworte allgemein, ohne eine genaue Zahl.",
+          "en": "It usually takes a few minutes.",
+          "variants": [
+            "It normally takes a few minutes.",
+            "It usually only takes a few minutes.",
+            "Usually it takes a few minutes."
+          ],
+          "keywords": [
+            "takes",
+            "minutes"
+          ],
+          "meaningDe": "Es dauert normalerweise ein paar Minuten.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "Für Regelmäßiges steht die einfache Gegenwart, oft mit usually.",
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.tenses.s05",
+          "situationDe": "Der Patient kommt ein wenig außer Atem an. Frag, ob der Weg zu euch problemlos war.",
+          "en": "Did you find us easily?",
+          "variants": [
+            "Did you find us OK?",
+            "Did you find your way here easily?",
+            "Did you find the department easily?"
+          ],
+          "keywords": [
+            "find"
+          ],
+          "meaningDe": "Haben Sie gut zu uns gefunden?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Did you fragt nach etwas Abgeschlossenem. Nach did steht die Grundform: find, nicht found.",
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.tenses.s06",
+          "situationDe": "Auf deiner Liste fehlt das Schreiben mit dem Termin. Frag, ob der Patient es heute dabeihat.",
+          "en": "Did you bring your letter?",
+          "variants": [
+            "Did you bring your appointment letter?",
+            "Have you brought your letter?",
+            "Have you got your letter with you?"
+          ],
+          "keywords": [
+            "letter"
+          ],
+          "meaningDe": "Haben Sie Ihr Schreiben mitgebracht?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.tenses.s07",
+          "situationDe": "Du hast den Patienten vorhin gebeten, alles vom Handgelenk abzunehmen. Kontrolliere, ob das erledigt ist.",
+          "en": "Did you take off your watch?",
+          "variants": [
+            "Did you take your watch off?",
+            "Did you remove your watch?",
+            "Have you taken off your watch?"
+          ],
+          "keywords": [
+            "watch"
+          ],
+          "meaningDe": "Haben Sie Ihre Uhr abgelegt?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.tenses.s08",
+          "situationDe": "In der Akte siehst du einen Besuch aus dem vergangenen Jahr. Sprich den Patienten freundlich darauf an.",
+          "en": "I think you were here last year.",
+          "variants": [
+            "I think you came here last year.",
+            "You were here last year, I think."
+          ],
+          "keywords": [
+            "last year"
+          ],
+          "meaningDe": "Ich glaube, Sie waren letztes Jahr hier.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Mit einem festen Zeitpunkt wie last year steht die einfache Vergangenheit, nicht have been.",
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.tenses.s09",
+          "situationDe": "Auf dem Bogen steht etwas zu einer alten Narbe am Bein. Frag, ob früher etwas am Gelenk gemacht wurde.",
+          "en": "Have you ever had an operation on your knee?",
+          "variants": [
+            "Have you ever had surgery on your knee?",
+            "Have you ever had knee surgery?",
+            "Have you had an operation on your knee?"
+          ],
+          "keywords": [
+            "operation|surgery",
+            "knee"
+          ],
+          "meaningDe": "Hatten Sie schon einmal eine Operation am Knie?",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Have you ever fragt nach Erfahrung bis heute.",
+          "source": {
+            "ref": "bc-present-perfect",
+            "locator": "Present perfect with time adverbials"
+          }
+        },
+        {
+          "id": "sb.tenses.s10",
+          "situationDe": "Der Patient schaut unsicher auf das große Gerät. Finde heraus, ob das für ihn neu ist.",
+          "en": "Have you ever been in a machine like this?",
+          "variants": [
+            "Have you been in a machine like this before?",
+            "Have you ever been in a scanner like this?",
+            "Have you ever been in a machine like this before?"
+          ],
+          "keywords": [
+            "machine|scanner"
+          ],
+          "meaningDe": "Waren Sie schon einmal in so einem Gerät?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "bc-present-perfect",
+            "locator": "Present perfect with time adverbials"
+          }
+        },
+        {
+          "id": "sb.tenses.s11",
+          "situationDe": "Die Patientin sagt, ihr sei kalt. Du entscheidest spontan, etwas für sie zu holen.",
+          "en": "I will bring you a blanket.",
+          "variants": [
+            "I'll bring you a blanket.",
+            "I will get you a blanket.",
+            "I'll get you a blanket."
+          ],
+          "keywords": [
+            "blanket"
+          ],
+          "meaningDe": "Ich bringe Ihnen eine Decke.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "will passt, wenn du dich gerade erst entscheidest.",
+          "source": {
+            "ref": "cam-future",
+            "locator": "Future"
+          }
+        },
+        {
+          "id": "sb.tenses.s12",
+          "situationDe": "Du musst noch etwas vorbereiten und brauchst etwa zehn Minuten. Sag dem Patienten, wann du wieder da bist.",
+          "en": "I will come back in ten minutes.",
+          "variants": [
+            "I'll come back in ten minutes.",
+            "I will be back in ten minutes.",
+            "I'll be back in ten minutes."
+          ],
+          "keywords": [
+            "back"
+          ],
+          "meaningDe": "Ich komme in zehn Minuten wieder.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "cam-future",
+            "locator": "Future"
+          }
+        },
+        {
+          "id": "sb.tenses.s13",
+          "situationDe": "Der Patient seufzt und schaut auf die Uhr. Sag ihm, dass es schnell vorbei ist.",
+          "en": "It will not take long.",
+          "variants": [
+            "It won't take long.",
+            "This will not take long.",
+            "This won't take long."
+          ],
+          "keywords": [
+            "long"
+          ],
+          "meaningDe": "Es wird nicht lange dauern.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "source": {
+            "ref": "cam-future",
+            "locator": "Future"
+          }
+        },
+        {
+          "id": "sb.tenses.s14",
+          "situationDe": "Laut Auftrag sind zwei Aufnahmen geplant. Sag dem Patienten, was du als Nächstes vorhast.",
+          "en": "I am going to take two pictures.",
+          "variants": [
+            "I'm going to take two pictures.",
+            "I am going to take two images.",
+            "I'm going to take two images."
+          ],
+          "keywords": [
+            "pictures|images"
+          ],
+          "meaningDe": "Ich werde zwei Aufnahmen machen.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "noteDe": "going to passt, wenn der Schritt schon feststeht.",
+          "source": {
+            "ref": "cam-going-to",
+            "locator": "Going to"
+          }
+        },
+        {
+          "id": "sb.tenses.s15",
+          "situationDe": "Die Vorbereitung ist fast fertig. Kündige an, dass es in Kürze losgeht.",
+          "en": "We are going to start in a moment.",
+          "variants": [
+            "We're going to start in a moment.",
+            "We are going to start in just a moment.",
+            "We are going to begin in a moment."
+          ],
+          "keywords": [
+            "start|begin"
+          ],
+          "meaningDe": "Wir fangen gleich an.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-going-to",
+            "locator": "Going to"
+          }
+        },
+        {
+          "id": "sb.tenses.s16",
+          "situationDe": "Der Patient liegt bereit, und die Liege setzt sich gleich in Bewegung. Damit er nicht erschrickt, kündigst du es an.",
+          "en": "I am going to move the table now.",
+          "variants": [
+            "I'm going to move the table now.",
+            "I am going to move the bed now.",
+            "I'm going to move the bed now."
+          ],
+          "keywords": [
+            "move",
+            "table|bed"
+          ],
+          "meaningDe": "Ich bewege jetzt den Tisch.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-going-to",
+            "locator": "Going to"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "sb.greeting",
+      "key": "greeting",
+      "titleDe": "Small Talk: Begrüßung",
+      "sentences": [
+        {
+          "id": "sb.greeting.s01",
+          "situationDe": "Du gehst morgens in den Warteraum, und dein Patient, Herr Harris, schaut auf. Grüße ihn mit der passenden Anrede.",
+          "en": "Good morning, Mr Harris.",
+          "variants": [
+            "Good afternoon, Mr Harris.",
+            "Hello, Mr Harris.",
+            "Morning, Mr Harris."
+          ],
+          "keywords": [
+            "morning|afternoon|hello"
+          ],
+          "meaningDe": "Guten Morgen, Herr Harris.",
+          "cefr": "A1",
+          "core": true,
+          "noteDe": "Anrede: Mr für Männer, Mrs oder Ms für Frauen. Ab Mittag heißt es Good afternoon.",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "sb.greeting.s02",
+          "situationDe": "Der Patient weiß noch nicht, wer vor ihm steht. Fang das Gespräch richtig an.",
+          "en": "Hello, my name is Anna.",
+          "variants": [
+            "Hi, my name is Anna.",
+            "Good morning, my name is Anna.",
+            "Good afternoon, my name is Anna."
+          ],
+          "keywords": [
+            "name"
+          ],
+          "meaningDe": "Guten Tag, mein Name ist Anna.",
+          "cefr": "A1",
+          "core": true,
+          "noteDe": "Sag hier deinen eigenen Namen.",
+          "source": {
+            "ref": "moorfields-hello",
+            "locator": "#HelloMyNameIs..."
+          }
+        },
+        {
+          "id": "sb.greeting.s03",
+          "situationDe": "Der Patient hat sich vorgestellt und dir die Hand gegeben. Antworte freundlich.",
+          "en": "Nice to meet you.",
+          "variants": [
+            "It is nice to meet you.",
+            "It's nice to meet you.",
+            "Pleased to meet you."
+          ],
+          "keywords": [
+            "meet"
+          ],
+          "meaningDe": "Schön, Sie kennenzulernen.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag nice"
+          }
+        },
+        {
+          "id": "sb.greeting.s04",
+          "situationDe": "Du bist unsicher, ob der Patient lieber mit Vornamen oder mit Nachnamen angesprochen werden will. Frag ihn.",
+          "en": "What would you like me to call you?",
+          "variants": [
+            "What should I call you?",
+            "What can I call you?",
+            "What would you like to be called?"
+          ],
+          "keywords": [
+            "call|called"
+          ],
+          "meaningDe": "Wie möchten Sie angesprochen werden?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-would",
+            "locator": "Would"
+          }
+        },
+        {
+          "id": "sb.greeting.s05",
+          "situationDe": "Im Flur steht jemand etwas verloren vor eurer Tür. Frag, ob er zu euch will.",
+          "en": "Are you here for a scan?",
+          "variants": [
+            "Are you here for your scan?",
+            "Are you here for an X-ray?",
+            "Are you here for your X-ray?"
+          ],
+          "keywords": [
+            "here",
+            "scan|X-ray"
+          ],
+          "meaningDe": "Sind Sie wegen einer Untersuchung hier?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.greeting.s06",
+          "situationDe": "Der Patient hat den frühen Termin trotz des weiten Wegs geschafft. Zeig ihm, dass du das zu schätzen weißt.",
+          "en": "Thank you for coming in today.",
+          "variants": [
+            "Thank you for coming today.",
+            "Thanks for coming in today.",
+            "Thank you for coming."
+          ],
+          "keywords": [
+            "coming"
+          ],
+          "meaningDe": "Danke, dass Sie heute gekommen sind.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag thank"
+          }
+        },
+        {
+          "id": "sb.greeting.s07",
+          "situationDe": "Der Patient steht noch schüchtern an der Tür deines Raumes. Hol ihn herein und biete ihm den Stuhl an.",
+          "en": "Come in and have a seat.",
+          "variants": [
+            "Come in and take a seat.",
+            "Please come in and have a seat.",
+            "Please come in and take a seat."
+          ],
+          "keywords": [
+            "come",
+            "seat"
+          ],
+          "meaningDe": "Kommen Sie herein und nehmen Sie Platz.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag seat"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "sb.greeting.p01",
+          "kind": "answer",
+          "en": "Nice to meet you too.",
+          "variants": [
+            "Nice to meet you as well.",
+            "Pleased to meet you too.",
+            "You too."
+          ],
+          "meaningDe": "Ich freue mich auch, Sie kennenzulernen.",
+          "cefr": "A1",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag nice"
+          },
+          "reactions": [
+            {
+              "en": "Please follow me.",
+              "fits": true,
+              "meaningDe": "Bitte folgen Sie mir.",
+              "source": {
+                "ref": "cam-imperative",
+                "locator": "Imperative clauses"
+              }
+            },
+            {
+              "en": "Nice to meet you.",
+              "fits": false,
+              "whyDe": "Das habt ihr euch gerade gesagt. Jetzt kann es weitergehen.",
+              "meaningDe": "Schön, Sie kennenzulernen.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag nice"
+              }
+            },
+            {
+              "en": "Don't worry, it is nearly over.",
+              "fits": false,
+              "whyDe": "Ihr fangt gerade erst an, und der Patient hat keine Sorge geäußert.",
+              "meaningDe": "Keine Sorge, es ist fast vorbei.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag worry"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.greeting.p02",
+          "kind": "answer",
+          "en": "Please call me Tom.",
+          "variants": [
+            "You can call me Tom.",
+            "Just call me Tom.",
+            "Tom is fine."
+          ],
+          "meaningDe": "Bitte nennen Sie mich Tom.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          },
+          "reactions": [
+            {
+              "en": "Thank you, Tom. Please come with me.",
+              "fits": true,
+              "meaningDe": "Danke, Tom. Bitte kommen Sie mit mir.",
+              "source": {
+                "ref": "cam-imperative",
+                "locator": "Imperative clauses"
+              }
+            },
+            {
+              "en": "Thank you, Mr Harris. Please come with me.",
+              "fits": false,
+              "whyDe": "Er hat gerade gesagt, dass er lieber Tom genannt werden möchte.",
+              "meaningDe": "Danke, Herr Harris. Bitte kommen Sie mit mir.",
+              "source": {
+                "ref": "cam-imperative",
+                "locator": "Imperative clauses"
+              }
+            },
+            {
+              "en": "What would you like me to call you?",
+              "fits": false,
+              "whyDe": "Genau das hat er dir gerade gesagt.",
+              "meaningDe": "Wie möchten Sie angesprochen werden?",
+              "source": {
+                "ref": "cam-would",
+                "locator": "Would"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.greeting.p03",
+          "kind": "question",
+          "en": "Are you the doctor?",
+          "variants": [
+            "Are you my doctor?",
+            "Are you a doctor?",
+            "So you're the doctor?"
+          ],
+          "meaningDe": "Sind Sie die Ärztin?",
+          "cefr": "A1",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Who will I see?"
+          },
+          "reactions": [
+            {
+              "en": "No, I am a radiographer. I will do your scan today.",
+              "fits": true,
+              "meaningDe": "Nein, ich bin MTR. Ich mache heute Ihre Untersuchung.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Who will I see?"
+              }
+            },
+            {
+              "en": "Nice to meet you.",
+              "fits": false,
+              "whyDe": "Das ist freundlich, beantwortet aber seine Frage nicht.",
+              "meaningDe": "Schön, Sie kennenzulernen.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag nice"
+              }
+            },
+            {
+              "en": "Your doctor will tell you the results.",
+              "fits": false,
+              "whyDe": "Er fragt, wer du bist, nicht nach dem Ergebnis.",
+              "meaningDe": "Ihr Arzt wird Ihnen die Ergebnisse mitteilen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.wellbeing",
+      "key": "wellbeing",
+      "titleDe": "Small Talk: Befinden",
+      "sentences": [
+        {
+          "id": "sb.wellbeing.s01",
+          "situationDe": "Der Patient setzt sich zu dir. Gegrüßt hast du schon, nun möchtest du freundlich ins Gespräch kommen.",
+          "en": "How are you today?",
+          "variants": [
+            "How are you?",
+            "How are you doing today?",
+            "How are you doing?"
+          ],
+          "keywords": [
+            "how"
+          ],
+          "meaningDe": "Wie geht es Ihnen heute?",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s02",
+          "situationDe": "Der Patient kommt mit Koffer und Mantel direkt von unterwegs. Erkundige dich, wie es auf dem Weg hierher lief.",
+          "en": "How was your journey?",
+          "variants": [
+            "How was your trip here?",
+            "How was the journey?",
+            "How was your trip?"
+          ],
+          "keywords": [
+            "journey|trip"
+          ],
+          "meaningDe": "Wie war Ihre Anreise?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s03",
+          "situationDe": "Der Patient kommt mit dem Auto und ist etwas gehetzt. Frag, ob es auf den Straßen voll war.",
+          "en": "Was the traffic bad?",
+          "variants": [
+            "Was the traffic bad today?",
+            "Was there much traffic?",
+            "Was there a lot of traffic?"
+          ],
+          "keywords": [
+            "traffic"
+          ],
+          "meaningDe": "War viel Verkehr?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s04",
+          "situationDe": "Der Patient ist plötzlich still geworden und schaut auf den Boden. Erkundige dich ganz allgemein, ob es ein Problem gibt.",
+          "en": "Is everything all right?",
+          "variants": [
+            "Is everything OK?",
+            "Everything OK?",
+            "Is everything all right with you?"
+          ],
+          "keywords": [
+            "everything"
+          ],
+          "meaningDe": "Ist alles in Ordnung?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s05",
+          "situationDe": "Der Patient hält sich mit einer Hand am Tisch fest und steigt langsam hinauf. Frag kurz, ob es geht.",
+          "en": "Are you OK there?",
+          "variants": [
+            "Are you all right there?",
+            "Are you OK?",
+            "Are you all right?"
+          ],
+          "keywords": [
+            "OK|all right"
+          ],
+          "meaningDe": "Geht es so?",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s06",
+          "situationDe": "Dem Patienten war eben kurz schwindelig, und er sitzt jetzt wieder aufrecht. Frag, wie es ihm in diesem Moment geht.",
+          "en": "How are you feeling now?",
+          "variants": [
+            "How do you feel now?",
+            "How are you feeling?",
+            "How do you feel?"
+          ],
+          "keywords": [
+            "feeling|feel"
+          ],
+          "meaningDe": "Wie fühlen Sie sich jetzt?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-q-wh",
+            "locator": "Questions: wh- questions"
+          }
+        },
+        {
+          "id": "sb.wellbeing.s07",
+          "situationDe": "Der Patient hat sich ein paar Minuten ausgeruht und Wasser getrunken. Frag, ob das geholfen hat.",
+          "en": "Are you feeling better now?",
+          "variants": [
+            "Do you feel better now?",
+            "Are you feeling better?",
+            "Do you feel better?"
+          ],
+          "keywords": [
+            "better"
+          ],
+          "meaningDe": "Geht es Ihnen jetzt besser?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "sb.wellbeing.p01",
+          "kind": "answer",
+          "en": "I'm fine, thank you.",
+          "variants": [
+            "Fine, thanks.",
+            "I'm very well, thank you.",
+            "Not bad, thanks."
+          ],
+          "meaningDe": "Mir geht es gut, danke.",
+          "cefr": "A1",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          },
+          "reactions": [
+            {
+              "en": "Good, I'm glad to hear that.",
+              "fits": true,
+              "meaningDe": "Schön, das freut mich.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag glad"
+              }
+            },
+            {
+              "en": "How are you today?",
+              "fits": false,
+              "whyDe": "Das hat er gerade beantwortet.",
+              "meaningDe": "Wie geht es Ihnen heute?",
+              "source": {
+                "ref": "bc-small-talk",
+                "locator": "2. A small talk conversation"
+              }
+            },
+            {
+              "en": "I'm sorry to hear that.",
+              "fits": false,
+              "whyDe": "Es geht ihm gut. Da passt kein Bedauern.",
+              "meaningDe": "Das tut mir leid.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag sorry"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.wellbeing.p02",
+          "kind": "answer",
+          "en": "It was OK, but the traffic was terrible.",
+          "variants": [
+            "It was fine, but there was a lot of traffic.",
+            "Not great. The traffic was really bad.",
+            "OK, but the traffic was awful."
+          ],
+          "meaningDe": "Es ging, aber der Verkehr war schrecklich.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry to hear that. But you are here now.",
+              "fits": true,
+              "meaningDe": "Das tut mir leid. Aber jetzt sind Sie ja hier.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag sorry"
+              }
+            },
+            {
+              "en": "Good, I'm glad to hear that.",
+              "fits": false,
+              "whyDe": "Der Verkehr war schlimm. Da passt keine Freude.",
+              "meaningDe": "Schön, das freut mich.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag glad"
+              }
+            },
+            {
+              "en": "How was your journey?",
+              "fits": false,
+              "whyDe": "Genau davon hat er gerade erzählt.",
+              "meaningDe": "Wie war Ihre Anreise?",
+              "source": {
+                "ref": "cam-q-wh",
+                "locator": "Questions: wh- questions"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.wellbeing.p03",
+          "kind": "unclear",
+          "en": "Not so good, to be honest.",
+          "variants": [
+            "Not great, to be honest.",
+            "I don't feel very well today.",
+            "I've been better."
+          ],
+          "meaningDe": "Ehrlich gesagt, nicht so gut.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag honest"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry. What's wrong?",
+              "fits": true,
+              "meaningDe": "Das tut mir leid. Was ist denn los?",
+              "source": {
+                "ref": "cam-q-wh",
+                "locator": "Questions: wh- questions"
+              }
+            },
+            {
+              "en": "Good, I'm glad to hear that.",
+              "fits": false,
+              "whyDe": "Es geht ihm nicht gut. Da passt keine Freude.",
+              "meaningDe": "Schön, das freut mich.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag glad"
+              }
+            },
+            {
+              "en": "Are you feeling better now?",
+              "fits": false,
+              "whyDe": "Er hat gerade gesagt, dass es ihm nicht gut geht. Frag zuerst, was ihm fehlt.",
+              "meaningDe": "Geht es Ihnen jetzt besser?",
+              "source": {
+                "ref": "cam-q-yesno",
+                "locator": "Questions: yes-no questions"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.waiting",
+      "key": "waiting",
+      "titleDe": "Small Talk: Wartezeit",
+      "sentences": [
+        {
+          "id": "sb.waiting.s01",
+          "situationDe": "Du bist noch mit dem Bogen eines anderen Patienten beschäftigt, und jemand kommt zu dir an den Tresen. Bitte ihn, sich kurz zu gedulden.",
+          "en": "Just a moment, please.",
+          "variants": [
+            "Just a moment.",
+            "Just a moment, thank you.",
+            "Please wait just a moment."
+          ],
+          "keywords": [
+            "moment"
+          ],
+          "meaningDe": "Einen Moment, bitte.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag just-a-moment"
+          }
+        },
+        {
+          "id": "sb.waiting.s02",
+          "situationDe": "Der Patient fragt, warum er noch nicht dran ist. Im Raum liegt noch jemand anderes.",
+          "en": "The scanner is busy at the moment.",
+          "variants": [
+            "The machine is busy at the moment.",
+            "The scanner is busy right now.",
+            "The machine is busy right now."
+          ],
+          "keywords": [
+            "busy"
+          ],
+          "meaningDe": "Das Gerät ist gerade belegt.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.waiting.s03",
+          "situationDe": "Der Patient hat einen Termin um zehn, und es ist schon nach zehn. Erkläre, dass die ganze Abteilung heute hinterherhinkt.",
+          "en": "We are running a little late today.",
+          "variants": [
+            "We're running a little late today.",
+            "We are running a bit late today.",
+            "We are a little late today."
+          ],
+          "keywords": [
+            "late"
+          ],
+          "meaningDe": "Wir sind heute etwas im Verzug.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "How long will it take?"
+          }
+        },
+        {
+          "id": "sb.waiting.s04",
+          "situationDe": "Der Patient fragt, ob er gleich drankommt. Das klappt nicht ganz, und du willst keine genaue Zeit versprechen.",
+          "en": "It will take a little longer.",
+          "variants": [
+            "It will take a bit longer.",
+            "It will be a little longer.",
+            "It's going to take a little longer."
+          ],
+          "keywords": [
+            "longer"
+          ],
+          "meaningDe": "Es dauert noch etwas.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "How long will it take?"
+          }
+        },
+        {
+          "id": "sb.waiting.s05",
+          "situationDe": "Der Patient vor ihm ist gerade fertig geworden. Sag dem Wartenden, dass er nun an der Reihe ist.",
+          "en": "You are next.",
+          "variants": [
+            "You're next.",
+            "You are next now.",
+            "It's your turn next."
+          ],
+          "keywords": [
+            "next"
+          ],
+          "meaningDe": "Sie sind als Nächster dran.",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.waiting.s06",
+          "situationDe": "Der Patient hat lange gesessen, und du holst ihn endlich ab. Entschuldige dich als Erstes dafür.",
+          "en": "Sorry to keep you waiting.",
+          "variants": [
+            "I'm sorry to keep you waiting.",
+            "I am sorry to keep you waiting.",
+            "I'm sorry about the wait."
+          ],
+          "keywords": [
+            "waiting|wait"
+          ],
+          "meaningDe": "Entschuldigen Sie, dass Sie warten mussten.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag keep"
+          }
+        },
+        {
+          "id": "sb.waiting.s07",
+          "situationDe": "Der Patient hat geduldig gesessen und sich nicht beschwert. Sag ihm, dass du das schätzt.",
+          "en": "Thank you for waiting.",
+          "variants": [
+            "Thanks for waiting.",
+            "Thank you for waiting so long.",
+            "Thank you for your patience."
+          ],
+          "keywords": [
+            "waiting|patience"
+          ],
+          "meaningDe": "Danke, dass Sie gewartet haben.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag wait"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "sb.waiting.p01",
+          "kind": "question",
+          "en": "How much longer will it be?",
+          "variants": [
+            "How long do I have to wait?",
+            "How much longer do I have to wait?",
+            "Will it be much longer?"
+          ],
+          "meaningDe": "Wie lange dauert es noch?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "How long will it take?"
+          },
+          "reactions": [
+            {
+              "en": "I will go and check for you.",
+              "fits": true,
+              "meaningDe": "Ich sehe für Sie nach.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "How long will it take?"
+              }
+            },
+            {
+              "en": "Thank you for waiting.",
+              "fits": false,
+              "whyDe": "Das ist freundlich, aber er will wissen, wie lange es noch dauert.",
+              "meaningDe": "Danke, dass Sie gewartet haben.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag wait"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist ein Kommando für die Aufnahme. Er sitzt noch im Warteraum.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.waiting.p02",
+          "kind": "answer",
+          "en": "That's OK. I don't mind waiting.",
+          "variants": [
+            "No problem. I can wait.",
+            "It's all right. I'm not in a hurry.",
+            "Don't worry about it."
+          ],
+          "meaningDe": "Schon gut. Das Warten macht mir nichts aus.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-mind",
+            "locator": "Mind"
+          },
+          "reactions": [
+            {
+              "en": "That is very kind of you. Thank you.",
+              "fits": true,
+              "meaningDe": "Das ist sehr freundlich von Ihnen. Danke.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag kind"
+              }
+            },
+            {
+              "en": "I'm sorry to hear that.",
+              "fits": false,
+              "whyDe": "Es macht ihm nichts aus. Da gibt es nichts zu bedauern.",
+              "meaningDe": "Das tut mir leid.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag sorry"
+              }
+            },
+            {
+              "en": "Are you feeling better now?",
+              "fits": false,
+              "whyDe": "Er hat nicht gesagt, dass es ihm schlecht geht.",
+              "meaningDe": "Geht es Ihnen jetzt besser?",
+              "source": {
+                "ref": "cam-q-yesno",
+                "locator": "Questions: yes-no questions"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.waiting.p03",
+          "kind": "unexpected",
+          "en": "I have to go soon. My parking ticket is running out.",
+          "variants": [
+            "I can't stay much longer. My parking runs out soon.",
+            "My parking ticket is nearly up. I have to go soon."
+          ],
+          "meaningDe": "Ich muss bald los. Mein Parkschein läuft ab.",
+          "cefr": "B1",
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          },
+          "reactions": [
+            {
+              "en": "I understand. I will see what I can do.",
+              "fits": true,
+              "meaningDe": "Ich verstehe. Ich schaue, was ich tun kann.",
+              "source": {
+                "ref": "cam-future",
+                "locator": "Future"
+              }
+            },
+            {
+              "en": "That is very kind of you. Thank you.",
+              "fits": false,
+              "whyDe": "Er hat ein Problem genannt. Ein Dank geht darauf nicht ein.",
+              "meaningDe": "Das ist sehr freundlich von Ihnen. Danke.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag kind"
+              }
+            },
+            {
+              "en": "Please wait here.",
+              "fits": false,
+              "whyDe": "Er sagt gerade, dass er bald weg muss. Das übergeht sein Problem.",
+              "meaningDe": "Bitte warten Sie hier.",
+              "source": {
+                "ref": "cam-imperative",
+                "locator": "Imperative clauses"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.weather",
+      "key": "weather",
+      "titleDe": "Small Talk: Wetter",
+      "sentences": [
+        {
+          "id": "sb.weather.s01",
+          "situationDe": "Der Patient reibt sich die Hände und zieht die Mütze ab. Mach eine kleine Bemerkung zum Wetter.",
+          "en": "It is cold outside today.",
+          "variants": [
+            "It's cold outside today.",
+            "It is cold out today.",
+            "It's really cold outside."
+          ],
+          "keywords": [
+            "cold"
+          ],
+          "meaningDe": "Es ist heute kalt draußen.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "sb.weather.s02",
+          "situationDe": "Durchs Fenster scheint die Sonne. Beginne damit ein lockeres Gespräch.",
+          "en": "It is a lovely day today.",
+          "variants": [
+            "It's a lovely day today.",
+            "It is a beautiful day today.",
+            "It's a nice day today."
+          ],
+          "keywords": [
+            "day"
+          ],
+          "meaningDe": "Heute ist ein schöner Tag.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Das Wetter ist ein sehr häufiges Thema im Small Talk.",
+          "source": {
+            "ref": "bc-what-small-talk",
+            "locator": "1. What is small talk?"
+          }
+        },
+        {
+          "id": "sb.weather.s03",
+          "situationDe": "Als du vorhin Pause hattest, goss es in Strömen. Der Patient kommt gerade von draußen. Frag, ob das immer noch so ist.",
+          "en": "Is it still raining?",
+          "variants": [
+            "Is it still raining outside?",
+            "Is it still raining out there?"
+          ],
+          "keywords": [
+            "raining"
+          ],
+          "meaningDe": "Regnet es noch?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          }
+        },
+        {
+          "id": "sb.weather.s04",
+          "situationDe": "Der Patient kommt ohne Schirm herein, und seine Haare glänzen. Erkundige dich, ob ihn der Regen erwischt hat.",
+          "en": "Did you get wet?",
+          "variants": [
+            "Did you get wet out there?",
+            "Did you get wet on the way here?",
+            "Did you get very wet?"
+          ],
+          "keywords": [
+            "wet"
+          ],
+          "meaningDe": "Sind Sie nass geworden?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.weather.s05",
+          "situationDe": "Das Kleidungsstück des Patienten tropft auf den Boden. Neben der Tür ist ein Haken frei. Sag es ihm.",
+          "en": "You can hang your wet coat here.",
+          "variants": [
+            "You can hang your wet jacket here.",
+            "You can put your wet coat here.",
+            "You can hang up your wet coat here."
+          ],
+          "keywords": [
+            "wet",
+            "coat|jacket"
+          ],
+          "meaningDe": "Sie können Ihren nassen Mantel hier aufhängen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        },
+        {
+          "id": "sb.weather.s06",
+          "situationDe": "Der Patient zieht die Jacke aus und wischt sich die Stirn. Frag, ob die Heizung für ihn zu stark ist.",
+          "en": "Is it too warm in here for you?",
+          "variants": [
+            "Is it too warm in here?",
+            "Are you too warm in here?",
+            "Is it too warm for you in here?"
+          ],
+          "keywords": [
+            "warm"
+          ],
+          "meaningDe": "Ist es Ihnen hier drin zu warm?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          }
+        },
+        {
+          "id": "sb.weather.s07",
+          "situationDe": "Der Himmel zieht sich zu, und der Patient will zu Fuß nach Hause. Sag, was du für den Rest des Tages erwartest.",
+          "en": "It is going to rain later.",
+          "variants": [
+            "It's going to rain later.",
+            "It will rain later.",
+            "I think it is going to rain later."
+          ],
+          "keywords": [
+            "rain"
+          ],
+          "meaningDe": "Später wird es regnen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-going-to",
+            "locator": "Going to"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "sb.weather.p01",
+          "kind": "answer",
+          "en": "Yes, it's freezing out there.",
+          "variants": [
+            "Yes, it's really cold out there.",
+            "Yes, it's very cold today.",
+            "It's freezing!"
+          ],
+          "meaningDe": "Ja, draußen ist es eiskalt.",
+          "cefr": "A2",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          },
+          "reactions": [
+            {
+              "en": "Yes, it is. Come in and get warm.",
+              "fits": true,
+              "meaningDe": "Ja, das stimmt. Kommen Sie herein und wärmen Sie sich auf.",
+              "source": {
+                "ref": "cam-imperative",
+                "locator": "Imperative clauses"
+              }
+            },
+            {
+              "en": "It is a lovely day today.",
+              "fits": false,
+              "whyDe": "Er hat gerade gesagt, dass es eiskalt ist. Du gehst nicht darauf ein.",
+              "meaningDe": "Heute ist ein schöner Tag.",
+              "source": {
+                "ref": "bc-what-small-talk",
+                "locator": "1. What is small talk?"
+              }
+            },
+            {
+              "en": "Is it still raining?",
+              "fits": false,
+              "whyDe": "Er spricht von der Kälte, nicht vom Regen.",
+              "meaningDe": "Regnet es noch?",
+              "source": {
+                "ref": "bc-small-talk",
+                "locator": "2. A small talk conversation"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.weather.p02",
+          "kind": "answer",
+          "en": "No, it has stopped now.",
+          "variants": [
+            "No, it stopped a few minutes ago.",
+            "No, it's dry now.",
+            "It has stopped, I think."
+          ],
+          "meaningDe": "Nein, es hat jetzt aufgehört.",
+          "cefr": "A2",
+          "source": {
+            "ref": "bc-small-talk",
+            "locator": "2. A small talk conversation"
+          },
+          "reactions": [
+            {
+              "en": "That's good. Maybe it will stay dry.",
+              "fits": true,
+              "meaningDe": "Das ist gut. Vielleicht bleibt es trocken.",
+              "source": {
+                "ref": "cam-future",
+                "locator": "Future"
+              }
+            },
+            {
+              "en": "I'm sorry to hear that.",
+              "fits": false,
+              "whyDe": "Der Regen hat aufgehört. Da gibt es nichts zu bedauern.",
+              "meaningDe": "Das tut mir leid.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag sorry"
+              }
+            },
+            {
+              "en": "Is it still raining?",
+              "fits": false,
+              "whyDe": "Genau das hat er gerade beantwortet.",
+              "meaningDe": "Regnet es noch?",
+              "source": {
+                "ref": "bc-small-talk",
+                "locator": "2. A small talk conversation"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.weather.p03",
+          "kind": "question",
+          "en": "Is it always this cold in here?",
+          "variants": [
+            "Is it always so cold in here?",
+            "Why is it so cold in here?",
+            "It's very cold in here, isn't it?"
+          ],
+          "meaningDe": "Ist es hier drin immer so kalt?",
+          "cefr": "A2",
+          "source": {
+            "ref": "radiologyinfo-chest",
+            "locator": "What will I experience during and after the procedure?"
+          },
+          "reactions": [
+            {
+              "en": "Yes, I'm afraid so. Would you like a blanket?",
+              "fits": true,
+              "meaningDe": "Ja, leider. Möchten Sie eine Decke?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag afraid"
+              }
+            },
+            {
+              "en": "It is going to rain later.",
+              "fits": false,
+              "whyDe": "Er fragt nach dem Raum, nicht nach dem Wetter draußen.",
+              "meaningDe": "Später wird es regnen.",
+              "source": {
+                "ref": "cam-going-to",
+                "locator": "Going to"
+              }
+            },
+            {
+              "en": "You are next.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nicht.",
+              "meaningDe": "Sie sind als Nächster dran.",
+              "source": {
+                "ref": "cam-present",
+                "locator": "Present"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.reassure",
+      "key": "reassure",
+      "titleDe": "Small Talk: Beruhigen",
+      "sentences": [
+        {
+          "id": "sb.reassure.s01",
+          "situationDe": "Die Patientin knetet ihre Hände und schaut ängstlich zum Gerät. Sag ihr etwas Beruhigendes.",
+          "en": "Please don't worry.",
+          "variants": [
+            "Don't worry.",
+            "Try not to worry.",
+            "There is no need to worry."
+          ],
+          "keywords": [
+            "worry"
+          ],
+          "meaningDe": "Bitte machen Sie sich keine Sorgen.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag worry"
+          }
+        },
+        {
+          "id": "sb.reassure.s02",
+          "situationDe": "Der Patient sagt, dass er sich hier ganz verloren fühlt. Sag ihm, wofür du da bist.",
+          "en": "I am here to help you.",
+          "variants": [
+            "I'm here to help you.",
+            "I am here to help.",
+            "I'm here to help."
+          ],
+          "keywords": [
+            "here",
+            "help"
+          ],
+          "meaningDe": "Ich bin da, um Ihnen zu helfen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.reassure.s03",
+          "situationDe": "Der Patient steigt langsam aus dem Rollstuhl um und entschuldigt sich dafür. Zeig ihm, dass es keine Eile hat.",
+          "en": "Take your time.",
+          "variants": [
+            "Take your time, please.",
+            "Please take your time.",
+            "You can take your time."
+          ],
+          "keywords": [
+            "time"
+          ],
+          "meaningDe": "Lassen Sie sich Zeit.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-imperative",
+            "locator": "Imperative clauses"
+          }
+        },
+        {
+          "id": "sb.reassure.s04",
+          "situationDe": "Die Patientin hat schon die Hälfte überstanden und hält tapfer still. Lob sie.",
+          "en": "You are doing really well.",
+          "variants": [
+            "You're doing really well.",
+            "You are doing very well.",
+            "You are doing great.",
+            "You're doing great."
+          ],
+          "keywords": [
+            "doing"
+          ],
+          "meaningDe": "Sie machen das wirklich gut.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        },
+        {
+          "id": "sb.reassure.s05",
+          "situationDe": "Der Patient hat im richtigen Moment stillgehalten, und die Aufnahme ist im Kasten. Sag ihm, wie das gelaufen ist.",
+          "en": "That was very good.",
+          "variants": [
+            "That was really good.",
+            "That was great.",
+            "That was very good, thank you."
+          ],
+          "keywords": [
+            "good|great"
+          ],
+          "meaningDe": "Das war sehr gut.",
+          "cefr": "A1",
+          "core": false,
+          "source": {
+            "ref": "cam-past-perfect",
+            "locator": "Past simple or present perfect?"
+          }
+        },
+        {
+          "id": "sb.reassure.s06",
+          "situationDe": "Der Patient wird ungeduldig. Du hast fast alles im Kasten, es fehlt nur noch ein letztes Bild.",
+          "en": "Just one more picture.",
+          "variants": [
+            "Only one more picture.",
+            "There is just one more picture.",
+            "Just one more image."
+          ],
+          "keywords": [
+            "more",
+            "picture|image"
+          ],
+          "meaningDe": "Nur noch eine Aufnahme.",
+          "cefr": "A2",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          }
+        },
+        {
+          "id": "sb.reassure.s07",
+          "situationDe": "Die letzte Aufnahme läuft gleich, und der Patient fragt, wie weit ihr seid. Mach ihm Mut.",
+          "en": "We are nearly finished.",
+          "variants": [
+            "We're nearly finished.",
+            "We are almost finished.",
+            "We are nearly done.",
+            "We're almost done."
+          ],
+          "keywords": [
+            "nearly|almost",
+            "finished|done"
+          ],
+          "meaningDe": "Wir sind gleich fertig.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-present",
+            "locator": "Present"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "sb.reassure.p01",
+          "kind": "answer",
+          "en": "I'm a bit nervous, to be honest.",
+          "variants": [
+            "I'm quite nervous, actually.",
+            "I'm a little scared.",
+            "I feel a bit nervous."
+          ],
+          "meaningDe": "Ehrlich gesagt bin ich etwas nervös.",
+          "cefr": "A2",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          },
+          "reactions": [
+            {
+              "en": "Please don't worry. I am here to help you.",
+              "fits": true,
+              "meaningDe": "Bitte machen Sie sich keine Sorgen. Ich bin da, um Ihnen zu helfen.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag worry"
+              }
+            },
+            {
+              "en": "Good, I'm glad to hear that.",
+              "fits": false,
+              "whyDe": "Er hat Angst. Da passt keine Freude.",
+              "meaningDe": "Schön, das freut mich.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag glad"
+              }
+            },
+            {
+              "en": "It is a lovely day today.",
+              "fits": false,
+              "whyDe": "Das lenkt nur ab und geht nicht auf seine Sorge ein.",
+              "meaningDe": "Heute ist ein schöner Tag.",
+              "source": {
+                "ref": "bc-what-small-talk",
+                "locator": "1. What is small talk?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.reassure.p02",
+          "kind": "question",
+          "en": "Am I doing it right?",
+          "variants": [
+            "Am I doing this right?",
+            "Is this right?",
+            "Is that OK?"
+          ],
+          "meaningDe": "Mache ich das richtig?",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-q-yesno",
+            "locator": "Questions: yes-no questions"
+          },
+          "reactions": [
+            {
+              "en": "Yes, you are doing really well.",
+              "fits": true,
+              "meaningDe": "Ja, Sie machen das wirklich gut.",
+              "source": {
+                "ref": "cam-present",
+                "locator": "Present"
+              }
+            },
+            {
+              "en": "How are you today?",
+              "fits": false,
+              "whyDe": "Er will wissen, ob er es richtig macht, und nicht, wie es ihm geht.",
+              "meaningDe": "Wie geht es Ihnen heute?",
+              "source": {
+                "ref": "bc-small-talk",
+                "locator": "2. A small talk conversation"
+              }
+            },
+            {
+              "en": "Thank you for waiting.",
+              "fits": false,
+              "whyDe": "Das beantwortet seine Frage nicht.",
+              "meaningDe": "Danke, dass Sie gewartet haben.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag wait"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sb.reassure.p03",
+          "kind": "question",
+          "en": "Is it nearly over?",
+          "variants": [
+            "Are we nearly done?",
+            "Is it almost finished?",
+            "Will it be over soon?"
+          ],
+          "meaningDe": "Ist es bald vorbei?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "How long will it take?"
+          },
+          "reactions": [
+            {
+              "en": "Yes, just one more picture.",
+              "fits": true,
+              "meaningDe": "Ja, nur noch eine Aufnahme.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "You are next.",
+              "fits": false,
+              "whyDe": "Das sagst du im Warteraum. Er liegt schon für die Aufnahme bereit.",
+              "meaningDe": "Sie sind als Nächster dran.",
+              "source": {
+                "ref": "cam-present",
+                "locator": "Present"
+              }
+            },
+            {
+              "en": "Thank you for coming in today.",
+              "fits": false,
+              "whyDe": "Das passt zur Begrüßung und beantwortet seine Frage nicht.",
+              "meaningDe": "Danke, dass Sie heute gekommen sind.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag thank"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

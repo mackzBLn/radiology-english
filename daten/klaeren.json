@@ -1,0 +1,3152 @@
+{
+  "formatVersion": 1,
+  "file": "klaeren",
+  "strand": "clarify",
+  "sections": [
+    {
+      "id": "kl.repeat",
+      "key": "repeat",
+      "titleDe": "Wiederholen und langsamer",
+      "sentences": [
+        {
+          "id": "kl.repeat.s01",
+          "situationDe": "Der Patient hat dir etwas erzählt. Die Worte waren klar, aber der Sinn kommt bei dir nicht an. Sag ihm das offen.",
+          "en": "Sorry, I don't understand.",
+          "variants": [
+            "I'm sorry, I don't understand.",
+            "Sorry, I do not understand.",
+            "Sorry, I didn't understand that.",
+            "I'm sorry, I didn't understand that."
+          ],
+          "keywords": [
+            "understand"
+          ],
+          "meaningDe": "Entschuldigung, das verstehe ich nicht.",
+          "cefr": "A1",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag understand"
+          }
+        },
+        {
+          "id": "kl.repeat.s02",
+          "situationDe": "Hinter dir läuft ein Gerät, und die Antwort des Patienten ist darin untergegangen. Sag ihm, dass sie nicht bei dir angekommen ist.",
+          "en": "I'm sorry, I didn't catch that.",
+          "variants": [
+            "Sorry, I didn't catch that.",
+            "I'm sorry, I didn't quite catch that.",
+            "I'm sorry, I didn't hear that.",
+            "Sorry, I didn't hear that."
+          ],
+          "keywords": [
+            "catch|hear"
+          ],
+          "meaningDe": "Entschuldigung, das habe ich nicht mitbekommen.",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "catch heißt hier: akustisch mitbekommen.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag catch"
+          }
+        },
+        {
+          "id": "kl.repeat.s03",
+          "situationDe": "Du möchtest die Antwort des Patienten gern noch einmal hören. Bitte ihn kurz darum.",
+          "en": "Sorry, could you repeat that, please?",
+          "variants": [
+            "Sorry, could you repeat that?",
+            "Could you repeat that, please?",
+            "Sorry, can you repeat that, please?",
+            "Sorry, could you say that again, please?",
+            "Could you say that again, please?"
+          ],
+          "keywords": [
+            "repeat|again"
+          ],
+          "meaningDe": "Entschuldigung, könnten Sie das bitte wiederholen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag repeat"
+          }
+        },
+        {
+          "id": "kl.repeat.s04",
+          "situationDe": "Du hast schon einmal nachgefragt und musst die Patientin nun ein zweites Mal um dasselbe bitten. Wähle die besonders rücksichtsvolle Form.",
+          "en": "Would you mind repeating that, please?",
+          "variants": [
+            "Would you mind repeating that?",
+            "Would you mind saying that again, please?",
+            "Would you mind saying that again?"
+          ],
+          "keywords": [
+            "repeating|again"
+          ],
+          "meaningDe": "Würde es Ihnen etwas ausmachen, das bitte zu wiederholen?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag repeat"
+          }
+        },
+        {
+          "id": "kl.repeat.s05",
+          "situationDe": "Der Patient redet so schnell, dass du nicht mitkommst. Bitte ihn, sein Tempo zu ändern.",
+          "en": "Could you speak more slowly, please?",
+          "variants": [
+            "Can you speak more slowly, please?",
+            "Could you please speak more slowly?",
+            "Could you speak a bit more slowly, please?",
+            "Could you talk more slowly, please?"
+          ],
+          "keywords": [
+            "slowly"
+          ],
+          "meaningDe": "Könnten Sie bitte langsamer sprechen?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag slowly"
+          }
+        },
+        {
+          "id": "kl.repeat.s06",
+          "situationDe": "Die Patientin ist aufgeregt und spricht immer schneller. Bitte sie sehr höflich und vorsichtig um ein ruhigeres Tempo.",
+          "en": "Would you mind speaking more slowly?",
+          "variants": [
+            "Would you mind speaking more slowly, please?",
+            "Would you mind speaking a bit more slowly?",
+            "Would you mind talking more slowly?"
+          ],
+          "keywords": [
+            "slowly"
+          ],
+          "meaningDe": "Würde es Ihnen etwas ausmachen, langsamer zu sprechen?",
+          "cefr": "B1",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag speak"
+          }
+        },
+        {
+          "id": "kl.repeat.s07",
+          "situationDe": "In der Antwort des Patienten kam ein Ausdruck vor, den du noch nie gehört hast. Frag nach seiner Bedeutung.",
+          "en": "Sorry, what does that word mean?",
+          "variants": [
+            "I'm sorry, what does that word mean?",
+            "What does that word mean, please?",
+            "Sorry, what does that mean?"
+          ],
+          "keywords": [
+            "mean"
+          ],
+          "meaningDe": "Entschuldigung, was bedeutet dieses Wort?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag mean"
+          }
+        },
+        {
+          "id": "kl.repeat.s08",
+          "situationDe": "Auch beim zweiten Hören verstehst du die Erklärung des Patienten nicht. Bitte ihn, sie mit anderen Worten zu sagen.",
+          "en": "Could you say that in a different way, please?",
+          "variants": [
+            "Can you say that in a different way, please?",
+            "Could you say that in a different way?",
+            "Could you say that another way, please?"
+          ],
+          "keywords": [
+            "say",
+            "way"
+          ],
+          "meaningDe": "Könnten Sie das bitte anders sagen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-requests",
+            "locator": "Requests"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "kl.spell",
+      "key": "spell",
+      "titleDe": "Buchstabieren",
+      "sentences": [
+        {
+          "id": "kl.spell.s01",
+          "situationDe": "Du findest den Patienten nicht auf deiner Liste. Vielleicht hast du seinen Namen nur falsch gehört. Lass ihn dir Zeichen für Zeichen sagen.",
+          "en": "Could you spell your name for me, please?",
+          "variants": [
+            "Can you spell your name for me, please?",
+            "Could you spell your name, please?",
+            "Can you spell your name, please?",
+            "How do you spell your name, please?"
+          ],
+          "keywords": [
+            "spell",
+            "name"
+          ],
+          "meaningDe": "Könnten Sie mir bitte Ihren Namen buchstabieren?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "kl.spell.s02",
+          "situationDe": "Den Vornamen hast du schon. Schwierig ist nur der Teil, den die ganze Familie trägt. Bitte um genau diesen Teil.",
+          "en": "Could you spell your surname, please?",
+          "variants": [
+            "Could you spell your last name, please?",
+            "Can you spell your surname, please?",
+            "Can you spell your last name, please?",
+            "Could you spell your family name, please?"
+          ],
+          "keywords": [
+            "spell",
+            "surname|last name|family name"
+          ],
+          "meaningDe": "Könnten Sie bitte Ihren Nachnamen buchstabieren?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "surname ist vor allem britisch, last name amerikanisch.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag surname"
+          }
+        },
+        {
+          "id": "kl.spell.s03",
+          "situationDe": "Die Patientin nennt den Namen ihrer Hausärztin. Du willst ihn notieren, weißt aber nicht, wie er geschrieben wird.",
+          "en": "How do you spell that?",
+          "variants": [
+            "How do you spell that, please?",
+            "Sorry, how do you spell that?",
+            "How is that spelled?",
+            "How is that spelt?"
+          ],
+          "keywords": [
+            "spell|spelled|spelt"
+          ],
+          "meaningDe": "Wie schreibt man das?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "kl.spell.s04",
+          "situationDe": "Der Name beginnt mit einem Laut, der im Lärm leicht zu verwechseln ist. Es könnte ein B sein oder ein P. Frag nach.",
+          "en": "Is the first letter B or P?",
+          "variants": [
+            "Is the first letter a B or a P?",
+            "Sorry, is the first letter B or P?",
+            "Is the first letter B, or is it P?"
+          ],
+          "keywords": [
+            "first",
+            "letter"
+          ],
+          "meaningDe": "Ist der erste Buchstabe ein B oder ein P?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          }
+        },
+        {
+          "id": "kl.spell.s05",
+          "situationDe": "Beim Buchstabieren hast du gehört, dass das L vielleicht zweimal hintereinander kommt. Kläre das.",
+          "en": "Is that a double L?",
+          "variants": [
+            "Is that double L?",
+            "Sorry, is that a double L?",
+            "Is that with a double L?"
+          ],
+          "keywords": [
+            "double"
+          ],
+          "meaningDe": "Ist das ein Doppel-L?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag double"
+          }
+        },
+        {
+          "id": "kl.spell.s06",
+          "situationDe": "Du hast den Namen von Mr Harris mitgeschrieben. Lies ihn zur Kontrolle Zeichen für Zeichen vor und frag, ob es stimmt.",
+          "en": "Let me check. H, A, double R, I, S. Is that right?",
+          "variants": [
+            "Let me check. H, A, R, R, I, S. Is that right?",
+            "Let me check. H, A, double R, I, S. Is that correct?",
+            "So that is H, A, double R, I, S. Is that right?"
+          ],
+          "keywords": [
+            "right|correct"
+          ],
+          "meaningDe": "Ich prüfe das kurz. H, A, Doppel-R, I, S. Stimmt das?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-echo",
+            "locator": "Echo questions, checking questions"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "kl.spell.p01",
+          "kind": "answer",
+          "en": "It's Harris. H, A, double R, I, S.",
+          "variants": [
+            "Harris. That's H, A, R, R, I, S.",
+            "It's spelled H, A, double R, I, S.",
+            "H, A, double R, I, S. Harris."
+          ],
+          "meaningDe": "Harris. H, A, Doppel-R, I, S.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          },
+          "reactions": [
+            {
+              "en": "Let me check. H, A, double R, I, S. Is that right?",
+              "fits": true,
+              "meaningDe": "Ich prüfe das kurz. H, A, Doppel-R, I, S. Stimmt das?",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "How do you spell that?",
+              "fits": false,
+              "whyDe": "Er hat den Namen gerade buchstabiert. Du musst nicht noch einmal danach fragen.",
+              "meaningDe": "Wie schreibt man das?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Der Name ist noch nicht bestätigt. Das Umziehen kommt später.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.spell.p02",
+          "kind": "answer",
+          "en": "It's Reid with an I, not with two Es.",
+          "variants": [
+            "Reid, that's R, E, I, D.",
+            "It's R, E, I, D. Reid with an I.",
+            "Most people write it wrong. It's R, E, I, D."
+          ],
+          "meaningDe": "Reid mit I, nicht mit zwei E.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. So that is R, E, I, D?",
+              "fits": true,
+              "meaningDe": "Danke. Das ist also R, E, I, D?",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "Is the first letter B or P?",
+              "fits": false,
+              "whyDe": "Den ersten Buchstaben hat die Patientin schon genannt. Offen ist nur die Mitte des Namens.",
+              "meaningDe": "Ist der erste Buchstabe ein B oder ein P?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            },
+            {
+              "en": "Is that a double L?",
+              "fits": false,
+              "whyDe": "Von einem L war keine Rede. Es geht um I und E.",
+              "meaningDe": "Ist das ein Doppel-L?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag double"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.spell.p03",
+          "kind": "unclear",
+          "en": "It's spelled the normal way.",
+          "variants": [
+            "Just the normal spelling.",
+            "You know, the way it's usually spelled.",
+            "It's the usual spelling."
+          ],
+          "meaningDe": "Es wird ganz normal geschrieben.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          },
+          "reactions": [
+            {
+              "en": "Sorry, could you spell it for me, please?",
+              "fits": true,
+              "meaningDe": "Entschuldigung, könnten Sie es mir bitte buchstabieren?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            },
+            {
+              "en": "Thank you. That is what I have here.",
+              "fits": false,
+              "whyDe": "Du weißt noch gar nicht, wie der Name geschrieben wird. Bestätigen kannst du ihn also nicht.",
+              "meaningDe": "Danke. Das habe ich auch hier stehen.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "Is the first letter B or P?",
+              "fits": false,
+              "whyDe": "Damit rätst du nur einen einzelnen Buchstaben. Du brauchst zuerst den ganzen Namen.",
+              "meaningDe": "Ist der erste Buchstabe ein B oder ein P?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.spell.p04",
+          "kind": "unexpected",
+          "en": "You've spelled my name wrong. There's no E at the end.",
+          "variants": [
+            "That's not my name. There's no E at the end.",
+            "That's wrong. My name has no E at the end.",
+            "You've got my name wrong. There's no E on the end."
+          ],
+          "meaningDe": "Sie haben meinen Namen falsch geschrieben. Am Ende steht kein E.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag spell"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry. Let me check that.",
+              "fits": true,
+              "meaningDe": "Entschuldigung. Ich prüfe das kurz.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "Thank you. I will tell the doctor about that.",
+              "fits": false,
+              "whyDe": "Ein Schreibfehler ist zuerst keine Sache für den Arzt. Prüf den Namen selbst nach.",
+              "meaningDe": "Danke. Ich sage das dem Arzt.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Please take off your jewellery.",
+              "fits": false,
+              "whyDe": "Das übergeht die Beschwerde des Patienten. Zuerst muss der Name stimmen.",
+              "meaningDe": "Bitte nehmen Sie Ihren Schmuck ab.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.spell.p05",
+          "kind": "question",
+          "en": "Do you need my first name as well?",
+          "variants": [
+            "Do you want my first name too?",
+            "Should I spell my first name too?",
+            "My first name as well?"
+          ],
+          "meaningDe": "Brauchen Sie auch meinen Vornamen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag first name"
+          },
+          "reactions": [
+            {
+              "en": "Yes, please. Could you spell that as well?",
+              "fits": true,
+              "meaningDe": "Ja, bitte. Könnten Sie den auch buchstabieren?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            },
+            {
+              "en": "You can eat and drink as normal.",
+              "fits": false,
+              "whyDe": "Das sagst du am Ende der Untersuchung. Er fragt gerade nach seinem Namen.",
+              "meaningDe": "Sie können normal essen und trinken.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            },
+            {
+              "en": "Is that a double L?",
+              "fits": false,
+              "whyDe": "Er hat noch nichts buchstabiert. Seine Frage bleibt so unbeantwortet.",
+              "meaningDe": "Ist das ein Doppel-L?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag double"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kl.confirm",
+      "key": "confirm",
+      "titleDe": "Verstandenes bestätigen",
+      "sentences": [
+        {
+          "id": "kl.confirm.s01",
+          "situationDe": "Der Patient hat dir viel auf einmal erzählt. Bevor du weitermachst, kündigst du an, dass du das Gehörte kurz prüfen möchtest.",
+          "en": "Let me check that I understood you.",
+          "variants": [
+            "Let me check that I understand you.",
+            "Let me check that I understood you correctly.",
+            "I just want to check that I understood you."
+          ],
+          "keywords": [
+            "check",
+            "understood|understand"
+          ],
+          "meaningDe": "Ich möchte kurz prüfen, ob ich Sie richtig verstanden habe.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag understand"
+          }
+        },
+        {
+          "id": "kl.confirm.s02",
+          "situationDe": "Der Patient spricht von seinem Knie und zeigt dabei auf das linke Bein. Vergewissere dich, dass du ihn richtig deutest.",
+          "en": "So you mean your left knee?",
+          "variants": [
+            "You mean your left knee?",
+            "So you mean the left knee?",
+            "Do you mean your left knee?"
+          ],
+          "keywords": [
+            "mean",
+            "left",
+            "knee"
+          ],
+          "meaningDe": "Sie meinen also Ihr linkes Knie?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag mean"
+          }
+        },
+        {
+          "id": "kl.confirm.s03",
+          "situationDe": "Die Patientin sagt tummy und zeigt ungefähr auf die Körpermitte. Nenne das übliche Wort dafür und prüfe, ob sie das meint.",
+          "en": "You mean your stomach?",
+          "variants": [
+            "So you mean your stomach?",
+            "Do you mean your stomach?",
+            "Sorry, do you mean your stomach?"
+          ],
+          "keywords": [
+            "mean",
+            "stomach"
+          ],
+          "meaningDe": "Sie meinen Ihren Bauch?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "tummy ist ein Alltagswort für Bauch.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag mean"
+          }
+        },
+        {
+          "id": "kl.confirm.s04",
+          "situationDe": "Der Patient erwähnt nebenbei einen Eingriff, und du bist nicht sicher, ob du den Zeitpunkt richtig gehört hast. Wiederhole das Gehörte als Frage.",
+          "en": "You had an operation last year?",
+          "variants": [
+            "Sorry, you had an operation last year?",
+            "So you had an operation last year?",
+            "You had surgery last year?"
+          ],
+          "keywords": [
+            "operation|surgery",
+            "year"
+          ],
+          "meaningDe": "Sie hatten letztes Jahr eine Operation?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "Beim Nachfragen bleibt die Satzstellung wie in der Aussage, nur die Stimme geht am Ende hoch.",
+          "source": {
+            "ref": "cam-q-echo",
+            "locator": "Echo questions, checking questions"
+          }
+        },
+        {
+          "id": "kl.confirm.s05",
+          "situationDe": "Die Patientin hat die Frage nach Unverträglichkeiten verneint. Das ist wichtig, also fasst du ihre Antwort noch einmal zusammen und lässt sie bestätigen.",
+          "en": "So you have no allergies, is that right?",
+          "variants": [
+            "So you don't have any allergies, is that right?",
+            "You have no allergies, is that right?",
+            "So you have no allergies, right?",
+            "So you do not have any allergies, is that correct?"
+          ],
+          "keywords": [
+            "allergies"
+          ],
+          "meaningDe": "Sie haben also keine Allergien, stimmt das?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-q-echo",
+            "locator": "Echo questions, checking questions"
+          }
+        },
+        {
+          "id": "kl.confirm.s06",
+          "situationDe": "Der Patient hat gezögert und nur vage geantwortet. Sprich aus, was du daraus entnimmst, damit er es richtigstellen kann.",
+          "en": "So you are not sure about that?",
+          "variants": [
+            "So you're not sure about that?",
+            "You are not sure about that?",
+            "You're not sure about that?"
+          ],
+          "keywords": [
+            "sure"
+          ],
+          "meaningDe": "Sie sind sich da also nicht sicher?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-echo",
+            "locator": "Echo questions, checking questions"
+          }
+        },
+        {
+          "id": "kl.confirm.s07",
+          "situationDe": "Du brauchst für dein Formular eine klare Antwort, der Patient redet aber um die Sache herum. Lass ihn sich festlegen.",
+          "en": "Sorry, do you mean yes or no?",
+          "variants": [
+            "Do you mean yes or no?",
+            "Sorry, is that a yes or a no?",
+            "Is that a yes or a no?"
+          ],
+          "keywords": [
+            "yes",
+            "no"
+          ],
+          "meaningDe": "Entschuldigung, meinen Sie ja oder nein?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag mean"
+          }
+        },
+        {
+          "id": "kl.confirm.s08",
+          "situationDe": "Am Ende eurer Abfrage bleibt dir ein Zweifel, ob du die Patientin insgesamt richtig erfasst hast. Frag sie genau das.",
+          "en": "Did I understand you correctly?",
+          "variants": [
+            "Did I understand that correctly?",
+            "Have I understood you correctly?",
+            "Have I understood that correctly?",
+            "Did I understand you right?"
+          ],
+          "keywords": [
+            "understand|understood"
+          ],
+          "meaningDe": "Habe ich Sie richtig verstanden?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag understand"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "kl.numbers",
+      "key": "numbers",
+      "titleDe": "Zahlen, Uhrzeiten, Daten, Namen",
+      "sentences": [
+        {
+          "id": "kl.numbers.s01",
+          "situationDe": "Der Patient hat dir sein Geburtsdatum genannt. Den Tag hast du nicht sicher gehört: Es könnte der 9. oder der 19. sein.",
+          "en": "Did you say the ninth or the 19th?",
+          "variants": [
+            "Sorry, did you say the ninth or the 19th?",
+            "Did you say the 9th or the 19th?",
+            "Did you say the ninth or the nineteenth?",
+            "Was it the ninth or the 19th?"
+          ],
+          "keywords": [
+            "say|was"
+          ],
+          "meaningDe": "Haben Sie den Neunten oder den Neunzehnten gesagt?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "kl.numbers.s02",
+          "situationDe": "Die Patientin sagt als Geburtsdatum nur vier, drei, einundsiebzig. Manche nennen zuerst den Tag, andere den Monat. Kläre, welches Datum sie meint.",
+          "en": "Is that the fourth of March or the third of April?",
+          "variants": [
+            "Sorry, is that the fourth of March or the third of April?",
+            "Is that March fourth or April third?",
+            "Is that March the fourth or April the third?"
+          ],
+          "keywords": [
+            "March",
+            "April"
+          ],
+          "meaningDe": "Ist das der 4. März oder der 3. April?",
+          "cefr": "B1",
+          "core": false,
+          "noteDe": "Im amerikanischen Englisch steht beim Datum der Monat vorn.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag date"
+          }
+        },
+        {
+          "id": "kl.numbers.s03",
+          "situationDe": "Du hast das Geburtsdatum verstanden. Sprich es zur Kontrolle noch einmal vollständig aus und warte, ob der Patient zustimmt.",
+          "en": "So that is the 23rd of March, 1971?",
+          "variants": [
+            "So that is March 23rd, 1971?",
+            "So that is March the 23rd, 1971?",
+            "That is the 23rd of March, 1971?",
+            "So that's the twenty-third of March, nineteen seventy-one?"
+          ],
+          "keywords": [
+            "March"
+          ],
+          "meaningDe": "Das ist also der 23. März 1971?",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Das Jahr sprichst du in zwei Teilen: nineteen seventy-one.",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "kl.numbers.s04",
+          "situationDe": "Für den Fall, dass ihr die Patientin später erreichen müsst, fehlt dir noch eine Angabe in den Unterlagen.",
+          "en": "What is your phone number, please?",
+          "variants": [
+            "Could you tell me your phone number, please?",
+            "Can I have your phone number, please?",
+            "What's your phone number, please?",
+            "What is your telephone number, please?"
+          ],
+          "keywords": [
+            "phone|telephone",
+            "number"
+          ],
+          "meaningDe": "Wie lautet bitte Ihre Telefonnummer?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag phone number"
+          }
+        },
+        {
+          "id": "kl.numbers.s05",
+          "situationDe": "Der Patient hat dir seine Nummer diktiert, und du hast sie notiert. Kündige an, dass du sie ihm zur Kontrolle noch einmal vorträgst.",
+          "en": "Let me read the number back to you.",
+          "variants": [
+            "I will read the number back to you.",
+            "Let me read that number back to you.",
+            "I'll read the number back to you."
+          ],
+          "keywords": [
+            "read",
+            "number"
+          ],
+          "meaningDe": "Ich lese Ihnen die Nummer noch einmal vor.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-q-echo",
+            "locator": "Echo questions, checking questions"
+          }
+        },
+        {
+          "id": "kl.numbers.s06",
+          "situationDe": "Der Patient nennt eine Zahl, die fast gleich klingt wie eine andere: Einmal endet sie auf -teen, einmal auf -ty. Kläre, welche es war.",
+          "en": "Did you say 13 or 30?",
+          "variants": [
+            "Sorry, did you say 13 or 30?",
+            "Did you say thirteen or thirty?",
+            "Sorry, did you say thirteen or thirty?",
+            "Was it 13 or 30?"
+          ],
+          "keywords": [
+            "say|was"
+          ],
+          "meaningDe": "Haben Sie dreizehn oder dreißig gesagt?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          }
+        },
+        {
+          "id": "kl.numbers.s07",
+          "situationDe": "Ein Patient steht ohne Unterlagen vor dir und ist nicht auf deiner aktuellen Liste. Finde heraus, für wann er einbestellt ist.",
+          "en": "What time is your appointment?",
+          "variants": [
+            "What time is your appointment, please?",
+            "What time was your appointment?",
+            "What time is your appointment today?"
+          ],
+          "keywords": [
+            "time",
+            "appointment"
+          ],
+          "meaningDe": "Um wie viel Uhr ist Ihr Termin?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          }
+        },
+        {
+          "id": "kl.numbers.s08",
+          "situationDe": "Der Patient sagt, er sei für 14:30 Uhr bestellt. Wiederhole die Uhrzeit, damit ihr beide sicher seid.",
+          "en": "So your appointment is at half past two?",
+          "variants": [
+            "So your appointment is at 2:30?",
+            "So your appointment is at two thirty?",
+            "Your appointment is at half past two?"
+          ],
+          "keywords": [
+            "appointment"
+          ],
+          "meaningDe": "Ihr Termin ist also um halb drei?",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "half past two heißt halb drei, nicht halb zwei. Ebenso üblich ist two thirty.",
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          }
+        },
+        {
+          "id": "kl.numbers.s09",
+          "situationDe": "Die Patientin nennt eine Uhrzeit, sagt aber nicht, zu welcher Tageshälfte sie gehört. Kläre das.",
+          "en": "Is that in the morning or in the afternoon?",
+          "variants": [
+            "Is that in the morning or the afternoon?",
+            "Do you mean in the morning or in the afternoon?",
+            "Is that am or pm?"
+          ],
+          "keywords": [
+            "morning|am",
+            "afternoon|pm"
+          ],
+          "meaningDe": "Ist das vormittags oder nachmittags?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "kl.numbers.p01",
+          "kind": "answer",
+          "en": "It's the 23rd of March, 1971.",
+          "variants": [
+            "March 23rd, 1971.",
+            "March the 23rd, 1971.",
+            "The twenty-third of March, nineteen seventy-one.",
+            "March twenty-third, nineteen seventy-one."
+          ],
+          "meaningDe": "Der 23. März 1971.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          },
+          "reactions": [
+            {
+              "en": "So that is the 23rd of March, 1971?",
+              "fits": true,
+              "meaningDe": "Das ist also der 23. März 1971?",
+              "source": {
+                "ref": "cam-number",
+                "locator": "Number"
+              }
+            },
+            {
+              "en": "Is that in the morning or in the afternoon?",
+              "fits": false,
+              "whyDe": "Das passt zu einer Uhrzeit. Er hat dir aber ein Datum genannt.",
+              "meaningDe": "Ist das vormittags oder nachmittags?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "Is that the fourth of March or the third of April?",
+              "fits": false,
+              "whyDe": "Das Datum ist klar. Diese Frage passt nur, wenn jemand bloß Zahlen nennt.",
+              "meaningDe": "Ist das der 4. März oder der 3. April?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p02",
+          "kind": "answer",
+          "en": "June the twelfth, 1958.",
+          "variants": [
+            "June twelfth, 1958.",
+            "June 12, 1958.",
+            "The twelfth of June, 1958.",
+            "It's the twelfth of June, nineteen fifty-eight."
+          ],
+          "meaningDe": "Der 12. Juni 1958.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag date"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. So that is the twelfth of June?",
+              "fits": true,
+              "meaningDe": "Danke. Das ist also der 12. Juni?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
+              }
+            },
+            {
+              "en": "What time is your appointment?",
+              "fits": false,
+              "whyDe": "Sie hat dir gerade das Geburtsdatum genannt. Das bestätigst du zuerst.",
+              "meaningDe": "Um wie viel Uhr ist Ihr Termin?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "Did you say the ninth or the 19th?",
+              "fits": false,
+              "whyDe": "Diese Zahlen kamen gar nicht vor. Sie hat den Zwölften genannt.",
+              "meaningDe": "Haben Sie den Neunten oder den Neunzehnten gesagt?",
+              "source": {
+                "ref": "cam-number",
+                "locator": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p03",
+          "kind": "unclear",
+          "en": "It's four, three, 71.",
+          "variants": [
+            "Four, three, 71.",
+            "It's four, three, seventy-one.",
+            "Oh four, oh three, seventy-one."
+          ],
+          "meaningDe": "Vier, drei, einundsiebzig.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag date"
+          },
+          "reactions": [
+            {
+              "en": "Is that the fourth of March or the third of April?",
+              "fits": true,
+              "meaningDe": "Ist das der 4. März oder der 3. April?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
+              }
+            },
+            {
+              "en": "Thank you. That is what I have here.",
+              "fits": false,
+              "whyDe": "Die Zahlen lassen zwei Daten zu. Bestätigen kannst du erst, wenn klar ist, welches gemeint ist.",
+              "meaningDe": "Danke. Genau das steht auch bei mir.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "Did you say 13 or 30?",
+              "fits": false,
+              "whyDe": "Keine dieser Zahlen kam vor. Unklar ist nur, ob zuerst der Tag oder der Monat steht.",
+              "meaningDe": "Haben Sie dreizehn oder dreißig gesagt?",
+              "source": {
+                "ref": "cam-number",
+                "locator": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p04",
+          "kind": "unexpected",
+          "en": "Oh, sorry, I said the wrong year. It's 1957.",
+          "variants": [
+            "Sorry, that's the wrong year. It's 1957.",
+            "No, wait. Not 1967. It's 1957.",
+            "Hang on, I got the year wrong. It's 1957."
+          ],
+          "meaningDe": "Oh, Entschuldigung, ich habe das falsche Jahr gesagt. Es ist 1957.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-number",
+            "locator": "Number"
+          },
+          "reactions": [
+            {
+              "en": "No problem. So that is 1957?",
+              "fits": true,
+              "meaningDe": "Kein Problem. Also 1957?",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "What is your date of birth, please?",
+              "fits": false,
+              "whyDe": "Tag und Monat kennst du schon, nur das Jahr war falsch. Du musst nicht von vorn fragen.",
+              "meaningDe": "Wie lautet bitte Ihr Geburtsdatum?",
+              "source": {
+                "ref": "mft-mri",
+                "locator": "What happens during a MRI scan?"
+              }
+            },
+            {
+              "en": "It is only for a few seconds.",
+              "fits": false,
+              "whyDe": "Das sagst du beim Luftanhalten. Zum Geburtsjahr passt es nicht.",
+              "meaningDe": "Es sind nur ein paar Sekunden.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p05",
+          "kind": "answer",
+          "en": "It's oh seven seven double oh, nine double oh, one two three.",
+          "variants": [
+            "Oh seven seven double oh, nine double oh, one two three.",
+            "It's zero seven seven zero zero, nine zero zero, one two three.",
+            "My number's oh seven seven double oh, nine double oh, one two three."
+          ],
+          "meaningDe": "Null sieben sieben null null, neun null null, eins zwei drei.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag oh"
+          },
+          "reactions": [
+            {
+              "en": "Let me read the number back to you.",
+              "fits": true,
+              "meaningDe": "Ich lese Ihnen die Nummer noch einmal vor.",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "What is your phone number, please?",
+              "fits": false,
+              "whyDe": "Die Nummer hat er gerade genannt. Jetzt geht es darum, sie zu prüfen.",
+              "meaningDe": "Wie lautet bitte Ihre Telefonnummer?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag phone number"
+              }
+            },
+            {
+              "en": "Did you say 13 or 30?",
+              "fits": false,
+              "whyDe": "Er hat die Ziffern einzeln genannt. Diese Zahlen kamen gar nicht vor.",
+              "meaningDe": "Haben Sie dreizehn oder dreißig gesagt?",
+              "source": {
+                "ref": "cam-number",
+                "locator": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p06",
+          "kind": "answer",
+          "en": "It's five five five, oh one four two.",
+          "variants": [
+            "Five five five, oh one four two.",
+            "Five five five, zero one four two.",
+            "My number's five five five, oh one four two."
+          ],
+          "meaningDe": "Fünf fünf fünf, null eins vier zwei.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag oh"
+          },
+          "reactions": [
+            {
+              "en": "Thank you. Five five five, oh one four two?",
+              "fits": true,
+              "meaningDe": "Danke. Fünf fünf fünf, null eins vier zwei?",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "Did you say 13 or 30?",
+              "fits": false,
+              "whyDe": "Sie hat die Ziffern einzeln genannt. Diese Zahlen kamen nicht vor.",
+              "meaningDe": "Haben Sie dreizehn oder dreißig gesagt?",
+              "source": {
+                "ref": "cam-number",
+                "locator": "Number"
+              }
+            },
+            {
+              "en": "Is that a double L?",
+              "fits": false,
+              "whyDe": "Das passt zu einem buchstabierten Namen, nicht zu einer Telefonnummer.",
+              "meaningDe": "Ist das ein Doppel-L?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag double"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p07",
+          "kind": "unexpected",
+          "en": "I can't remember my number. It's in my phone somewhere.",
+          "variants": [
+            "I never remember my own number. Let me look in my phone.",
+            "Hang on, I don't know it by heart. It's in my phone.",
+            "I don't know my number. Can I look on my phone?"
+          ],
+          "meaningDe": "Ich kann mir meine Nummer nicht merken. Sie ist irgendwo in meinem Handy.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag phone number"
+          },
+          "reactions": [
+            {
+              "en": "No problem. I can wait a moment.",
+              "fits": true,
+              "meaningDe": "Kein Problem. Ich kann einen Moment warten.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag wait"
+              }
+            },
+            {
+              "en": "Let me read the number back to you.",
+              "fits": false,
+              "whyDe": "Du hast noch gar keine Nummer bekommen. Es gibt nichts vorzulesen.",
+              "meaningDe": "Ich lese Ihnen die Nummer noch einmal vor.",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "Could you speak more slowly, please?",
+              "fits": false,
+              "whyDe": "Er spricht nicht zu schnell. Ihm fehlt nur die Nummer.",
+              "meaningDe": "Könnten Sie bitte langsamer sprechen?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag slowly"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p08",
+          "kind": "unclear",
+          "en": "It's a new number. I think it ends in double three.",
+          "variants": [
+            "It's new. It ends in double three, I think.",
+            "I only got it last week. I think it ends in double three.",
+            "I think it ends in two threes. It's a new number."
+          ],
+          "meaningDe": "Das ist eine neue Nummer. Ich glaube, sie endet auf drei drei.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag double"
+          },
+          "reactions": [
+            {
+              "en": "Could you check it on your phone, please?",
+              "fits": true,
+              "meaningDe": "Könnten Sie das bitte in Ihrem Handy nachsehen?",
+              "source": {
+                "ref": "cam-requests",
+                "locator": "Requests"
+              }
+            },
+            {
+              "en": "Thank you. That is what I have here.",
+              "fits": false,
+              "whyDe": "Sie ist selbst nicht sicher, und ganz genannt hat sie die Nummer auch nicht. Bestätigen kannst du so nichts.",
+              "meaningDe": "Danke. Genau das steht auch bei mir.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "You can leave your things in this locker.",
+              "fits": false,
+              "whyDe": "Das gehört zum Umziehen. Die Frage nach der Nummer ist noch offen.",
+              "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p09",
+          "kind": "answer",
+          "en": "My appointment's at quarter past ten.",
+          "variants": [
+            "It's at a quarter past ten.",
+            "It's at quarter after ten.",
+            "They told me ten fifteen.",
+            "They said 10:15."
+          ],
+          "meaningDe": "Mein Termin ist um Viertel nach zehn.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag quarter"
+          },
+          "reactions": [
+            {
+              "en": "So your appointment is at quarter past ten?",
+              "fits": true,
+              "meaningDe": "Ihr Termin ist also um Viertel nach zehn?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag quarter"
+              }
+            },
+            {
+              "en": "Is that the fourth of March or the third of April?",
+              "fits": false,
+              "whyDe": "Das ist eine Frage zum Datum. Er hat dir eine Uhrzeit genannt.",
+              "meaningDe": "Ist das der 4. März oder der 3. April?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
+              }
+            },
+            {
+              "en": "Please change into this gown.",
+              "fits": false,
+              "whyDe": "Das gehört zum Umziehen. Erst klärst du, ob sein Termin stimmt.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p10",
+          "kind": "unexpected",
+          "en": "I've been here since half past one.",
+          "variants": [
+            "I've been waiting since half past one.",
+            "I've been here since 1:30.",
+            "I've been waiting here since one thirty."
+          ],
+          "meaningDe": "Ich bin seit halb zwei hier.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          },
+          "reactions": [
+            {
+              "en": "I'm sorry that I kept you waiting.",
+              "fits": true,
+              "meaningDe": "Entschuldigung, dass Sie warten mussten.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag wait"
+              }
+            },
+            {
+              "en": "So your appointment is at half past two?",
+              "fits": false,
+              "whyDe": "Er hat keine Terminzeit genannt, sondern gesagt, seit wann er schon wartet.",
+              "meaningDe": "Ihr Termin ist also um halb drei?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Er ärgert sich über die Wartezeit. Darauf gehst du zuerst ein.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p11",
+          "kind": "unclear",
+          "en": "It's ten past three, or ten to. I can't remember.",
+          "variants": [
+            "Ten past three, I think. Or was it ten to?",
+            "Ten after three, or ten to three. I'm not sure.",
+            "Is it ten past three? Or ten to? I forget."
+          ],
+          "meaningDe": "Es ist zehn nach drei oder zehn vor. Ich weiß es nicht mehr.",
+          "cefr": "A2",
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          },
+          "reactions": [
+            {
+              "en": "Let me check your appointment on my list.",
+              "fits": true,
+              "meaningDe": "Ich sehe auf meiner Liste nach Ihrem Termin.",
+              "source": {
+                "ref": "wihb-xray",
+                "locator": "When you arrive at Radiology"
+              }
+            },
+            {
+              "en": "So your appointment is at half past two?",
+              "fits": false,
+              "whyDe": "Diese Uhrzeit hat sie gar nicht genannt.",
+              "meaningDe": "Ihr Termin ist also um halb drei?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "What time is your appointment?",
+              "fits": false,
+              "whyDe": "Genau das weiß sie gerade nicht. Sieh selbst nach, statt noch einmal zu fragen.",
+              "meaningDe": "Um wie viel Uhr ist Ihr Termin?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p12",
+          "kind": "question",
+          "en": "Excuse me, what's the time?",
+          "variants": [
+            "Excuse me, do you know what time it is?",
+            "Have you got the time?",
+            "Do you have the time?",
+            "What time is it now, please?"
+          ],
+          "meaningDe": "Entschuldigung, wie spät ist es?",
+          "cefr": "A1",
+          "source": {
+            "ref": "cam-time",
+            "locator": "Time"
+          },
+          "reactions": [
+            {
+              "en": "It's ten to three.",
+              "fits": true,
+              "meaningDe": "Es ist zehn vor drei.",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "What time is your appointment?",
+              "fits": false,
+              "whyDe": "Er will nur wissen, wie spät es gerade ist. Das kannst du direkt beantworten.",
+              "meaningDe": "Um wie viel Uhr ist Ihr Termin?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das antwortest du auf die Frage nach der Dauer, nicht auf die nach der Uhrzeit.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.numbers.p13",
+          "kind": "question",
+          "en": "Do you want the day first or the month first?",
+          "variants": [
+            "Day first or month first?",
+            "Should I say the day or the month first?",
+            "Do you want the month first or the day?"
+          ],
+          "meaningDe": "Möchten Sie zuerst den Tag oder zuerst den Monat?",
+          "cefr": "A2",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag date"
+          },
+          "reactions": [
+            {
+              "en": "The day first, please.",
+              "fits": true,
+              "meaningDe": "Zuerst den Tag, bitte.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag date"
+              }
+            },
+            {
+              "en": "Is that in the morning or in the afternoon?",
+              "fits": false,
+              "whyDe": "Das passt zu einer Uhrzeit. Sie fragt nach der Reihenfolge im Datum.",
+              "meaningDe": "Ist das vormittags oder nachmittags?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            },
+            {
+              "en": "Could you spell your surname, please?",
+              "fits": false,
+              "whyDe": "Das ist eine Bitte zum Namen. Ihre Frage zum Datum bleibt offen.",
+              "meaningDe": "Könnten Sie bitte Ihren Nachnamen buchstabieren?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag surname"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kl.teachback",
+      "key": "teachback",
+      "titleDe": "Verstehen prüfen",
+      "sentences": [
+        {
+          "id": "kl.teachback.s01",
+          "situationDe": "Du musst dem Patienten einiges erklären. Damit es ihn nicht erschlägt, kündigst du an, dass du nicht alles auf einmal sagst.",
+          "en": "I will explain this one step at a time.",
+          "variants": [
+            "Let me explain this one step at a time.",
+            "I will explain this step by step.",
+            "Let me explain this step by step.",
+            "I'll explain this one step at a time."
+          ],
+          "keywords": [
+            "explain",
+            "step"
+          ],
+          "meaningDe": "Ich erkläre Ihnen das Schritt für Schritt.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Chunk and check"
+          }
+        },
+        {
+          "id": "kl.teachback.s02",
+          "situationDe": "Du hast den ersten Teil erklärt und willst wissen, ob du weitermachen kannst.",
+          "en": "Is that clear so far?",
+          "variants": [
+            "Is everything clear so far?",
+            "Is that OK so far?",
+            "Does that make sense so far?",
+            "Is that clear?"
+          ],
+          "keywords": [
+            "clear|OK|sense"
+          ],
+          "meaningDe": "Ist das so weit klar?",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Chunk and check"
+          }
+        },
+        {
+          "id": "kl.teachback.s03",
+          "situationDe": "Die Patientin schaut unsicher. Der letzte Punkt ist offenbar nicht angekommen. Sag ihr, was du jetzt tust.",
+          "en": "Let me explain that part again.",
+          "variants": [
+            "I will explain that part again.",
+            "I'll explain that part again.",
+            "Let me go over that part again."
+          ],
+          "keywords": [
+            "part",
+            "again"
+          ],
+          "meaningDe": "Ich erkläre diesen Teil noch einmal.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ihs-teachback",
+            "locator": "Teach Back"
+          }
+        },
+        {
+          "id": "kl.teachback.s04",
+          "situationDe": "Du möchtest prüfen, ob der Patient alles verstanden hat. Er soll sich dabei aber nicht abgefragt fühlen. Nimm die Verantwortung auf dich.",
+          "en": "I want to make sure I explained it clearly.",
+          "variants": [
+            "I want to be sure that I explained it clearly.",
+            "I just want to make sure I explained it clearly.",
+            "I want to check that I explained it clearly."
+          ],
+          "keywords": [
+            "explained"
+          ],
+          "meaningDe": "Ich möchte sichergehen, dass ich es verständlich erklärt habe.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ihs-teachback",
+            "locator": "Teach Back"
+          }
+        },
+        {
+          "id": "kl.teachback.s05",
+          "situationDe": "Die Patientin nickt nur. Du willst aber hören, was bei ihr angekommen ist. Sie soll dir selbst schildern, wie es gleich weitergeht.",
+          "en": "Could you tell me in your own words what will happen?",
+          "variants": [
+            "Can you tell me in your own words what will happen?",
+            "Could you tell me in your own words what happens next?",
+            "Could you say in your own words what will happen?"
+          ],
+          "keywords": [
+            "own",
+            "words"
+          ],
+          "meaningDe": "Könnten Sie mir in Ihren eigenen Worten sagen, was gleich passiert?",
+          "cefr": "A2",
+          "core": true,
+          "noteDe": "Das heißt Teach-Back: Der Patient erklärt es selbst, und du merkst, ob es angekommen ist.",
+          "source": {
+            "ref": "chft-teachback",
+            "locator": "Teach back"
+          }
+        },
+        {
+          "id": "kl.teachback.s06",
+          "situationDe": "Gleich soll der Patient allein zurechtkommen. Prüfe, ob er weiß, was dann seine Aufgabe ist.",
+          "en": "Can you tell me what you need to do next?",
+          "variants": [
+            "Could you tell me what you need to do next?",
+            "Can you tell me what you have to do next?",
+            "What do you need to do next?"
+          ],
+          "keywords": [
+            "do",
+            "next"
+          ],
+          "meaningDe": "Können Sie mir sagen, was Sie als Nächstes tun müssen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ihs-teachback",
+            "locator": "Teach Back"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "kl.rescue",
+      "key": "rescue",
+      "titleDe": "Rettungssätze",
+      "sentences": [
+        {
+          "id": "kl.rescue.s01",
+          "situationDe": "Der Patient fragt etwas, worauf du selbst keine Antwort hast, zum Beispiel wo er später sein Auto abholen kann. Sag es ehrlich.",
+          "en": "I'm afraid I don't know.",
+          "variants": [
+            "I am afraid I do not know.",
+            "I'm sorry, I don't know.",
+            "Sorry, I don't know."
+          ],
+          "keywords": [
+            "know"
+          ],
+          "meaningDe": "Das weiß ich leider nicht.",
+          "cefr": "A2",
+          "core": false,
+          "noteDe": "I'm afraid hat hier nichts mit Angst zu tun. Es macht eine unerfreuliche Aussage höflicher.",
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag i-m-afraid"
+          }
+        },
+        {
+          "id": "kl.rescue.s02",
+          "situationDe": "Die Patientin stellt dir eine Frage zu ihrer Krankheit. Das gehört nicht in deinen Bereich. Sag ihr freundlich, dass du dazu nichts sagen kannst.",
+          "en": "I'm afraid I can't answer that.",
+          "variants": [
+            "I am afraid I cannot answer that.",
+            "I'm afraid I can't answer that question.",
+            "I'm sorry, I can't answer that.",
+            "Sorry, I can't answer that question."
+          ],
+          "keywords": [
+            "answer"
+          ],
+          "meaningDe": "Das kann ich Ihnen leider nicht beantworten.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag afraid"
+          }
+        },
+        {
+          "id": "kl.rescue.s03",
+          "situationDe": "Der Patient will von dir wissen, was er wegen seiner Beschwerden tun soll. Mach klar, wer dafür zuständig ist.",
+          "en": "That is a question for the doctor.",
+          "variants": [
+            "That's a question for the doctor.",
+            "That is a question for your doctor.",
+            "That's a question for your doctor."
+          ],
+          "keywords": [
+            "question",
+            "doctor"
+          ],
+          "meaningDe": "Das ist eine Frage für den Arzt.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "kl.rescue.s04",
+          "situationDe": "Die Patientin hat eine Frage, die du nicht selbst klären darfst. Versprich ihr, dich darum zu kümmern und wieder zu ihr zu kommen.",
+          "en": "I will ask the doctor and come back to you.",
+          "variants": [
+            "I'll ask the doctor and come back to you.",
+            "Let me ask the doctor and come back to you.",
+            "I will ask the doctor and come back."
+          ],
+          "keywords": [
+            "ask",
+            "doctor"
+          ],
+          "meaningDe": "Ich frage den Arzt und komme wieder zu Ihnen.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "kl.rescue.s05",
+          "situationDe": "Das Gespräch wird dir sprachlich zu schwierig. Erkläre dem Patienten freundlich, woran es liegt.",
+          "en": "I'm afraid my English is not very good.",
+          "variants": [
+            "I'm afraid my English isn't very good.",
+            "I'm sorry, my English is not very good.",
+            "Sorry, my English is not very good."
+          ],
+          "keywords": [
+            "English"
+          ],
+          "meaningDe": "Mein Englisch ist leider nicht sehr gut.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag afraid"
+          }
+        },
+        {
+          "id": "kl.rescue.s06",
+          "situationDe": "Eine Kollegin steht neben dir, die das Thema auf Englisch sicherer beherrscht. Sag dem Patienten, warum sie jetzt übernimmt.",
+          "en": "My colleague can explain that better.",
+          "variants": [
+            "My colleague can explain this better.",
+            "A colleague can explain that better.",
+            "My colleague can explain that better than I can."
+          ],
+          "keywords": [
+            "colleague",
+            "explain"
+          ],
+          "meaningDe": "Meine Kollegin kann das besser erklären.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-can-could-may",
+            "locator": "Can, could or may?"
+          }
+        },
+        {
+          "id": "kl.rescue.s07",
+          "situationDe": "Du kommst allein nicht mehr weiter, die Kollegin ist nebenan. Bitte den Patienten kurz um Geduld und sag ihm, was du vorhast.",
+          "en": "Just a moment, please. I will get my colleague.",
+          "variants": [
+            "Just a moment, please. I'll get my colleague.",
+            "Just a moment. I will get my colleague.",
+            "Just a moment, please. I will get a colleague."
+          ],
+          "keywords": [
+            "moment",
+            "colleague"
+          ],
+          "meaningDe": "Einen Moment bitte. Ich hole meine Kollegin.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "cambridge-dictionary",
+            "locator": "Eintrag just-a-moment"
+          }
+        },
+        {
+          "id": "kl.rescue.s08",
+          "situationDe": "Der Patient braucht etwas, wofür du nicht zuständig bist, und du weißt noch nicht, wer es ist. Sag ihm, dass du dich kümmerst.",
+          "en": "I will find someone who can help you.",
+          "variants": [
+            "I'll find someone who can help you.",
+            "Let me find someone who can help you.",
+            "I will get someone who can help you."
+          ],
+          "keywords": [
+            "someone",
+            "help"
+          ],
+          "meaningDe": "Ich suche jemanden, der Ihnen helfen kann.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "kl.rescue.s09",
+          "situationDe": "Direkt nach der Aufnahme will die Patientin von dir wissen, was herausgekommen ist. Das erfährt sie nicht von dir, und das sagst du ihr.",
+          "en": "I can't give you the results.",
+          "variants": [
+            "I cannot give you the results.",
+            "I'm afraid I can't give you the results.",
+            "I'm sorry, I can't give you the results."
+          ],
+          "keywords": [
+            "results"
+          ],
+          "meaningDe": "Die Ergebnisse kann ich Ihnen nicht mitteilen.",
+          "cefr": "A2",
+          "core": true,
+          "clinicDependent": true,
+          "noteDe": "Zu Befunden äußerst du dich nicht, auch wenn du die Bilder gesehen hast.",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How will I get my results?"
+          }
+        },
+        {
+          "id": "kl.rescue.s10",
+          "situationDe": "Der Patient versteht nicht, warum er jetzt noch nichts erfährt. Erkläre, wer sich als Nächstes mit den Aufnahmen befasst.",
+          "en": "A radiologist will look at the pictures first.",
+          "variants": [
+            "The radiologist will look at the pictures first.",
+            "A radiologist will look at the images first.",
+            "A doctor will look at the pictures first."
+          ],
+          "keywords": [
+            "look",
+            "pictures|images"
+          ],
+          "meaningDe": "Zuerst sieht sich ein Radiologe die Bilder an.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How do I get my results?"
+          }
+        },
+        {
+          "id": "kl.rescue.s11",
+          "situationDe": "Die Patientin fragt, von wem sie erfährt, was herausgekommen ist. Verweise sie an die Person, die sie zu euch geschickt hat.",
+          "en": "The doctor who sent you will explain the results.",
+          "variants": [
+            "The doctor who referred you will explain the results.",
+            "The doctor who sent you will explain the results to you.",
+            "Your GP will explain the results.",
+            "Your family doctor will explain the results."
+          ],
+          "keywords": [
+            "doctor|GP",
+            "results"
+          ],
+          "meaningDe": "Der Arzt, der Sie zu uns geschickt hat, erklärt Ihnen die Ergebnisse.",
+          "cefr": "B1",
+          "core": false,
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "How do I get my results?"
+          }
+        }
+      ],
+      "patient": []
+    },
+    {
+      "id": "kl.patientquestions",
+      "key": "patientquestions",
+      "titleDe": "Typische Patientenfragen",
+      "sentences": [
+        {
+          "id": "kl.patientquestions.s01",
+          "situationDe": "Vor der Untersuchung wirkt die Patientin angespannt, sagt aber nichts. Gib ihr die Gelegenheit, es auszusprechen.",
+          "en": "Is there anything you are worried about?",
+          "variants": [
+            "Is there anything you're worried about?",
+            "Are you worried about anything?",
+            "Is there anything that worries you?"
+          ],
+          "keywords": [
+            "worried|worries"
+          ],
+          "meaningDe": "Gibt es etwas, worüber Sie sich Sorgen machen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          }
+        },
+        {
+          "id": "kl.patientquestions.s02",
+          "situationDe": "Viele Patienten trauen sich nicht, etwas zu sagen. Ermutige den Patienten, jederzeit auf dich zuzukommen.",
+          "en": "Please ask me if you have any questions.",
+          "variants": [
+            "Please ask me if you have a question.",
+            "Please ask if you have any questions.",
+            "Just ask me if you have any questions."
+          ],
+          "keywords": [
+            "ask",
+            "questions|question"
+          ],
+          "meaningDe": "Bitte fragen Sie mich, wenn Sie Fragen haben.",
+          "cefr": "A2",
+          "core": true,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        },
+        {
+          "id": "kl.patientquestions.s03",
+          "situationDe": "Der Patient will etwas wissen, das du nicht sofort beantworten kannst, das aber jemand bei euch klären kann. Würdige sein Anliegen und kümmere dich darum.",
+          "en": "Good question. Let me find out for you.",
+          "variants": [
+            "That is a good question. Let me find out for you.",
+            "That's a good question. Let me find out for you.",
+            "Good question. I will find out for you."
+          ],
+          "keywords": [
+            "question",
+            "find"
+          ],
+          "meaningDe": "Gute Frage. Ich erkundige mich für Sie.",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "cam-politeness",
+            "locator": "Politeness"
+          }
+        },
+        {
+          "id": "kl.patientquestions.s04",
+          "situationDe": "Du hast der Patientin geantwortet, und gleich soll es weitergehen. Prüfe, ob noch etwas offen ist.",
+          "en": "Do you have any other questions?",
+          "variants": [
+            "Do you have any more questions?",
+            "Have you got any other questions?",
+            "Have you got any more questions?"
+          ],
+          "keywords": [
+            "questions"
+          ],
+          "meaningDe": "Haben Sie noch andere Fragen?",
+          "cefr": "A2",
+          "core": false,
+          "source": {
+            "ref": "ruh-ct",
+            "locator": "Where do I go when I arrive at the hospital?"
+          }
+        }
+      ],
+      "patient": [
+        {
+          "id": "kl.patientquestions.p01",
+          "kind": "question",
+          "en": "How long am I going to be in there?",
+          "variants": [
+            "How long will I be in the machine?",
+            "How long do I have to stay in there?",
+            "How long does this thing take?"
+          ],
+          "meaningDe": "Wie lange bin ich da drin?",
+          "cefr": "A2",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "How long will the scan take?"
+          },
+          "reactions": [
+            {
+              "en": "It depends on the part of your body.",
+              "fits": true,
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "Your doctor will tell you the results.",
+              "fits": false,
+              "whyDe": "Das sagt etwas zum Ergebnis, nicht zur Dauer.",
+              "meaningDe": "Ihr Arzt teilt Ihnen die Ergebnisse mit.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            },
+            {
+              "en": "You can get changed in this cubicle.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Dauer, nicht nach dem Umziehen.",
+              "meaningDe": "Sie können sich in dieser Kabine umziehen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p02",
+          "kind": "question",
+          "en": "Will this take long? I've got to get back to work.",
+          "variants": [
+            "Is this going to take long? I have to get back to work.",
+            "Will I be out of here soon? I've got to go to work.",
+            "Is this going to take long? I need to get back to work."
+          ],
+          "meaningDe": "Dauert das lange? Ich muss zurück zur Arbeit.",
+          "cefr": "A2",
+          "source": {
+            "ref": "nnuh-xray",
+            "locator": "How long will it take?"
+          },
+          "reactions": [
+            {
+              "en": "I can't say exactly. Let me find out for you.",
+              "fits": true,
+              "meaningDe": "Genau kann ich das nicht sagen. Ich erkundige mich für Sie.",
+              "source": {
+                "ref": "nnuh-xray",
+                "locator": "How long will it take?"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Sie sorgt sich um die Zeit, nicht um Schmerzen.",
+              "meaningDe": "Die Untersuchung tut nicht weh.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "Is that in the morning or in the afternoon?",
+              "fits": false,
+              "whyDe": "Sie hat keine Uhrzeit genannt, die du klären müsstest.",
+              "meaningDe": "Ist das vormittags oder nachmittags?",
+              "source": {
+                "ref": "cam-time",
+                "locator": "Time"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p03",
+          "kind": "question",
+          "en": "Are we nearly finished?",
+          "variants": [
+            "Are we almost done?",
+            "Is it nearly over?",
+            "How much longer is this going to be?"
+          ],
+          "meaningDe": "Sind wir bald fertig?",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How long will the scan take?"
+          },
+          "reactions": [
+            {
+              "en": "Let me check how much longer it will be.",
+              "fits": true,
+              "meaningDe": "Ich schaue nach, wie lange es noch dauert.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How long will the scan take?"
+              }
+            },
+            {
+              "en": "Let me explain what will happen today.",
+              "fits": false,
+              "whyDe": "Das passt an den Anfang. Jetzt will er wissen, wann es vorbei ist.",
+              "meaningDe": "Ich erkläre Ihnen, was heute passiert.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Could you tell me in your own words what will happen?",
+              "fits": false,
+              "whyDe": "Das prüft sein Verstehen. Seine Frage nach dem Ende bleibt offen.",
+              "meaningDe": "Könnten Sie mir in Ihren eigenen Worten sagen, was gleich passiert?",
+              "source": {
+                "ref": "chft-teachback",
+                "locator": "Teach back"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p04",
+          "kind": "question",
+          "en": "Is this going to hurt?",
+          "variants": [
+            "Will it hurt?",
+            "Is it painful?",
+            "It doesn't hurt, does it?",
+            "Does it hurt much?"
+          ],
+          "meaningDe": "Tut das weh?",
+          "cefr": "A2",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "Will it hurt?"
+          },
+          "reactions": [
+            {
+              "en": "The scan does not hurt.",
+              "fits": true,
+              "meaningDe": "Die Untersuchung tut nicht weh.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das antwortet auf die Frage nach der Dauer.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "Please tell me if you are not sure.",
+              "fits": false,
+              "whyDe": "Das gehört zu den Sicherheitsfragen. Sie möchte wissen, ob es wehtut.",
+              "meaningDe": "Bitte sagen Sie mir, wenn Sie nicht sicher sind.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p05",
+          "kind": "question",
+          "en": "Will I feel anything?",
+          "variants": [
+            "Am I going to feel anything?",
+            "Do you feel anything while it's happening?",
+            "Can you feel it when it's working?"
+          ],
+          "meaningDe": "Spüre ich etwas davon?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "You should not feel any pain. Please tell me if you do.",
+              "fits": true,
+              "meaningDe": "Schmerzen sollten Sie keine haben. Bitte sagen Sie mir, falls doch.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "I can't give you the results.",
+              "fits": false,
+              "whyDe": "Nach dem Ergebnis hat er gar nicht gefragt.",
+              "meaningDe": "Die Ergebnisse kann ich Ihnen nicht mitteilen.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How will I get my results?"
+              }
+            },
+            {
+              "en": "Please lie down on the table.",
+              "fits": false,
+              "whyDe": "Das übergeht seine Frage. Zuerst beantwortest du, was ihn beschäftigt.",
+              "meaningDe": "Bitte legen Sie sich auf den Tisch.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "What happens during the MRI scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p06",
+          "kind": "question",
+          "en": "What if it starts to hurt while I'm lying there?",
+          "variants": [
+            "What do I do if my back starts to hurt?",
+            "What if lying there hurts my back?",
+            "What if it gets painful in there?"
+          ],
+          "meaningDe": "Was ist, wenn es anfängt wehzutun, während ich da liege?",
+          "cefr": "A2",
+          "noteDe": "Beim MRT zeigst du zusätzlich die Klingel.",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Will the scan be uncomfortable?"
+          },
+          "reactions": [
+            {
+              "en": "Please tell me straight away. I can hear you.",
+              "fits": true,
+              "meaningDe": "Sagen Sie es mir bitte sofort. Ich kann Sie hören.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Sie sorgt sich ums Liegen, nicht um die Aufnahme selbst. So bleibt ihre Frage unbeantwortet. Beim MRT zeigst du zusätzlich die Klingel.",
+              "meaningDe": "Die Untersuchung tut nicht weh.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "You can eat and drink as normal.",
+              "fits": false,
+              "whyDe": "Das sagst du am Ende der Untersuchung. Es hat mit ihrer Sorge nichts zu tun.",
+              "meaningDe": "Sie können normal essen und trinken.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p07",
+          "kind": "question",
+          "en": "Does the needle hurt?",
+          "variants": [
+            "Is the injection going to hurt?",
+            "I hate needles. Is it going to hurt?",
+            "Will I feel the needle?"
+          ],
+          "meaningDe": "Tut die Nadel weh?",
+          "cefr": "A2",
+          "source": {
+            "ref": "dudley-ct",
+            "locator": "What happens during the CT scan?"
+          },
+          "reactions": [
+            {
+              "en": "Are you worried about the needle?",
+              "fits": true,
+              "meaningDe": "Machen Sie sich Sorgen wegen der Nadel?",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "What happens during the CT scan?"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Aufnahme. Seine Sorge bleibt dabei unbeachtet.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "You may have a metal taste in your mouth.",
+              "fits": false,
+              "whyDe": "Das betrifft die Wirkung des Kontrastmittels beim CT, nicht die Nadel.",
+              "meaningDe": "Sie haben vielleicht einen Metallgeschmack im Mund.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Before the CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p08",
+          "kind": "question",
+          "en": "When will I know what's wrong with me?",
+          "variants": [
+            "When do I find out what's wrong?",
+            "When will somebody tell me what it is?",
+            "How soon will I know what it is?"
+          ],
+          "meaningDe": "Wann erfahre ich, was mir fehlt?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "When will I get the results?"
+          },
+          "reactions": [
+            {
+              "en": "Your doctor will talk to you about the results.",
+              "fits": true,
+              "meaningDe": "Ihr Arzt bespricht die Ergebnisse mit Ihnen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            },
+            {
+              "en": "Please wait here for a short time after the scan.",
+              "fits": false,
+              "whyDe": "Das betrifft das Warten nach dem Kontrastmittel, nicht das Ergebnis.",
+              "meaningDe": "Bitte warten Sie nach der Untersuchung noch kurz hier.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "After the CT scan"
+              }
+            },
+            {
+              "en": "It is important for your safety.",
+              "fits": false,
+              "whyDe": "Das begründet eine Sicherheitsfrage. Er will wissen, wann er Bescheid bekommt.",
+              "meaningDe": "Das ist wichtig für Ihre Sicherheit.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p09",
+          "kind": "question",
+          "en": "Can you just tell me if it looks OK?",
+          "variants": [
+            "Does it look OK to you?",
+            "You've seen the pictures. Is it OK?",
+            "Just between us, does it look all right?"
+          ],
+          "meaningDe": "Können Sie mir nicht einfach sagen, ob es gut aussieht?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "How will I get my results?"
+          },
+          "reactions": [
+            {
+              "en": "I'm afraid I can't answer that. Your doctor will explain.",
+              "fits": true,
+              "meaningDe": "Das kann ich Ihnen leider nicht beantworten. Das erklärt Ihnen Ihr Arzt.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "How will I get my results?"
+              }
+            },
+            {
+              "en": "Did I understand you correctly?",
+              "fits": false,
+              "whyDe": "Du hast sie richtig verstanden. Jetzt braucht sie eine klare Antwort.",
+              "meaningDe": "Habe ich Sie richtig verstanden?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag understand"
+              }
+            },
+            {
+              "en": "We are finished now. You can get dressed.",
+              "fits": false,
+              "whyDe": "Das übergeht ihre Frage. Sie bleibt mit ihrer Sorge allein.",
+              "meaningDe": "Wir sind jetzt fertig. Sie können sich anziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p10",
+          "kind": "question",
+          "en": "Who's going to give me the results?",
+          "variants": [
+            "Who tells me the results?",
+            "Who do I ask about the results?",
+            "Do I call you for the results?"
+          ],
+          "meaningDe": "Wer teilt mir die Ergebnisse mit?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "cuh-ct",
+            "locator": "How, when and by whom will my results be communicated?"
+          },
+          "reactions": [
+            {
+              "en": "The doctor who sent you will explain the results.",
+              "fits": true,
+              "meaningDe": "Der Arzt, der Sie zu uns geschickt hat, erklärt Ihnen die Ergebnisse.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das sagt, wo du während der Aufnahme bist. Gefragt ist, von wem das Ergebnis kommt.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "We are finished now. You can get dressed.",
+              "fits": false,
+              "whyDe": "Das gehört zum Abschluss, sagt ihm aber nicht, von wem er das Ergebnis bekommt.",
+              "meaningDe": "Wir sind jetzt fertig. Sie können sich anziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p11",
+          "kind": "question",
+          "en": "What if I don't hear anything?",
+          "variants": [
+            "What do I do if nobody calls me?",
+            "What if nobody tells me the results?",
+            "And if I don't hear from anyone?"
+          ],
+          "meaningDe": "Was ist, wenn ich nichts höre?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Getting your CT scan results"
+          },
+          "reactions": [
+            {
+              "en": "Please ask the doctor who sent you.",
+              "fits": true,
+              "meaningDe": "Bitte fragen Sie den Arzt, der Sie zu uns geschickt hat.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Getting your CT scan results"
+              }
+            },
+            {
+              "en": "I can hear you, and you can talk to me.",
+              "fits": false,
+              "whyDe": "Das gilt während der Aufnahme. Sie meint aber, dass später keine Nachricht kommt.",
+              "meaningDe": "Ich kann Sie hören, und Sie können mit mir sprechen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Please lie flat on your back.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung zur Lagerung. Ihre Frage nach dem Ergebnis bleibt offen.",
+              "meaningDe": "Bitte legen Sie sich flach auf den Rücken.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p12",
+          "kind": "question",
+          "en": "What happens if I move?",
+          "variants": [
+            "What if I move by accident?",
+            "What if I move a bit?",
+            "Is it bad if I move?"
+          ],
+          "meaningDe": "Was passiert, wenn ich mich bewege?",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "The pictures may not be clear. Then we may need to repeat them.",
+              "fits": true,
+              "meaningDe": "Die Bilder werden vielleicht unscharf. Dann müssen wir sie eventuell wiederholen.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist die Anweisung selbst. Seine Frage, was beim Bewegen passiert, bleibt offen.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            },
+            {
+              "en": "Your doctor will tell you the results.",
+              "fits": false,
+              "whyDe": "Das sagt etwas zum Ergebnis, nicht zum Bewegen.",
+              "meaningDe": "Ihr Arzt teilt Ihnen die Ergebnisse mit.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "How do I get my results?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p13",
+          "kind": "question",
+          "en": "Can I scratch my nose?",
+          "variants": [
+            "My nose itches. Can I scratch it?",
+            "Can I just scratch my nose quickly?",
+            "What if I get an itch?"
+          ],
+          "meaningDe": "Darf ich mich an der Nase kratzen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "lothian-mri",
+            "locator": "What will the MRI scan involve?"
+          },
+          "reactions": [
+            {
+              "en": "Please try to keep still until I tell you.",
+              "fits": true,
+              "meaningDe": "Bitte versuchen Sie stillzuhalten, bis ich es Ihnen sage.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What will the MRI scan involve?"
+              }
+            },
+            {
+              "en": "Please tell me if you feel unwell.",
+              "fits": false,
+              "whyDe": "Das passt, wenn es ihr schlecht geht. Hier geht es nur ums Stillhalten.",
+              "meaningDe": "Bitte sagen Sie mir, wenn Sie sich unwohl fühlen.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "Are you comfortable like that?",
+              "fits": false,
+              "whyDe": "Sie hat eine klare Frage gestellt. Ob sie sich kratzen darf, beantwortest du so nicht.",
+              "meaningDe": "Liegen Sie so bequem?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p14",
+          "kind": "question",
+          "en": "Do I have to hold my breath the whole time?",
+          "variants": [
+            "Do I hold my breath all the way through?",
+            "Have I got to hold my breath for the whole thing?",
+            "Is it the whole time I have to hold my breath?"
+          ],
+          "meaningDe": "Muss ich die ganze Zeit die Luft anhalten?",
+          "cefr": "A2",
+          "source": {
+            "ref": "wwl-mri",
+            "locator": "During your scan"
+          },
+          "reactions": [
+            {
+              "en": "No, only for a few seconds. I will tell you when.",
+              "fits": true,
+              "meaningDe": "Nein, nur ein paar Sekunden. Ich sage Ihnen, wann.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            },
+            {
+              "en": "Breathe out.",
+              "fits": false,
+              "whyDe": "Das ist ein Kommando für den Moment der Aufnahme. Seine Frage beantwortet es nicht.",
+              "meaningDe": "Atmen Sie aus.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Please try to stay still the whole time.",
+              "fits": false,
+              "whyDe": "Das gilt fürs Stillhalten. Er fragt nach dem Luftanhalten.",
+              "meaningDe": "Bitte versuchen Sie, die ganze Zeit still zu bleiben.",
+              "source": {
+                "ref": "wwl-mri",
+                "locator": "During your scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p15",
+          "kind": "question",
+          "en": "What if I need you while I'm in there?",
+          "variants": [
+            "What if I need something while I'm in there?",
+            "How do I get your attention in there?",
+            "How do I tell you if something's wrong?"
+          ],
+          "meaningDe": "Was ist, wenn ich Sie brauche, während ich da drin bin?",
+          "cefr": "A2",
+          "noteDe": "Beim MRT zeigst du zusätzlich die Klingel.",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "During an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Just talk to me. I can hear you.",
+              "fits": true,
+              "meaningDe": "Sprechen Sie einfach mit mir. Ich kann Sie hören.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "During an MRI scan"
+              }
+            },
+            {
+              "en": "It is only for a few seconds.",
+              "fits": false,
+              "whyDe": "Das sagst du beim Luftanhalten. Er fragt, wie er dich erreicht. Beim MRT zeigst du zusätzlich die Klingel.",
+              "meaningDe": "Es sind nur ein paar Sekunden.",
+              "source": {
+                "ref": "radiologyinfo-chest",
+                "locator": "How is the procedure performed?"
+              }
+            },
+            {
+              "en": "Let me help you get up.",
+              "fits": false,
+              "whyDe": "Das sagst du am Ende. Seine Frage gilt der Zeit während der Aufnahme.",
+              "meaningDe": "Ich helfe Ihnen beim Aufstehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "What happens during the procedure?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p16",
+          "kind": "question",
+          "en": "Is it a lot of radiation?",
+          "variants": [
+            "How much radiation is it?",
+            "Do I get much radiation from this?",
+            "Is that a high dose?"
+          ],
+          "meaningDe": "Ist das viel Strahlung?",
+          "cefr": "B1",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "Possible complications of X-rays"
+          },
+          "reactions": [
+            {
+              "en": "I will ask the doctor to explain that to you.",
+              "fits": true,
+              "meaningDe": "Ich bitte den Arzt, Ihnen das zu erklären.",
+              "source": {
+                "ref": "cam-politeness",
+                "locator": "Politeness"
+              }
+            },
+            {
+              "en": "The scan does not hurt.",
+              "fits": false,
+              "whyDe": "Er fragt nach der Strahlung, nicht nach Schmerzen.",
+              "meaningDe": "Die Untersuchung tut nicht weh.",
+              "source": {
+                "ref": "dudley-ct",
+                "locator": "Will it hurt?"
+              }
+            },
+            {
+              "en": "Do you have any allergies?",
+              "fits": false,
+              "whyDe": "Das ist eine Sicherheitsfrage an ihn. Seine eigene Frage bleibt dabei offen.",
+              "meaningDe": "Haben Sie Allergien?",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "Preparing for a CT scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p17",
+          "kind": "question",
+          "en": "Is this safe?",
+          "variants": [
+            "Is all this safe?",
+            "Is it dangerous?",
+            "Are these scans bad for you?"
+          ],
+          "meaningDe": "Ist das sicher?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Are there any risks?"
+          },
+          "reactions": [
+            {
+              "en": "What worries you about it?",
+              "fits": true,
+              "meaningDe": "Was macht Ihnen daran Sorgen?",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Will the scan be uncomfortable?"
+              }
+            },
+            {
+              "en": "You can leave your things in this locker.",
+              "fits": false,
+              "whyDe": "Das gehört zum Umziehen. Auf ihre Sorge geht es nicht ein.",
+              "meaningDe": "Sie können Ihre Sachen in diesem Spind lassen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Yes, please. You can put them back on afterwards.",
+              "fits": false,
+              "whyDe": "Das passt zu einer Brille oder zu Schmuck, nicht zur Frage nach der Sicherheit.",
+              "meaningDe": "Ja, bitte. Sie können sie danach wieder anziehen.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "Are you required to make any special preparations?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p18",
+          "kind": "question",
+          "en": "I had a CT two weeks ago. Is another one OK?",
+          "variants": [
+            "I had a CT scan two weeks ago. Can I have another one?",
+            "I only had a CT two weeks ago. Is it OK to have another?",
+            "I had a CT a couple of weeks ago. Is another one all right?"
+          ],
+          "meaningDe": "Ich hatte vor zwei Wochen ein CT. Ist noch eines in Ordnung?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-ct",
+            "locator": "Possible complications of a CT scan"
+          },
+          "reactions": [
+            {
+              "en": "Thank you for telling me. I will ask the doctor.",
+              "fits": true,
+              "meaningDe": "Danke, dass Sie mir das sagen. Ich frage den Arzt.",
+              "source": {
+                "ref": "cam-politeness",
+                "locator": "Politeness"
+              }
+            },
+            {
+              "en": "You had an operation last year?",
+              "fits": false,
+              "whyDe": "Sie sprach von einer früheren Aufnahme, nicht von einer Operation.",
+              "meaningDe": "Sie hatten letztes Jahr eine Operation?",
+              "source": {
+                "ref": "cam-q-echo",
+                "locator": "Echo questions, checking questions"
+              }
+            },
+            {
+              "en": "You can eat and drink as normal.",
+              "fits": false,
+              "whyDe": "Das sagst du am Ende der Untersuchung. Ihre Frage beantwortet es nicht.",
+              "meaningDe": "Sie können normal essen und trinken.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "After an MRI scan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p19",
+          "kind": "question",
+          "en": "Why do you have to go behind that screen?",
+          "variants": [
+            "Why do you stand behind that wall?",
+            "Why are you going behind there?",
+            "If it's safe, why do you go behind the screen?"
+          ],
+          "meaningDe": "Warum müssen Sie hinter diese Schutzwand gehen?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-xray",
+            "locator": "What happens during an X-ray"
+          },
+          "reactions": [
+            {
+              "en": "It is for safety. I can still see and hear you.",
+              "fits": true,
+              "meaningDe": "Das dient der Sicherheit. Ich kann Sie weiter sehen und hören.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "What happens during the X-ray?"
+              }
+            },
+            {
+              "en": "I can hear you, and you can talk to me.",
+              "fits": false,
+              "whyDe": "Das stimmt zwar, erklärt aber nicht, warum du hinter die Wand gehst.",
+              "meaningDe": "Ich kann Sie hören, und Sie können mit mir sprechen.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            },
+            {
+              "en": "Please keep very still.",
+              "fits": false,
+              "whyDe": "Das ist eine Anweisung für die Aufnahme. Seine Frage bleibt offen.",
+              "meaningDe": "Bitte halten Sie ganz still.",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "What happens during an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p20",
+          "kind": "question",
+          "en": "Can my daughter stay with me?",
+          "variants": [
+            "Can my daughter stay in here with me?",
+            "Can my daughter come in with me?",
+            "Is it OK if my daughter stays in the room?"
+          ],
+          "meaningDe": "Darf meine Tochter bei mir bleiben?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "Can I bring a relative or friend?"
+          },
+          "reactions": [
+            {
+              "en": "Let me ask. It depends on the scan.",
+              "fits": true,
+              "meaningDe": "Ich frage nach. Das hängt von der Untersuchung ab.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Can I bring a relative or friend?"
+              }
+            },
+            {
+              "en": "Could you spell your name for me, please?",
+              "fits": false,
+              "whyDe": "Nach dem Namen fragst du bei der Identität. Hier geht es um die Begleitung.",
+              "meaningDe": "Könnten Sie mir bitte Ihren Namen buchstabieren?",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag spell"
+              }
+            },
+            {
+              "en": "These feelings usually go away quickly.",
+              "fits": false,
+              "whyDe": "Das bezieht sich auf das Gefühl nach dem Kontrastmittel beim CT.",
+              "meaningDe": "Diese Gefühle gehen meist schnell vorbei.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Are there any risks?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p21",
+          "kind": "question",
+          "en": "Can I eat afterwards?",
+          "variants": [
+            "Can I have something to eat after this?",
+            "Am I allowed to eat when it's finished?",
+            "Can I get a bite to eat after this?"
+          ],
+          "meaningDe": "Darf ich danach essen?",
+          "cefr": "A2",
+          "clinicDependent": true,
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Can I eat and drink afterwards?"
+          },
+          "reactions": [
+            {
+              "en": "Yes, you can eat and drink as normal.",
+              "fits": true,
+              "meaningDe": "Ja, Sie können normal essen und trinken.",
+              "source": {
+                "ref": "glos-mri",
+                "locator": "Can I eat and drink afterwards?"
+              }
+            },
+            {
+              "en": "It depends on the part of your body.",
+              "fits": false,
+              "whyDe": "Das antwortet auf die Frage nach der Dauer.",
+              "meaningDe": "Das hängt vom Körperteil ab.",
+              "source": {
+                "ref": "jpaget-xray",
+                "locator": "How long will the X-ray take?"
+              }
+            },
+            {
+              "en": "Have you had anything to eat or drink today?",
+              "fits": false,
+              "whyDe": "Sie fragt nach der Zeit danach, nicht nach dem, was sie heute schon gegessen hat.",
+              "meaningDe": "Haben Sie heute schon etwas gegessen oder getrunken?",
+              "source": {
+                "ref": "nhs-xray",
+                "locator": "Preparing for an X-ray"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p22",
+          "kind": "question",
+          "en": "Can I drive home afterwards?",
+          "variants": [
+            "Am I OK to drive after this?",
+            "Is it OK if I drive home?",
+            "I came in the car. Can I drive back?"
+          ],
+          "meaningDe": "Darf ich danach selbst nach Hause fahren?",
+          "cefr": "A2",
+          "source": {
+            "ref": "nhs-mri",
+            "locator": "After an MRI scan"
+          },
+          "reactions": [
+            {
+              "en": "Have you had anything to help you relax today?",
+              "fits": true,
+              "meaningDe": "Haben Sie heute etwas zur Beruhigung bekommen?",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "Someone will need to take you home.",
+              "fits": false,
+              "whyDe": "Das gilt nur nach einem Beruhigungsmittel. Das musst du zuerst erfragen.",
+              "meaningDe": "Jemand muss Sie nach Hause bringen.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Are there any risks?"
+              }
+            },
+            {
+              "en": "Please change into this gown.",
+              "fits": false,
+              "whyDe": "Das gehört zur Vorbereitung. Er denkt schon an die Zeit danach.",
+              "meaningDe": "Bitte ziehen Sie dieses Hemd an.",
+              "source": {
+                "ref": "ruh-mri",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p23",
+          "kind": "question",
+          "en": "Are there any side effects?",
+          "variants": [
+            "Will I feel sick afterwards?",
+            "Can this make me feel ill?",
+            "Will I feel funny after this?"
+          ],
+          "meaningDe": "Gibt es Nebenwirkungen?",
+          "cefr": "B1",
+          "source": {
+            "ref": "glos-mri",
+            "locator": "Are there side effects?"
+          },
+          "reactions": [
+            {
+              "en": "Please tell me if you feel unwell. The doctor can tell you more.",
+              "fits": true,
+              "meaningDe": "Bitte sagen Sie mir, wenn Sie sich unwohl fühlen. Der Arzt kann Ihnen mehr dazu sagen.",
+              "source": {
+                "ref": "nhs-mri",
+                "locator": "Possible complications of an MRI scan"
+              }
+            },
+            {
+              "en": "It is important for your safety.",
+              "fits": false,
+              "whyDe": "Das begründet eine Sicherheitsfrage. Ihre Frage nach Nebenwirkungen beantwortet es nicht.",
+              "meaningDe": "Das ist wichtig für Ihre Sicherheit.",
+              "source": {
+                "ref": "lothian-mri",
+                "locator": "What happens before my scan?"
+              }
+            },
+            {
+              "en": "Please take a seat. I will be back in just a moment.",
+              "fits": false,
+              "whyDe": "So lässt du sie mit ihrer Frage einfach stehen.",
+              "meaningDe": "Bitte nehmen Sie Platz. Ich bin gleich wieder da.",
+              "source": {
+                "ref": "cambridge-dictionary",
+                "locator": "Eintrag seat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "kl.patientquestions.p24",
+          "kind": "unclear",
+          "en": "So that's it, then?",
+          "variants": [
+            "Is that all?",
+            "So is that everything?",
+            "Am I done now?"
+          ],
+          "meaningDe": "War es das jetzt?",
+          "cefr": "A2",
+          "source": {
+            "ref": "ruh-mri",
+            "locator": "What happens after the scan?"
+          },
+          "reactions": [
+            {
+              "en": "Yes, that's it. You can get dressed now.",
+              "fits": true,
+              "meaningDe": "Ja, das war es. Sie können sich jetzt anziehen.",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "Do you have any questions before we start?",
+              "fits": false,
+              "whyDe": "Die Untersuchung ist schon vorbei. Jetzt fängt nichts mehr an.",
+              "meaningDe": "Haben Sie Fragen, bevor wir anfangen?",
+              "source": {
+                "ref": "ruh-ct",
+                "locator": "Where do I go when I arrive at the hospital?"
+              }
+            },
+            {
+              "en": "I will be in the next room.",
+              "fits": false,
+              "whyDe": "Das sagst du vor der Aufnahme. Die ist aber schon vorbei.",
+              "meaningDe": "Ich bin im Nebenraum.",
+              "source": {
+                "ref": "nhs-ct",
+                "locator": "During the CT scan"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
