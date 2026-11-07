@@ -70,6 +70,10 @@ textarea {
   font-size: .8rem;
 }
 a { color: var(--accent); }
+/* Die Regel oben für button würde hidden sonst aufheben. */
+[hidden] { display: none !important; }
+button.big { min-height: 64px; font-size: 1.1rem; }
+summary { padding: 14px; margin-bottom: 12px; background: var(--card); border-radius: 12px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -77,10 +81,39 @@ a { color: var(--accent); }
   <section class="card">
     <h1>Erkennung mehrfach</h1>
     <p class="small" id="info">…</p>
-    <p class="small">Bitte nur den Satz von dieser Seite sprechen und keine Patientendaten eingeben.</p>
+    <p class="small">Bitte nur die Sätze von dieser Seite sprechen und keine Patientendaten eingeben.</p>
     <p class="small"><a href="index.html">Zurück zur Testseite</a></p>
   </section>
 
+  <section class="card">
+    <h2>Echter Ablauf</h2>
+    <p class="small">Prüft die Reihenfolge des späteren Sprechmodus: anhören, nachsprechen, nochmal anhören, weiter. Handy nicht stumm, ohne Kopfhörer, mit Netz.</p>
+    <div id="seq-choose">
+      <button type="button" id="seq-start-H">H: Alles auf einer Seite</button>
+      <p class="small">Die Seite lädt nur vor jedem neuen Satz neu.</p>
+      <button type="button" id="seq-start-I">I: Neu laden vor dem Sprechen</button>
+      <p class="small">Die Seite lädt auch nach dem Anhören und nach dem Sprechen selbst neu.</p>
+      <p class="small" id="seq-summary"></p>
+    </div>
+    <div id="seq-run" hidden>
+      <p class="small" id="seq-progress"></p>
+      <p class="sentence" lang="en" id="seq-sentence"></p>
+      <button type="button" class="big" id="seq-step"></button>
+      <button type="button" class="secondary" id="seq-cancel">Durchgang abbrechen</button>
+    </div>
+    <div class="status" id="seq-status">Noch nichts gestartet.</div>
+  </section>
+
+  <section class="card">
+    <h2>Ergebnis Echter Ablauf</h2>
+    <p class="small">Nach H und I markieren, kopieren und in den Chat schicken.</p>
+    <button type="button" id="seq-select">Alles markieren</button>
+    <textarea id="seq-report" readonly></textarea>
+    <button type="button" class="secondary" id="seq-clear">Ergebnisse löschen</button>
+  </section>
+
+  <details>
+  <summary>Frühere Varianten A bis G</summary>
   <section class="card">
     <h2>So geht es</h2>
     <ol>
@@ -109,12 +142,13 @@ a { color: var(--accent); }
     <textarea id="report" readonly></textarea>
     <button type="button" class="secondary" id="btn-clear">Ergebnisse löschen</button>
   </section>
+  </details>
 </main>
 <script>
 (function () {
   "use strict";
 
-  const VERSION = "0.1.2";
+  const VERSION = "0.1.3";
   // Vorsilbe nach Entscheidungen.md, Phase 0, Nr. 1 (Quelle 39).
   const STORE_KEY = "radiology-english.erkennung.data";
   const LANG = "en-GB";
@@ -563,6 +597,566 @@ a { color: var(--accent); }
         setStatus("Ergebnisse gelöscht.");
         render();
       }
+    });
+    render();
+  }
+
+  init();
+})();
+</script>
+<script>
+(function () {
+  "use strict";
+
+  // Prüft die Reihenfolge des späteren Sprechmodus (Testprotokoll, Lauf 3, Folgerung 6).
+  // Offen ist, ob die Erkennung direkt nach einer Sprachausgabe läuft (Quellen 46 und 47).
+  const VERSION = "0.1.3";
+  // Vorsilbe nach Entscheidungen.md, Phase 0, Nr. 1 (Quelle 39).
+  const STORE_KEY = "radiology-english.ablauf.data";
+  const LANG = "en-GB";
+  // Neutrale Alltagssätze ohne Fachinhalt wie in test.js; sie brauchen keine Quelle (Vorgabe des Projekts).
+  const SENTENCES = [
+    "The weather is nice today.",
+    "We are going to the park after lunch.",
+    "The bus leaves at nine in the morning.",
+    "My brother likes to read books in the evening.",
+    "The shop closes at six o'clock.",
+  ];
+  const MODES = {
+    H: { title: "H: Alles auf einer Seite", reloadAroundSpeaking: false },
+    I: { title: "I: Neu laden vor dem Sprechen", reloadAroundSpeaking: true },
+  };
+  const STEPS = {
+    listen: { number: 1, label: "1. Anhören", hint: "Tippe auf „Anhören“." },
+    speak: { number: 2, label: "2. Sprechen", hint: "Tippe auf „Sprechen“ und sprich den Satz nach." },
+    relisten: { number: 3, label: "3. Nochmal anhören", hint: "Tippe auf „Nochmal anhören“." },
+    next: { number: 4, label: "4. Weiter", hint: "Tippe auf „Weiter“." },
+  };
+  const PAUSE_BEFORE_STOP_MS = 2500;
+  const NO_SPEECH_LIMIT_MS = 15000;
+  const NO_AUDIOSTART_LIMIT_MS = 30000;
+  const END_GUARD_MS = 3000;
+  const SPEAK_GUARD_MS = 15000;
+  // Wie bei Variante G, damit nur die Reihenfolge neu ist.
+  const RELOAD_DELAY_MS = 800;
+
+  const $ = (id) => document.getElementById(id);
+  let busy = false;
+  let keptUtterance = null;
+
+  function timeStamp() {
+    return new Date().toLocaleTimeString("de-DE");
+  }
+
+  function setStatus(text, kind) {
+    const element = $("seq-status");
+    element.textContent = text;
+    element.className = "status" + (kind ? " " + kind : "");
+  }
+
+  function emptyData() {
+    return { passes: [], current: null, reloadStartedAt: null, reloadReason: "", hidden: 0 };
+  }
+
+  function loadData() {
+    const empty = emptyData();
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      return raw ? Object.assign(empty, JSON.parse(raw)) : empty;
+    } catch (error) {
+      return empty;
+    }
+  }
+
+  function saveData(data) {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    } catch (error) {
+      setStatus("Speichern fehlgeschlagen: " + error.name, "err");
+    }
+  }
+
+  function currentSentence(data) {
+    return data.passes[data.current.pass].sentences[data.current.sentence];
+  }
+
+  function words(text) {
+    return text.toLowerCase().replace(/’/g, "'").replace(/[^a-z0-9']+/g, " ").trim().split(" ").filter(Boolean);
+  }
+
+  function isExact(text, target) {
+    const said = words(text);
+    const wanted = words(target);
+    return said.length === wanted.length && said.every((word, index) => word === wanted[index]);
+  }
+
+  function seconds(ms) {
+    return (ms / 1000).toFixed(1).replace(".", ",") + " s";
+  }
+
+  // Muss direkt im Tipp laufen: Ohne Tipp verwirft iOS die Ausgabe still, bis in diesem
+  // Seitenaufruf einmal aus einem Tipp heraus gesprochen wurde (Quelle 47, Testprotokoll, Lauf 3).
+  function speakLogged(text, done) {
+    const startedMs = Date.now();
+    const log = { tappedAt: timeStamp(), events: [], result: "", endedMs: null, hiddenBefore: 0 };
+    const note = (name) => log.events.push(name + " +" + (Date.now() - startedMs) + " ms");
+    if (!window.speechSynthesis) {
+      log.result = "keine Sprachausgabe";
+      log.endedMs = Date.now();
+      done(log);
+      return;
+    }
+    const state = () => "pending " + window.speechSynthesis.pending + ", speaking " + window.speechSynthesis.speaking;
+    let guard = null;
+    let finished = false;
+    const finish = (result) => {
+      if (finished) {
+        return;
+      }
+      finished = true;
+      clearTimeout(guard);
+      log.result = result;
+      log.endedMs = Date.now();
+      done(log);
+    };
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = LANG;
+    utterance.onstart = () => note("start");
+    utterance.onend = () => {
+      note("end");
+      finish("gesprochen");
+    };
+    utterance.onerror = (event) => {
+      note("error " + event.error);
+      finish("Fehler " + event.error);
+    };
+    keptUtterance = utterance;
+    note("speak()");
+    window.speechSynthesis.speak(utterance);
+    note("danach " + state());
+    guard = setTimeout(() => {
+      note("kein Ende, " + state());
+      finish("kein Ende nach " + (SPEAK_GUARD_MS / 1000) + " s");
+    }, SPEAK_GUARD_MS);
+  }
+
+  function recognizeLogged(target, done) {
+    const startedMs = Date.now();
+    const log = {
+      tappedAt: timeStamp(), events: [], results: 0, text: "", final: false, confidence: null,
+      error: "", message: "", outcome: "", heard: false, exact: false, gapMs: null, hiddenBefore: 0,
+    };
+    const note = (name) => log.events.push(name + " +" + (Date.now() - startedMs) + " ms");
+    const timers = {};
+    const clearTimer = (name) => {
+      if (timers[name]) {
+        clearTimeout(timers[name]);
+        delete timers[name];
+      }
+    };
+    const setTimer = (name, delay, callback) => {
+      clearTimer(name);
+      timers[name] = setTimeout(callback, delay);
+    };
+    let recognition = null;
+    let finished = false;
+    const finish = (outcome) => {
+      if (finished) {
+        return;
+      }
+      finished = true;
+      Object.keys(timers).forEach(clearTimer);
+      if (recognition) {
+        ["onstart", "onaudiostart", "onspeechstart", "onresult", "onerror", "onend"].forEach((name) => {
+          recognition[name] = null;
+        });
+      }
+      log.outcome = outcome;
+      log.heard = log.text !== "";
+      log.exact = isExact(log.text, target);
+      done(log);
+    };
+    const requestEnd = (method, reason) => {
+      note(reason);
+      try {
+        recognition[method]();
+      } catch (error) {
+        note("Ausnahme bei " + method + "(): " + error.name);
+      }
+      setTimer("endGuard", END_GUARD_MS, () => finish("kein end nach " + method + "()"));
+    };
+    // Safari bietet die Schnittstelle als webkitSpeechRecognition an (Quelle 27).
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) {
+      note("Spracherkennung fehlt");
+      finish("fehlt");
+      return;
+    }
+    try {
+      recognition = new Recognition();
+      recognition.lang = LANG;
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+      recognition.onstart = () => note("start");
+      recognition.onaudiostart = () => {
+        note("audiostart");
+        clearTimer("noAudiostart");
+        setStatus("Bitte jetzt den Satz nachsprechen.", "warn");
+        setTimer("limit", NO_SPEECH_LIMIT_MS, () => requestEnd("abort", "keine Sprache nach " + (NO_SPEECH_LIMIT_MS / 1000) + " s"));
+      };
+      recognition.onspeechstart = () => note("speechstart");
+      recognition.onresult = (event) => {
+        log.results += 1;
+        const parts = [];
+        for (let i = 0; i < event.results.length; i += 1) {
+          parts.push(event.results[i][0].transcript.trim());
+        }
+        log.text = parts.join(" ").trim();
+        const last = event.results[event.results.length - 1];
+        if (last.isFinal) {
+          log.final = true;
+          log.confidence = last[0].confidence;
+        }
+        clearTimer("limit");
+        setStatus("Erkannt bisher: " + log.text, "warn");
+        setTimer("pause", PAUSE_BEFORE_STOP_MS, () => requestEnd("stop", "stop() nach Pause"));
+      };
+      recognition.onerror = (event) => {
+        log.error = event.error;
+        log.message = event.message || "";
+        note("error " + event.error);
+      };
+      recognition.onend = () => {
+        note("end");
+        finish("end");
+      };
+      setTimer("noAudiostart", NO_AUDIOSTART_LIMIT_MS, () => requestEnd("abort", "kein audiostart nach " + (NO_AUDIOSTART_LIMIT_MS / 1000) + " s"));
+      note("start()");
+      recognition.start();
+    } catch (error) {
+      log.error = error.name;
+      log.message = error.message || "";
+      note("Ausnahme " + error.name);
+      finish("Ausnahme");
+    }
+  }
+
+  function reloadPage(reason) {
+    const data = loadData();
+    data.reloadStartedAt = Date.now();
+    data.reloadReason = reason;
+    saveData(data);
+    window.location.reload();
+  }
+
+  function startPass(modeKey) {
+    const data = loadData();
+    if (busy || data.current) {
+      return;
+    }
+    data.passes.push({
+      mode: modeKey,
+      startedAt: timeStamp(),
+      finished: false,
+      cancelled: false,
+      sentences: SENTENCES.map((text) => ({ text: text, reloads: [], listen: null, speak: null, relisten: null })),
+    });
+    data.current = { pass: data.passes.length - 1, sentence: 0, step: "listen" };
+    data.hidden = 0;
+    saveData(data);
+    busy = true;
+    reloadPage("vor Satz 1");
+  }
+
+  function finishStep(field, log, nextStep, reloadReason) {
+    const data = loadData();
+    const current = data.current;
+    data.passes[current.pass].sentences[current.sentence][field] = log;
+    current.step = nextStep;
+    saveData(data);
+    if (reloadReason) {
+      setStatus("Die Seite lädt neu.", "warn");
+      render();
+      setTimeout(() => reloadPage(reloadReason), RELOAD_DELAY_MS);
+      return;
+    }
+    busy = false;
+    render();
+  }
+
+  function goNext(data) {
+    const current = data.current;
+    const pass = data.passes[current.pass];
+    if (current.sentence + 1 >= pass.sentences.length) {
+      pass.finished = true;
+      data.current = null;
+      saveData(data);
+      render();
+      return;
+    }
+    current.sentence += 1;
+    current.step = "listen";
+    saveData(data);
+    busy = true;
+    reloadPage("vor Satz " + (current.sentence + 1));
+  }
+
+  function onStepTap() {
+    if (busy) {
+      return;
+    }
+    const data = loadData();
+    const current = data.current;
+    if (!current) {
+      return;
+    }
+    if (current.step === "next") {
+      goNext(data);
+      return;
+    }
+    const mode = MODES[data.passes[current.pass].mode];
+    const sentence = currentSentence(data);
+    const step = current.step;
+    const hiddenBefore = data.hidden;
+    data.hidden = 0;
+    saveData(data);
+    busy = true;
+    render();
+    if (step === "speak") {
+      const gapMs = sentence.listen ? Date.now() - sentence.listen.endedMs : null;
+      setStatus("Mikrofon startet …", "warn");
+      recognizeLogged(sentence.text, (log) => {
+        log.gapMs = gapMs;
+        log.hiddenBefore = hiddenBefore;
+        finishStep("speak", log, "relisten", mode.reloadAroundSpeaking ? "nach dem Sprechen" : "");
+      });
+      return;
+    }
+    setStatus("Die Seite spricht den Satz.", "warn");
+    speakLogged(sentence.text, (log) => {
+      log.hiddenBefore = hiddenBefore;
+      if (step === "listen") {
+        finishStep("listen", log, "speak", mode.reloadAroundSpeaking ? "vor dem Sprechen" : "");
+      } else {
+        finishStep("relisten", log, "next", "");
+      }
+    });
+  }
+
+  function describeSpeech(name, log) {
+    if (!log) {
+      return "  " + name + ": nicht gelaufen";
+    }
+    return "  " + name + ", getippt " + log.tappedAt + ": " + log.result + "; davor verborgen " + log.hiddenBefore +
+      "-mal\n    Ereignisse: " + log.events.join(", ");
+  }
+
+  function describeRecognition(log) {
+    if (!log) {
+      return "  Sprechen: nicht gelaufen";
+    }
+    const parts = [
+      "  Sprechen, getippt " + log.tappedAt + ": " + (log.heard ? "Sprache erkannt" : "nichts erkannt"),
+      "wortgleich " + (log.exact ? "ja" : "nein"),
+      "Text \"" + log.text + "\"",
+      "Endergebnis " + (log.final ? "ja" : "nein"),
+    ];
+    if (log.confidence !== null) {
+      parts.push("confidence " + log.confidence);
+    }
+    if (log.error) {
+      parts.push("Fehler " + log.error + (log.message ? " [" + log.message + "]" : ""));
+    }
+    parts.push("Ende: " + log.outcome);
+    if (log.gapMs !== null) {
+      parts.push("Abstand zum Ende des Anhörens " + seconds(log.gapMs));
+    }
+    parts.push("davor verborgen " + log.hiddenBefore + "-mal");
+    return parts.join("; ") + "\n    Ereignisse: " + log.events.join(", ") + "; result " + log.results + "-mal";
+  }
+
+  function describeReloads(sentence) {
+    return sentence.reloads.map((entry) => {
+      const details = [entry.ms + " ms"];
+      if (entry.type) {
+        details.push("Art " + entry.type);
+      }
+      if (typeof entry.transfer === "number") {
+        details.push("übertragen " + entry.transfer + " Byte");
+      }
+      return "  Neuladen " + entry.reason + ": " + details.join(", ");
+    });
+  }
+
+  function passCounts(pass) {
+    const spoken = pass.sentences.filter((sentence) => sentence.speak);
+    const speeches = [];
+    pass.sentences.forEach((sentence) => {
+      [sentence.listen, sentence.relisten].forEach((log) => {
+        if (log) {
+          speeches.push(log);
+        }
+      });
+    });
+    return {
+      spoken: spoken.length,
+      heard: spoken.filter((sentence) => sentence.speak.heard).length,
+      exact: spoken.filter((sentence) => sentence.speak.exact).length,
+      speeches: speeches.length,
+      speechesDone: speeches.filter((log) => log.result === "gesprochen").length,
+    };
+  }
+
+  function buildReport(data) {
+    const controlled = navigator.serviceWorker && navigator.serviceWorker.controller ? "ja" : "nein";
+    const lines = [
+      "Radiology English – Echter Ablauf, Version " + VERSION,
+      "Stand: " + new Date().toISOString() + " (UTC), Ortszeit " + timeStamp(),
+      "userAgent: " + navigator.userAgent,
+      "navigator.standalone: " + (typeof navigator.standalone === "boolean" ? navigator.standalone : "nicht vorhanden"),
+      "Service Worker steuert die Seite: " + controlled,
+      "Sprache: " + LANG,
+    ];
+    data.passes.forEach((pass, index) => {
+      const counts = passCounts(pass);
+      const state = pass.finished ? "fertig" : (pass.cancelled ? "abgebrochen" : "läuft");
+      lines.push("");
+      lines.push("[" + MODES[pass.mode].title + "] Durchgang " + (index + 1) + ", begonnen " + pass.startedAt + ", " + state +
+        ": Sprache erkannt " + counts.heard + " von " + counts.spoken + ", wortgleich " + counts.exact + " von " + counts.spoken +
+        ", Sprachausgabe bis zum Ende " + counts.speechesDone + " von " + counts.speeches + ".");
+      pass.sentences.forEach((sentence, number) => {
+        if (!sentence.listen && !sentence.speak && !sentence.relisten && !sentence.reloads.length) {
+          return;
+        }
+        lines.push("Satz " + (number + 1) + ": " + sentence.text);
+        describeReloads(sentence).forEach((line) => lines.push(line));
+        lines.push(describeSpeech("Anhören", sentence.listen));
+        lines.push(describeRecognition(sentence.speak));
+        lines.push(describeSpeech("Nochmal anhören", sentence.relisten));
+      });
+    });
+    return lines.join("\n");
+  }
+
+  function showStatus(data) {
+    const current = data.current;
+    if (!current) {
+      const last = data.passes[data.passes.length - 1];
+      if (!last) {
+        setStatus("Noch nichts gestartet.");
+      } else if (last.cancelled) {
+        setStatus("Durchgang abgebrochen.", "warn");
+      } else {
+        setStatus("Durchgang fertig. Nächste Variante tippen oder das Ergebnis kopieren.", "ok");
+      }
+      return;
+    }
+    const sentence = currentSentence(data);
+    const hint = STEPS[current.step].hint;
+    if (sentence.speak && (current.step === "relisten" || current.step === "next")) {
+      const said = sentence.speak.heard ? "Erkannt: " + sentence.speak.text + "." : "Nichts erkannt.";
+      setStatus(said + " " + hint, sentence.speak.heard ? "ok" : "err");
+      return;
+    }
+    setStatus(hint);
+  }
+
+  function describeSummary(data) {
+    return "Bisher: " + Object.keys(MODES).map((key) => {
+      const done = data.passes.filter((pass) => pass.mode === key && pass.finished);
+      if (!done.length) {
+        return key + " noch nicht";
+      }
+      const counts = passCounts(done[done.length - 1]);
+      return key + " " + counts.heard + " von " + counts.spoken + " erkannt";
+    }).join(", ") + ".";
+  }
+
+  function render() {
+    const data = loadData();
+    const current = data.current;
+    $("seq-choose").hidden = Boolean(current);
+    $("seq-run").hidden = !current;
+    if (current) {
+      const pass = data.passes[current.pass];
+      const isLast = current.sentence + 1 >= pass.sentences.length;
+      const step = STEPS[current.step];
+      $("seq-progress").textContent = MODES[pass.mode].title + ", Satz " + (current.sentence + 1) + " von " + pass.sentences.length +
+        ", Schritt " + step.number + " von 4";
+      $("seq-sentence").textContent = currentSentence(data).text;
+      $("seq-step").textContent = current.step === "next" && isLast ? "4. Durchgang beenden" : step.label;
+      $("seq-step").disabled = busy;
+      $("seq-cancel").disabled = busy;
+    }
+    $("seq-summary").textContent = describeSummary(data);
+    $("seq-select").disabled = busy;
+    $("seq-clear").disabled = busy;
+    $("seq-report").value = buildReport(data);
+    if (!busy) {
+      showStatus(data);
+    }
+  }
+
+  function navigationInfo() {
+    try {
+      const entry = performance.getEntriesByType("navigation")[0];
+      return entry ? { type: entry.type, transfer: entry.transferSize } : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function init() {
+    const data = loadData();
+    if (data.reloadStartedAt) {
+      const entry = Object.assign({ reason: data.reloadReason, ms: Date.now() - data.reloadStartedAt }, navigationInfo());
+      if (data.current) {
+        currentSentence(data).reloads.push(entry);
+      }
+      data.reloadStartedAt = null;
+      data.reloadReason = "";
+      saveData(data);
+    }
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        return;
+      }
+      const latest = loadData();
+      // Das Neuladen selbst zählt hier nicht als Verbergen (Testprotokoll, Lauf 3).
+      if (latest.current && !latest.reloadStartedAt) {
+        latest.hidden += 1;
+        saveData(latest);
+      }
+    });
+    Object.keys(MODES).forEach((key) => {
+      $("seq-start-" + key).addEventListener("click", () => startPass(key));
+    });
+    $("seq-step").addEventListener("click", onStepTap);
+    $("seq-cancel").addEventListener("click", () => {
+      if (busy || !window.confirm("Durchgang abbrechen?")) {
+        return;
+      }
+      const latest = loadData();
+      if (latest.current) {
+        latest.passes[latest.current.pass].cancelled = true;
+        latest.current = null;
+        saveData(latest);
+      }
+      render();
+    });
+    $("seq-select").addEventListener("click", () => {
+      const report = $("seq-report");
+      report.focus();
+      report.select();
+      report.setSelectionRange(0, report.value.length);
+    });
+    $("seq-clear").addEventListener("click", () => {
+      if (busy || !window.confirm("Alle Ergebnisse von H und I löschen?")) {
+        return;
+      }
+      saveData(emptyData());
+      render();
     });
     render();
   }
